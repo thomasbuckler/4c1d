@@ -5,7 +5,7 @@
     <script src="js/webpd-latest.js"></script>
     <script>
         var patch
-        $.get('patches/which_distributor.pd', function(patchStr) {
+        $.get('patches/myPatch.pd', function(patchStr) {
           patch = Pd.loadPatch(patchStr)
           Pd.start()
         })
