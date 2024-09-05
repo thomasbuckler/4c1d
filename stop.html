@@ -78,16 +78,17 @@
             }
 
             updateDisplay() {
-                let minutes = Math.floor(this.elapsedTime / 60000);
-                let seconds = Math.floor((this.elapsedTime % 60000) / 1000);
-                let milliseconds = Math.floor((this.elapsedTime % 1000));
-                
-                minutes = minutes.toString().padStart(2, "0");
-                seconds = seconds.toString().padStart(2, "0");
-                milliseconds = milliseconds.toString().padStart(3, "0");
-                
-                this.element.textContent = `${minutes}:${seconds}.${milliseconds}`;
-            }
+				let minutes = Math.floor(this.elapsedTime / 60000);
+				let seconds = Math.floor((this.elapsedTime % 60000) / 1000);
+				let milliseconds = Math.floor((this.elapsedTime % 1000) / 100); // Get only the first digit
+
+    // No padding for minutes
+				seconds = seconds.toString().padStart(2, "0");
+				milliseconds = milliseconds.toString(); // No padding for milliseconds, only show one digit
+
+				this.element.textContent = `${minutes}:${seconds}.${milliseconds}`;
+}
+
         }
 
         const stopwatches = [
