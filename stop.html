@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stacked Colorful Stopwatches</title>
+    <title></title>
     <style>
         body {
             display: flex;
@@ -18,7 +18,7 @@
         .stopwatch {
             font-size: 92px;
             cursor: pointer;
-            padding: 20px;
+            padding: 1px;
             width: 100%;
             text-align: center;
         }
@@ -81,11 +81,8 @@
 				let minutes = Math.floor(this.elapsedTime / 60000);
 				let seconds = Math.floor((this.elapsedTime % 60000) / 1000);
 				let milliseconds = Math.floor((this.elapsedTime % 1000) / 100); // Get only the first digit
-
-    // No padding for minutes
 				seconds = seconds.toString().padStart(2, "0");
-				milliseconds = milliseconds.toString(); // No padding for milliseconds, only show one digit
-
+				milliseconds = milliseconds.toString(); 
 				this.element.textContent = `${minutes}:${seconds}.${milliseconds}`;
 }
 
