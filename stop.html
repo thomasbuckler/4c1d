@@ -3,29 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full-width Stacked Colorful Stopwatches</title>
+    <title>Stacked Colorful Stopwatches</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            font-family: Arial, sans-serif;
-            background-color: white;
-        }
         body {
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
         }
         .stopwatch {
             font-size: 72px;
             cursor: pointer;
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 20px;
             width: 100%;
-            min-height: 25%;
+            text-align: center;
         }
         #stopwatch1 { color: #ff0000; }
         #stopwatch2 { color: #00ff00; }
