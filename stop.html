@@ -1,95 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Stopwatch</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacked Colorful Stopwatches</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: fuchsia;
+        }
+        .stopwatch {
+            font-size: 72px;
+            cursor: pointer;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        #stopwatch1 { color: white; }
+        #stopwatch2 { color: #00ff00; } /* Bright green */
+        #stopwatch3 { color: #0000ff; } /* Blue */
+        #stopwatch4 { color: yellow; }
+    </style>
 </head>
 <body>
-  <div id="stopwatch">
-    <span id="minutes">00</span>:<span id="seconds">00</span>:<span id="milliseconds">00</span>
-  </div>
-  <button id="start-stop">Start</button>
-  <button id="reset">Reset</button>
+    <div id="stopwatch1" class="stopwatch">00:00.000</div>
+    <div id="stopwatch2" class="stopwatch">00:00.000</div>
+    <div id="stopwatch3" class="stopwatch">00:00.000</div>
+    <div id="stopwatch4" class="stopwatch">00:00.000</div>
 
-  <script src="script.js"></script>
+    <script>
+        class Stopwatch {
+            constructor(element) {
+                this.element = element;
+                this.startTime = 0;
+                this.elapsedTime = 0;
+                this.timerInterval = null;
+                this.running = false;
+
+                this.element.addEventListener('click', () => {
+                    if (this.running) {
+                        this.stop();
+                    } else if (this.elapsedTime > 0) {
+                        this.reset();
+                    } else {
+                        this.start();
+                    }
+                });
+            }
+
+            start() {
+                this.startTime = Date.now() - this.elapsedTime;
+                this.timerInterval = setInterval(() => this.updateTime(), 10);
+                this.running = true;
+            }
+
+            stop() {
+                clearInterval(this.timerInterval);
+                this.running = false;
+            }
+
+            reset() {
+                clearInterval(this.timerInterval);
+                this.elapsedTime = 0;
+                this.running = false;
+                this.updateDisplay();
+            }
+
+            updateTime() {
+                this.elapsedTime = Date.now() - this.startTime;
+                this.updateDisplay();
+            }
+
+            updateDisplay() {
+                let minutes = Math.floor(this.elapsedTime / 60000);
+                let seconds = Math.floor((this.elapsedTime % 60000) / 1000);
+                let milliseconds = Math.floor((this.elapsedTime % 1000));
+                
+                minutes = minutes.toString().padStart(2, "0");
+                seconds = seconds.toString().padStart(2, "0");
+                milliseconds = milliseconds.toString().padStart(3, "0");
+                
+                this.element.textContent = `${minutes}:${seconds}.${milliseconds}`;
+            }
+        }
+
+        const stopwatches = [
+            new Stopwatch(document.getElementById('stopwatch1')),
+            new Stopwatch(document.getElementById('stopwatch2')),
+            new Stopwatch(document.getElementById('stopwatch3')),
+            new Stopwatch(document.getElementById('stopwatch4'))
+        ];
+    </script>
 </body>
 </html>
-
-style.css
-
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-#stopwatch {
-  font-size: 64px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-#minutes, #seconds, #milliseconds {
-  display: inline-block;
-  width: 50px;
-  text-align: right;
-}
-
-button {
-  font-size: 24px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #ccc;
-}
-
-script.js
-
-let stopwatchRunning = false;
-let minutes = 0;
-let seconds = 0;
-let milliseconds = 0;
-let intervalId;
-
-document.getElementById('start-stop').addEventListener('click', () => {
-  if (!stopwatchRunning) {
-    stopwatchRunning = true;
-    intervalId = setInterval(() => {
-      milliseconds++;
-      if (milliseconds === 100) {
-        milliseconds = 0;
-        seconds++;
-        if (seconds === 60) {
-          seconds = 0;
-          minutes++;
-        }
-      }
-      updateStopwatch();
-    }, 10);
-  } else {
-    stopwatchRunning = false;
-    clearInterval(intervalId);
-  }
-});
-
-document.getElementById('reset').addEventListener('click', () => {
-  stopwatchRunning = false;
-  clearInterval(intervalId);
-  minutes = 0;
-  seconds = 0;
-  milliseconds = 0;
-  updateStopwatch();
-});
-
-function updateStopwatch() {
-  document.getElementById('minutes').textContent = pad(minutes);
-  document.getElementById('seconds').textContent = pad(seconds);
-  document.getElementById('milliseconds').textContent = pad(milliseconds);
-}
-
-function pad(number) {
-  return (number < 10 ? '0' : '') + number;
-}
