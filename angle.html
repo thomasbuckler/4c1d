@@ -57,7 +57,7 @@
 </head>
 <body>
     <div class="calculator">
-        <h2>Pre-fold Angle Calculator</h2>
+        <!-- <h2>Pre-fold Angle Calculator</h2> -->
         <form id="calculatorForm">
             <input type="number" id="preFoldAngle" placeholder="180" required>
             <br>
@@ -71,6 +71,7 @@
             e.preventDefault();
             
             const x = parseFloat(document.getElementById('preFoldAngle').value);
+			<!-- this calculation divides the user inputed angle by 2 then multiples that by 2/3 -->
             const result = (x / 2) * (2/3);
             
             document.getElementById('result').textContent = `Result: ${result.toFixed(2)}`;
