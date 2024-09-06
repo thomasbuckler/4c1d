@@ -67,15 +67,23 @@
     </div>
 
     <script>
-        document.getElementById('calculatorForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const x = parseFloat(document.getElementById('preFoldAngle').value);
-			<!-- this calculation divides the user inputed angle by 2 then multiples that by 2/3 -->
-            const result = (x / 2) * (2/3);
-            
-            document.getElementById('result').textContent = `${result.toFixed(1)}`;
-        });
-    </script>
+    document.getElementById('calculatorForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const x = parseFloat(document.getElementById('preFoldAngle').value);
+        const result = (x / 2) * (2/3);
+        
+        // Get the result as a string with two decimal places
+        const resultString = result.toFixed(2);
+        
+        // Split the result into two parts: before and after the first decimal
+        const firstDecimal = resultString.slice(0, resultString.length - 1);
+        const hiddenPart = resultString.slice(resultString.length - 1);
+
+        // Display the first decimal and hide the second
+        document.getElementById('result').innerHTML = `${firstDecimal}<span style="visibility: hidden;">${hiddenPart}</span>`;
+    });
+</script>
+
 </body>
 </html>
