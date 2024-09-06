@@ -3,47 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    #<title>Pre-fold Angle Calculator</title>
+    <title></title>
     <style>
-        body {
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
             font-family: Arial, sans-serif;
+            background-color: fuchsia;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
         }
         .calculator {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            font-size: 36px;
             text-align: center;
+            width: 100%;
         }
         input {
-            width: 100%;
+            width: 80%;
             padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
+            margin: 20px 0;
+            font-size: 36px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-bottom: 2px solid white;
+            color: white;
+            text-align: center;
+        }
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
         }
         button {
-            background-color: #4CAF50;
+            background-color: transparent;
             color: white;
-            border: none;
+            border: 2px solid white;
             padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
+            font-size: 36px;
             cursor: pointer;
-            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
         #result {
-            margin-top: 20px;
+            margin-top: 40px;
+            font-size: 48px;
             font-weight: bold;
         }
     </style>
@@ -52,8 +59,8 @@
     <div class="calculator">
         <h2>Pre-fold Angle Calculator</h2>
         <form id="calculatorForm">
-            <label for="preFoldAngle">Enter pre-fold angle:</label>
-            <input type="number" id="preFoldAngle" required>
+            <input type="number" id="preFoldAngle" placeholder="180" required>
+            <br>
             <button type="submit">Calculate</button>
         </form>
         <div id="result"></div>
