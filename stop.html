@@ -5,16 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>stop</title>
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            #height: 100vh;
-            margin: 0;
-            font-family: Jokerman, sans-serif;
-            background-color: white;
-        }
+	@font-face {
+    	font-family: 'Jokerman';
+    	src: url('jokerman.woff2') format('woff2'),
+        	 url('jokerman.woff') format('woff'),
+         	url('jokerman.ttf') format('truetype');
+    	font-weight: normal;
+    	font-style: normal;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    #height: 100vh;
+    margin: 0;
+    font-family: 'Jokerman', sans-serif;
+    background-color: white;
+}
         .stopwatch {
             font-size: 119px;
             cursor: pointer;
