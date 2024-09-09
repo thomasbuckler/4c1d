@@ -33,26 +33,32 @@ color: #0000ff;
 #stopwatch4 {
 color: #ff00ff;
 }
+.stopwatch img {
+display: inline-block;
+width: 200px;
+height: 300px;
+margin: 0 -4px;
+}
 </style>
 </head>
 <body>
 <div id="stopwatch1" class="stopwatch">
-<span id="minutes-1"></span>:
-<span id="seconds-1"></span>.
+<span id="minutes-1"></span>
+<span id="seconds-1"></span>
 <span id="milliseconds-1"></span>
 </div>
 <div id="stopwatch2" class="stopwatch">
-<span id="minutes-2"></span>:
-<span id="seconds-2"></span>.
+<span id="minutes-2"></span>
+<span id="seconds-2"></span>
 <span id="milliseconds-2"></span>
 </div>
 <div id="stopwatch3" class="stopwatch">
-<span id="minutes-3"></span>:
-<span id="seconds-3"></span>.
+<span id="minutes-3"></span>
+<span id="seconds-3"></span>
 <span id="milliseconds-3"></span>
 </div>
 <div id="stopwatch4" class="stopwatch">
-<span id="minutes-4"></span>:
+<span id="minutes-4"></span>
 <span id="seconds-4"></span>.
 <span id="milliseconds-4"></span>
 </div>
@@ -64,8 +70,13 @@ this.startTime = 0;
 this.elapsedTime = 0;
 this.timerInterval = null;
 this.running = false;
-this.updateDisplay(); // Call updateDisplay once to load the images
-this.element.addEventListener('click', () => {
+this.element.addEventListener('click', (event) => {
+this.handleClick(event);
+});
+this.updateDisplay(); // Call updateDisplay to load the images initially
+}
+handleClick(event) {
+if (event.target.tagName === 'IMG' || event.target.classList.contains('stopwatch') || event.target.tagName === 'SPAN') {
 if (this.running) {
 this.stop();
 } else if (this.elapsedTime > 0) {
@@ -73,12 +84,10 @@ this.reset();
 } else {
 this.start();
 }
-});
 }
-
-});
 }
 start() {
+this.updateDisplay(); // Call updateDisplay to load the images
 this.startTime = Date.now() - this.elapsedTime;
 this.timerInterval = setInterval(() => this.updateTime(), 10);
 this.running = true;
@@ -97,44 +106,39 @@ updateTime() {
 this.elapsedTime = Date.now() - this.startTime;
 this.updateDisplay();
 }
+
 updateDisplay() {
-  let minutes = Math.floor(this.elapsedTime / 60000);
-  let seconds = Math.floor((this.elapsedTime % 60000) / 1000);
-  let milliseconds = Math.floor((this.elapsedTime % 1000) / 100);
-
-  const minutesTens = document.createElement('img');
-  minutesTens.src = 'images/' + Math.floor(minutes / 10) + '.png';
-  minutesTens.width = 200;
-  minutesTens.height = 300;
-
-  const minutesOnes = document.createElement('img');
-  minutesOnes.src = 'images/' + (minutes % 10) + '.png';
-  minutesOnes.width = 200;
-  minutesOnes.height = 300;
-
-  const secondsTens = document.createElement('img');
-  secondsTens.src = 'images/' + Math.floor(seconds / 10) + '.png';
-  secondsTens.width = 200;
-  secondsTens.height = 300;
-
-  const secondsOnes = document.createElement('img');
-  secondsOnes.src = 'images/' + (seconds % 10) + '.png';
-  secondsOnes.width = 200;
-  secondsOnes.height = 300;
-
-  const millisecondsOnes = document.createElement('img');
-  millisecondsOnes.src = 'images/' + milliseconds + '.png';
-  millisecondsOnes.width = 200;
-  millisecondsOnes.height = 300;
-
-  this.element.querySelector('#minutes-' + this.element.id.substring(9)).innerHTML = '';
-  this.element.querySelector('#minutes-' + this.element.id.substring(9)).appendChild(minutesTens);
-  this.element.querySelector('#minutes-' + this.element.id.substring(9)).appendChild(minutesOnes);
-  this.element.querySelector('#seconds-' + this.element.id.substring(9)).innerHTML = '';
-  this.element.querySelector('#seconds-' + this.element.id.substring(9)).appendChild(secondsTens);
-  this.element.querySelector('#seconds-' + this.element.id.substring(9)).appendChild(secondsOnes);
-  this.element.querySelector('#milliseconds-' + this.element.id.substring(9)).innerHTML = '';
-  this.element.querySelector('#milliseconds-' + this.element.id.substring(9)).appendChild(millisecondsOnes);
+let minutes = Math.floor(this.elapsedTime / 60000);
+let seconds = Math.floor((this.elapsedTime % 60000) / 1000);
+let milliseconds = Math.floor((this.elapsedTime % 1000) / 100);
+const minutesTens = document.createElement('img');
+minutesTens.src = 'images/' + Math.floor(minutes / 10) + '.png';
+minutesTens.width = 200;
+minutesTens.height = 300;
+const minutesOnes = document.createElement('img');
+minutesOnes.src = 'images/' + (minutes % 10) + '.png';
+minutesOnes.width = 200;
+minutesOnes.height = 300;
+const secondsTens = document.createElement('img');
+secondsTens.src = 'images/' + Math.floor(seconds / 10) + '.png';
+secondsTens.width = 200;
+secondsTens.height = 300;
+const secondsOnes = document.createElement('img');
+secondsOnes.src = 'images/' + (seconds % 10) + '.png';
+secondsOnes.width = 200;
+secondsOnes.height = 300;
+const millisecondsOnes = document.createElement('img');
+millisecondsOnes.src = 'images/' + milliseconds + '.png';
+millisecondsOnes.width = 200;
+millisecondsOnes.height = 300;
+this.element.querySelector('#minutes-' + this.element.id.substring(9)).innerHTML = '';
+this.element.querySelector('#minutes-' + this.element.id.substring(9)).appendChild(minutesTens);
+this.element.querySelector('#minutes-' + this.element.id.substring(9)).appendChild(minutesOnes);
+this.element.querySelector('#seconds-' + this.element.id.substring(9)).innerHTML = '';
+this.element.querySelector('#seconds-' + this.element.id.substring(9)).appendChild(secondsTens);
+this.element.querySelector('#seconds-' + this.element.id.substring(9)).appendChild(secondsOnes);
+this.element.querySelector('#milliseconds-' + this.element.id.substring(9)).innerHTML = '';
+this.element.querySelector('#milliseconds-' + this.element.id.substring(9)).appendChild(millisecondsOnes);
 }
 }
 const stopwatches = [
