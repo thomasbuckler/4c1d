@@ -64,6 +64,7 @@ this.startTime = 0;
 this.elapsedTime = 0;
 this.timerInterval = null;
 this.running = false;
+this.updateDisplay(); // Call updateDisplay once to load the images
 this.element.addEventListener('click', () => {
 if (this.running) {
 this.stop();
@@ -72,6 +73,9 @@ this.reset();
 } else {
 this.start();
 }
+});
+}
+
 });
 }
 start() {
