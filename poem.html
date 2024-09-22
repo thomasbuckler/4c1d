@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forfeitula Auralicula</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Code+Pro&family=VT323&family=Press+Start+2P&family=Special+Elite&family=Inconsolata&family=Major+Mono+Display&family=Courier+Prime&family=IBM+Plex+Mono&family=Space+Mono&family=Anonymous+Pro&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            animation: backgroundShift 60s linear infinite;
+        }
+        .container {
+            padding: 50px;
+            position: relative;
+            animation: globalTilt 20s ease-in-out infinite;
+            transform-origin: center center;
+        }
+        .title {
+            font-size: 2.5em;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        .title span {
+            display: inline-block;
+            margin: 0 5px;
+        }
+        .poem {
+            max-width: 800px;
+            font-size: 1.2em;
+            position: relative;
+            height: 400px;
+        }
+        .poem p {
+            margin: 0;
+            position: absolute;
+            animation: lineTilt 15s ease-in-out infinite, lineWave 10s ease-in-out infinite;
+            transform-origin: center left;
+        }
+        .letter {
+            display: inline-block;
+        }
+        .word {
+            display: inline-block;
+            margin-right: 0.5em;
+        }
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(var(--wave-height)); }
+        }
+        @keyframes colorShift {
+            0% { color: hsl(0, 100%, 50%); }
+            12.5% { color: hsl(45, 100%, 50%); }
+            25% { color: hsl(90, 100%, 50%); }
+            37.5% { color: hsl(135, 100%, 50%); }
+            50% { color: hsl(180, 100%, 50%); }
+            62.5% { color: hsl(225, 100%, 50%); }
+            75% { color: hsl(270, 100%, 50%); }
+            87.5% { color: hsl(315, 100%, 50%); }
+            100% { color: hsl(360, 100%, 50%); }
+        }
+        @keyframes backgroundShift {
+            0% { background-color: hsl(0, 50%, 10%); }
+            6.25% { background-color: hsl(22.5, 50%, 10%); }
+            12.5% { background-color: hsl(45, 50%, 10%); }
+            18.75% { background-color: hsl(67.5, 50%, 10%); }
+            25% { background-color: hsl(90, 50%, 10%); }
+            31.25% { background-color: hsl(112.5, 50%, 10%); }
+            37.5% { background-color: hsl(135, 50%, 10%); }
+            43.75% { background-color: hsl(157.5, 50%, 10%); }
+            50% { background-color: hsl(180, 50%, 10%); }
+            56.25% { background-color: hsl(202.5, 50%, 10%); }
+            62.5% { background-color: hsl(225, 50%, 10%); }
+            68.75% { background-color: hsl(247.5, 50%, 10%); }
+            75% { background-color: hsl(270, 50%, 10%); }
+            81.25% { background-color: hsl(292.5, 50%, 10%); }
+            87.5% { background-color: hsl(315, 50%, 10%); }
+            93.75% { background-color: hsl(337.5, 50%, 10%); }
+            100% { background-color: hsl(360, 50%, 10%); }
+        }
+        @keyframes globalTilt {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+        @keyframes lineTilt {
+            0%, 100% { transform: rotate(var(--tilt-start)); }
+            50% { transform: rotate(var(--tilt-end)); }
+        }
+        @keyframes lineWave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(var(--line-wave-height)); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title" id="title"></div>
+        <div class="poem">
+            <p id="line1"></p>
+            <p id="line2"></p>
+            <p id="line3"></p>
+            <p id="line4"></p>
+            <p id="line5"></p>
+            <p id="line6"></p>
+        </div>
+    </div>
+    <script>
+        const title = "Forfeitula Auralicula";
+        const lines = [
+            "A & B ⅋ Cmeant?",
+            "florls & painʇs ⅋ sea⅂∀nce!",
+            "doorls ith inkan vvayrvvALvs aᴎd vvhy'res?",
+            "ith tics & 'ftears ⅋ tore",
+            "mightd joysts! yern supoisd two imployd ingwing?",
+            "dink dink dink dink, dink, dink"
+        ];
+        
+        const fonts = ['Roboto Mono', 'Source Code Pro', 'VT323', 'Special Elite', 'Courier New', 'Arial', 'Times New Roman', 'Inconsolata', 'Major Mono Display', 'Press Start 2P', 'Courier Prime', 'IBM Plex Mono', 'Space Mono', 'Anonymous Pro'];
+        
+        function randomFont() {
+            return fonts[Math.floor(Math.random() * fonts.length)];
+        }
+        
+        function randomTransform() {
+            const rotate = Math.random() * 20 - 10;
+            const skewX = Math.random() * 20 - 10;
+            const skewY = Math.random() * 20 - 10;
+            return `rotate(${rotate}deg) skew(${skewX}deg, ${skewY}deg)`;
+        }
+        
+        function stylizeLetter(letter, index, lineIndex) {
+            const span = document.createElement('span');
+            span.textContent = letter;
+            span.className = 'letter';
+            span.style.fontFamily = randomFont();
+            span.style.fontSize = `${0.8 + Math.random() * 0.6}em`;
+            span.style.fontStyle = Math.random() > 0.5 ? 'italic' : 'normal';
+            span.style.fontWeight = Math.random() > 0.5 ? 'bold' : 'normal';
+            span.style.transform = randomTransform();
+            span.style.display = 'inline-block';
+            
+            const waveHeight = -2 - (Math.random() * 4);
+            const waveDuration = 2 + Math.random() * 3;
+            const colorShiftDuration = Math.random() < 0.3 ? 0.1 + Math.random() * 0.4 : 1 + Math.random() * 9;
+            span.style.animation = `
+                wave ${waveDuration}s ease-in-out infinite,
+                colorShift ${colorShiftDuration}s linear infinite
+            `;
+            span.style.setProperty('--wave-height', `${waveHeight}px`);
+            
+            return span;
+        }
+        
+        function createWord(word, lineIndex) {
+            const wordSpan = document.createElement('span');
+            wordSpan.className = 'word';
+            word.split('').forEach((letter, letterIndex) => {
+                wordSpan.appendChild(stylizeLetter(letter, letterIndex, lineIndex));
+            });
+            return wordSpan;
+        }
+        
+        // Stylize title
+        const titleElement = document.getElementById('title');
+        title.split(' ').forEach((word, wordIndex) => {
+            titleElement.appendChild(createWord(word, -1));
+        });
+        
+        // Stylize poem lines
+        lines.forEach((line, lineIndex) => {
+            const p = document.getElementById(`line${lineIndex + 1}`);
+            p.style.top = `${lineIndex * 60 + Math.random() * 30}px`;
+            p.style.left = `${Math.random() * 100}px`;
+            p.style.animationDelay = `${Math.random() * 5}s`;
+            p.style.setProperty('--line-wave-height', `${-5 - Math.random() * 10}px`);
+            
+            const tiltStart = -2 + Math.random() * 4;
+            const tiltEnd = -2 + Math.random() * 4;
+            p.style.setProperty('--tilt-start', `${tiltStart}deg`);
+            p.style.setProperty('--tilt-end', `${tiltEnd}deg`);
+            
+            line.split(/\s+/).forEach((word, wordIndex) => {
+                p.appendChild(createWord(word, lineIndex));
+            });
+        });
+    </script>
+</body>
+</html>
