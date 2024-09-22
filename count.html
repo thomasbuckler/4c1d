@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap to Count</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #counter {
+            color: red;
+            font-size: 88vw;
+            font-family: Arial, sans-serif;
+            line-height: 1;
+            text-align: center;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="counter">0</div>
+
+<script>
+    let count = 0;
+    const counterDiv = document.getElementById('counter');
+
+    counterDiv.addEventListener('click', () => {
+        count++;
+        counterDiv.textContent = count;
+
+        // Adjust font-size based on number of digits
+        if (count < 10) {
+            counterDiv.style.fontSize = "88vw";
+        } else {
+            counterDiv.style.fontSize = "86vw"; // Adjust for double digits
+        }
+    });
+</script>
+
+</body>
+</html>
