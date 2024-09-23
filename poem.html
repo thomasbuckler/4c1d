@@ -101,14 +101,14 @@
         </div>
     </div>
     <script>
-        const title = "forfeitula aurlicula";
+        const title = "forfeitula auralicula";
         const lines = [
             "A & B ⅋ C meant",
-            "          florls & painʇs ⅋ sea⅂∀nce",
+            "florls & painʇs ⅋ sea⅂∀nce",
             "doorls ith inkan vvayrvvALvs aᴎd vvhyres",
-            "th tics & th tiers v th tore mightd joysts",
-            "    yern poisd two imployd ing wingt",
-            "dink dink dink dink, dink, dink"
+            "tiers v tics n tore mightd joysts",
+            "yearn so poisd two imployd ding wingt",
+            "dink dink dink dink   dink     dink"
         ];
         
         const fonts = ['Roboto Mono', 'Source Code Pro', 'VT323', 'Special Elite', 'Courier New', 'Arial', 'Times New Roman', 'Inconsolata', 'Major Mono Display', 'Press Start 2P', 'Courier Prime', 'IBM Plex Mono', 'Space Mono', 'Anonymous Pro', 'Fira Code', 'Ubuntu Mono', 'JetBrains Mono', 'Consolas', 'Monospace'];
@@ -130,8 +130,8 @@
             const waveHeight = -1 - (Math.random() * 2);
             const waveDuration = 5 + Math.random() * 5;
             const colorShiftDuration = Math.random() < 0.3 ? 0.1 + Math.random() * 0.4 : 1 + Math.random() * 9;
-            const letterTiltStart = -5 + Math.random() * 10;
-            const letterTiltEnd = -5 + Math.random() * 10;
+            const letterTiltStart = -25 + Math.random() * 25; // Increased tilt range
+            const letterTiltEnd = -25 + Math.random() * 25; // Increased tilt range
             span.style.animation = `
                 wave ${waveDuration}s ease-in-out infinite,
                 colorShift ${colorShiftDuration}s linear infinite,
@@ -173,8 +173,8 @@
             p.style.animationDelay = `${Math.random() * 5}s`;
             p.style.setProperty('--line-wave-height', `${-5 - Math.random() * 10}px`);
             
-            const tiltStart = -2 + Math.random() * 4;
-            const tiltEnd = -2 + Math.random() * 4;
+            const tiltStart = -50 + Math.random() * 50;
+            const tiltEnd = -50 + Math.random() * 50;
             p.style.setProperty('--tilt-start', `${tiltStart}deg`);
             p.style.setProperty('--tilt-end', `${tiltEnd}deg`);
             
