@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forfeitula Auralicula</title>
+    <title>forfeitula auralicula</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Code+Pro&family=VT323&family=Press+Start+2P&family=Special+Elite&family=Inconsolata&family=Major+Mono+Display&family=Courier+Prime&family=IBM+Plex+Mono&family=Space+Mono&family=Anonymous+Pro&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Source+Code+Pro&family=VT323&family=Press+Start+2P&family=Special+Elite&family=Inconsolata&family=Major+Mono+Display&family=Courier+Prime&family=IBM+Plex+Mono&family=Space+Mono&family=Anonymous+Pro&family=Fira+Code&family=Ubuntu+Mono&family=JetBrains+Mono&family=Consolas&family=Monospace&display=swap');
         
         body {
             margin: 0;
@@ -20,21 +20,15 @@
         .container {
             padding: 50px;
             position: relative;
-            animation: globalTilt 20s ease-in-out infinite;
+            animation: globalTilt 40s ease-in-out infinite;
             transform-origin: center center;
         }
         .title {
-            font-size: 2.5em;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            font-size: 1.2em;
             margin-bottom: 40px;
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
-        }
-        .title span {
-            display: inline-block;
-            margin: 0 5px;
         }
         .poem {
             max-width: 800px;
@@ -47,9 +41,12 @@
             position: absolute;
             animation: lineTilt 15s ease-in-out infinite, lineWave 10s ease-in-out infinite;
             transform-origin: center left;
+            white-space: nowrap;
         }
         .letter {
             display: inline-block;
+            animation: letterTilt 10s ease-in-out infinite;
+            transform-origin: center;
         }
         .word {
             display: inline-block;
@@ -61,32 +58,16 @@
         }
         @keyframes colorShift {
             0% { color: hsl(0, 100%, 50%); }
-            12.5% { color: hsl(45, 100%, 50%); }
             25% { color: hsl(90, 100%, 50%); }
-            37.5% { color: hsl(135, 100%, 50%); }
             50% { color: hsl(180, 100%, 50%); }
-            62.5% { color: hsl(225, 100%, 50%); }
             75% { color: hsl(270, 100%, 50%); }
-            87.5% { color: hsl(315, 100%, 50%); }
             100% { color: hsl(360, 100%, 50%); }
         }
         @keyframes backgroundShift {
             0% { background-color: hsl(0, 50%, 10%); }
-            6.25% { background-color: hsl(22.5, 50%, 10%); }
-            12.5% { background-color: hsl(45, 50%, 10%); }
-            18.75% { background-color: hsl(67.5, 50%, 10%); }
             25% { background-color: hsl(90, 50%, 10%); }
-            31.25% { background-color: hsl(112.5, 50%, 10%); }
-            37.5% { background-color: hsl(135, 50%, 10%); }
-            43.75% { background-color: hsl(157.5, 50%, 10%); }
             50% { background-color: hsl(180, 50%, 10%); }
-            56.25% { background-color: hsl(202.5, 50%, 10%); }
-            62.5% { background-color: hsl(225, 50%, 10%); }
-            68.75% { background-color: hsl(247.5, 50%, 10%); }
             75% { background-color: hsl(270, 50%, 10%); }
-            81.25% { background-color: hsl(292.5, 50%, 10%); }
-            87.5% { background-color: hsl(315, 50%, 10%); }
-            93.75% { background-color: hsl(337.5, 50%, 10%); }
             100% { background-color: hsl(360, 50%, 10%); }
         }
         @keyframes globalTilt {
@@ -100,6 +81,10 @@
         @keyframes lineWave {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(var(--line-wave-height)); }
+        }
+        @keyframes letterTilt {
+            0%, 100% { transform: rotate(var(--letter-tilt-start)); }
+            50% { transform: rotate(var(--letter-tilt-end)); }
         }
     </style>
 </head>
@@ -116,27 +101,20 @@
         </div>
     </div>
     <script>
-        const title = "Forfeitula Auralicula";
+        const title = "forfeitula aurlicula";
         const lines = [
-            "A & B ⅋ Cmeant?",
-            "florls & painʇs ⅋ sea⅂∀nce!",
-            "doorls ith inkan vvayrvvALvs aᴎd vvhy'res?",
-            "ith tics & 'ftears ⅋ tore",
-            "mightd joysts! yern supoisd two imployd ingwing?",
+            "A & B ⅋ Cmeant",
+            "          florls & painʇs ⅋ sea⅂∀nce",
+            "doorls ith inkan vvayrvvALvs aᴎd vvhyres",
+            "ith tics & v tears ⅋ v tore mightd joysts",
+            "    yern poisd two imployd ing wingt",
             "dink dink dink dink, dink, dink"
         ];
         
-        const fonts = ['Roboto Mono', 'Source Code Pro', 'VT323', 'Special Elite', 'Courier New', 'Arial', 'Times New Roman', 'Inconsolata', 'Major Mono Display', 'Press Start 2P', 'Courier Prime', 'IBM Plex Mono', 'Space Mono', 'Anonymous Pro'];
+        const fonts = ['Roboto Mono', 'Source Code Pro', 'VT323', 'Special Elite', 'Courier New', 'Arial', 'Times New Roman', 'Inconsolata', 'Major Mono Display', 'Press Start 2P', 'Courier Prime', 'IBM Plex Mono', 'Space Mono', 'Anonymous Pro', 'Fira Code', 'Ubuntu Mono', 'JetBrains Mono', 'Consolas', 'Monospace'];
         
         function randomFont() {
             return fonts[Math.floor(Math.random() * fonts.length)];
-        }
-        
-        function randomTransform() {
-            const rotate = Math.random() * 20 - 10;
-            const skewX = Math.random() * 20 - 10;
-            const skewY = Math.random() * 20 - 10;
-            return `rotate(${rotate}deg) skew(${skewX}deg, ${skewY}deg)`;
         }
         
         function stylizeLetter(letter, index, lineIndex) {
@@ -147,17 +125,21 @@
             span.style.fontSize = `${0.8 + Math.random() * 0.6}em`;
             span.style.fontStyle = Math.random() > 0.5 ? 'italic' : 'normal';
             span.style.fontWeight = Math.random() > 0.5 ? 'bold' : 'normal';
-            span.style.transform = randomTransform();
             span.style.display = 'inline-block';
             
-            const waveHeight = -2 - (Math.random() * 4);
-            const waveDuration = 2 + Math.random() * 3;
+            const waveHeight = -1 - (Math.random() * 2);
+            const waveDuration = 5 + Math.random() * 5;
             const colorShiftDuration = Math.random() < 0.3 ? 0.1 + Math.random() * 0.4 : 1 + Math.random() * 9;
+            const letterTiltStart = -5 + Math.random() * 10;
+            const letterTiltEnd = -5 + Math.random() * 10;
             span.style.animation = `
                 wave ${waveDuration}s ease-in-out infinite,
-                colorShift ${colorShiftDuration}s linear infinite
+                colorShift ${colorShiftDuration}s linear infinite,
+                letterTilt ${10 + Math.random() * 5}s ease-in-out infinite ${Math.random() * 10}s
             `;
             span.style.setProperty('--wave-height', `${waveHeight}px`);
+            span.style.setProperty('--letter-tilt-start', `${letterTiltStart}deg`);
+            span.style.setProperty('--letter-tilt-end', `${letterTiltEnd}deg`);
             
             return span;
         }
@@ -166,7 +148,13 @@
             const wordSpan = document.createElement('span');
             wordSpan.className = 'word';
             word.split('').forEach((letter, letterIndex) => {
-                wordSpan.appendChild(stylizeLetter(letter, letterIndex, lineIndex));
+                if (lineIndex === -1 && word === 'forfeitula' && letterIndex === 3) {
+                    const flippedF = stylizeLetter('ɟ', letterIndex, lineIndex);
+                    flippedF.style.transform = 'rotate(180deg)';
+                    wordSpan.appendChild(flippedF);
+                } else {
+                    wordSpan.appendChild(stylizeLetter(letter, letterIndex, lineIndex));
+                }
             });
             return wordSpan;
         }
