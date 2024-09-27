@@ -11,7 +11,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      /* height: 100vh; */
       margin: 0;
       background-color: white;
     }
@@ -88,7 +87,6 @@
         let minutes = Math.floor(this.elapsedTime / 60000);
         let seconds = Math.floor((this.elapsedTime % 60000) / 1000);
         let milliseconds = Math.floor((this.elapsedTime % 1000) / 100);
-        // Get only the first digit
         seconds = seconds.toString().padStart(2, "0");
         milliseconds = milliseconds.toString();
         this.element.textContent = `${minutes}:${seconds}.${milliseconds}`;
@@ -102,19 +100,53 @@
       new Stopwatch(document.getElementById('stopwatch4'))
     ];
 
-    // Add speech control to the first timer
+    // Speech recognition for voice commands
     const recognition = new webkitSpeechRecognition();
     recognition.lang = 'en-US';
-    recognition.maxResults = 10;
+    recognition.continuous = true; // Listen continuously
+    recognition.interimResults = false; // Only final results
+
+    let isRecognizing = false;
+
+    recognition.onstart = () => {
+      isRecognizing = true;
+      console.log("Speech recognition started");
+    };
+
     recognition.onresult = event => {
-      const transcript = event.results[0][0].transcript;
+      const transcript = event.results[event.results.length - 1][0].transcript.trim().toLowerCase();
+      console.log("Recognized: " + transcript);
       if (transcript === 'start') {
         stopwatches[0].start();
       } else if (transcript === 'stop') {
         stopwatches[0].stop();
       }
     };
-    recognition.start();
+
+    recognition.onerror = event => {
+      console.error('Speech recognition error:', event.error);
+      if (event.error === 'no-speech' || event.error === 'audio-capture') {
+        isRecognizing = false;
+        recognition.stop(); // Stop on specific errors to avoid an infinite loop
+      }
+    };
+
+    recognition.onend = () => {
+      console.log("Speech recognition ended");
+      if (isRecognizing) {
+        recognition.start(); // Restart only if it was running
+      }
+    };
+
+    // Start speech recognition after ensuring permission is granted
+    function startRecognition() {
+      if (!isRecognizing) {
+        recognition.start();
+      }
+    }
+
+    // Initialize and start listening when the page loads
+    window.onload = startRecognition;
   </script>
 </body>
 </html>
