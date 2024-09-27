@@ -1,0 +1,122 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+  <style>
+    body {
+      font-family: Garamond, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* height: 100vh; */
+      margin: 0;
+      background-color: white;
+    }
+    .stopwatch {
+      font-size: 119px;
+      cursor: pointer;
+      padding: 1px;
+      width: 100%;
+      text-align: center;
+    }
+    #stopwatch1 {
+      color: red;
+    }
+    #stopwatch2 {
+      color: #00ff00;
+    }
+    #stopwatch3 {
+      color: #0000ff;
+    }
+    #stopwatch4 {
+      color: #ff00ff;
+    }
+  </style>
+</head>
+<body>
+  <div id="stopwatch1" class="stopwatch">0:00.0</div>
+  <div id="stopwatch2" class="stopwatch">0:00.0</div>
+  <div id="stopwatch3" class="stopwatch">0:00.0</div>
+  <div id="stopwatch4" class="stopwatch">0:00.0</div>
+
+  <script>
+    class Stopwatch {
+      constructor(element) {
+        this.element = element;
+        this.startTime = 0;
+        this.elapsedTime = 0;
+        this.timerInterval = null;
+        this.running = false;
+        this.element.addEventListener('click', () => {
+          if (this.running) {
+            this.stop();
+          } else if (this.elapsedTime > 0) {
+            this.reset();
+          } else {
+            this.start();
+          }
+        });
+      }
+
+      start() {
+        this.startTime = Date.now() - this.elapsedTime;
+        this.timerInterval = setInterval(() => this.updateTime(), 10);
+        this.running = true;
+      }
+
+      stop() {
+        clearInterval(this.timerInterval);
+        this.running = false;
+      }
+
+      reset() {
+        clearInterval(this.timerInterval);
+        this.elapsedTime = 0;
+        this.running = false;
+        this.updateDisplay();
+      }
+
+      updateTime() {
+        this.elapsedTime = Date.now() - this.startTime;
+        this.updateDisplay();
+      }
+
+      updateDisplay() {
+        let minutes = Math.floor(this.elapsedTime / 60000);
+        let seconds = Math.floor((this.elapsedTime % 60000) / 1000);
+        let milliseconds = Math.floor((this.elapsedTime % 1000) / 100);
+        // Get only the first digit
+        seconds = seconds.toString().padStart(2, "0");
+        milliseconds = milliseconds.toString();
+        this.element.textContent = `${minutes}:${seconds}.${milliseconds}`;
+      }
+    }
+
+    const stopwatches = [
+      new Stopwatch(document.getElementById('stopwatch1')),
+      new Stopwatch(document.getElementById('stopwatch2')),
+      new Stopwatch(document.getElementById('stopwatch3')),
+      new Stopwatch(document.getElementById('stopwatch4'))
+    ];
+
+    // Add speech control to the first timer
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.maxResults = 10;
+    recognition.onresult = event => {
+      const transcript = event.results[0][0].transcript;
+      if (transcript === 'start') {
+        stopwatches[0].start();
+      } else if (transcript === 'stop') {
+        stopwatches[0].stop();
+      }
+    };
+    recognition.start();
+  </script>
+</body>
+</html>
