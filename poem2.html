@@ -12,8 +12,8 @@
             padding: 0;
             height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: flex-start;
+            align-items: flex-start;
             overflow: hidden;
             animation: backgroundShift 60s linear infinite;
         }
@@ -21,7 +21,7 @@
             padding: 50px;
             position: relative;
             animation: globalTilt 40s ease-in-out infinite;
-            transform-origin: center center;
+            transform-origin: top left;
         }
         .title {
             font-size: 1.2em;
@@ -40,7 +40,7 @@
             margin: 0;
             position: absolute;
             animation: lineTilt 15s ease-in-out infinite, lineWave 10s ease-in-out infinite;
-            transform-origin: center left;
+            transform-origin: top left;
             white-space: nowrap;
         }
         .letter {
@@ -127,8 +127,8 @@
             const waveHeight = -1 - (Math.random() * 2);
             const waveDuration = 5 + Math.random() * 5;
             const colorShiftDuration = Math.random() < 0.3 ? 0.1 + Math.random() * 0.4 : 1 + Math.random() * 9;
-            const letterTiltStart = -25 + Math.random() * 25; // Increased tilt range
-            const letterTiltEnd = -25 + Math.random() * 25; // Increased tilt range
+            const letterTiltStart = -25 + Math.random() * 25;
+            const letterTiltEnd = -25 + Math.random() * 25;
             span.style.animation = `
                 wave ${waveDuration}s ease-in-out infinite,
                 colorShift ${colorShiftDuration}s linear infinite,
@@ -166,7 +166,7 @@
         lines.forEach((line, lineIndex) => {
             const p = document.getElementById(`line${lineIndex + 1}`);
             p.style.top = `${lineIndex * 60 + Math.random() * 30}px`;
-            p.style.left = `${Math.random() * 100}px`;
+            p.style.left = '0px';  // Set left to 0 for left justification
             p.style.animationDelay = `${Math.random() * 5}s`;
             p.style.setProperty('--line-wave-height', `${-5 - Math.random() * 10}px`);
             
