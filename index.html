@@ -1,108 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palindrome Patterns</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            padding: 20px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        /* Light mode styles */
-        body {
-            background-color: #ffffff;
-            color: #000000;
-        }
-        /* Dark mode styles */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #121212;
-                color: #ffffff;
-            }
-            a {
-                color: #80b3ff;
-            }
-        }
-        a {
-            color: #0073e6;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palindrome Patterns</title>
+<style>
+	body {
+		<!-- font-family: Arial, sans-serif; -->
+		<!-- line-height: 1.6; -->
+		<!-- margin: 20px; -->
+		<!-- padding: 20px; -->
+		<!-- transition: background-color 0.3s, color 0.3s; -->
+	}
+	/* Light mode styles */
+	body {
+		background-color: #ffffff;
+		color: #000000;
+	}
+	/* Dark mode styles */
+	@media (prefers-color-scheme: dark) {
+		body {
+			background-color: #121212;
+			color: #ffffff;
+		}
+		a {
+			color: #80b3ff;
+		}
+	}
+	a {
+		color: #0073e6;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+</style>
 </head>
 <body>
-    <h1>Palindrome Patterns</h1>
-    <p>Click on the links below to view the palindrome pattern groups:</p>
-    <a href="palindromes_c2_l0_r0.txt">Center 2, Left 0, Right 0</a><br>
-    <a href="palindromes_c2_l0_r1.txt">Center 2, Left 0, Right 1</a><br>
-    <a href="palindromes_c2_l1_r1.txt">Center 2, Left 1, Right 1</a><br>
-    <a href="palindromes_c2_l1_r2.txt">Center 2, Left 1, Right 2</a><br>
-    <a href="palindromes_c2_l2_r2.txt">Center 2, Left 2, Right 2</a><br>
-    <a href="palindromes_c2_l2_r3.txt">Center 2, Left 2, Right 3</a><br>
-    <a href="palindromes_c2_l3_r3.txt">Center 2, Left 3, Right 3</a><br>
-    <a href="palindromes_c2_l3_r4.txt">Center 2, Left 3, Right 4</a><br>
-    <a href="palindromes_c2_l4_r4.txt">Center 2, Left 4, Right 4</a><br>
-    <a href="palindromes_c2_l4_r5.txt">Center 2, Left 4, Right 5</a><br>
-    <a href="palindromes_c2_l5_r5.txt">Center 2, Left 5, Right 5</a><br>
-    <a href="palindromes_c3_l0_r0.txt">Center 3, Left 0, Right 0</a><br>
-    <a href="palindromes_c3_l0_r1.txt">Center 3, Left 0, Right 1</a><br>
-    <a href="palindromes_c3_l1_r1.txt">Center 3, Left 1, Right 1</a><br>
-    <a href="palindromes_c3_l1_r2.txt">Center 3, Left 1, Right 2</a><br>
-    <a href="palindromes_c3_l2_r2.txt">Center 3, Left 2, Right 2</a><br>
-    <a href="palindromes_c3_l2_r3.txt">Center 3, Left 2, Right 3</a><br>
-    <a href="palindromes_c3_l3_r3.txt">Center 3, Left 3, Right 3</a><br>
-    <a href="palindromes_c3_l3_r4.txt">Center 3, Left 3, Right 4</a><br>
-    <a href="palindromes_c3_l4_r4.txt">Center 3, Left 4, Right 4</a><br>
-    <a href="palindromes_c3_l4_r5.txt">Center 3, Left 4, Right 5</a><br>
-    <a href="palindromes_c4_l0_r0.txt">Center 4, Left 0, Right 0</a><br>
-    <a href="palindromes_c4_l0_r1.txt">Center 4, Left 0, Right 1</a><br>
-    <a href="palindromes_c4_l1_r1.txt">Center 4, Left 1, Right 1</a><br>
-    <a href="palindromes_c4_l1_r2.txt">Center 4, Left 1, Right 2</a><br>
-    <a href="palindromes_c4_l2_r2.txt">Center 4, Left 2, Right 2</a><br>
-    <a href="palindromes_c4_l2_r3.txt">Center 4, Left 2, Right 3</a><br>
-    <a href="palindromes_c4_l3_r3.txt">Center 4, Left 3, Right 3</a><br>
-    <a href="palindromes_c4_l3_r4.txt">Center 4, Left 3, Right 4</a><br>
-    <a href="palindromes_c4_l4_r4.txt">Center 4, Left 4, Right 4</a><br>
-    <a href="palindromes_c5_l0_r0.txt">Center 5, Left 0, Right 0</a><br>
-    <a href="palindromes_c5_l0_r1.txt">Center 5, Left 0, Right 1</a><br>
-    <a href="palindromes_c5_l1_r1.txt">Center 5, Left 1, Right 1</a><br>
-    <a href="palindromes_c5_l1_r2.txt">Center 5, Left 1, Right 2</a><br>
-    <a href="palindromes_c5_l2_r2.txt">Center 5, Left 2, Right 2</a><br>
-    <a href="palindromes_c5_l2_r3.txt">Center 5, Left 2, Right 3</a><br>
-    <a href="palindromes_c5_l3_r3.txt">Center 5, Left 3, Right 3</a><br>
-    <a href="palindromes_c5_l3_r4.txt">Center 5, Left 3, Right 4</a><br>
-    <a href="palindromes_c6_l0_r0.txt">Center 6, Left 0, Right 0</a><br>
-    <a href="palindromes_c6_l0_r1.txt">Center 6, Left 0, Right 1</a><br>
-    <a href="palindromes_c6_l1_r1.txt">Center 6, Left 1, Right 1</a><br>
-    <a href="palindromes_c6_l1_r2.txt">Center 6, Left 1, Right 2</a><br>
-    <a href="palindromes_c6_l2_r2.txt">Center 6, Left 2, Right 2</a><br>
-    <a href="palindromes_c6_l2_r3.txt">Center 6, Left 2, Right 3</a><br>
-    <a href="palindromes_c6_l3_r3.txt">Center 6, Left 3, Right 3</a><br>
-    <a href="palindromes_c7_l0_r0.txt">Center 7, Left 0, Right 0</a><br>
-    <a href="palindromes_c7_l0_r1.txt">Center 7, Left 0, Right 1</a><br>
-    <a href="palindromes_c7_l1_r1.txt">Center 7, Left 1, Right 1</a><br>
-    <a href="palindromes_c7_l1_r2.txt">Center 7, Left 1, Right 2</a><br>
-    <a href="palindromes_c7_l2_r2.txt">Center 7, Left 2, Right 2</a><br>
-    <a href="palindromes_c7_l2_r3.txt">Center 7, Left 2, Right 3</a><br>
-    <a href="palindromes_c8_l0_r0.txt">Center 8, Left 0, Right 0</a><br>
-    <a href="palindromes_c8_l0_r1.txt">Center 8, Left 0, Right 1</a><br>
-    <a href="palindromes_c8_l1_r1.txt">Center 8, Left 1, Right 1</a><br>
-    <a href="palindromes_c8_l1_r2.txt">Center 8, Left 1, Right 2</a><br>
-    <a href="palindromes_c8_l2_r2.txt">Center 8, Left 2, Right 2</a><br>
-    <a href="palindromes_c9_l0_r0.txt">Center 9, Left 0, Right 0</a><br>
-    <a href="palindromes_c9_l0_r1.txt">Center 9, Left 0, Right 1</a><br>
-    <a href="palindromes_c9_l1_r1.txt">Center 9, Left 1, Right 1</a><br>
-    <a href="palindromes_c9_l1_r2.txt">Center 9, Left 1, Right 2</a><br>
-    <a href="palindromes_c10_l0_r0.txt">Center 10, Left 0, Right 0</a><br>
-    <a href="palindromes_c10_l0_r1.txt">Center 10, Left 0, Right 1</a><br>
-    <a href="palindromes_c10_l1_r1.txt">Center 10, Left 1, Right 1</a><br>
-    <a href="palindromes_c11_l0_r0.txt">Center 11, Left 0, Right 0</a><br>
-	<a href="palindromes_c11_l0_r1.txt">Center 11, Left 0, Right 1</a><br>
-	<a href="palindromes_c12_l0_r0.txt">Center 12, Left 0, Right 0</a><br>
+<h1>Palindrome Patterns</h1>
+<p>Click on the links below to view the palindrome pattern groups:</p>
+<a href="palindromes_c2_l0_r0.txt">Center 2, Left 0, Right 0</a><br>
+<a href="palindromes_c2_l0_r1.txt">Center 2, Left 0, Right 1</a><br>
+<a href="palindromes_c2_l1_r1.txt">Center 2, Left 1, Right 1</a><br>
+<a href="palindromes_c2_l1_r2.txt">Center 2, Left 1, Right 2</a><br>
+<a href="palindromes_c2_l2_r2.txt">Center 2, Left 2, Right 2</a><br>
+<a href="palindromes_c2_l2_r3.txt">Center 2, Left 2, Right 3</a><br>
+<a href="palindromes_c2_l3_r3.txt">Center 2, Left 3, Right 3</a><br>
+<a href="palindromes_c2_l3_r4.txt">Center 2, Left 3, Right 4</a><br>
+<a href="palindromes_c2_l4_r4.txt">Center 2, Left 4, Right 4</a><br>
+<a href="palindromes_c2_l4_r5.txt">Center 2, Left 4, Right 5</a><br>
+<a href="palindromes_c2_l5_r5.txt">Center 2, Left 5, Right 5</a><br>
+<a href="palindromes_c3_l0_r0.txt">Center 3, Left 0, Right 0</a><br>
+<a href="palindromes_c3_l0_r1.txt">Center 3, Left 0, Right 1</a><br>
+<a href="palindromes_c3_l1_r1.txt">Center 3, Left 1, Right 1</a><br>
+<a href="palindromes_c3_l1_r2.txt">Center 3, Left 1, Right 2</a><br>
+<a href="palindromes_c3_l2_r2.txt">Center 3, Left 2, Right 2</a><br>
+<a href="palindromes_c3_l2_r3.txt">Center 3, Left 2, Right 3</a><br>
+<a href="palindromes_c3_l3_r3.txt">Center 3, Left 3, Right 3</a><br>
+<a href="palindromes_c3_l3_r4.txt">Center 3, Left 3, Right 4</a><br>
+<a href="palindromes_c3_l4_r4.txt">Center 3, Left 4, Right 4</a><br>
+<a href="palindromes_c3_l4_r5.txt">Center 3, Left 4, Right 5</a><br>
+<a href="palindromes_c4_l0_r0.txt">Center 4, Left 0, Right 0</a><br>
+<a href="palindromes_c4_l0_r1.txt">Center 4, Left 0, Right 1</a><br>
+<a href="palindromes_c4_l1_r1.txt">Center 4, Left 1, Right 1</a><br>
+<a href="palindromes_c4_l1_r2.txt">Center 4, Left 1, Right 2</a><br>
+<a href="palindromes_c4_l2_r2.txt">Center 4, Left 2, Right 2</a><br>
+<a href="palindromes_c4_l2_r3.txt">Center 4, Left 2, Right 3</a><br>
+<a href="palindromes_c4_l3_r3.txt">Center 4, Left 3, Right 3</a><br>
+<a href="palindromes_c4_l3_r4.txt">Center 4, Left 3, Right 4</a><br>
+<a href="palindromes_c4_l4_r4.txt">Center 4, Left 4, Right 4</a><br>
+<a href="palindromes_c5_l0_r0.txt">Center 5, Left 0, Right 0</a><br>
+<a href="palindromes_c5_l0_r1.txt">Center 5, Left 0, Right 1</a><br>
+<a href="palindromes_c5_l1_r1.txt">Center 5, Left 1, Right 1</a><br>
+<a href="palindromes_c5_l1_r2.txt">Center 5, Left 1, Right 2</a><br>
+<a href="palindromes_c5_l2_r2.txt">Center 5, Left 2, Right 2</a><br>
+<a href="palindromes_c5_l2_r3.txt">Center 5, Left 2, Right 3</a><br>
+<a href="palindromes_c5_l3_r3.txt">Center 5, Left 3, Right 3</a><br>
+<a href="palindromes_c5_l3_r4.txt">Center 5, Left 3, Right 4</a><br>
+<a href="palindromes_c6_l0_r0.txt">Center 6, Left 0, Right 0</a><br>
+<a href="palindromes_c6_l0_r1.txt">Center 6, Left 0, Right 1</a><br>
+<a href="palindromes_c6_l1_r1.txt">Center 6, Left 1, Right 1</a><br>
+<a href="palindromes_c6_l1_r2.txt">Center 6, Left 1, Right 2</a><br>
+<a href="palindromes_c6_l2_r2.txt">Center 6, Left 2, Right 2</a><br>
+<a href="palindromes_c6_l2_r3.txt">Center 6, Left 2, Right 3</a><br>
+<a href="palindromes_c6_l3_r3.txt">Center 6, Left 3, Right 3</a><br>
+<a href="palindromes_c7_l0_r0.txt">Center 7, Left 0, Right 0</a><br>
+<a href="palindromes_c7_l0_r1.txt">Center 7, Left 0, Right 1</a><br>
+<a href="palindromes_c7_l1_r1.txt">Center 7, Left 1, Right 1</a><br>
+<a href="palindromes_c7_l1_r2.txt">Center 7, Left 1, Right 2</a><br>
+<a href="palindromes_c7_l2_r2.txt">Center 7, Left 2, Right 2</a><br>
+<a href="palindromes_c7_l2_r3.txt">Center 7, Left 2, Right 3</a><br>
+<a href="palindromes_c8_l0_r0.txt">Center 8, Left 0, Right 0</a><br>
+<a href="palindromes_c8_l0_r1.txt">Center 8, Left 0, Right 1</a><br>
+<a href="palindromes_c8_l1_r1.txt">Center 8, Left 1, Right 1</a><br>
+<a href="palindromes_c8_l1_r2.txt">Center 8, Left 1, Right 2</a><br>
+<a href="palindromes_c8_l2_r2.txt">Center 8, Left 2, Right 2</a><br>
+<a href="palindromes_c9_l0_r0.txt">Center 9, Left 0, Right 0</a><br>
+<a href="palindromes_c9_l0_r1.txt">Center 9, Left 0, Right 1</a><br>
+<a href="palindromes_c9_l1_r1.txt">Center 9, Left 1, Right 1</a><br>
+<a href="palindromes_c9_l1_r2.txt">Center 9, Left 1, Right 2</a><br>
+<a href="palindromes_c10_l0_r0.txt">Center 10, Left 0, Right 0</a><br>
+<a href="palindromes_c10_l0_r1.txt">Center 10, Left 0, Right 1</a><br>
+<a href="palindromes_c10_l1_r1.txt">Center 10, Left 1, Right 1</a><br>
+<a href="palindromes_c11_l0_r0.txt">Center 11, Left 0, Right 0</a><br>
+<a href="palindromes_c11_l0_r1.txt">Center 11, Left 0, Right 1</a><br>
+<a href="palindromes_c12_l0_r0.txt">Center 12, Left 0, Right 0</a><br>
 </body></html>
