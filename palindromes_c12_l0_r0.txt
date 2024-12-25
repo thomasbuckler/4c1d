@@ -1,8 +1,0 @@
-Found 1 words with 12-letter center palindromes
-(0 letters left, 0 letters right):
-Grouped by 1 unique palindromes:
-(Words are sorted by frequency of usage - most common first)
-
-Group 'xxxxxxxxxxxx' (1 words):
-  xxxxxxxxxxxx (center palindrome: xxxxxxxxxxxx, frequency: 1.2)
-
