@@ -1,0 +1,8 @@
+Found 1 words with 8-letter center palindromes
+(2 letters left, 2 letters right):
+Grouped by 1 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'ssssssss' (1 words):
+  yessssssssss (center palindrome: ssssssss, frequency: 1.0)
+

@@ -1,0 +1,277 @@
+Found 106 words with 5-letter center palindromes
+(1 letters left, 2 letters right):
+Grouped by 83 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'aaaaa' (5 words):
+  aaaaaand (center palindrome: aaaaa, frequency: 2.1)
+  daaaaamn (center palindrome: aaaaa, frequency: 1.5)
+  baaaaack (center palindrome: aaaaa, frequency: 1.1)
+  haaaaate (center palindrome: aaaaa, frequency: 1.1)
+  saaaaame (center palindrome: aaaaa, frequency: 1.1)
+
+Group 'argra' (4 words):
+  hargrave (center palindrome: argra, frequency: 2.4)
+  margrave (center palindrome: argra, frequency: 2.1)
+  wargrave (center palindrome: argra, frequency: 1.6)
+  gargrave (center palindrome: argra, frequency: 1.1)
+
+Group 'ssess' (4 words):
+  assessed (center palindrome: ssess, frequency: 3.9)
+  assesses (center palindrome: ssess, frequency: 2.9)
+  assessor (center palindrome: ssess, frequency: 2.9)
+  assessee (center palindrome: ssess, frequency: 2.1)
+
+Group 'reter' (3 words):
+  ureteral (center palindrome: reter, frequency: 1.8)
+  ureteric (center palindrome: reter, frequency: 1.3)
+  preterit (center palindrome: reter, frequency: 1.0)
+
+Group 'uuuuu' (3 words):
+  fuuuuuck (center palindrome: uuuuu, frequency: 2.0)
+  huuuuuge (center palindrome: uuuuu, frequency: 1.4)
+  juuuuust (center palindrome: uuuuu, frequency: 1.4)
+
+Group 'ynony' (3 words):
+  synonyms (center palindrome: ynony, frequency: 3.2)
+  synonymy (center palindrome: ynony, frequency: 2.3)
+  synonyme (center palindrome: ynony, frequency: 1.1)
+
+Group 'arcra' (2 words):
+  warcraft (center palindrome: arcra, frequency: 3.2)
+  carcrash (center palindrome: arcra, frequency: 1.1)
+
+Group 'eeeee' (2 words):
+  yeeeeeah (center palindrome: eeeee, frequency: 1.2)
+  veeeeery (center palindrome: eeeee, frequency: 1.0)
+
+Group 'iiiii' (2 words):
+  niiiiice (center palindrome: iiiii, frequency: 1.3)
+  fiiiiine (center palindrome: iiiii, frequency: 1.0)
+
+Group 'ildli' (2 words):
+  wildlife (center palindrome: ildli, frequency: 4.3)
+  wildling (center palindrome: ildli, frequency: 2.2)
+
+Group 'ooooo' (2 words):
+  looooong (center palindrome: ooooo, frequency: 2.2)
+  looooove (center palindrome: ooooo, frequency: 2.0)
+
+Group 'reder' (2 words):
+  frederic (center palindrome: reder, frequency: 3.2)
+  frederik (center palindrome: reder, frequency: 2.6)
+
+Group 'rofor' (2 words):
+  proforma (center palindrome: rofor, frequency: 1.8)
+  broforce (center palindrome: rofor, frequency: 1.1)
+
+Group 'aboba' (1 words):
+  rabobank (center palindrome: aboba, frequency: 2.1)
+
+Group 'adoda' (1 words):
+  vadodara (center palindrome: adoda, frequency: 2.3)
+
+Group 'ahaha' (1 words):
+  bahahaha (center palindrome: ahaha, frequency: 1.9)
+
+Group 'ahlha' (1 words):
+  dahlhaus (center palindrome: ahlha, frequency: 1.5)
+
+Group 'aitia' (1 words):
+  haitians (center palindrome: aitia, frequency: 2.7)
+
+Group 'alala' (1 words):
+  lalaland (center palindrome: alala, frequency: 1.1)
+
+Group 'alkla' (1 words):
+  falkland (center palindrome: alkla, frequency: 2.9)
+
+Group 'ampma' (1 words):
+  kampmann (center palindrome: ampma, frequency: 1.3)
+
+Group 'angna' (1 words):
+  hangnail (center palindrome: angna, frequency: 1.6)
+
+Group 'arbra' (1 words):
+  barbrady (center palindrome: arbra, frequency: 1.1)
+
+Group 'ardra' (1 words):
+  hardrada (center palindrome: ardra, frequency: 1.5)
+
+Group 'arfra' (1 words):
+  warframe (center palindrome: arfra, frequency: 2.3)
+
+Group 'cilic' (1 words):
+  scilicet (center palindrome: cilic, frequency: 1.1)
+
+Group 'eesee' (1 words):
+  meeseeks (center palindrome: eesee, frequency: 1.4)
+
+Group 'elple' (1 words):
+  helpless (center palindrome: elple, frequency: 3.7)
+
+Group 'eltle' (1 words):
+  beltless (center palindrome: eltle, frequency: 1.3)
+
+Group 'ememe' (1 words):
+  rememebr (center palindrome: ememe, frequency: 1.1)
+
+Group 'enine' (1 words):
+  beninese (center palindrome: enine, frequency: 1.4)
+
+Group 'ercre' (1 words):
+  mercredi (center palindrome: ercre, frequency: 1.5)
+
+Group 'ewswe' (1 words):
+  newsweek (center palindrome: ewswe, frequency: 3.1)
+
+Group 'habah' (1 words):
+  chabahar (center palindrome: habah, frequency: 1.5)
+
+Group 'hanah' (1 words):
+  shanahan (center palindrome: hanah, frequency: 2.9)
+
+Group 'heleh' (1 words):
+  whelehan (center palindrome: heleh, frequency: 1.0)
+
+Group 'iemei' (1 words):
+  niemeier (center palindrome: iemei, frequency: 1.2)
+
+Group 'illli' (1 words):
+  milllion (center palindrome: illli, frequency: 1.4)
+
+Group 'irpri' (1 words):
+  airprint (center palindrome: irpri, frequency: 1.2)
+
+Group 'isusi' (1 words):
+  misusing (center palindrome: isusi, frequency: 2.7)
+
+Group 'itati' (1 words):
+  citation (center palindrome: itati, frequency: 3.8)
+
+Group 'lanal' (1 words):
+  planalto (center palindrome: lanal, frequency: 1.1)
+
+Group 'lewel' (1 words):
+  llewelyn (center palindrome: lewel, frequency: 2.4)
+
+Group 'neven' (1 words):
+  unevenly (center palindrome: neven, frequency: 2.7)
+
+Group 'nifin' (1 words):
+  knifings (center palindrome: nifin, frequency: 1.2)
+
+Group 'nilin' (1 words):
+  anilines (center palindrome: nilin, frequency: 1.3)
+
+Group 'nodon' (1 words):
+  anodonta (center palindrome: nodon, frequency: 1.1)
+
+Group 'nomon' (1 words):
+  gnomonic (center palindrome: nomon, frequency: 1.1)
+
+Group 'ocaco' (1 words):
+  cocacola (center palindrome: ocaco, frequency: 1.6)
+
+Group 'olklo' (1 words):
+  folklore (center palindrome: olklo, frequency: 3.5)
+
+Group 'omemo' (1 words):
+  somemore (center palindrome: omemo, frequency: 1.1)
+
+Group 'ongno' (1 words):
+  longnose (center palindrome: ongno, frequency: 1.3)
+
+Group 'onono' (1 words):
+  mononoke (center palindrome: onono, frequency: 2.1)
+
+Group 'oogoo' (1 words):
+  googoosh (center palindrome: oogoo, frequency: 1.0)
+
+Group 'ooloo' (1 words):
+  cooloola (center palindrome: ooloo, frequency: 1.3)
+
+Group 'ooroo' (1 words):
+  moorooka (center palindrome: ooroo, frequency: 1.2)
+
+Group 'opepo' (1 words):
+  copepods (center palindrome: opepo, frequency: 2.2)
+
+Group 'orbro' (1 words):
+  norbrook (center palindrome: orbro, frequency: 1.1)
+
+Group 'orcro' (1 words):
+  norcross (center palindrome: orcro, frequency: 2.5)
+
+Group 'orgro' (1 words):
+  norgrove (center palindrome: orgro, frequency: 1.3)
+
+Group 'orkro' (1 words):
+  workroom (center palindrome: orkro, frequency: 2.3)
+
+Group 'ornro' (1 words):
+  cornrows (center palindrome: ornro, frequency: 2.1)
+
+Group 'ortro' (1 words):
+  fortrose (center palindrome: ortro, frequency: 1.4)
+
+Group 'otato' (1 words):
+  potatoes (center palindrome: otato, frequency: 4.1)
+
+Group 'racar' (1 words):
+  dracarys (center palindrome: racar, frequency: 1.6)
+
+Group 'ragar' (1 words):
+  fragaria (center palindrome: ragar, frequency: 1.5)
+
+Group 'ramar' (1 words):
+  kramaric (center palindrome: ramar, frequency: 1.0)
+
+Group 'refer' (1 words):
+  prefered (center palindrome: refer, frequency: 2.4)
+
+Group 'reher' (1 words):
+  treherne (center palindrome: reher, frequency: 1.2)
+
+Group 'rener' (1 words):
+  trenerry (center palindrome: rener, frequency: 1.0)
+
+Group 'reper' (1 words):
+  creperie (center palindrome: reper, frequency: 1.1)
+
+Group 'reser' (1 words):
+  preserve (center palindrome: reser, frequency: 4.2)
+
+Group 'ridir' (1 words):
+  gridiron (center palindrome: ridir, frequency: 2.7)
+
+Group 'robor' (1 words):
+  uroboros (center palindrome: robor, frequency: 1.1)
+
+Group 'rovor' (1 words):
+  provorov (center palindrome: rovor, frequency: 1.2)
+
+Group 'ssass' (1 words):
+  assassin (center palindrome: ssass, frequency: 3.7)
+
+Group 'sukus' (1 words):
+  tsukushi (center palindrome: sukus, frequency: 1.4)
+
+Group 'tamat' (1 words):
+  stamatis (center palindrome: tamat, frequency: 1.4)
+
+Group 'tapat' (1 words):
+  atapattu (center palindrome: tapat, frequency: 1.2)
+
+Group 'teket' (1 words):
+  steketee (center palindrome: teket, frequency: 1.4)
+
+Group 'ururu' (1 words):
+  kururugi (center palindrome: ururu, frequency: 1.0)
+
+Group 'utotu' (1 words):
+  autotune (center palindrome: utotu, frequency: 2.3)
+
+Group 'xotox' (1 words):
+  exotoxin (center palindrome: xotox, frequency: 1.2)
+

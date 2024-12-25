@@ -1,0 +1,1623 @@
+Found 1284 words with 3-letter center palindromes
+(3 letters left, 3 letters right):
+Grouped by 167 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'ici' (46 words):
+  officials (center palindrome: ici, frequency: 4.7)
+  efficient (center palindrome: ici, frequency: 4.4)
+  delicious (center palindrome: ici, frequency: 4.3)
+  municipal (center palindrome: ici, frequency: 4.2)
+  musicians (center palindrome: ici, frequency: 4.1)
+  judiciary (center palindrome: ici, frequency: 3.9)
+  medicines (center palindrome: ici, frequency: 3.8)
+  solicitor (center palindrome: ici, frequency: 3.7)
+  malicious (center palindrome: ici, frequency: 3.7)
+  medicinal (center palindrome: ici, frequency: 3.5)
+  deficient (center palindrome: ici, frequency: 3.3)
+  homicides (center palindrome: ici, frequency: 3.1)
+  magicians (center palindrome: ici, frequency: 3.1)
+  solicited (center palindrome: ici, frequency: 2.9)
+  homicidal (center palindrome: ici, frequency: 2.7)
+  judicious (center palindrome: ici, frequency: 2.7)
+  officiate (center palindrome: ici, frequency: 2.6)
+  domiciled (center palindrome: ici, frequency: 2.6)
+  feliciano (center palindrome: ici, frequency: 2.5)
+  opticians (center palindrome: ici, frequency: 2.3)
+  officiant (center palindrome: ici, frequency: 2.2)
+  ethicists (center palindrome: ici, frequency: 2.2)
+  lyricists (center palindrome: ici, frequency: 2.2)
+  illicitly (center palindrome: ici, frequency: 2.1)
+  logicians (center palindrome: ici, frequency: 2.1)
+  officious (center palindrome: ici, frequency: 2.1)
+  domiciles (center palindrome: ici, frequency: 1.9)
+  felicitas (center palindrome: ici, frequency: 1.7)
+  feliciana (center palindrome: ici, frequency: 1.7)
+  officialy (center palindrome: ici, frequency: 1.6)
+  municipio (center palindrome: ici, frequency: 1.6)
+  regicides (center palindrome: ici, frequency: 1.6)
+  ufficiale (center palindrome: ici, frequency: 1.5)
+  felicidad (center palindrome: ici, frequency: 1.4)
+  galicians (center palindrome: ici, frequency: 1.4)
+  delicioso (center palindrome: ici, frequency: 1.4)
+  culicidae (center palindrome: ici, frequency: 1.3)
+  deliciosa (center palindrome: ici, frequency: 1.3)
+  medicinae (center palindrome: ici, frequency: 1.3)
+  officiers (center palindrome: ici, frequency: 1.2)
+  silicides (center palindrome: ici, frequency: 1.2)
+  femicides (center palindrome: ici, frequency: 1.1)
+  desicions (center palindrome: ici, frequency: 1.1)
+  musiciens (center palindrome: ici, frequency: 1.1)
+  cilicians (center palindrome: ici, frequency: 1.1)
+  noticiero (center palindrome: ici, frequency: 1.0)
+
+Group 'iti' (43 words):
+  political (center palindrome: iti, frequency: 5.3)
+  positions (center palindrome: iti, frequency: 4.6)
+  ambitious (center palindrome: iti, frequency: 4.0)
+  additions (center palindrome: iti, frequency: 3.8)
+  ambitions (center palindrome: iti, frequency: 3.6)
+  petitions (center palindrome: iti, frequency: 3.4)
+  auditions (center palindrome: iti, frequency: 3.4)
+  positives (center palindrome: iti, frequency: 3.4)
+  munitions (center palindrome: iti, frequency: 3.3)
+  additives (center palindrome: iti, frequency: 3.2)
+  fugitives (center palindrome: iti, frequency: 3.1)
+  digitized (center palindrome: iti, frequency: 2.9)
+  leviticus (center palindrome: iti, frequency: 2.9)
+  sanitizer (center palindrome: iti, frequency: 2.7)
+  seditious (center palindrome: iti, frequency: 2.6)
+  sanitized (center palindrome: iti, frequency: 2.6)
+  maritimes (center palindrome: iti, frequency: 2.4)
+  politique (center palindrome: iti, frequency: 2.4)
+  digitised (center palindrome: iti, frequency: 2.4)
+  digitizer (center palindrome: iti, frequency: 2.3)
+  politicos (center palindrome: iti, frequency: 2.2)
+  novitiate (center palindrome: iti, frequency: 2.1)
+  sanitised (center palindrome: iti, frequency: 1.9)
+  ignitions (center palindrome: iti, frequency: 1.8)
+  levitical (center palindrome: iti, frequency: 1.8)
+  politican (center palindrome: iti, frequency: 1.7)
+  sanitiser (center palindrome: iti, frequency: 1.7)
+  maritimus (center palindrome: iti, frequency: 1.5)
+  tahitians (center palindrome: iti, frequency: 1.5)
+  gefitinib (center palindrome: iti, frequency: 1.4)
+  politicus (center palindrome: iti, frequency: 1.4)
+  politiken (center palindrome: iti, frequency: 1.4)
+  digitizes (center palindrome: iti, frequency: 1.4)
+  sanitizes (center palindrome: iti, frequency: 1.3)
+  digitimes (center palindrome: iti, frequency: 1.2)
+  domitilla (center palindrome: iti, frequency: 1.2)
+  politicks (center palindrome: iti, frequency: 1.2)
+  volitions (center palindrome: iti, frequency: 1.1)
+  digitiser (center palindrome: iti, frequency: 1.1)
+  navitimer (center palindrome: iti, frequency: 1.1)
+  seditions (center palindrome: iti, frequency: 1.1)
+  maritimum (center palindrome: iti, frequency: 1.1)
+  genitives (center palindrome: iti, frequency: 1.0)
+
+Group 'ara' (40 words):
+  separated (center palindrome: ara, frequency: 4.3)
+  clearance (center palindrome: ara, frequency: 4.0)
+  apparatus (center palindrome: ara, frequency: 3.8)
+  separates (center palindrome: ara, frequency: 3.6)
+  nicaragua (center palindrome: ara, frequency: 3.4)
+  asparagus (center palindrome: ara, frequency: 3.2)
+  paparazzi (center palindrome: ara, frequency: 3.2)
+  separator (center palindrome: ara, frequency: 2.9)
+  cataracts (center palindrome: ara, frequency: 2.8)
+  separable (center palindrome: ara, frequency: 2.5)
+  maharajah (center palindrome: ara, frequency: 2.3)
+  jacaranda (center palindrome: ara, frequency: 2.2)
+  paparazzo (center palindrome: ara, frequency: 2.1)
+  natarajan (center palindrome: ara, frequency: 2.0)
+  elbaradei (center palindrome: ara, frequency: 1.8)
+  maharajas (center palindrome: ara, frequency: 1.8)
+  matarazzo (center palindrome: ara, frequency: 1.8)
+  jayaraman (center palindrome: ara, frequency: 1.7)
+  gujaratis (center palindrome: ara, frequency: 1.6)
+  nagarajan (center palindrome: ara, frequency: 1.5)
+  mozarabic (center palindrome: ara, frequency: 1.5)
+  clearasil (center palindrome: ara, frequency: 1.4)
+  gunaratna (center palindrome: ara, frequency: 1.4)
+  navaratri (center palindrome: ara, frequency: 1.4)
+  gunaratne (center palindrome: ara, frequency: 1.4)
+  kumarakom (center palindrome: ara, frequency: 1.4)
+  samaranch (center palindrome: ara, frequency: 1.4)
+  demaratus (center palindrome: ara, frequency: 1.3)
+  reparable (center palindrome: ara, frequency: 1.3)
+  batarangs (center palindrome: ara, frequency: 1.2)
+  kasaragod (center palindrome: ara, frequency: 1.2)
+  cataraqui (center palindrome: ara, frequency: 1.2)
+  senaratne (center palindrome: ara, frequency: 1.2)
+  vicarages (center palindrome: ara, frequency: 1.2)
+  devarajan (center palindrome: ara, frequency: 1.2)
+  cadarache (center palindrome: ara, frequency: 1.1)
+  sivaraman (center palindrome: ara, frequency: 1.1)
+  dasaratha (center palindrome: ara, frequency: 1.1)
+  togarashi (center palindrome: ara, frequency: 1.1)
+  uttaradit (center palindrome: ara, frequency: 1.0)
+
+Group 'ama' (39 words):
+  islamabad (center palindrome: ama, frequency: 3.3)
+  kalamazoo (center palindrome: ama, frequency: 3.0)
+  undamaged (center palindrome: ama, frequency: 2.8)
+  salamanca (center palindrome: ama, frequency: 2.6)
+  catamaran (center palindrome: ama, frequency: 2.6)
+  wanamaker (center palindrome: ama, frequency: 2.3)
+  shyamalan (center palindrome: ama, frequency: 2.2)
+  karamazov (center palindrome: ama, frequency: 2.2)
+  cajamarca (center palindrome: ama, frequency: 2.0)
+  hamamatsu (center palindrome: ama, frequency: 1.8)
+  takamatsu (center palindrome: ama, frequency: 1.8)
+  bonamassa (center palindrome: ama, frequency: 1.8)
+  annamalai (center palindrome: ama, frequency: 1.7)
+  wakamatsu (center palindrome: ama, frequency: 1.7)
+  annamaria (center palindrome: ama, frequency: 1.7)
+  untamable (center palindrome: ama, frequency: 1.6)
+  hiramatsu (center palindrome: ama, frequency: 1.5)
+  casamance (center palindrome: ama, frequency: 1.5)
+  muramatsu (center palindrome: ama, frequency: 1.5)
+  calamansi (center palindrome: ama, frequency: 1.4)
+  nizamabad (center palindrome: ama, frequency: 1.4)
+  unnamable (center palindrome: ama, frequency: 1.4)
+  allamakee (center palindrome: ama, frequency: 1.4)
+  tupamaros (center palindrome: ama, frequency: 1.4)
+  mahamadou (center palindrome: ama, frequency: 1.4)
+  paramatta (center palindrome: ama, frequency: 1.4)
+  catamarca (center palindrome: ama, frequency: 1.3)
+  annamarie (center palindrome: ama, frequency: 1.3)
+  talamanca (center palindrome: ama, frequency: 1.3)
+  ginamarie (center palindrome: ama, frequency: 1.2)
+  paramatma (center palindrome: ama, frequency: 1.2)
+  kasamatsu (center palindrome: ama, frequency: 1.1)
+  nunamaker (center palindrome: ama, frequency: 1.1)
+  calamares (center palindrome: ama, frequency: 1.1)
+  dinamalar (center palindrome: ama, frequency: 1.1)
+  hisamatsu (center palindrome: ama, frequency: 1.1)
+  delamater (center palindrome: ama, frequency: 1.0)
+  kecamatan (center palindrome: ama, frequency: 1.0)
+  fukamachi (center palindrome: ama, frequency: 1.0)
+
+Group 'ini' (39 words):
+  dominican (center palindrome: ini, frequency: 3.6)
+  feminists (center palindrome: ini, frequency: 3.6)
+  dominique (center palindrome: ini, frequency: 3.2)
+  reminisce (center palindrome: ini, frequency: 2.8)
+  dominions (center palindrome: ini, frequency: 2.8)
+  trainings (center palindrome: ini, frequency: 2.7)
+  infinitum (center palindrome: ini, frequency: 2.5)
+  feminized (center palindrome: ini, frequency: 2.3)
+  encinitas (center palindrome: ini, frequency: 2.1)
+  definitly (center palindrome: ini, frequency: 2.1)
+  actinides (center palindrome: ini, frequency: 2.0)
+  feminisms (center palindrome: ini, frequency: 2.0)
+  laminitis (center palindrome: ini, frequency: 1.9)
+  latinized (center palindrome: ini, frequency: 1.8)
+  leninists (center palindrome: ini, frequency: 1.8)
+  arminians (center palindrome: ini, frequency: 1.7)
+  vaginitis (center palindrome: ini, frequency: 1.7)
+  feminised (center palindrome: ini, frequency: 1.6)
+  dominical (center palindrome: ini, frequency: 1.5)
+  infinites (center palindrome: ini, frequency: 1.5)
+  feminista (center palindrome: ini, frequency: 1.5)
+  dominicus (center palindrome: ini, frequency: 1.4)
+  hominidae (center palindrome: ini, frequency: 1.4)
+  alpinists (center palindrome: ini, frequency: 1.4)
+  brainiest (center palindrome: ini, frequency: 1.3)
+  latinised (center palindrome: ini, frequency: 1.3)
+  definiton (center palindrome: ini, frequency: 1.3)
+  medinipur (center palindrome: ini, frequency: 1.3)
+  definiens (center palindrome: ini, frequency: 1.1)
+  definites (center palindrome: ini, frequency: 1.1)
+  geminiani (center palindrome: ini, frequency: 1.1)
+  socinians (center palindrome: ini, frequency: 1.1)
+  laciniata (center palindrome: ini, frequency: 1.1)
+  luminizer (center palindrome: ini, frequency: 1.1)
+  actinidia (center palindrome: ini, frequency: 1.1)
+  divinized (center palindrome: ini, frequency: 1.1)
+  administr (center palindrome: ini, frequency: 1.1)
+  matinicus (center palindrome: ini, frequency: 1.1)
+  latinidad (center palindrome: ini, frequency: 1.0)
+
+Group 'ere' (37 words):
+  reference (center palindrome: ere, frequency: 4.7)
+  interests (center palindrome: ere, frequency: 4.7)
+  sovereign (center palindrome: ere, frequency: 4.0)
+  adherence (center palindrome: ere, frequency: 3.3)
+  inference (center palindrome: ere, frequency: 3.2)
+  reverence (center palindrome: ere, frequency: 3.2)
+  adherents (center palindrome: ere, frequency: 3.1)
+  coherence (center palindrome: ere, frequency: 3.1)
+  deference (center palindrome: ere, frequency: 3.0)
+  devereaux (center palindrome: ere, frequency: 2.4)
+  referenda (center palindrome: ere, frequency: 2.4)
+  coherency (center palindrome: ere, frequency: 2.0)
+  referents (center palindrome: ere, frequency: 1.9)
+  poweredge (center palindrome: ere, frequency: 1.8)
+  cinereous (center palindrome: ere, frequency: 1.8)
+  esmerelda (center palindrome: ere, frequency: 1.7)
+  viceregal (center palindrome: ere, frequency: 1.7)
+  afferents (center palindrome: ere, frequency: 1.7)
+  apheresis (center palindrome: ere, frequency: 1.6)
+  lawerence (center palindrome: ere, frequency: 1.6)
+  reverends (center palindrome: ere, frequency: 1.6)
+  diference (center palindrome: ere, frequency: 1.6)
+  interesse (center palindrome: ere, frequency: 1.4)
+  limerence (center palindrome: ere, frequency: 1.4)
+  usherette (center palindrome: ere, frequency: 1.4)
+  hyperemia (center palindrome: ere, frequency: 1.3)
+  diferente (center palindrome: ere, frequency: 1.3)
+  diaeresis (center palindrome: ere, frequency: 1.2)
+  severence (center palindrome: ere, frequency: 1.2)
+  efferents (center palindrome: ere, frequency: 1.2)
+  syneresis (center palindrome: ere, frequency: 1.1)
+  goserelin (center palindrome: ere, frequency: 1.1)
+  hyperemic (center palindrome: ere, frequency: 1.1)
+  inherence (center palindrome: ere, frequency: 1.1)
+  etheredge (center palindrome: ere, frequency: 1.1)
+  experence (center palindrome: ere, frequency: 1.1)
+  intereste (center palindrome: ere, frequency: 1.0)
+
+Group 'ili' (37 words):
+  civilians (center palindrome: ili, frequency: 4.1)
+  affiliate (center palindrome: ili, frequency: 4.0)
+  auxiliary (center palindrome: ili, frequency: 3.7)
+  civilized (center palindrome: ili, frequency: 3.5)
+  resilient (center palindrome: ili, frequency: 3.5)
+  mobilized (center palindrome: ili, frequency: 3.1)
+  civilised (center palindrome: ili, frequency: 3.1)
+  humiliate (center palindrome: ili, frequency: 3.1)
+  umbilical (center palindrome: ili, frequency: 3.0)
+  pavilions (center palindrome: ili, frequency: 2.7)
+  mobilised (center palindrome: ili, frequency: 2.7)
+  fusiliers (center palindrome: ili, frequency: 2.5)
+  umbilicus (center palindrome: ili, frequency: 2.3)
+  familiars (center palindrome: ili, frequency: 2.2)
+  sicilians (center palindrome: ili, frequency: 2.2)
+  mobilizes (center palindrome: ili, frequency: 2.1)
+  nihilists (center palindrome: ili, frequency: 2.0)
+  siciliano (center palindrome: ili, frequency: 1.9)
+  basilicas (center palindrome: ili, frequency: 1.8)
+  deciliter (center palindrome: ili, frequency: 1.6)
+  pugilists (center palindrome: ili, frequency: 1.6)
+  availible (center palindrome: ili, frequency: 1.6)
+  mobilises (center palindrome: ili, frequency: 1.5)
+  ravilious (center palindrome: ili, frequency: 1.5)
+  tamilians (center palindrome: ili, frequency: 1.5)
+  cheilitis (center palindrome: ili, frequency: 1.5)
+  osgiliath (center palindrome: ili, frequency: 1.4)
+  facilites (center palindrome: ili, frequency: 1.3)
+  familiale (center palindrome: ili, frequency: 1.3)
+  basilides (center palindrome: ili, frequency: 1.3)
+  defilippo (center palindrome: ili, frequency: 1.3)
+  mobilizer (center palindrome: ili, frequency: 1.2)
+  hisilicon (center palindrome: ili, frequency: 1.2)
+  siciliana (center palindrome: ili, frequency: 1.1)
+  basilican (center palindrome: ili, frequency: 1.1)
+  basilicum (center palindrome: ili, frequency: 1.1)
+  resiliant (center palindrome: ili, frequency: 1.0)
+
+Group 'tit' (34 words):
+  institute (center palindrome: tit, frequency: 4.8)
+  gratitude (center palindrome: tit, frequency: 3.9)
+  partition (center palindrome: tit, frequency: 3.7)
+  multitude (center palindrome: tit, frequency: 3.6)
+  subtitles (center palindrome: tit, frequency: 3.5)
+  fortitude (center palindrome: tit, frequency: 3.1)
+  destitute (center palindrome: tit, frequency: 3.1)
+  subtitled (center palindrome: tit, frequency: 2.8)
+  instituto (center palindrome: tit, frequency: 2.7)
+  dietitian (center palindrome: tit, frequency: 2.7)
+  multitask (center palindrome: tit, frequency: 2.5)
+  dentition (center palindrome: tit, frequency: 2.4)
+  rectitude (center palindrome: tit, frequency: 2.2)
+  platitude (center palindrome: tit, frequency: 2.2)
+  certitude (center palindrome: tit, frequency: 2.1)
+  beatitude (center palindrome: tit, frequency: 2.0)
+  instituut (center palindrome: tit, frequency: 1.7)
+  partitive (center palindrome: tit, frequency: 1.6)
+  multitool (center palindrome: tit, frequency: 1.6)
+  instituts (center palindrome: tit, frequency: 1.5)
+  lnstitute (center palindrome: tit, frequency: 1.4)
+  mattituck (center palindrome: tit, frequency: 1.3)
+  fortitudo (center palindrome: tit, frequency: 1.3)
+  instituti (center palindrome: tit, frequency: 1.3)
+  instituta (center palindrome: tit, frequency: 1.2)
+  sortition (center palindrome: tit, frequency: 1.2)
+  restituta (center palindrome: tit, frequency: 1.2)
+  lattitude (center palindrome: tit, frequency: 1.1)
+  postition (center palindrome: tit, frequency: 1.1)
+  restitute (center palindrome: tit, frequency: 1.1)
+  institutt (center palindrome: tit, frequency: 1.1)
+  mistitled (center palindrome: tit, frequency: 1.1)
+  surtitles (center palindrome: tit, frequency: 1.1)
+  hestitate (center palindrome: tit, frequency: 1.0)
+
+Group 'nin' (30 words):
+  groningen (center palindrome: nin, frequency: 2.6)
+  cunningly (center palindrome: nin, frequency: 2.4)
+  menninger (center palindrome: nin, frequency: 1.9)
+  horniness (center palindrome: nin, frequency: 1.8)
+  henninger (center palindrome: nin, frequency: 1.7)
+  leininger (center palindrome: nin, frequency: 1.6)
+  berninger (center palindrome: nin, frequency: 1.6)
+  phoniness (center palindrome: nin, frequency: 1.6)
+  funniness (center palindrome: nin, frequency: 1.5)
+  leiningen (center palindrome: nin, frequency: 1.5)
+  feininger (center palindrome: nin, frequency: 1.5)
+  cloninger (center palindrome: nin, frequency: 1.5)
+  winningly (center palindrome: nin, frequency: 1.5)
+  shininess (center palindrome: nin, frequency: 1.4)
+  meiningen (center palindrome: nin, frequency: 1.4)
+  corniness (center palindrome: nin, frequency: 1.4)
+  meininger (center palindrome: nin, frequency: 1.3)
+  weininger (center palindrome: nin, frequency: 1.3)
+  uraninite (center palindrome: nin, frequency: 1.3)
+  damningly (center palindrome: nin, frequency: 1.2)
+  beuningen (center palindrome: nin, frequency: 1.2)
+  denninger (center palindrome: nin, frequency: 1.2)
+  benninger (center palindrome: nin, frequency: 1.1)
+  lehninger (center palindrome: nin, frequency: 1.1)
+  reininger (center palindrome: nin, frequency: 1.1)
+  renninger (center palindrome: nin, frequency: 1.1)
+  fenninger (center palindrome: nin, frequency: 1.1)
+  manninger (center palindrome: nin, frequency: 1.0)
+  winninger (center palindrome: nin, frequency: 1.0)
+  deininger (center palindrome: nin, frequency: 1.0)
+
+Group 'ana' (29 words):
+  kavanaugh (center palindrome: ana, frequency: 3.1)
+  cavanaugh (center palindrome: ana, frequency: 2.6)
+  empanadas (center palindrome: ana, frequency: 2.3)
+  unmanaged (center palindrome: ana, frequency: 2.2)
+  maranatha (center palindrome: ana, frequency: 2.0)
+  takanashi (center palindrome: ana, frequency: 1.9)
+  yogananda (center palindrome: ana, frequency: 1.9)
+  stranahan (center palindrome: ana, frequency: 1.8)
+  yamanashi (center palindrome: ana, frequency: 1.8)
+  peranakan (center palindrome: ana, frequency: 1.8)
+  sivananda (center palindrome: ana, frequency: 1.7)
+  paranasal (center palindrome: ana, frequency: 1.7)
+  iheanacho (center palindrome: ana, frequency: 1.7)
+  mclanahan (center palindrome: ana, frequency: 1.7)
+  paranaque (center palindrome: ana, frequency: 1.5)
+  ramananda (center palindrome: ana, frequency: 1.5)
+  camanachd (center palindrome: ana, frequency: 1.5)
+  attanasio (center palindrome: ana, frequency: 1.4)
+  cleanable (center palindrome: ana, frequency: 1.4)
+  dayananda (center palindrome: ana, frequency: 1.4)
+  bananaman (center palindrome: ana, frequency: 1.3)
+  sadananda (center palindrome: ana, frequency: 1.3)
+  jayanagar (center palindrome: ana, frequency: 1.2)
+  osmanabad (center palindrome: ana, frequency: 1.2)
+  mutanabbi (center palindrome: ana, frequency: 1.1)
+  appanages (center palindrome: ana, frequency: 1.1)
+  mahanagar (center palindrome: ana, frequency: 1.1)
+  cleanaway (center palindrome: ana, frequency: 1.1)
+  athanasia (center palindrome: ana, frequency: 1.0)
+
+Group 'tat' (25 words):
+  quotation (center palindrome: tat, frequency: 3.5)
+  tentative (center palindrome: tat, frequency: 3.5)
+  dictators (center palindrome: tat, frequency: 3.2)
+  flotation (center palindrome: tat, frequency: 3.1)
+  gestation (center palindrome: tat, frequency: 3.0)
+  dictating (center palindrome: tat, frequency: 2.9)
+  lactation (center palindrome: tat, frequency: 2.8)
+  dictation (center palindrome: tat, frequency: 2.7)
+  agitators (center palindrome: tat, frequency: 2.7)
+  imitators (center palindrome: tat, frequency: 2.5)
+  lactating (center palindrome: tat, frequency: 2.5)
+  restating (center palindrome: tat, frequency: 2.2)
+  gustatory (center palindrome: tat, frequency: 2.0)
+  gestating (center palindrome: tat, frequency: 2.0)
+  siltation (center palindrome: tat, frequency: 1.9)
+  eustatius (center palindrome: tat, frequency: 1.8)
+  instating (center palindrome: tat, frequency: 1.5)
+  mentation (center palindrome: tat, frequency: 1.4)
+  hortatory (center palindrome: tat, frequency: 1.4)
+  saltation (center palindrome: tat, frequency: 1.4)
+  enstatite (center palindrome: tat, frequency: 1.3)
+  sortation (center palindrome: tat, frequency: 1.2)
+  tentation (center palindrome: tat, frequency: 1.2)
+  saltatory (center palindrome: tat, frequency: 1.1)
+  gustation (center palindrome: tat, frequency: 1.1)
+
+Group 'imi' (24 words):
+  unlimited (center palindrome: imi, frequency: 4.1)
+  optimized (center palindrome: imi, frequency: 3.4)
+  minimized (center palindrome: imi, frequency: 3.0)
+  minimizes (center palindrome: imi, frequency: 2.9)
+  optimised (center palindrome: imi, frequency: 2.6)
+  maximized (center palindrome: imi, frequency: 2.6)
+  maximizes (center palindrome: imi, frequency: 2.6)
+  delimited (center palindrome: imi, frequency: 2.5)
+  minimised (center palindrome: imi, frequency: 2.5)
+  optimists (center palindrome: imi, frequency: 2.4)
+  optimizer (center palindrome: imi, frequency: 2.3)
+  optimizes (center palindrome: imi, frequency: 2.2)
+  minimises (center palindrome: imi, frequency: 2.1)
+  maximised (center palindrome: imi, frequency: 2.0)
+  kazimierz (center palindrome: imi, frequency: 1.9)
+  maximises (center palindrome: imi, frequency: 1.9)
+  delimiter (center palindrome: imi, frequency: 1.9)
+  maximizer (center palindrome: imi, frequency: 1.7)
+  minimizer (center palindrome: imi, frequency: 1.7)
+  maximinus (center palindrome: imi, frequency: 1.4)
+  optimises (center palindrome: imi, frequency: 1.4)
+  gediminas (center palindrome: imi, frequency: 1.2)
+  assimilis (center palindrome: imi, frequency: 1.1)
+  optimiser (center palindrome: imi, frequency: 1.1)
+
+Group 'olo' (24 words):
+  monologue (center palindrome: olo, frequency: 3.3)
+  ideologue (center palindrome: olo, frequency: 2.4)
+  homologue (center palindrome: olo, frequency: 2.0)
+  theologie (center palindrome: olo, frequency: 1.9)
+  antologia (center palindrome: olo, frequency: 1.8)
+  recolored (center palindrome: olo, frequency: 1.8)
+  sefolosha (center palindrome: olo, frequency: 1.7)
+  uncolored (center palindrome: olo, frequency: 1.7)
+  oncologic (center palindrome: olo, frequency: 1.6)
+  serologic (center palindrome: olo, frequency: 1.6)
+  etiologic (center palindrome: olo, frequency: 1.6)
+  theologia (center palindrome: olo, frequency: 1.5)
+  virologic (center palindrome: olo, frequency: 1.4)
+  mycologia (center palindrome: olo, frequency: 1.4)
+  bicolored (center palindrome: olo, frequency: 1.3)
+  agnolotti (center palindrome: olo, frequency: 1.2)
+  tokoloshe (center palindrome: olo, frequency: 1.2)
+  cytologic (center palindrome: olo, frequency: 1.2)
+  oecologia (center palindrome: olo, frequency: 1.2)
+  acnologia (center palindrome: olo, frequency: 1.1)
+  filologia (center palindrome: olo, frequency: 1.1)
+  appolonia (center palindrome: olo, frequency: 1.0)
+  ideologie (center palindrome: olo, frequency: 1.0)
+  ideologic (center palindrome: olo, frequency: 1.0)
+
+Group 'ala' (22 words):
+  imbalance (center palindrome: ala, frequency: 3.5)
+  escalated (center palindrome: ala, frequency: 3.4)
+  himalayan (center palindrome: ala, frequency: 3.1)
+  himalayas (center palindrome: ala, frequency: 3.1)
+  escalator (center palindrome: ala, frequency: 3.0)
+  escalates (center palindrome: ala, frequency: 2.8)
+  rebalance (center palindrome: ala, frequency: 2.6)
+  jalalabad (center palindrome: ala, frequency: 2.4)
+  escalante (center palindrome: ala, frequency: 2.4)
+  unbalance (center palindrome: ala, frequency: 2.3)
+  balalaika (center palindrome: ala, frequency: 1.9)
+  inhalants (center palindrome: ala, frequency: 1.7)
+  achalasia (center palindrome: ala, frequency: 1.7)
+  mahalaxmi (center palindrome: ala, frequency: 1.7)
+  cobalamin (center palindrome: ala, frequency: 1.7)
+  manalapan (center palindrome: ala, frequency: 1.6)
+  tadalafil (center palindrome: ala, frequency: 1.6)
+  escalades (center palindrome: ala, frequency: 1.4)
+  inhalable (center palindrome: ala, frequency: 1.4)
+  resalable (center palindrome: ala, frequency: 1.1)
+  unsalable (center palindrome: ala, frequency: 1.1)
+  inbalance (center palindrome: ala, frequency: 1.1)
+
+Group 'eme' (21 words):
+  movements (center palindrome: eme, frequency: 4.3)
+  telemetry (center palindrome: eme, frequency: 3.0)
+  ephemeral (center palindrome: eme, frequency: 3.0)
+  basements (center palindrome: eme, frequency: 2.9)
+  pavements (center palindrome: eme, frequency: 2.8)
+  easements (center palindrome: eme, frequency: 2.5)
+  vehemence (center palindrome: eme, frequency: 2.2)
+  ephemeris (center palindrome: eme, frequency: 2.1)
+  havemeyer (center palindrome: eme, frequency: 1.9)
+  casements (center palindrome: eme, frequency: 1.8)
+  rememeber (center palindrome: eme, frequency: 1.7)
+  vetements (center palindrome: eme, frequency: 1.6)
+  wedemeyer (center palindrome: eme, frequency: 1.5)
+  novemeber (center palindrome: eme, frequency: 1.4)
+  telemedia (center palindrome: eme, frequency: 1.3)
+  artemesia (center palindrome: eme, frequency: 1.3)
+  telemeter (center palindrome: eme, frequency: 1.2)
+  rosemeyer (center palindrome: eme, frequency: 1.2)
+  artemenko (center palindrome: eme, frequency: 1.1)
+  decemeber (center palindrome: eme, frequency: 1.1)
+  altemeyer (center palindrome: eme, frequency: 1.1)
+
+Group 'idi' (21 words):
+  insidious (center palindrome: idi, frequency: 3.2)
+  juridical (center palindrome: idi, frequency: 2.5)
+  meridians (center palindrome: idi, frequency: 2.4)
+  fluidized (center palindrome: idi, frequency: 2.1)
+  invidious (center palindrome: idi, frequency: 2.1)
+  davidians (center palindrome: idi, frequency: 1.9)
+  libidinal (center palindrome: idi, frequency: 1.7)
+  veridical (center palindrome: idi, frequency: 1.4)
+  ascidians (center palindrome: idi, frequency: 1.4)
+  pyridines (center palindrome: idi, frequency: 1.4)
+  nalidixic (center palindrome: idi, frequency: 1.3)
+  aphididae (center palindrome: idi, frequency: 1.3)
+  fluidised (center palindrome: idi, frequency: 1.3)
+  numidians (center palindrome: idi, frequency: 1.3)
+  viridiana (center palindrome: idi, frequency: 1.2)
+  acrididae (center palindrome: idi, frequency: 1.2)
+  juridique (center palindrome: idi, frequency: 1.2)
+  meridiana (center palindrome: idi, frequency: 1.2)
+  meridiani (center palindrome: idi, frequency: 1.1)
+  druidical (center palindrome: idi, frequency: 1.1)
+  obsidians (center palindrome: idi, frequency: 1.1)
+
+Group 'isi' (20 words):
+  decisions (center palindrome: isi, frequency: 4.7)
+  louisiana (center palindrome: isi, frequency: 4.2)
+  divisions (center palindrome: isi, frequency: 4.1)
+  invisible (center palindrome: isi, frequency: 4.1)
+  revisions (center palindrome: isi, frequency: 3.5)
+  revisited (center palindrome: isi, frequency: 3.2)
+  uprisings (center palindrome: isi, frequency: 3.0)
+  divisible (center palindrome: isi, frequency: 2.7)
+  incisions (center palindrome: isi, frequency: 2.7)
+  envisions (center palindrome: isi, frequency: 2.6)
+  parisians (center palindrome: isi, frequency: 2.6)
+  invisibly (center palindrome: isi, frequency: 2.3)
+  tunisians (center palindrome: isi, frequency: 2.1)
+  unvisited (center palindrome: isi, frequency: 1.6)
+  louisiane (center palindrome: isi, frequency: 1.4)
+  excisions (center palindrome: isi, frequency: 1.4)
+  parisiens (center palindrome: isi, frequency: 1.4)
+  troisieme (center palindrome: isi, frequency: 1.3)
+  artisinal (center palindrome: isi, frequency: 1.3)
+  divisione (center palindrome: isi, frequency: 1.1)
+
+Group 'ata' (19 words):
+  relatable (center palindrome: ata, frequency: 3.3)
+  palatable (center palindrome: ata, frequency: 3.1)
+  treatable (center palindrome: ata, frequency: 2.9)
+  stratagem (center palindrome: ata, frequency: 2.4)
+  rotatable (center palindrome: ata, frequency: 2.2)
+  rotatably (center palindrome: ata, frequency: 1.8)
+  stratasys (center palindrome: ata, frequency: 1.8)
+  nabataean (center palindrome: ata, frequency: 1.6)
+  locatable (center palindrome: ata, frequency: 1.4)
+  datatable (center palindrome: ata, frequency: 1.3)
+  hecataeus (center palindrome: ata, frequency: 1.3)
+  updatable (center palindrome: ata, frequency: 1.3)
+  floatable (center palindrome: ata, frequency: 1.2)
+  undatable (center palindrome: ata, frequency: 1.1)
+  calatayud (center palindrome: ata, frequency: 1.1)
+  hayatabad (center palindrome: ata, frequency: 1.1)
+  parataxis (center palindrome: ata, frequency: 1.1)
+  uneatable (center palindrome: ata, frequency: 1.1)
+  moratalla (center palindrome: ata, frequency: 1.0)
+
+Group 'aba' (18 words):
+  databases (center palindrome: aba, frequency: 3.6)
+  calabasas (center palindrome: aba, frequency: 2.5)
+  adiabatic (center palindrome: aba, frequency: 2.4)
+  athabasca (center palindrome: aba, frequency: 2.4)
+  sugababes (center palindrome: aba, frequency: 1.8)
+  sarabande (center palindrome: aba, frequency: 1.8)
+  databanks (center palindrome: aba, frequency: 1.6)
+  panabaker (center palindrome: aba, frequency: 1.6)
+  rutabagas (center palindrome: aba, frequency: 1.6)
+  parabatai (center palindrome: aba, frequency: 1.4)
+  funabashi (center palindrome: aba, frequency: 1.3)
+  megabanks (center palindrome: aba, frequency: 1.3)
+  barabanki (center palindrome: aba, frequency: 1.3)
+  caraballo (center palindrome: aba, frequency: 1.3)
+  athabaska (center palindrome: aba, frequency: 1.2)
+  artabanus (center palindrome: aba, frequency: 1.2)
+  barabanov (center palindrome: aba, frequency: 1.1)
+  kababayan (center palindrome: aba, frequency: 1.0)
+
+Group 'apa' (18 words):
+  incapable (center palindrome: apa, frequency: 3.7)
+  bonaparte (center palindrome: apa, frequency: 3.1)
+  galapagos (center palindrome: apa, frequency: 2.9)
+  escapades (center palindrome: apa, frequency: 2.6)
+  rajapaksa (center palindrome: apa, frequency: 2.5)
+  verapamil (center palindrome: apa, frequency: 1.9)
+  rajapakse (center palindrome: apa, frequency: 1.9)
+  macapagal (center palindrome: apa, frequency: 1.9)
+  mohapatra (center palindrome: apa, frequency: 1.6)
+  ganapathy (center palindrome: apa, frequency: 1.6)
+  majapahit (center palindrome: apa, frequency: 1.6)
+  ganapathi (center palindrome: apa, frequency: 1.5)
+  mahapatra (center palindrome: apa, frequency: 1.5)
+  carapaces (center palindrome: apa, frequency: 1.4)
+  malaparte (center palindrome: apa, frequency: 1.2)
+  uncapable (center palindrome: apa, frequency: 1.2)
+  karapatan (center palindrome: apa, frequency: 1.2)
+  escapable (center palindrome: apa, frequency: 1.1)
+
+Group 'omo' (18 words):
+  locomotor (center palindrome: omo, frequency: 2.2)
+  xenomorph (center palindrome: omo, frequency: 1.9)
+  lokomotiv (center palindrome: omo, frequency: 1.9)
+  euromoney (center palindrome: omo, frequency: 1.9)
+  vasomotor (center palindrome: omo, frequency: 1.8)
+  vedomosti (center palindrome: omo, frequency: 1.7)
+  solomonic (center palindrome: omo, frequency: 1.7)
+  aeromonas (center palindrome: omo, frequency: 1.5)
+  nanomolar (center palindrome: omo, frequency: 1.4)
+  ideomotor (center palindrome: omo, frequency: 1.4)
+  endomondo (center palindrome: omo, frequency: 1.4)
+  bogomolov (center palindrome: omo, frequency: 1.3)
+  ectomorph (center palindrome: omo, frequency: 1.3)
+  mesomorph (center palindrome: omo, frequency: 1.2)
+  automobil (center palindrome: omo, frequency: 1.2)
+  endomorph (center palindrome: omo, frequency: 1.1)
+  lagomorph (center palindrome: omo, frequency: 1.1)
+  allomorph (center palindrome: omo, frequency: 1.1)
+
+Group 'ifi' (16 words):
+  semifinal (center palindrome: ifi, frequency: 3.2)
+  modifiers (center palindrome: ifi, frequency: 2.8)
+  pacifists (center palindrome: ifi, frequency: 2.4)
+  artificer (center palindrome: ifi, frequency: 2.4)
+  purifiers (center palindrome: ifi, frequency: 2.3)
+  pacifiers (center palindrome: ifi, frequency: 2.1)
+  artifical (center palindrome: ifi, frequency: 1.9)
+  modifieds (center palindrome: ifi, frequency: 1.7)
+  artifices (center palindrome: ifi, frequency: 1.6)
+  verifiers (center palindrome: ifi, frequency: 1.5)
+  pacifique (center palindrome: ifi, frequency: 1.4)
+  holifield (center palindrome: ifi, frequency: 1.3)
+  monifieth (center palindrome: ifi, frequency: 1.2)
+  bonifield (center palindrome: ifi, frequency: 1.1)
+  gasifiers (center palindrome: ifi, frequency: 1.1)
+  citifield (center palindrome: ifi, frequency: 1.1)
+
+Group 'ivi' (16 words):
+  activists (center palindrome: ivi, frequency: 4.1)
+  oblivious (center palindrome: ivi, frequency: 3.3)
+  antivirus (center palindrome: ivi, frequency: 2.9)
+  antiviral (center palindrome: ivi, frequency: 2.8)
+  bolivians (center palindrome: ivi, frequency: 2.1)
+  natividad (center palindrome: ivi, frequency: 1.7)
+  nativists (center palindrome: ivi, frequency: 1.7)
+  strivings (center palindrome: ivi, frequency: 1.5)
+  obliviate (center palindrome: ivi, frequency: 1.5)
+  boliviano (center palindrome: ivi, frequency: 1.4)
+  lariviere (center palindrome: ivi, frequency: 1.4)
+  redivivus (center palindrome: ivi, frequency: 1.4)
+  boliviana (center palindrome: ivi, frequency: 1.2)
+  actividad (center palindrome: ivi, frequency: 1.1)
+  arriviste (center palindrome: ivi, frequency: 1.1)
+  oblivions (center palindrome: ivi, frequency: 1.0)
+
+Group 'tst' (16 words):
+  footsteps (center palindrome: tst, frequency: 3.7)
+  bootstrap (center palindrome: tst, frequency: 2.9)
+  whetstone (center palindrome: tst, frequency: 2.3)
+  shitstorm (center palindrome: tst, frequency: 2.3)
+  siltstone (center palindrome: tst, frequency: 2.2)
+  pottstown (center palindrome: tst, frequency: 2.1)
+  waitstaff (center palindrome: tst, frequency: 1.9)
+  buttstock (center palindrome: tst, frequency: 1.7)
+  shitstain (center palindrome: tst, frequency: 1.5)
+  wettstein (center palindrome: tst, frequency: 1.5)
+  gottstein (center palindrome: tst, frequency: 1.4)
+  gritstone (center palindrome: tst, frequency: 1.4)
+  hartstein (center palindrome: tst, frequency: 1.3)
+  maltsters (center palindrome: tst, frequency: 1.3)
+  wittstock (center palindrome: tst, frequency: 1.2)
+  pittstown (center palindrome: tst, frequency: 1.1)
+
+Group 'oto' (15 words):
+  serotonin (center palindrome: oto, frequency: 3.3)
+  cytotoxic (center palindrome: oto, frequency: 2.6)
+  shootouts (center palindrome: oto, frequency: 2.5)
+  theotokos (center palindrome: oto, frequency: 2.0)
+  endotoxin (center palindrome: oto, frequency: 2.0)
+  rarotonga (center palindrome: oto, frequency: 2.0)
+  genotoxic (center palindrome: oto, frequency: 1.8)
+  hypotonia (center palindrome: oto, frequency: 1.8)
+  mycotoxin (center palindrome: oto, frequency: 1.7)
+  hypotonic (center palindrome: oto, frequency: 1.7)
+  dinotopia (center palindrome: oto, frequency: 1.5)
+  homotopic (center palindrome: oto, frequency: 1.4)
+  autotools (center palindrome: oto, frequency: 1.2)
+  conotoxin (center palindrome: oto, frequency: 1.1)
+  cytotoxin (center palindrome: oto, frequency: 1.0)
+
+Group 'ene' (14 words):
+  degeneres (center palindrome: ene, frequency: 2.8)
+  bioenergy (center palindrome: ene, frequency: 2.3)
+  ergenekon (center palindrome: ene, frequency: 1.8)
+  arceneaux (center palindrome: ene, frequency: 1.7)
+  regeneron (center palindrome: ene, frequency: 1.7)
+  cazeneuve (center palindrome: ene, frequency: 1.6)
+  oogenesis (center palindrome: ene, frequency: 1.4)
+  greenedge (center palindrome: ene, frequency: 1.4)
+  splenetic (center palindrome: ene, frequency: 1.4)
+  regenesis (center palindrome: ene, frequency: 1.2)
+  praeneste (center palindrome: ene, frequency: 1.2)
+  ahnenerbe (center palindrome: ene, frequency: 1.2)
+  roseneath (center palindrome: ene, frequency: 1.1)
+  lowenergy (center palindrome: ene, frequency: 1.1)
+
+Group 'oso' (14 words):
+  autosomal (center palindrome: oso, frequency: 2.6)
+  ribosomal (center palindrome: oso, frequency: 2.5)
+  ribosomes (center palindrome: oso, frequency: 2.4)
+  cytosolic (center palindrome: oso, frequency: 2.3)
+  lysosomal (center palindrome: oso, frequency: 2.3)
+  theosophy (center palindrome: oso, frequency: 2.2)
+  liposomes (center palindrome: oso, frequency: 2.0)
+  lysosomes (center palindrome: oso, frequency: 2.0)
+  filosofia (center palindrome: oso, frequency: 1.8)
+  endosomes (center palindrome: oso, frequency: 1.8)
+  liposomal (center palindrome: oso, frequency: 1.8)
+  endosomal (center palindrome: oso, frequency: 1.6)
+  autosomes (center palindrome: oso, frequency: 1.3)
+  aerosoles (center palindrome: oso, frequency: 1.1)
+
+Group 'ele' (13 words):
+  madeleine (center palindrome: ele, frequency: 3.4)
+  rerelease (center palindrome: ele, frequency: 2.0)
+  novelette (center palindrome: ele, frequency: 2.0)
+  angelenos (center palindrome: ele, frequency: 1.9)
+  excelente (center palindrome: ele, frequency: 1.5)
+  atheletes (center palindrome: ele, frequency: 1.4)
+  towelette (center palindrome: ele, frequency: 1.3)
+  angelelli (center palindrome: ele, frequency: 1.3)
+  entelechy (center palindrome: ele, frequency: 1.2)
+  espelette (center palindrome: ele, frequency: 1.2)
+  cameleers (center palindrome: ele, frequency: 1.2)
+  undeleted (center palindrome: ele, frequency: 1.1)
+  angeletti (center palindrome: ele, frequency: 1.1)
+
+Group 'igi' (13 words):
+  religious (center palindrome: igi, frequency: 4.8)
+  religions (center palindrome: igi, frequency: 3.9)
+  litigious (center palindrome: igi, frequency: 2.4)
+  dirigible (center palindrome: igi, frequency: 2.2)
+  religiosa (center palindrome: igi, frequency: 1.6)
+  religione (center palindrome: igi, frequency: 1.5)
+  caligiuri (center palindrome: igi, frequency: 1.4)
+  religieux (center palindrome: igi, frequency: 1.4)
+  lunigiana (center palindrome: igi, frequency: 1.2)
+  dirigisme (center palindrome: igi, frequency: 1.1)
+  dirigiste (center palindrome: igi, frequency: 1.1)
+  religiose (center palindrome: igi, frequency: 1.1)
+  religioso (center palindrome: igi, frequency: 1.1)
+
+Group 'ipi' (13 words):
+  recipient (center palindrome: ipi, frequency: 3.9)
+  filipinos (center palindrome: ipi, frequency: 3.2)
+  occipital (center palindrome: ipi, frequency: 2.7)
+  euripides (center palindrome: ipi, frequency: 2.6)
+  incipient (center palindrome: ipi, frequency: 2.5)
+  pilipinas (center palindrome: ipi, frequency: 2.4)
+  filipinas (center palindrome: ipi, frequency: 2.2)
+  insipidus (center palindrome: ipi, frequency: 1.6)
+  decipiens (center palindrome: ipi, frequency: 1.6)
+  excipient (center palindrome: ipi, frequency: 1.5)
+  accipiter (center palindrome: ipi, frequency: 1.5)
+  bicipital (center palindrome: ipi, frequency: 1.1)
+  malipiero (center palindrome: ipi, frequency: 1.1)
+
+Group 'nan' (13 words):
+  hernandez (center palindrome: nan, frequency: 3.5)
+  fernandez (center palindrome: nan, frequency: 3.4)
+  fernandes (center palindrome: nan, frequency: 2.8)
+  tiananmen (center palindrome: nan, frequency: 2.8)
+  hainanese (center palindrome: nan, frequency: 1.6)
+  hovnanian (center palindrome: nan, frequency: 1.5)
+  dhananjay (center palindrome: nan, frequency: 1.3)
+  cannanore (center palindrome: nan, frequency: 1.3)
+  mwananchi (center palindrome: nan, frequency: 1.2)
+  tienanmen (center palindrome: nan, frequency: 1.2)
+  poznanski (center palindrome: nan, frequency: 1.1)
+  ordnances (center palindrome: nan, frequency: 1.0)
+  poznansky (center palindrome: nan, frequency: 1.0)
+
+Group 'odo' (13 words):
+  herodotus (center palindrome: odo, frequency: 2.8)
+  theodoric (center palindrome: odo, frequency: 2.2)
+  holodomor (center palindrome: odo, frequency: 2.2)
+  theodosia (center palindrome: odo, frequency: 2.0)
+  theodorus (center palindrome: odo, frequency: 1.8)
+  theodoret (center palindrome: odo, frequency: 1.7)
+  almodovar (center palindrome: odo, frequency: 1.6)
+  theodoros (center palindrome: odo, frequency: 1.5)
+  theodorou (center palindrome: odo, frequency: 1.4)
+  theodotus (center palindrome: odo, frequency: 1.4)
+  algodones (center palindrome: odo, frequency: 1.3)
+  dipodomys (center palindrome: odo, frequency: 1.2)
+  loxodonta (center palindrome: odo, frequency: 1.1)
+
+Group 'ada' (12 words):
+  macadamia (center palindrome: ada, frequency: 2.5)
+  moradabad (center palindrome: ada, frequency: 1.8)
+  ahmadabad (center palindrome: ada, frequency: 1.8)
+  papadakis (center palindrome: ada, frequency: 1.6)
+  devadatta (center palindrome: ada, frequency: 1.5)
+  broadacre (center palindrome: ada, frequency: 1.4)
+  treadaway (center palindrome: ada, frequency: 1.4)
+  sagadahoc (center palindrome: ada, frequency: 1.2)
+  valadares (center palindrome: ada, frequency: 1.2)
+  devadasis (center palindrome: ada, frequency: 1.1)
+  yamadayev (center palindrome: ada, frequency: 1.1)
+  affadavit (center palindrome: ada, frequency: 1.0)
+
+Group 'asa' (12 words):
+  pheasants (center palindrome: asa, frequency: 2.6)
+  pleasance (center palindrome: asa, frequency: 2.0)
+  lucasarts (center palindrome: asa, frequency: 2.0)
+  pleasants (center palindrome: asa, frequency: 2.0)
+  mahasabha (center palindrome: asa, frequency: 1.8)
+  babasaheb (center palindrome: asa, frequency: 1.6)
+  dadasaheb (center palindrome: asa, frequency: 1.5)
+  balasaheb (center palindrome: asa, frequency: 1.4)
+  mosasaurs (center palindrome: asa, frequency: 1.4)
+  colasanto (center palindrome: asa, frequency: 1.2)
+  conasauga (center palindrome: asa, frequency: 1.1)
+  malasadas (center palindrome: asa, frequency: 1.1)
+
+Group 'ava' (12 words):
+  excavated (center palindrome: ava, frequency: 3.2)
+  excavator (center palindrome: ava, frequency: 2.7)
+  cleavages (center palindrome: ava, frequency: 2.0)
+  saravanan (center palindrome: ava, frequency: 1.6)
+  excavates (center palindrome: ava, frequency: 1.5)
+  excavatum (center palindrome: ava, frequency: 1.5)
+  abravanel (center palindrome: ava, frequency: 1.4)
+  cleavable (center palindrome: ava, frequency: 1.4)
+  mahavamsa (center palindrome: ava, frequency: 1.2)
+  nagavalli (center palindrome: ava, frequency: 1.2)
+  agravaine (center palindrome: ava, frequency: 1.2)
+  polavaram (center palindrome: ava, frequency: 1.1)
+
+Group 'ebe' (12 words):
+  blueberry (center palindrome: ebe, frequency: 3.3)
+  forebears (center palindrome: ebe, frequency: 2.6)
+  bluebells (center palindrome: ebe, frequency: 2.3)
+  bluebeard (center palindrome: ebe, frequency: 2.2)
+  hypebeast (center palindrome: ebe, frequency: 1.9)
+  roseberry (center palindrome: ebe, frequency: 1.8)
+  treebeard (center palindrome: ebe, frequency: 1.6)
+  lineberry (center palindrome: ebe, frequency: 1.2)
+  carebears (center palindrome: ebe, frequency: 1.2)
+  remebered (center palindrome: ebe, frequency: 1.2)
+  lifebelts (center palindrome: ebe, frequency: 1.1)
+  cerebella (center palindrome: ebe, frequency: 1.1)
+
+Group 'ete' (12 words):
+  cafeteria (center palindrome: ete, frequency: 3.4)
+  sweetened (center palindrome: ete, frequency: 3.0)
+  sweetener (center palindrome: ete, frequency: 2.9)
+  foretells (center palindrome: ete, frequency: 2.1)
+  lopetegui (center palindrome: ete, frequency: 1.8)
+  quietened (center palindrome: ete, frequency: 1.7)
+  unmetered (center palindrome: ete, frequency: 1.7)
+  muleteers (center palindrome: ete, frequency: 1.3)
+  cafeteros (center palindrome: ete, frequency: 1.2)
+  vizetelly (center palindrome: ete, frequency: 1.2)
+  fireteams (center palindrome: ete, frequency: 1.1)
+  swietenia (center palindrome: ete, frequency: 1.0)
+
+Group 'ono' (12 words):
+  mcdonough (center palindrome: ono, frequency: 2.9)
+  taxonomic (center palindrome: ono, frequency: 2.9)
+  autonomic (center palindrome: ono, frequency: 2.7)
+  ergonomic (center palindrome: ono, frequency: 2.7)
+  agronomic (center palindrome: ono, frequency: 2.1)
+  lomonosov (center palindrome: ono, frequency: 2.0)
+  akzonobel (center palindrome: ono, frequency: 1.4)
+  holonomic (center palindrome: ono, frequency: 1.4)
+  ammonoids (center palindrome: ono, frequency: 1.3)
+  mesonotum (center palindrome: ono, frequency: 1.2)
+  autonomie (center palindrome: ono, frequency: 1.1)
+  autonomia (center palindrome: ono, frequency: 1.1)
+
+Group 'opo' (12 words):
+  acropolis (center palindrome: opo, frequency: 2.7)
+  monopoles (center palindrome: opo, frequency: 1.8)
+  demopolis (center palindrome: opo, frequency: 1.6)
+  monopolar (center palindrome: opo, frequency: 1.6)
+  filopodia (center palindrome: opo, frequency: 1.5)
+  akropolis (center palindrome: opo, frequency: 1.4)
+  nicopolis (center palindrome: opo, frequency: 1.4)
+  nanopores (center palindrome: opo, frequency: 1.4)
+  homopolar (center palindrome: opo, frequency: 1.3)
+  mesopores (center palindrome: opo, frequency: 1.2)
+  theopolis (center palindrome: opo, frequency: 1.2)
+  aeroponic (center palindrome: opo, frequency: 1.1)
+
+Group 'rar' (12 words):
+  libraries (center palindrome: rar, frequency: 4.1)
+  hierarchy (center palindrome: rar, frequency: 3.8)
+  librarian (center palindrome: rar, frequency: 3.6)
+  terrarium (center palindrome: rar, frequency: 2.4)
+  wairarapa (center palindrome: rar, frequency: 1.8)
+  hierarchs (center palindrome: rar, frequency: 1.7)
+  ferrarese (center palindrome: rar, frequency: 1.5)
+  heirarchy (center palindrome: rar, frequency: 1.4)
+  tetrarchy (center palindrome: rar, frequency: 1.3)
+  pedrarias (center palindrome: rar, frequency: 1.1)
+  ultrarich (center palindrome: rar, frequency: 1.0)
+  ferrarini (center palindrome: rar, frequency: 1.0)
+
+Group 'aya' (11 words):
+  kobayashi (center palindrome: aya, frequency: 2.9)
+  narayanan (center palindrome: aya, frequency: 2.2)
+  repayable (center palindrome: aya, frequency: 2.0)
+  unpayable (center palindrome: aya, frequency: 1.6)
+  damayanti (center palindrome: aya, frequency: 1.4)
+  unsayable (center palindrome: aya, frequency: 1.4)
+  sprayable (center palindrome: aya, frequency: 1.2)
+  vinayagar (center palindrome: aya, frequency: 1.2)
+  comayagua (center palindrome: aya, frequency: 1.1)
+  megayacht (center palindrome: aya, frequency: 1.1)
+  padayappa (center palindrome: aya, frequency: 1.1)
+
+Group 'ede' (11 words):
+  daredevil (center palindrome: ede, frequency: 3.3)
+  creedence (center palindrome: ede, frequency: 2.4)
+  benedetto (center palindrome: ede, frequency: 2.4)
+  benedetti (center palindrome: ede, frequency: 2.3)
+  decedents (center palindrome: ede, frequency: 1.9)
+  benedetta (center palindrome: ede, frequency: 1.6)
+  homedepot (center palindrome: ede, frequency: 1.5)
+  gamedeals (center palindrome: ede, frequency: 1.2)
+  impedence (center palindrome: ede, frequency: 1.2)
+  cenedella (center palindrome: ede, frequency: 1.0)
+  alrededor (center palindrome: ede, frequency: 1.0)
+
+Group 'iri' (11 words):
+  empirical (center palindrome: iri, frequency: 3.6)
+  satirical (center palindrome: iri, frequency: 3.4)
+  delirious (center palindrome: iri, frequency: 3.0)
+  satirists (center palindrome: iri, frequency: 2.1)
+  satirized (center palindrome: iri, frequency: 2.1)
+  satirizes (center palindrome: iri, frequency: 2.0)
+  satirised (center palindrome: iri, frequency: 1.8)
+  blairites (center palindrome: iri, frequency: 1.8)
+  nasiriyah (center palindrome: iri, frequency: 1.5)
+  satirises (center palindrome: iri, frequency: 1.5)
+  empiricus (center palindrome: iri, frequency: 1.4)
+
+Group 'aha' (10 words):
+  takahashi (center palindrome: aha, frequency: 2.8)
+  allahabad (center palindrome: aha, frequency: 2.8)
+  abrahamic (center palindrome: aha, frequency: 2.5)
+  tomahawks (center palindrome: aha, frequency: 2.2)
+  tanahashi (center palindrome: aha, frequency: 2.1)
+  kalahandi (center palindrome: aha, frequency: 1.4)
+  yelahanka (center palindrome: aha, frequency: 1.4)
+  delahanty (center palindrome: aha, frequency: 1.3)
+  kurahashi (center palindrome: aha, frequency: 1.3)
+  funahashi (center palindrome: aha, frequency: 1.1)
+
+Group 'hih' (10 words):
+  yoshihiro (center palindrome: hih, frequency: 1.9)
+  yoshihide (center palindrome: hih, frequency: 1.8)
+  yoshihiko (center palindrome: hih, frequency: 1.7)
+  toshihiko (center palindrome: hih, frequency: 1.5)
+  toshihiro (center palindrome: hih, frequency: 1.5)
+  nishihara (center palindrome: hih, frequency: 1.4)
+  yoshihara (center palindrome: hih, frequency: 1.4)
+  yoshihisa (center palindrome: hih, frequency: 1.3)
+  yoshihito (center palindrome: hih, frequency: 1.3)
+  yoshiharu (center palindrome: hih, frequency: 1.2)
+
+Group 'hth' (10 words):
+  nighthawk (center palindrome: hth, frequency: 2.5)
+  diphthong (center palindrome: hth, frequency: 2.1)
+  righthand (center palindrome: hth, frequency: 1.9)
+  tighthead (center palindrome: hth, frequency: 1.6)
+  sighthill (center palindrome: hth, frequency: 1.3)
+  mechthild (center palindrome: hth, frequency: 1.2)
+  lighthill (center palindrome: hth, frequency: 1.2)
+  nighthold (center palindrome: hth, frequency: 1.1)
+  lichtheim (center palindrome: hth, frequency: 1.0)
+  righthere (center palindrome: hth, frequency: 1.0)
+
+Group 'aga' (9 words):
+  sacagawea (center palindrome: aga, frequency: 1.9)
+  karaganda (center palindrome: aga, frequency: 1.7)
+  outagamie (center palindrome: aga, frequency: 1.5)
+  matagalpa (center palindrome: aga, frequency: 1.5)
+  managable (center palindrome: aga, frequency: 1.4)
+  sivaganga (center palindrome: aga, frequency: 1.4)
+  fumagalli (center palindrome: aga, frequency: 1.4)
+  karagandy (center palindrome: aga, frequency: 1.2)
+  delagarza (center palindrome: aga, frequency: 1.1)
+
+Group 'aka' (9 words):
+  breakaway (center palindrome: aka, frequency: 3.2)
+  breakable (center palindrome: aka, frequency: 2.4)
+  breakages (center palindrome: aka, frequency: 2.0)
+  masakadza (center palindrome: aka, frequency: 1.3)
+  dinakaran (center palindrome: aka, frequency: 1.2)
+  sakakawea (center palindrome: aka, frequency: 1.1)
+  masakatsu (center palindrome: aka, frequency: 1.1)
+  barakamon (center palindrome: aka, frequency: 1.0)
+  tweakable (center palindrome: aka, frequency: 1.0)
+
+Group 'lel' (9 words):
+  mcclellan (center palindrome: lel, frequency: 3.0)
+  maclellan (center palindrome: lel, frequency: 2.0)
+  tableland (center palindrome: lel, frequency: 2.0)
+  guileless (center palindrome: lel, frequency: 1.9)
+  scaleless (center palindrome: lel, frequency: 1.5)
+  halleluja (center palindrome: lel, frequency: 1.4)
+  mcclellin (center palindrome: lel, frequency: 1.4)
+  gilleland (center palindrome: lel, frequency: 1.1)
+  cablelabs (center palindrome: lel, frequency: 1.1)
+
+Group 'rdr' (9 words):
+  overdrive (center palindrome: rdr, frequency: 3.2)
+  boardroom (center palindrome: rdr, frequency: 3.0)
+  overdraft (center palindrome: rdr, frequency: 2.8)
+  hairdryer (center palindrome: rdr, frequency: 2.4)
+  overdrawn (center palindrome: rdr, frequency: 2.4)
+  teardrops (center palindrome: rdr, frequency: 2.3)
+  iberdrola (center palindrome: rdr, frequency: 1.7)
+  guardroom (center palindrome: rdr, frequency: 1.7)
+  stardrive (center palindrome: rdr, frequency: 1.2)
+
+Group 'aca' (8 words):
+  maracaibo (center palindrome: aca, frequency: 2.2)
+  caracalla (center palindrome: aca, frequency: 2.1)
+  sylacauga (center palindrome: aca, frequency: 1.6)
+  ediacaran (center palindrome: aca, frequency: 1.5)
+  novacaine (center palindrome: aca, frequency: 1.3)
+  calacanis (center palindrome: aca, frequency: 1.3)
+  malacarne (center palindrome: aca, frequency: 1.1)
+  mayacamas (center palindrome: aca, frequency: 1.0)
+
+Group 'ibi' (8 words):
+  exhibited (center palindrome: ibi, frequency: 3.9)
+  inhibitor (center palindrome: ibi, frequency: 3.4)
+  inhibited (center palindrome: ibi, frequency: 3.1)
+  exhibitor (center palindrome: ibi, frequency: 2.7)
+  namibians (center palindrome: ibi, frequency: 1.6)
+  exhibiton (center palindrome: ibi, frequency: 1.1)
+  minibikes (center palindrome: ibi, frequency: 1.0)
+  visibilty (center palindrome: ibi, frequency: 1.0)
+
+Group 'oro' (8 words):
+  fluorosis (center palindrome: oro, frequency: 1.9)
+  autoroute (center palindrome: oro, frequency: 1.7)
+  chlorosis (center palindrome: oro, frequency: 1.7)
+  chlorotic (center palindrome: oro, frequency: 1.5)
+  ketorolac (center palindrome: oro, frequency: 1.4)
+  todorovic (center palindrome: oro, frequency: 1.2)
+  maboroshi (center palindrome: oro, frequency: 1.1)
+  fedorovna (center palindrome: oro, frequency: 1.0)
+
+Group 'awa' (7 words):
+  illawarra (center palindrome: awa, frequency: 2.8)
+  megawatts (center palindrome: awa, frequency: 2.8)
+  irrawaddy (center palindrome: awa, frequency: 2.2)
+  gigawatts (center palindrome: awa, frequency: 2.2)
+  madawaska (center palindrome: awa, frequency: 1.6)
+  delawares (center palindrome: awa, frequency: 1.5)
+  terawatts (center palindrome: awa, frequency: 1.2)
+
+Group 'mam' (7 words):
+  firmament (center palindrome: mam, frequency: 2.6)
+  sammamish (center palindrome: mam, frequency: 1.9)
+  dramamine (center palindrome: mam, frequency: 1.9)
+  formamide (center palindrome: mam, frequency: 1.6)
+  shimamura (center palindrome: mam, frequency: 1.6)
+  shimamoto (center palindrome: mam, frequency: 1.4)
+  permament (center palindrome: mam, frequency: 1.3)
+
+Group 'non' (7 words):
+  mennonite (center palindrome: non, frequency: 2.8)
+  cannonade (center palindrome: non, frequency: 1.8)
+  pannonian (center palindrome: non, frequency: 1.6)
+  cannoneer (center palindrome: non, frequency: 1.4)
+  cannoning (center palindrome: non, frequency: 1.3)
+  cannonier (center palindrome: non, frequency: 1.2)
+  shinonome (center palindrome: non, frequency: 1.1)
+
+Group 'ror' (7 words):
+  terrorist (center palindrome: ror, frequency: 4.3)
+  terrorism (center palindrome: ror, frequency: 4.2)
+  mirroring (center palindrome: ror, frequency: 3.0)
+  terrorize (center palindrome: ror, frequency: 2.8)
+  metrorail (center palindrome: ror, frequency: 2.2)
+  micrornas (center palindrome: ror, frequency: 2.2)
+  terrorise (center palindrome: ror, frequency: 2.1)
+
+Group 'tet' (7 words):
+  obstetric (center palindrome: tet, frequency: 2.6)
+  dietetics (center palindrome: tet, frequency: 2.5)
+  whitetail (center palindrome: tet, frequency: 2.1)
+  hostetler (center palindrome: tet, frequency: 2.1)
+  hostetter (center palindrome: tet, frequency: 1.7)
+  gestetner (center palindrome: tet, frequency: 1.4)
+  rastetter (center palindrome: tet, frequency: 1.1)
+
+Group 'cyc' (6 words):
+  tricycles (center palindrome: cyc, frequency: 2.2)
+  tricyclic (center palindrome: cyc, frequency: 2.1)
+  epicyclic (center palindrome: cyc, frequency: 1.7)
+  unicycles (center palindrome: cyc, frequency: 1.6)
+  epicycles (center palindrome: cyc, frequency: 1.5)
+  alicyclic (center palindrome: cyc, frequency: 1.4)
+
+Group 'dad' (6 words):
+  skedaddle (center palindrome: dad, frequency: 1.7)
+  mondadori (center palindrome: dad, frequency: 1.6)
+  ciudadano (center palindrome: dad, frequency: 1.4)
+  verdadero (center palindrome: dad, frequency: 1.2)
+  verdadera (center palindrome: dad, frequency: 1.2)
+  ciudadana (center palindrome: dad, frequency: 1.1)
+
+Group 'ehe' (6 words):
+  foreheads (center palindrome: ehe, frequency: 2.7)
+  boneheads (center palindrome: ehe, frequency: 1.8)
+  coneheads (center palindrome: ehe, frequency: 1.6)
+  trueheart (center palindrome: ehe, frequency: 1.5)
+  fireheart (center palindrome: ehe, frequency: 1.3)
+  cokeheads (center palindrome: ehe, frequency: 1.2)
+
+Group 'eve' (6 words):
+  redevelop (center palindrome: eve, frequency: 2.6)
+  viceversa (center palindrome: eve, frequency: 1.6)
+  echeveria (center palindrome: eve, frequency: 1.6)
+  chieveley (center palindrome: eve, frequency: 1.2)
+  echeverri (center palindrome: eve, frequency: 1.2)
+  unlevered (center palindrome: eve, frequency: 1.1)
+
+Group 'lul' (6 words):
+  cellulose (center palindrome: lul, frequency: 3.1)
+  cellulite (center palindrome: lul, frequency: 2.8)
+  celluloid (center palindrome: lul, frequency: 2.6)
+  cellulase (center palindrome: lul, frequency: 1.9)
+  fazlullah (center palindrome: lul, frequency: 1.5)
+  nkululeko (center palindrome: lul, frequency: 1.0)
+
+Group 'mem' (6 words):
+  agamemnon (center palindrome: mem, frequency: 2.7)
+  dismember (center palindrome: mem, frequency: 2.4)
+  nonmember (center palindrome: mem, frequency: 1.8)
+  schmemann (center palindrome: mem, frequency: 1.2)
+  iremember (center palindrome: mem, frequency: 1.1)
+  endmember (center palindrome: mem, frequency: 1.0)
+
+Group 'ndn' (6 words):
+  blindness (center palindrome: ndn, frequency: 3.4)
+  soundness (center palindrome: ndn, frequency: 2.6)
+  roundness (center palindrome: ndn, frequency: 2.2)
+  blandness (center palindrome: ndn, frequency: 2.0)
+  grandness (center palindrome: ndn, frequency: 1.5)
+  blondness (center palindrome: ndn, frequency: 1.2)
+
+Group 'nen' (6 words):
+  eminently (center palindrome: nen, frequency: 2.8)
+  chinensis (center palindrome: nen, frequency: 2.0)
+  aloneness (center palindrome: nen, frequency: 1.9)
+  proneness (center palindrome: nen, frequency: 1.7)
+  eminences (center palindrome: nen, frequency: 1.7)
+  gyanendra (center palindrome: nen, frequency: 1.5)
+
+Group 'rbr' (6 words):
+  hairbrush (center palindrome: rbr, frequency: 2.4)
+  swarbrick (center palindrome: rbr, frequency: 1.9)
+  overbroad (center palindrome: rbr, frequency: 1.9)
+  overbrook (center palindrome: rbr, frequency: 1.8)
+  sherbrook (center palindrome: rbr, frequency: 1.2)
+  deerbrook (center palindrome: rbr, frequency: 1.1)
+
+Group 'coc' (5 words):
+  concocted (center palindrome: coc, frequency: 2.8)
+  precocity (center palindrome: coc, frequency: 1.6)
+  percocets (center palindrome: coc, frequency: 1.6)
+  precocial (center palindrome: coc, frequency: 1.3)
+  leucocyte (center palindrome: coc, frequency: 1.2)
+
+Group 'epe' (5 words):
+  makepeace (center palindrome: epe, frequency: 2.2)
+  donepezil (center palindrome: epe, frequency: 1.6)
+  kraepelin (center palindrome: epe, frequency: 1.6)
+  steepened (center palindrome: epe, frequency: 1.3)
+  indepence (center palindrome: epe, frequency: 1.1)
+
+Group 'ese' (5 words):
+  cheeseman (center palindrome: ese, frequency: 2.0)
+  teleserye (center palindrome: ese, frequency: 1.6)
+  homeserve (center palindrome: ese, frequency: 1.4)
+  homesense (center palindrome: ese, frequency: 1.3)
+  griesemer (center palindrome: ese, frequency: 1.1)
+
+Group 'lil' (5 words):
+  gilliland (center palindrome: lil, frequency: 2.2)
+  publilius (center palindrome: lil, frequency: 1.5)
+  khalilzad (center palindrome: lil, frequency: 1.4)
+  daylilies (center palindrome: lil, frequency: 1.4)
+  fullilove (center palindrome: lil, frequency: 1.4)
+
+Group 'ses' (5 words):
+  horseshoe (center palindrome: ses, frequency: 3.2)
+  horseshit (center palindrome: ses, frequency: 2.8)
+  possesion (center palindrome: ses, frequency: 1.9)
+  possesive (center palindrome: ses, frequency: 1.1)
+  nessesary (center palindrome: ses, frequency: 1.0)
+
+Group 'tot' (5 words):
+  prototype (center palindrome: tot, frequency: 3.8)
+  lectotype (center palindrome: tot, frequency: 1.6)
+  pentothal (center palindrome: tot, frequency: 1.6)
+  subtotals (center palindrome: tot, frequency: 1.1)
+  phototype (center palindrome: tot, frequency: 1.0)
+
+Group 'uou' (5 words):
+  tenuously (center palindrome: uou, frequency: 1.9)
+  arduously (center palindrome: uou, frequency: 1.5)
+  sinuously (center palindrome: uou, frequency: 1.4)
+  vacuously (center palindrome: uou, frequency: 1.3)
+  fatuously (center palindrome: uou, frequency: 1.2)
+
+Group 'viv' (5 words):
+  survivors (center palindrome: viv, frequency: 4.1)
+  surviving (center palindrome: viv, frequency: 4.0)
+  convivial (center palindrome: viv, frequency: 2.4)
+  survivals (center palindrome: viv, frequency: 2.0)
+  convivium (center palindrome: viv, frequency: 1.1)
+
+Group 'bab' (4 words):
+  crybabies (center palindrome: bab, frequency: 2.1)
+  probables (center palindrome: bab, frequency: 1.6)
+  furbabies (center palindrome: bab, frequency: 1.5)
+  probabaly (center palindrome: bab, frequency: 1.3)
+
+Group 'cac' (4 words):
+  ericaceae (center palindrome: cac, frequency: 1.5)
+  educacion (center palindrome: cac, frequency: 1.4)
+  memcached (center palindrome: cac, frequency: 1.3)
+  geocaches (center palindrome: cac, frequency: 1.3)
+
+Group 'cic' (4 words):
+  fascicles (center palindrome: cic, frequency: 1.8)
+  lincicome (center palindrome: cic, frequency: 1.4)
+  fascicule (center palindrome: cic, frequency: 1.1)
+  muscicapa (center palindrome: cic, frequency: 1.0)
+
+Group 'ewe' (4 words):
+  farewells (center palindrome: ewe, frequency: 2.5)
+  bejeweled (center palindrome: ewe, frequency: 2.2)
+  ninewells (center palindrome: ewe, frequency: 1.4)
+  tubewells (center palindrome: ewe, frequency: 1.2)
+
+Group 'ofo' (4 words):
+  autofocus (center palindrome: ofo, frequency: 2.5)
+  tenofovir (center palindrome: ofo, frequency: 1.9)
+  cidofovir (center palindrome: ofo, frequency: 1.1)
+  aerofoils (center palindrome: ofo, frequency: 1.1)
+
+Group 'rtr' (4 words):
+  courtroom (center palindrome: rtr, frequency: 3.6)
+  fairtrade (center palindrome: rtr, frequency: 2.5)
+  chartreux (center palindrome: rtr, frequency: 1.2)
+  overtrain (center palindrome: rtr, frequency: 1.0)
+
+Group 'sis' (4 words):
+  consisted (center palindrome: sis, frequency: 3.9)
+  persisted (center palindrome: sis, frequency: 3.3)
+  subsisted (center palindrome: sis, frequency: 2.0)
+  russische (center palindrome: sis, frequency: 1.4)
+
+Group 'tht' (4 words):
+  deathtrap (center palindrome: tht, frequency: 2.1)
+  smithtown (center palindrome: tht, frequency: 2.0)
+  southtown (center palindrome: tht, frequency: 1.6)
+  northtown (center palindrome: tht, frequency: 1.4)
+
+Group 'ckc' (3 words):
+  blackcomb (center palindrome: ckc, frequency: 1.8)
+  blackcoin (center palindrome: ckc, frequency: 1.3)
+  blackcock (center palindrome: ckc, frequency: 1.2)
+
+Group 'ege' (3 words):
+  allegedly (center palindrome: ege, frequency: 4.1)
+  telegenic (center palindrome: ege, frequency: 1.6)
+  fliegende (center palindrome: ege, frequency: 1.2)
+
+Group 'eze' (3 words):
+  breezeway (center palindrome: eze, frequency: 1.9)
+  freezepop (center palindrome: eze, frequency: 1.2)
+  freezeout (center palindrome: eze, frequency: 1.0)
+
+Group 'hch' (3 words):
+  pushchair (center palindrome: hch, frequency: 2.2)
+  rothchild (center palindrome: hch, frequency: 1.8)
+  highchair (center palindrome: hch, frequency: 1.8)
+
+Group 'hsh' (3 words):
+  dachshund (center palindrome: hsh, frequency: 2.6)
+  bathsheba (center palindrome: hsh, frequency: 2.3)
+  pathshala (center palindrome: hsh, frequency: 1.2)
+
+Group 'lbl' (3 words):
+  cellblock (center palindrome: lbl, frequency: 1.8)
+  hellblade (center palindrome: lbl, frequency: 1.5)
+  fullblown (center palindrome: lbl, frequency: 1.2)
+
+Group 'ldl' (3 words):
+  childless (center palindrome: ldl, frequency: 3.1)
+  worldline (center palindrome: ldl, frequency: 1.6)
+  worldling (center palindrome: ldl, frequency: 1.1)
+
+Group 'ltl' (3 words):
+  faultless (center palindrome: ltl, frequency: 2.6)
+  guiltless (center palindrome: ltl, frequency: 2.0)
+  faultline (center palindrome: ltl, frequency: 1.6)
+
+Group 'ngn' (3 words):
+  wrongness (center palindrome: ngn, frequency: 2.1)
+  beingness (center palindrome: ngn, frequency: 1.3)
+  thingness (center palindrome: ngn, frequency: 1.0)
+
+Group 'nkn' (3 words):
+  frankness (center palindrome: nkn, frequency: 2.5)
+  blankness (center palindrome: nkn, frequency: 1.8)
+  drunkness (center palindrome: nkn, frequency: 1.2)
+
+Group 'ntn' (3 words):
+  bluntness (center palindrome: ntn, frequency: 2.3)
+  faintness (center palindrome: ntn, frequency: 1.8)
+  kenntniss (center palindrome: ntn, frequency: 1.1)
+
+Group 'nun' (3 words):
+  downunder (center palindrome: nun, frequency: 1.7)
+  cernunnos (center palindrome: nun, frequency: 1.5)
+  carnuntum (center palindrome: nun, frequency: 1.2)
+
+Group 'obo' (3 words):
+  eurobonds (center palindrome: obo, frequency: 1.8)
+  kerobokan (center palindrome: obo, frequency: 1.1)
+  moroboshi (center palindrome: obo, frequency: 1.1)
+
+Group 'oco' (3 words):
+  monocoque (center palindrome: oco, frequency: 1.9)
+  hypocotyl (center palindrome: oco, frequency: 1.5)
+  eurocodes (center palindrome: oco, frequency: 1.0)
+
+Group 'owo' (3 words):
+  infoworld (center palindrome: owo, frequency: 1.7)
+  rotoworld (center palindrome: owo, frequency: 1.4)
+  sudowoodo (center palindrome: owo, frequency: 1.4)
+
+Group 'pap' (3 words):
+  rappaport (center palindrome: pap, frequency: 2.3)
+  endpapers (center palindrome: pap, frequency: 1.7)
+  newpapers (center palindrome: pap, frequency: 1.1)
+
+Group 'rfr' (3 words):
+  doorframe (center palindrome: rfr, frequency: 2.0)
+  hoarfrost (center palindrome: rfr, frequency: 1.4)
+  starfruit (center palindrome: rfr, frequency: 1.4)
+
+Group 'rpr' (3 words):
+  overprint (center palindrome: rpr, frequency: 1.9)
+  overprice (center palindrome: rpr, frequency: 1.4)
+  overproof (center palindrome: rpr, frequency: 1.3)
+
+Group 'rur' (3 words):
+  chirurgie (center palindrome: rur, frequency: 1.7)
+  oberursel (center palindrome: rur, frequency: 1.2)
+  februrary (center palindrome: rur, frequency: 1.2)
+
+Group 'sas' (3 words):
+  massasoit (center palindrome: sas, frequency: 1.9)
+  bursaspor (center palindrome: sas, frequency: 1.4)
+  kissasian (center palindrome: sas, frequency: 1.0)
+
+Group 'axa' (2 words):
+  relaxants (center palindrome: axa, frequency: 2.0)
+  taraxacum (center palindrome: axa, frequency: 1.5)
+
+Group 'chc' (2 words):
+  hitchcock (center palindrome: chc, frequency: 3.3)
+  punchcard (center palindrome: chc, frequency: 1.4)
+
+Group 'did' (2 words):
+  candidate (center palindrome: did, frequency: 4.7)
+  candidacy (center palindrome: did, frequency: 3.4)
+
+Group 'ece' (2 words):
+  indecency (center palindrome: ece, frequency: 2.6)
+  novecento (center palindrome: ece, frequency: 1.2)
+
+Group 'gog' (2 words):
+  volgograd (center palindrome: gog, frequency: 2.8)
+  bergoglio (center palindrome: gog, frequency: 2.0)
+
+Group 'izi' (2 words):
+  dovizioso (center palindrome: izi, frequency: 1.9)
+  poliziano (center palindrome: izi, frequency: 1.3)
+
+Group 'ksk' (2 words):
+  peekskill (center palindrome: ksk, frequency: 2.2)
+  buckskins (center palindrome: ksk, frequency: 1.3)
+
+Group 'lal' (2 words):
+  mallalieu (center palindrome: lal, frequency: 1.5)
+  fadlallah (center palindrome: lal, frequency: 1.3)
+
+Group 'lcl' (2 words):
+  sailcloth (center palindrome: lcl, frequency: 1.8)
+  hillclimb (center palindrome: lcl, frequency: 1.8)
+
+Group 'lfl' (2 words):
+  wellfleet (center palindrome: lfl, frequency: 1.9)
+  shelflife (center palindrome: lfl, frequency: 1.1)
+
+Group 'lol' (2 words):
+  philology (center palindrome: lol, frequency: 2.7)
+  philolaus (center palindrome: lol, frequency: 1.1)
+
+Group 'lpl' (2 words):
+  tailplane (center palindrome: lpl, frequency: 1.6)
+  sailplane (center palindrome: lpl, frequency: 1.6)
+
+Group 'mom' (2 words):
+  chamomile (center palindrome: mom, frequency: 2.6)
+  shimomura (center palindrome: mom, frequency: 1.9)
+
+Group 'nsn' (2 words):
+  transneft (center palindrome: nsn, frequency: 1.4)
+  transness (center palindrome: nsn, frequency: 1.1)
+
+Group 'pep' (2 words):
+  culpepper (center palindrome: pep, frequency: 2.5)
+  dyspeptic (center palindrome: pep, frequency: 1.7)
+
+Group 'pip' (2 words):
+  bagpipers (center palindrome: pip, frequency: 1.5)
+  bagpiping (center palindrome: pip, frequency: 1.2)
+
+Group 'rcr' (2 words):
+  overcrowd (center palindrome: rcr, frequency: 1.6)
+  starcross (center palindrome: rcr, frequency: 1.2)
+
+Group 'rwr' (2 words):
+  overwrite (center palindrome: rwr, frequency: 2.4)
+  overwrote (center palindrome: rwr, frequency: 1.3)
+
+Group 'sys' (2 words):
+  ecosystem (center palindrome: sys, frequency: 3.8)
+  subsystem (center palindrome: sys, frequency: 2.9)
+
+Group 'ugu' (2 words):
+  inaugural (center palindrome: ugu, frequency: 3.7)
+  mizuguchi (center palindrome: ugu, frequency: 1.3)
+
+Group 'afa' (1 words):
+  megafauna (center palindrome: afa, frequency: 2.1)
+
+Group 'aia' (1 words):
+  havaianas (center palindrome: aia, frequency: 1.6)
+
+Group 'aja' (1 words):
+  sacajawea (center palindrome: aja, frequency: 1.7)
+
+Group 'bub' (1 words):
+  redbubble (center palindrome: bub, frequency: 2.0)
+
+Group 'dsd' (1 words):
+  landsdale (center palindrome: dsd, frequency: 1.1)
+
+Group 'dud' (1 words):
+  asaduddin (center palindrome: dud, frequency: 1.0)
+
+Group 'eie' (1 words):
+  receieved (center palindrome: eie, frequency: 1.1)
+
+Group 'eje' (1 words):
+  bluejeans (center palindrome: eje, frequency: 1.6)
+
+Group 'exe' (1 words):
+  nonexempt (center palindrome: exe, frequency: 1.5)
+
+Group 'fuf' (1 words):
+  kerfuffle (center palindrome: fuf, frequency: 2.3)
+
+Group 'ghg' (1 words):
+  loughgall (center palindrome: ghg, frequency: 1.3)
+
+Group 'gsg' (1 words):
+  kingsgate (center palindrome: gsg, frequency: 1.8)
+
+Group 'hhh' (1 words):
+  yeahhhhhh (center palindrome: hhh, frequency: 1.3)
+
+Group 'hlh' (1 words):
+  stahlhelm (center palindrome: hlh, frequency: 1.4)
+
+Group 'hph' (1 words):
+  bethphage (center palindrome: hph, frequency: 1.0)
+
+Group 'hwh' (1 words):
+  bushwhack (center palindrome: hwh, frequency: 1.4)
+
+Group 'ihi' (1 words):
+  annihilus (center palindrome: ihi, frequency: 1.3)
+
+Group 'jaj' (1 words):
+  vejjajiva (center palindrome: jaj, frequency: 1.5)
+
+Group 'kkk' (1 words):
+  fuckkkkkk (center palindrome: kkk, frequency: 1.1)
+
+Group 'kok' (1 words):
+  kuskokwim (center palindrome: kok, frequency: 1.6)
+
+Group 'lkl' (1 words):
+  stalkless (center palindrome: lkl, frequency: 1.1)
+
+Group 'lll' (1 words):
+  reallllly (center palindrome: lll, frequency: 1.9)
+
+Group 'lsl' (1 words):
+  hillslope (center palindrome: lsl, frequency: 1.3)
+
+Group 'ogo' (1 words):
+  eriogonum (center palindrome: ogo, frequency: 1.2)
+
+Group 'oho' (1 words):
+  alcoholic (center palindrome: oho, frequency: 3.9)
+
+Group 'ojo' (1 words):
+  kilojoule (center palindrome: ojo, frequency: 1.2)
+
+Group 'ooo' (1 words):
+  lmaoooooo (center palindrome: ooo, frequency: 1.5)
+
+Group 'oyo' (1 words):
+  hiroyoshi (center palindrome: oyo, frequency: 1.1)
+
+Group 'ozo' (1 words):
+  bryozoans (center palindrome: ozo, frequency: 1.7)
+
+Group 'pop' (1 words):
+  rappoport (center palindrome: pop, frequency: 1.6)
+
+Group 'psp' (1 words):
+  slipspace (center palindrome: psp, frequency: 1.2)
+
+Group 'rer' (1 words):
+  spareribs (center palindrome: rer, frequency: 1.5)
+
+Group 'rgr' (1 words):
+  overgrown (center palindrome: rgr, frequency: 3.1)
+
+Group 'rir' (1 words):
+  mccririck (center palindrome: rir, frequency: 1.2)
+
+Group 'rmr' (1 words):
+  stormrage (center palindrome: rmr, frequency: 1.0)
+
+Group 'rnr' (1 words):
+  cairnryan (center palindrome: rnr, frequency: 1.4)
+
+Group 'sts' (1 words):
+  coastside (center palindrome: sts, frequency: 1.1)
+
+Group 'sus' (1 words):
+  matsusaka (center palindrome: sus, frequency: 1.0)
+
+Group 'tut' (1 words):
+  statutory (center palindrome: tut, frequency: 3.8)
+
+Group 'tyt' (1 words):
+  partytime (center palindrome: tyt, frequency: 1.1)
+
+Group 'unu' (1 words):
+  kununurra (center palindrome: unu, frequency: 1.6)
+
+Group 'upu' (1 words):
+  blaupunkt (center palindrome: upu, frequency: 1.5)
+
+Group 'waw' (1 words):
+  stowaways (center palindrome: waw, frequency: 2.2)
+
+Group 'ymy' (1 words):
+  polymyxin (center palindrome: ymy, frequency: 1.5)
+

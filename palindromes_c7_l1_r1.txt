@@ -1,0 +1,68 @@
+Found 27 words with 7-letter center palindromes
+(1 letters left, 1 letters right):
+Grouped by 18 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'ooooooo' (6 words):
+  soooooooo (center palindrome: ooooooo, frequency: 2.2)
+  noooooooo (center palindrome: ooooooo, frequency: 2.0)
+  goooooood (center palindrome: ooooooo, frequency: 1.5)
+  woooooooo (center palindrome: ooooooo, frequency: 1.5)
+  goooooooo (center palindrome: ooooooo, frequency: 1.2)
+  boooooooo (center palindrome: ooooooo, frequency: 1.2)
+
+Group 'hhhhhhh' (4 words):
+  ahhhhhhhh (center palindrome: hhhhhhh, frequency: 1.7)
+  ohhhhhhhh (center palindrome: hhhhhhh, frequency: 1.6)
+  shhhhhhhh (center palindrome: hhhhhhh, frequency: 1.3)
+  uhhhhhhhh (center palindrome: hhhhhhh, frequency: 1.3)
+
+Group 'aaaaaaa' (2 words):
+  waaaaaaay (center palindrome: aaaaaaa, frequency: 1.7)
+  maaaaaaan (center palindrome: aaaaaaa, frequency: 1.1)
+
+Group 'abataba' (1 words):
+  tabatabai (center palindrome: abataba, frequency: 1.3)
+
+Group 'ahahaha' (1 words):
+  hahahahaa (center palindrome: ahahaha, frequency: 1.1)
+
+Group 'atarata' (1 words):
+  cataratas (center palindrome: atarata, frequency: 1.1)
+
+Group 'edivide' (1 words):
+  redivided (center palindrome: edivide, frequency: 1.1)
+
+Group 'eeeeeee' (1 words):
+  meeeeeeee (center palindrome: eeeeeee, frequency: 1.2)
+
+Group 'enomone' (1 words):
+  menomonee (center palindrome: enomone, frequency: 1.9)
+
+Group 'ississi' (1 words):
+  mississip (center palindrome: ississi, frequency: 1.0)
+
+Group 'ivadavi' (1 words):
+  rivadavia (center palindrome: ivadavi, frequency: 1.5)
+
+Group 'lllllll' (1 words):
+  allllllll (center palindrome: lllllll, frequency: 1.4)
+
+Group 'mmmmmmm' (1 words):
+  hmmmmmmmm (center palindrome: mmmmmmm, frequency: 1.4)
+
+Group 'nnnnnnn' (1 words):
+  annnnnnnd (center palindrome: nnnnnnn, frequency: 1.2)
+
+Group 'ootstoo' (1 words):
+  footstool (center palindrome: ootstoo, frequency: 2.3)
+
+Group 'ossesso' (1 words):
+  possessor (center palindrome: ossesso, frequency: 2.6)
+
+Group 'uuuuuuu' (1 words):
+  buuuuuuut (center palindrome: uuuuuuu, frequency: 1.2)
+
+Group 'wwwwwww' (1 words):
+  awwwwwwww (center palindrome: wwwwwww, frequency: 1.1)
+

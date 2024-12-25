@@ -1,0 +1,49 @@
+Found 22 words with 4-letter center palindromes
+(4 letters left, 4 letters right):
+Grouped by 11 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'issi' (9 words):
+  commissioner (center palindrome: issi, frequency: 4.4)
+  commissioned (center palindrome: issi, frequency: 4.0)
+  narcissistic (center palindrome: issi, frequency: 3.2)
+  dismissively (center palindrome: issi, frequency: 2.2)
+  submissively (center palindrome: issi, frequency: 1.7)
+  permissioned (center palindrome: issi, frequency: 1.3)
+  mississinewa (center palindrome: issi, frequency: 1.1)
+  permissively (center palindrome: issi, frequency: 1.0)
+  profissional (center palindrome: issi, frequency: 1.0)
+
+Group 'amma' (3 words):
+  inflammation (center palindrome: amma, frequency: 3.7)
+  inflammatory (center palindrome: amma, frequency: 3.7)
+  inflammasome (center palindrome: amma, frequency: 1.5)
+
+Group 'assa' (2 words):
+  thalassaemia (center palindrome: assa, frequency: 1.5)
+  spamassassin (center palindrome: assa, frequency: 1.1)
+
+Group 'atta' (1 words):
+  manhattanite (center palindrome: atta, frequency: 1.1)
+
+Group 'egge' (1 words):
+  heideggerian (center palindrome: egge, frequency: 1.3)
+
+Group 'elle' (1 words):
+  brunelleschi (center palindrome: elle, frequency: 1.9)
+
+Group 'erre' (1 words):
+  niederreiter (center palindrome: erre, frequency: 1.5)
+
+Group 'iddi' (1 words):
+  forbiddingly (center palindrome: iddi, frequency: 1.2)
+
+Group 'illi' (1 words):
+  macgillivray (center palindrome: illi, frequency: 2.0)
+
+Group 'itti' (1 words):
+  permittivity (center palindrome: itti, frequency: 2.1)
+
+Group 'ollo' (1 words):
+  thefollowing (center palindrome: ollo, frequency: 1.3)
+

@@ -1,0 +1,221 @@
+Found 88 words with 5-letter center palindromes
+(2 letters left, 2 letters right):
+Grouped by 64 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'itati' (6 words):
+  imitation (center palindrome: itati, frequency: 3.5)
+  imitating (center palindrome: itati, frequency: 3.2)
+  agitation (center palindrome: itati, frequency: 3.2)
+  agitating (center palindrome: itati, frequency: 2.7)
+  imitative (center palindrome: itati, frequency: 2.2)
+  initative (center palindrome: itati, frequency: 1.3)
+
+Group 'otsto' (4 words):
+  rootstock (center palindrome: otsto, frequency: 2.2)
+  scotstoun (center palindrome: otsto, frequency: 1.8)
+  scotstown (center palindrome: otsto, frequency: 1.1)
+  rootstown (center palindrome: otsto, frequency: 1.1)
+
+Group 'ssess' (4 words):
+  possessed (center palindrome: ssess, frequency: 3.9)
+  possesses (center palindrome: ssess, frequency: 3.6)
+  obssessed (center palindrome: ssess, frequency: 1.4)
+  bissessar (center palindrome: ssess, frequency: 1.3)
+
+Group 'ahaha' (3 words):
+  bwahahaha (center palindrome: ahaha, frequency: 1.6)
+  muahahaha (center palindrome: ahaha, frequency: 1.6)
+  mwahahaha (center palindrome: ahaha, frequency: 1.4)
+
+Group 'artra' (3 words):
+  heartrate (center palindrome: artra, frequency: 1.8)
+  chartrand (center palindrome: artra, frequency: 1.7)
+  startrack (center palindrome: artra, frequency: 1.1)
+
+Group 'aaaaa' (2 words):
+  whaaaaaat (center palindrome: aaaaa, frequency: 1.6)
+  yeaaaaaah (center palindrome: aaaaa, frequency: 1.1)
+
+Group 'batab' (2 words):
+  debatable (center palindrome: batab, frequency: 3.1)
+  debatably (center palindrome: batab, frequency: 1.5)
+
+Group 'divid' (2 words):
+  undivided (center palindrome: divid, frequency: 3.0)
+  individua (center palindrome: divid, frequency: 1.4)
+
+Group 'ildli' (2 words):
+  childlike (center palindrome: ildli, frequency: 2.9)
+  childline (center palindrome: ildli, frequency: 2.0)
+
+Group 'layal' (2 words):
+  malayalee (center palindrome: layal, frequency: 1.5)
+  malayalis (center palindrome: layal, frequency: 1.2)
+
+Group 'noton' (2 words):
+  monotonic (center palindrome: noton, frequency: 2.2)
+  monotones (center palindrome: noton, frequency: 1.2)
+
+Group 'ooooo' (2 words):
+  smoooooth (center palindrome: ooooo, frequency: 1.1)
+  whooooole (center palindrome: ooooo, frequency: 1.0)
+
+Group 'tivit' (2 words):
+  activites (center palindrome: tivit, frequency: 2.0)
+  activitie (center palindrome: tivit, frequency: 1.0)
+
+Group 'yyyyy' (2 words):
+  wayyyyyyy (center palindrome: yyyyy, frequency: 1.4)
+  whyyyyyyy (center palindrome: yyyyy, frequency: 1.1)
+
+Group 'ackca' (1 words):
+  blackcaps (center palindrome: ackca, frequency: 1.5)
+
+Group 'ainia' (1 words):
+  brainiacs (center palindrome: ainia, frequency: 1.6)
+
+Group 'andna' (1 words):
+  brandname (center palindrome: andna, frequency: 1.5)
+
+Group 'arcra' (1 words):
+  starcraft (center palindrome: arcra, frequency: 2.7)
+
+Group 'ardra' (1 words):
+  guardrail (center palindrome: ardra, frequency: 2.5)
+
+Group 'argra' (1 words):
+  beargrass (center palindrome: argra, frequency: 1.1)
+
+Group 'carac' (1 words):
+  cucaracha (center palindrome: carac, frequency: 1.8)
+
+Group 'ccacc' (1 words):
+  boccaccio (center palindrome: ccacc, frequency: 2.2)
+
+Group 'cific' (1 words):
+  pacificus (center palindrome: cific, frequency: 1.6)
+
+Group 'eeeee' (1 words):
+  sweeeeeet (center palindrome: eeeee, frequency: 1.1)
+
+Group 'erdre' (1 words):
+  overdress (center palindrome: erdre, frequency: 1.4)
+
+Group 'ergre' (1 words):
+  evergreen (center palindrome: ergre, frequency: 3.4)
+
+Group 'hahah' (1 words):
+  hahahahha (center palindrome: hahah, frequency: 1.5)
+
+Group 'ifefi' (1 words):
+  knifefish (center palindrome: ifefi, frequency: 1.3)
+
+Group 'igogi' (1 words):
+  prigogine (center palindrome: igogi, frequency: 1.5)
+
+Group 'iiiii' (1 words):
+  shiiiiiit (center palindrome: iiiii, frequency: 1.4)
+
+Group 'irpri' (1 words):
+  fairprice (center palindrome: irpri, frequency: 1.2)
+
+Group 'ivovi' (1 words):
+  slivovitz (center palindrome: ivovi, frequency: 1.4)
+
+Group 'lasal' (1 words):
+  delasalle (center palindrome: lasal, frequency: 1.1)
+
+Group 'lllll' (1 words):
+  welllllll (center palindrome: lllll, frequency: 1.1)
+
+Group 'lobol' (1 words):
+  pilobolus (center palindrome: lobol, frequency: 1.4)
+
+Group 'lovol' (1 words):
+  kilovolts (center palindrome: lovol, frequency: 1.4)
+
+Group 'manam' (1 words):
+  mcmanaman (center palindrome: manam, frequency: 2.0)
+
+Group 'monom' (1 words):
+  comonomer (center palindrome: monom, frequency: 1.1)
+
+Group 'nawan' (1 words):
+  tonawanda (center palindrome: nawan, frequency: 2.3)
+
+Group 'neben' (1 words):
+  cinebench (center palindrome: neben, frequency: 1.2)
+
+Group 'nemen' (1 words):
+  tenements (center palindrome: nemen, frequency: 2.6)
+
+Group 'nepen' (1 words):
+  ninepence (center palindrome: nepen, frequency: 1.4)
+
+Group 'nesen' (1 words):
+  nonesense (center palindrome: nesen, frequency: 1.5)
+
+Group 'neven' (1 words):
+  benevento (center palindrome: neven, frequency: 1.9)
+
+Group 'nexen' (1 words):
+  menexenus (center palindrome: nexen, frequency: 1.2)
+
+Group 'nitin' (1 words):
+  sunitinib (center palindrome: nitin, frequency: 1.3)
+
+Group 'nodon' (1 words):
+  conodonts (center palindrome: nodon, frequency: 1.7)
+
+Group 'nomon' (1 words):
+  menomonie (center palindrome: nomon, frequency: 1.7)
+
+Group 'orcro' (1 words):
+  moorcroft (center palindrome: orcro, frequency: 1.9)
+
+Group 'orero' (1 words):
+  storeroom (center palindrome: orero, frequency: 2.6)
+
+Group 'ownwo' (1 words):
+  brownwood (center palindrome: ownwo, frequency: 1.9)
+
+Group 'ragar' (1 words):
+  saragarhi (center palindrome: ragar, frequency: 1.0)
+
+Group 'rakar' (1 words):
+  surakarta (center palindrome: rakar, frequency: 1.6)
+
+Group 'ratar' (1 words):
+  barataria (center palindrome: ratar, frequency: 1.8)
+
+Group 'robor' (1 words):
+  ouroboros (center palindrome: robor, frequency: 2.1)
+
+Group 'ropor' (1 words):
+  aeroporto (center palindrome: ropor, frequency: 1.7)
+
+Group 'silis' (1 words):
+  basilisks (center palindrome: silis, frequency: 1.5)
+
+Group 'sinis' (1 words):
+  masinissa (center palindrome: sinis, frequency: 1.2)
+
+Group 'snans' (1 words):
+  posnanski (center palindrome: snans, frequency: 1.0)
+
+Group 'speps' (1 words):
+  dyspepsia (center palindrome: speps, frequency: 2.1)
+
+Group 'sssss' (1 words):
+  yesssssss (center palindrome: sssss, frequency: 1.6)
+
+Group 'tabat' (1 words):
+  katabatic (center palindrome: tabat, frequency: 1.5)
+
+Group 'tinit' (1 words):
+  retinitis (center palindrome: tinit, frequency: 2.2)
+
+Group 'uanau' (1 words):
+  aquanauts (center palindrome: uanau, frequency: 1.4)
+

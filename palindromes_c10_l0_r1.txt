@@ -1,0 +1,11 @@
+Found 2 words with 10-letter center palindromes
+(0 letters left, 1 letters right):
+Grouped by 2 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'aaaaaaaaaa' (1 words):
+  aaaaaaaaaah (center palindrome: aaaaaaaaaa, frequency: 1.2)
+
+Group 'oooooooooo' (1 words):
+  ooooooooooh (center palindrome: oooooooooo, frequency: 1.2)
+

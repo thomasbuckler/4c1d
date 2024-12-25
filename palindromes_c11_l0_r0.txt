@@ -1,0 +1,20 @@
+Found 5 words with 11-letter center palindromes
+(0 letters left, 0 letters right):
+Grouped by 5 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'ahahahahaha' (1 words):
+  ahahahahaha (center palindrome: ahahahahaha, frequency: 1.7)
+
+Group 'hahahahahah' (1 words):
+  hahahahahah (center palindrome: hahahahahah, frequency: 1.7)
+
+Group 'lololololol' (1 words):
+  lololololol (center palindrome: lololololol, frequency: 1.6)
+
+Group 'ooooooooooo' (1 words):
+  ooooooooooo (center palindrome: ooooooooooo, frequency: 1.1)
+
+Group 'xxxxxxxxxxx' (1 words):
+  xxxxxxxxxxx (center palindrome: xxxxxxxxxxx, frequency: 1.0)
+

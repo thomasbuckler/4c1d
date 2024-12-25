@@ -1,0 +1,1544 @@
+Found 513 words with 3-letter center palindromes
+(0 letters left, 0 letters right):
+Grouped by 513 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'aaa' (1 words):
+  aaa (center palindrome: aaa, frequency: 3.8)
+
+Group 'aba' (1 words):
+  aba (center palindrome: aba, frequency: 3.3)
+
+Group 'aca' (1 words):
+  aca (center palindrome: aca, frequency: 3.5)
+
+Group 'ada' (1 words):
+  ada (center palindrome: ada, frequency: 3.7)
+
+Group 'aea' (1 words):
+  aea (center palindrome: aea, frequency: 2.3)
+
+Group 'afa' (1 words):
+  afa (center palindrome: afa, frequency: 2.6)
+
+Group 'aga' (1 words):
+  aga (center palindrome: aga, frequency: 3.1)
+
+Group 'aha' (1 words):
+  aha (center palindrome: aha, frequency: 3.6)
+
+Group 'aia' (1 words):
+  aia (center palindrome: aia, frequency: 2.8)
+
+Group 'aja' (1 words):
+  aja (center palindrome: aja, frequency: 2.8)
+
+Group 'aka' (1 words):
+  aka (center palindrome: aka, frequency: 4.2)
+
+Group 'ala' (1 words):
+  ala (center palindrome: ala, frequency: 3.5)
+
+Group 'ama' (1 words):
+  ama (center palindrome: ama, frequency: 3.5)
+
+Group 'ana' (1 words):
+  ana (center palindrome: ana, frequency: 3.9)
+
+Group 'aoa' (1 words):
+  aoa (center palindrome: aoa, frequency: 2.6)
+
+Group 'apa' (1 words):
+  apa (center palindrome: apa, frequency: 3.3)
+
+Group 'aqa' (1 words):
+  aqa (center palindrome: aqa, frequency: 2.3)
+
+Group 'ara' (1 words):
+  ara (center palindrome: ara, frequency: 3.2)
+
+Group 'asa' (1 words):
+  asa (center palindrome: asa, frequency: 3.4)
+
+Group 'ata' (1 words):
+  ata (center palindrome: ata, frequency: 3.0)
+
+Group 'aua' (1 words):
+  aua (center palindrome: aua, frequency: 1.9)
+
+Group 'ava' (1 words):
+  ava (center palindrome: ava, frequency: 3.5)
+
+Group 'awa' (1 words):
+  awa (center palindrome: awa, frequency: 2.9)
+
+Group 'axa' (1 words):
+  axa (center palindrome: axa, frequency: 2.5)
+
+Group 'aya' (1 words):
+  aya (center palindrome: aya, frequency: 2.9)
+
+Group 'aza' (1 words):
+  aza (center palindrome: aza, frequency: 2.4)
+
+Group 'bab' (1 words):
+  bab (center palindrome: bab, frequency: 3.0)
+
+Group 'bbb' (1 words):
+  bbb (center palindrome: bbb, frequency: 3.0)
+
+Group 'bcb' (1 words):
+  bcb (center palindrome: bcb, frequency: 2.0)
+
+Group 'bdb' (1 words):
+  bdb (center palindrome: bdb, frequency: 1.9)
+
+Group 'beb' (1 words):
+  beb (center palindrome: beb, frequency: 1.7)
+
+Group 'bfb' (1 words):
+  bfb (center palindrome: bfb, frequency: 1.7)
+
+Group 'bgb' (1 words):
+  bgb (center palindrome: bgb, frequency: 1.8)
+
+Group 'bhb' (1 words):
+  bhb (center palindrome: bhb, frequency: 1.9)
+
+Group 'bib' (1 words):
+  bib (center palindrome: bib, frequency: 3.0)
+
+Group 'bjb' (1 words):
+  bjb (center palindrome: bjb, frequency: 1.1)
+
+Group 'bkb' (1 words):
+  bkb (center palindrome: bkb, frequency: 1.9)
+
+Group 'blb' (1 words):
+  blb (center palindrome: blb, frequency: 1.7)
+
+Group 'bmb' (1 words):
+  bmb (center palindrome: bmb, frequency: 1.7)
+
+Group 'bnb' (1 words):
+  bnb (center palindrome: bnb, frequency: 2.6)
+
+Group 'bob' (1 words):
+  bob (center palindrome: bob, frequency: 4.6)
+
+Group 'bpb' (1 words):
+  bpb (center palindrome: bpb, frequency: 1.4)
+
+Group 'brb' (1 words):
+  brb (center palindrome: brb, frequency: 3.0)
+
+Group 'bsb' (1 words):
+  bsb (center palindrome: bsb, frequency: 2.6)
+
+Group 'btb' (1 words):
+  btb (center palindrome: btb, frequency: 2.2)
+
+Group 'bub' (1 words):
+  bub (center palindrome: bub, frequency: 2.9)
+
+Group 'bvb' (1 words):
+  bvb (center palindrome: bvb, frequency: 2.3)
+
+Group 'bwb' (1 words):
+  bwb (center palindrome: bwb, frequency: 1.7)
+
+Group 'bxb' (1 words):
+  bxb (center palindrome: bxb, frequency: 1.2)
+
+Group 'byb' (1 words):
+  byb (center palindrome: byb, frequency: 1.6)
+
+Group 'cac' (1 words):
+  cac (center palindrome: cac, frequency: 2.9)
+
+Group 'cbc' (1 words):
+  cbc (center palindrome: cbc, frequency: 3.5)
+
+Group 'ccc' (1 words):
+  ccc (center palindrome: ccc, frequency: 3.1)
+
+Group 'cdc' (1 words):
+  cdc (center palindrome: cdc, frequency: 3.6)
+
+Group 'cec' (1 words):
+  cec (center palindrome: cec, frequency: 2.8)
+
+Group 'cfc' (1 words):
+  cfc (center palindrome: cfc, frequency: 2.9)
+
+Group 'cgc' (1 words):
+  cgc (center palindrome: cgc, frequency: 2.4)
+
+Group 'chc' (1 words):
+  chc (center palindrome: chc, frequency: 2.4)
+
+Group 'cic' (1 words):
+  cic (center palindrome: cic, frequency: 2.9)
+
+Group 'cjc' (1 words):
+  cjc (center palindrome: cjc, frequency: 2.0)
+
+Group 'ckc' (1 words):
+  ckc (center palindrome: ckc, frequency: 1.5)
+
+Group 'clc' (1 words):
+  clc (center palindrome: clc, frequency: 2.6)
+
+Group 'cmc' (1 words):
+  cmc (center palindrome: cmc, frequency: 3.1)
+
+Group 'cnc' (1 words):
+  cnc (center palindrome: cnc, frequency: 2.9)
+
+Group 'coc' (1 words):
+  coc (center palindrome: coc, frequency: 2.7)
+
+Group 'cpc' (1 words):
+  cpc (center palindrome: cpc, frequency: 3.2)
+
+Group 'cqc' (1 words):
+  cqc (center palindrome: cqc, frequency: 2.7)
+
+Group 'crc' (1 words):
+  crc (center palindrome: crc, frequency: 3.1)
+
+Group 'csc' (1 words):
+  csc (center palindrome: csc, frequency: 2.8)
+
+Group 'ctc' (1 words):
+  ctc (center palindrome: ctc, frequency: 2.7)
+
+Group 'cuc' (1 words):
+  cuc (center palindrome: cuc, frequency: 2.0)
+
+Group 'cvc' (1 words):
+  cvc (center palindrome: cvc, frequency: 2.5)
+
+Group 'cwc' (1 words):
+  cwc (center palindrome: cwc, frequency: 2.5)
+
+Group 'cxc' (1 words):
+  cxc (center palindrome: cxc, frequency: 1.8)
+
+Group 'cyc' (1 words):
+  cyc (center palindrome: cyc, frequency: 2.2)
+
+Group 'dad' (1 words):
+  dad (center palindrome: dad, frequency: 5.0)
+
+Group 'dbd' (1 words):
+  dbd (center palindrome: dbd, frequency: 2.2)
+
+Group 'dcd' (1 words):
+  dcd (center palindrome: dcd, frequency: 2.0)
+
+Group 'ddd' (1 words):
+  ddd (center palindrome: ddd, frequency: 2.6)
+
+Group 'ded' (1 words):
+  ded (center palindrome: ded, frequency: 2.8)
+
+Group 'dfd' (1 words):
+  dfd (center palindrome: dfd, frequency: 1.9)
+
+Group 'dgd' (1 words):
+  dgd (center palindrome: dgd, frequency: 1.8)
+
+Group 'dhd' (1 words):
+  dhd (center palindrome: dhd, frequency: 1.7)
+
+Group 'did' (1 words):
+  did (center palindrome: did, frequency: 6.0)
+
+Group 'djd' (1 words):
+  djd (center palindrome: djd, frequency: 1.5)
+
+Group 'dkd' (1 words):
+  dkd (center palindrome: dkd, frequency: 1.1)
+
+Group 'dld' (1 words):
+  dld (center palindrome: dld, frequency: 2.0)
+
+Group 'dmd' (1 words):
+  dmd (center palindrome: dmd, frequency: 2.5)
+
+Group 'dnd' (1 words):
+  dnd (center palindrome: dnd, frequency: 2.9)
+
+Group 'dod' (1 words):
+  dod (center palindrome: dod, frequency: 3.3)
+
+Group 'dpd' (1 words):
+  dpd (center palindrome: dpd, frequency: 2.3)
+
+Group 'drd' (1 words):
+  drd (center palindrome: drd, frequency: 1.8)
+
+Group 'dsd' (1 words):
+  dsd (center palindrome: dsd, frequency: 2.3)
+
+Group 'dtd' (1 words):
+  dtd (center palindrome: dtd, frequency: 2.2)
+
+Group 'dud' (1 words):
+  dud (center palindrome: dud, frequency: 3.0)
+
+Group 'dvd' (1 words):
+  dvd (center palindrome: dvd, frequency: 4.2)
+
+Group 'dwd' (1 words):
+  dwd (center palindrome: dwd, frequency: 1.9)
+
+Group 'dxd' (1 words):
+  dxd (center palindrome: dxd, frequency: 2.1)
+
+Group 'dzd' (1 words):
+  dzd (center palindrome: dzd, frequency: 1.1)
+
+Group 'eae' (1 words):
+  eae (center palindrome: eae, frequency: 2.1)
+
+Group 'ebe' (1 words):
+  ebe (center palindrome: ebe, frequency: 1.8)
+
+Group 'ece' (1 words):
+  ece (center palindrome: ece, frequency: 2.8)
+
+Group 'ede' (1 words):
+  ede (center palindrome: ede, frequency: 2.2)
+
+Group 'eee' (1 words):
+  eee (center palindrome: eee, frequency: 2.7)
+
+Group 'efe' (1 words):
+  efe (center palindrome: efe, frequency: 2.6)
+
+Group 'ege' (1 words):
+  ege (center palindrome: ege, frequency: 2.0)
+
+Group 'ehe' (1 words):
+  ehe (center palindrome: ehe, frequency: 2.1)
+
+Group 'eie' (1 words):
+  eie (center palindrome: eie, frequency: 1.7)
+
+Group 'eje' (1 words):
+  eje (center palindrome: eje, frequency: 1.5)
+
+Group 'eke' (1 words):
+  eke (center palindrome: eke, frequency: 2.6)
+
+Group 'ele' (1 words):
+  ele (center palindrome: ele, frequency: 2.8)
+
+Group 'eme' (1 words):
+  eme (center palindrome: eme, frequency: 2.3)
+
+Group 'ene' (1 words):
+  ene (center palindrome: ene, frequency: 2.7)
+
+Group 'eoe' (1 words):
+  eoe (center palindrome: eoe, frequency: 2.2)
+
+Group 'epe' (1 words):
+  epe (center palindrome: epe, frequency: 2.0)
+
+Group 'ere' (1 words):
+  ere (center palindrome: ere, frequency: 3.1)
+
+Group 'ese' (1 words):
+  ese (center palindrome: ese, frequency: 2.9)
+
+Group 'ete' (1 words):
+  ete (center palindrome: ete, frequency: 2.2)
+
+Group 'eue' (1 words):
+  eue (center palindrome: eue, frequency: 1.5)
+
+Group 'eve' (1 words):
+  eve (center palindrome: eve, frequency: 4.3)
+
+Group 'ewe' (1 words):
+  ewe (center palindrome: ewe, frequency: 2.8)
+
+Group 'exe' (1 words):
+  exe (center palindrome: exe, frequency: 2.9)
+
+Group 'eye' (1 words):
+  eye (center palindrome: eye, frequency: 5.0)
+
+Group 'eze' (1 words):
+  eze (center palindrome: eze, frequency: 2.5)
+
+Group 'faf' (1 words):
+  faf (center palindrome: faf, frequency: 2.4)
+
+Group 'fbf' (1 words):
+  fbf (center palindrome: fbf, frequency: 1.5)
+
+Group 'fcf' (1 words):
+  fcf (center palindrome: fcf, frequency: 2.1)
+
+Group 'fdf' (1 words):
+  fdf (center palindrome: fdf, frequency: 1.6)
+
+Group 'fef' (1 words):
+  fef (center palindrome: fef, frequency: 1.8)
+
+Group 'fff' (1 words):
+  fff (center palindrome: fff, frequency: 2.5)
+
+Group 'fgf' (1 words):
+  fgf (center palindrome: fgf, frequency: 2.1)
+
+Group 'fhf' (1 words):
+  fhf (center palindrome: fhf, frequency: 1.1)
+
+Group 'fif' (1 words):
+  fif (center palindrome: fif, frequency: 2.2)
+
+Group 'fkf' (1 words):
+  fkf (center palindrome: fkf, frequency: 1.0)
+
+Group 'flf' (1 words):
+  flf (center palindrome: flf, frequency: 1.3)
+
+Group 'fmf' (1 words):
+  fmf (center palindrome: fmf, frequency: 2.1)
+
+Group 'fnf' (1 words):
+  fnf (center palindrome: fnf, frequency: 1.7)
+
+Group 'fof' (1 words):
+  fof (center palindrome: fof, frequency: 2.1)
+
+Group 'fpf' (1 words):
+  fpf (center palindrome: fpf, frequency: 1.6)
+
+Group 'frf' (1 words):
+  frf (center palindrome: frf, frequency: 1.7)
+
+Group 'fsf' (1 words):
+  fsf (center palindrome: fsf, frequency: 2.2)
+
+Group 'ftf' (1 words):
+  ftf (center palindrome: ftf, frequency: 2.0)
+
+Group 'fuf' (1 words):
+  fuf (center palindrome: fuf, frequency: 1.1)
+
+Group 'fvf' (1 words):
+  fvf (center palindrome: fvf, frequency: 1.1)
+
+Group 'fwf' (1 words):
+  fwf (center palindrome: fwf, frequency: 1.4)
+
+Group 'fyf' (1 words):
+  fyf (center palindrome: fyf, frequency: 1.7)
+
+Group 'gag' (1 words):
+  gag (center palindrome: gag, frequency: 3.6)
+
+Group 'gbg' (1 words):
+  gbg (center palindrome: gbg, frequency: 1.6)
+
+Group 'gcg' (1 words):
+  gcg (center palindrome: gcg, frequency: 1.4)
+
+Group 'gdg' (1 words):
+  gdg (center palindrome: gdg, frequency: 1.2)
+
+Group 'geg' (1 words):
+  geg (center palindrome: geg, frequency: 1.4)
+
+Group 'gfg' (1 words):
+  gfg (center palindrome: gfg, frequency: 1.6)
+
+Group 'ggg' (1 words):
+  ggg (center palindrome: ggg, frequency: 2.7)
+
+Group 'ghg' (1 words):
+  ghg (center palindrome: ghg, frequency: 2.6)
+
+Group 'gig' (1 words):
+  gig (center palindrome: gig, frequency: 4.0)
+
+Group 'gkg' (1 words):
+  gkg (center palindrome: gkg, frequency: 1.2)
+
+Group 'glg' (1 words):
+  glg (center palindrome: glg, frequency: 1.8)
+
+Group 'gmg' (1 words):
+  gmg (center palindrome: gmg, frequency: 2.2)
+
+Group 'gng' (1 words):
+  gng (center palindrome: gng, frequency: 1.6)
+
+Group 'gog' (1 words):
+  gog (center palindrome: gog, frequency: 2.6)
+
+Group 'gpg' (1 words):
+  gpg (center palindrome: gpg, frequency: 2.0)
+
+Group 'grg' (1 words):
+  grg (center palindrome: grg, frequency: 1.7)
+
+Group 'gsg' (1 words):
+  gsg (center palindrome: gsg, frequency: 1.9)
+
+Group 'gtg' (1 words):
+  gtg (center palindrome: gtg, frequency: 2.0)
+
+Group 'gug' (1 words):
+  gug (center palindrome: gug, frequency: 1.4)
+
+Group 'gvg' (1 words):
+  gvg (center palindrome: gvg, frequency: 1.4)
+
+Group 'gwg' (1 words):
+  gwg (center palindrome: gwg, frequency: 1.9)
+
+Group 'hah' (1 words):
+  hah (center palindrome: hah, frequency: 3.5)
+
+Group 'hbh' (1 words):
+  hbh (center palindrome: hbh, frequency: 1.4)
+
+Group 'hch' (1 words):
+  hch (center palindrome: hch, frequency: 1.4)
+
+Group 'hdh' (1 words):
+  hdh (center palindrome: hdh, frequency: 1.5)
+
+Group 'heh' (1 words):
+  heh (center palindrome: heh, frequency: 3.7)
+
+Group 'hfh' (1 words):
+  hfh (center palindrome: hfh, frequency: 1.2)
+
+Group 'hgh' (1 words):
+  hgh (center palindrome: hgh, frequency: 2.7)
+
+Group 'hhh' (1 words):
+  hhh (center palindrome: hhh, frequency: 2.6)
+
+Group 'hih' (1 words):
+  hih (center palindrome: hih, frequency: 1.7)
+
+Group 'hlh' (1 words):
+  hlh (center palindrome: hlh, frequency: 1.6)
+
+Group 'hmh' (1 words):
+  hmh (center palindrome: hmh, frequency: 1.7)
+
+Group 'hnh' (1 words):
+  hnh (center palindrome: hnh, frequency: 1.3)
+
+Group 'hoh' (1 words):
+  hoh (center palindrome: hoh, frequency: 2.9)
+
+Group 'hph' (1 words):
+  hph (center palindrome: hph, frequency: 1.3)
+
+Group 'hrh' (1 words):
+  hrh (center palindrome: hrh, frequency: 2.5)
+
+Group 'hsh' (1 words):
+  hsh (center palindrome: hsh, frequency: 1.9)
+
+Group 'hth' (1 words):
+  hth (center palindrome: hth, frequency: 2.0)
+
+Group 'huh' (1 words):
+  huh (center palindrome: huh, frequency: 4.3)
+
+Group 'hvh' (1 words):
+  hvh (center palindrome: hvh, frequency: 1.1)
+
+Group 'hwh' (1 words):
+  hwh (center palindrome: hwh, frequency: 1.4)
+
+Group 'hxh' (1 words):
+  hxh (center palindrome: hxh, frequency: 2.1)
+
+Group 'iai' (1 words):
+  iai (center palindrome: iai, frequency: 2.2)
+
+Group 'ibi' (1 words):
+  ibi (center palindrome: ibi, frequency: 2.2)
+
+Group 'ici' (1 words):
+  ici (center palindrome: ici, frequency: 2.7)
+
+Group 'idi' (1 words):
+  idi (center palindrome: idi, frequency: 2.5)
+
+Group 'iei' (1 words):
+  iei (center palindrome: iei, frequency: 1.4)
+
+Group 'ifi' (1 words):
+  ifi (center palindrome: ifi, frequency: 2.4)
+
+Group 'igi' (1 words):
+  igi (center palindrome: igi, frequency: 2.2)
+
+Group 'ihi' (1 words):
+  ihi (center palindrome: ihi, frequency: 1.9)
+
+Group 'iii' (1 words):
+  iii (center palindrome: iii, frequency: 4.6)
+
+Group 'iji' (1 words):
+  iji (center palindrome: iji, frequency: 1.6)
+
+Group 'iki' (1 words):
+  iki (center palindrome: iki, frequency: 2.1)
+
+Group 'ili' (1 words):
+  ili (center palindrome: ili, frequency: 2.4)
+
+Group 'imi' (1 words):
+  imi (center palindrome: imi, frequency: 2.5)
+
+Group 'ini' (1 words):
+  ini (center palindrome: ini, frequency: 2.8)
+
+Group 'ioi' (1 words):
+  ioi (center palindrome: ioi, frequency: 2.4)
+
+Group 'ipi' (1 words):
+  ipi (center palindrome: ipi, frequency: 2.0)
+
+Group 'iri' (1 words):
+  iri (center palindrome: iri, frequency: 2.5)
+
+Group 'isi' (1 words):
+  isi (center palindrome: isi, frequency: 3.1)
+
+Group 'iti' (1 words):
+  iti (center palindrome: iti, frequency: 2.5)
+
+Group 'iui' (1 words):
+  iui (center palindrome: iui, frequency: 2.1)
+
+Group 'ivi' (1 words):
+  ivi (center palindrome: ivi, frequency: 2.0)
+
+Group 'iwi' (1 words):
+  iwi (center palindrome: iwi, frequency: 2.2)
+
+Group 'ixi' (1 words):
+  ixi (center palindrome: ixi, frequency: 1.4)
+
+Group 'iyi' (1 words):
+  iyi (center palindrome: iyi, frequency: 1.7)
+
+Group 'izi' (1 words):
+  izi (center palindrome: izi, frequency: 1.6)
+
+Group 'jaj' (1 words):
+  jaj (center palindrome: jaj, frequency: 1.3)
+
+Group 'jbj' (1 words):
+  jbj (center palindrome: jbj, frequency: 2.0)
+
+Group 'jcj' (1 words):
+  jcj (center palindrome: jcj, frequency: 1.2)
+
+Group 'jej' (1 words):
+  jej (center palindrome: jej, frequency: 1.5)
+
+Group 'jij' (1 words):
+  jij (center palindrome: jij, frequency: 1.7)
+
+Group 'jjj' (1 words):
+  jjj (center palindrome: jjj, frequency: 2.0)
+
+Group 'jmj' (1 words):
+  jmj (center palindrome: jmj, frequency: 1.5)
+
+Group 'jnj' (1 words):
+  jnj (center palindrome: jnj, frequency: 1.8)
+
+Group 'joj' (1 words):
+  joj (center palindrome: joj, frequency: 1.5)
+
+Group 'jpj' (1 words):
+  jpj (center palindrome: jpj, frequency: 1.7)
+
+Group 'jsj' (1 words):
+  jsj (center palindrome: jsj, frequency: 1.4)
+
+Group 'jyj' (1 words):
+  jyj (center palindrome: jyj, frequency: 1.7)
+
+Group 'kak' (1 words):
+  kak (center palindrome: kak, frequency: 2.4)
+
+Group 'kbk' (1 words):
+  kbk (center palindrome: kbk, frequency: 1.2)
+
+Group 'kck' (1 words):
+  kck (center palindrome: kck, frequency: 1.7)
+
+Group 'kdk' (1 words):
+  kdk (center palindrome: kdk, frequency: 1.3)
+
+Group 'kek' (1 words):
+  kek (center palindrome: kek, frequency: 2.5)
+
+Group 'kfk' (1 words):
+  kfk (center palindrome: kfk, frequency: 1.5)
+
+Group 'khk' (1 words):
+  khk (center palindrome: khk, frequency: 1.1)
+
+Group 'kik' (1 words):
+  kik (center palindrome: kik, frequency: 2.7)
+
+Group 'kjk' (1 words):
+  kjk (center palindrome: kjk, frequency: 1.2)
+
+Group 'kkk' (1 words):
+  kkk (center palindrome: kkk, frequency: 3.2)
+
+Group 'klk' (1 words):
+  klk (center palindrome: klk, frequency: 1.8)
+
+Group 'kmk' (1 words):
+  kmk (center palindrome: kmk, frequency: 1.4)
+
+Group 'knk' (1 words):
+  knk (center palindrome: knk, frequency: 1.8)
+
+Group 'kok' (1 words):
+  kok (center palindrome: kok, frequency: 3.0)
+
+Group 'kpk' (1 words):
+  kpk (center palindrome: kpk, frequency: 2.2)
+
+Group 'krk' (1 words):
+  krk (center palindrome: krk, frequency: 2.1)
+
+Group 'ksk' (1 words):
+  ksk (center palindrome: ksk, frequency: 1.5)
+
+Group 'ktk' (1 words):
+  ktk (center palindrome: ktk, frequency: 1.5)
+
+Group 'kuk' (1 words):
+  kuk (center palindrome: kuk, frequency: 2.2)
+
+Group 'kvk' (1 words):
+  kvk (center palindrome: kvk, frequency: 1.5)
+
+Group 'kwk' (1 words):
+  kwk (center palindrome: kwk, frequency: 1.5)
+
+Group 'kyk' (1 words):
+  kyk (center palindrome: kyk, frequency: 1.5)
+
+Group 'lal' (1 words):
+  lal (center palindrome: lal, frequency: 3.1)
+
+Group 'lbl' (1 words):
+  lbl (center palindrome: lbl, frequency: 2.0)
+
+Group 'lcl' (1 words):
+  lcl (center palindrome: lcl, frequency: 2.3)
+
+Group 'ldl' (1 words):
+  ldl (center palindrome: ldl, frequency: 2.9)
+
+Group 'lel' (1 words):
+  lel (center palindrome: lel, frequency: 2.6)
+
+Group 'lfl' (1 words):
+  lfl (center palindrome: lfl, frequency: 2.3)
+
+Group 'lgl' (1 words):
+  lgl (center palindrome: lgl, frequency: 1.4)
+
+Group 'lhl' (1 words):
+  lhl (center palindrome: lhl, frequency: 1.6)
+
+Group 'lil' (1 words):
+  lil (center palindrome: lil, frequency: 3.9)
+
+Group 'ljl' (1 words):
+  ljl (center palindrome: ljl, frequency: 1.0)
+
+Group 'lll' (1 words):
+  lll (center palindrome: lll, frequency: 2.6)
+
+Group 'lml' (1 words):
+  lml (center palindrome: lml, frequency: 1.6)
+
+Group 'lnl' (1 words):
+  lnl (center palindrome: lnl, frequency: 1.5)
+
+Group 'lol' (1 words):
+  lol (center palindrome: lol, frequency: 5.0)
+
+Group 'lpl' (1 words):
+  lpl (center palindrome: lpl, frequency: 2.4)
+
+Group 'lrl' (1 words):
+  lrl (center palindrome: lrl, frequency: 1.3)
+
+Group 'lsl' (1 words):
+  lsl (center palindrome: lsl, frequency: 1.9)
+
+Group 'ltl' (1 words):
+  ltl (center palindrome: ltl, frequency: 2.1)
+
+Group 'lul' (1 words):
+  lul (center palindrome: lul, frequency: 2.6)
+
+Group 'lvl' (1 words):
+  lvl (center palindrome: lvl, frequency: 3.2)
+
+Group 'lwl' (1 words):
+  lwl (center palindrome: lwl, frequency: 1.3)
+
+Group 'lyl' (1 words):
+  lyl (center palindrome: lyl, frequency: 1.0)
+
+Group 'mam' (1 words):
+  mam (center palindrome: mam, frequency: 3.2)
+
+Group 'mbm' (1 words):
+  mbm (center palindrome: mbm, frequency: 1.9)
+
+Group 'mcm' (1 words):
+  mcm (center palindrome: mcm, frequency: 2.8)
+
+Group 'mdm' (1 words):
+  mdm (center palindrome: mdm, frequency: 2.5)
+
+Group 'mem' (1 words):
+  mem (center palindrome: mem, frequency: 2.9)
+
+Group 'mfm' (1 words):
+  mfm (center palindrome: mfm, frequency: 2.2)
+
+Group 'mgm' (1 words):
+  mgm (center palindrome: mgm, frequency: 3.3)
+
+Group 'mhm' (1 words):
+  mhm (center palindrome: mhm, frequency: 2.5)
+
+Group 'mim' (1 words):
+  mim (center palindrome: mim, frequency: 2.8)
+
+Group 'mjm' (1 words):
+  mjm (center palindrome: mjm, frequency: 1.8)
+
+Group 'mkm' (1 words):
+  mkm (center palindrome: mkm, frequency: 1.6)
+
+Group 'mlm' (1 words):
+  mlm (center palindrome: mlm, frequency: 3.1)
+
+Group 'mmm' (1 words):
+  mmm (center palindrome: mmm, frequency: 3.5)
+
+Group 'mnm' (1 words):
+  mnm (center palindrome: mnm, frequency: 1.9)
+
+Group 'mom' (1 words):
+  mom (center palindrome: mom, frequency: 5.1)
+
+Group 'mpm' (1 words):
+  mpm (center palindrome: mpm, frequency: 2.1)
+
+Group 'mqm' (1 words):
+  mqm (center palindrome: mqm, frequency: 2.3)
+
+Group 'mrm' (1 words):
+  mrm (center palindrome: mrm, frequency: 2.0)
+
+Group 'msm' (1 words):
+  msm (center palindrome: msm, frequency: 3.3)
+
+Group 'mtm' (1 words):
+  mtm (center palindrome: mtm, frequency: 2.3)
+
+Group 'mum' (1 words):
+  mum (center palindrome: mum, frequency: 4.4)
+
+Group 'mvm' (1 words):
+  mvm (center palindrome: mvm, frequency: 1.9)
+
+Group 'mwm' (1 words):
+  mwm (center palindrome: mwm, frequency: 1.8)
+
+Group 'mxm' (1 words):
+  mxm (center palindrome: mxm, frequency: 1.7)
+
+Group 'mym' (1 words):
+  mym (center palindrome: mym, frequency: 1.6)
+
+Group 'mzm' (1 words):
+  mzm (center palindrome: mzm, frequency: 1.0)
+
+Group 'nan' (1 words):
+  nan (center palindrome: nan, frequency: 3.5)
+
+Group 'nbn' (1 words):
+  nbn (center palindrome: nbn, frequency: 2.8)
+
+Group 'ncn' (1 words):
+  ncn (center palindrome: ncn, frequency: 1.6)
+
+Group 'ndn' (1 words):
+  ndn (center palindrome: ndn, frequency: 1.7)
+
+Group 'nen' (1 words):
+  nen (center palindrome: nen, frequency: 2.5)
+
+Group 'ngn' (1 words):
+  ngn (center palindrome: ngn, frequency: 1.9)
+
+Group 'nhn' (1 words):
+  nhn (center palindrome: nhn, frequency: 1.5)
+
+Group 'nin' (1 words):
+  nin (center palindrome: nin, frequency: 2.9)
+
+Group 'nln' (1 words):
+  nln (center palindrome: nln, frequency: 1.7)
+
+Group 'nmn' (1 words):
+  nmn (center palindrome: nmn, frequency: 1.5)
+
+Group 'nnn' (1 words):
+  nnn (center palindrome: nnn, frequency: 2.3)
+
+Group 'non' (1 words):
+  non (center palindrome: non, frequency: 5.3)
+
+Group 'npn' (1 words):
+  npn (center palindrome: npn, frequency: 2.1)
+
+Group 'nrn' (1 words):
+  nrn (center palindrome: nrn, frequency: 1.4)
+
+Group 'nsn' (1 words):
+  nsn (center palindrome: nsn, frequency: 2.2)
+
+Group 'ntn' (1 words):
+  ntn (center palindrome: ntn, frequency: 2.2)
+
+Group 'nun' (1 words):
+  nun (center palindrome: nun, frequency: 3.6)
+
+Group 'nvn' (1 words):
+  nvn (center palindrome: nvn, frequency: 1.2)
+
+Group 'nwn' (1 words):
+  nwn (center palindrome: nwn, frequency: 1.6)
+
+Group 'nxn' (1 words):
+  nxn (center palindrome: nxn, frequency: 1.4)
+
+Group 'nyn' (1 words):
+  nyn (center palindrome: nyn, frequency: 1.4)
+
+Group 'oao' (1 words):
+  oao (center palindrome: oao, frequency: 2.0)
+
+Group 'obo' (1 words):
+  obo (center palindrome: obo, frequency: 2.3)
+
+Group 'oco' (1 words):
+  oco (center palindrome: oco, frequency: 2.0)
+
+Group 'odo' (1 words):
+  odo (center palindrome: odo, frequency: 2.8)
+
+Group 'oeo' (1 words):
+  oeo (center palindrome: oeo, frequency: 1.4)
+
+Group 'ofo' (1 words):
+  ofo (center palindrome: ofo, frequency: 1.8)
+
+Group 'ogo' (1 words):
+  ogo (center palindrome: ogo, frequency: 1.8)
+
+Group 'oho' (1 words):
+  oho (center palindrome: oho, frequency: 2.2)
+
+Group 'oio' (1 words):
+  oio (center palindrome: oio, frequency: 1.3)
+
+Group 'ojo' (1 words):
+  ojo (center palindrome: ojo, frequency: 2.4)
+
+Group 'oko' (1 words):
+  oko (center palindrome: oko, frequency: 2.3)
+
+Group 'olo' (1 words):
+  olo (center palindrome: olo, frequency: 1.8)
+
+Group 'omo' (1 words):
+  omo (center palindrome: omo, frequency: 2.6)
+
+Group 'ono' (1 words):
+  ono (center palindrome: ono, frequency: 3.2)
+
+Group 'ooo' (1 words):
+  ooo (center palindrome: ooo, frequency: 3.4)
+
+Group 'opo' (1 words):
+  opo (center palindrome: opo, frequency: 2.1)
+
+Group 'oro' (1 words):
+  oro (center palindrome: oro, frequency: 2.9)
+
+Group 'oso' (1 words):
+  oso (center palindrome: oso, frequency: 2.6)
+
+Group 'oto' (1 words):
+  oto (center palindrome: oto, frequency: 2.4)
+
+Group 'ouo' (1 words):
+  ouo (center palindrome: ouo, frequency: 1.3)
+
+Group 'ovo' (1 words):
+  ovo (center palindrome: ovo, frequency: 2.5)
+
+Group 'owo' (1 words):
+  owo (center palindrome: owo, frequency: 2.5)
+
+Group 'oxo' (1 words):
+  oxo (center palindrome: oxo, frequency: 2.5)
+
+Group 'oyo' (1 words):
+  oyo (center palindrome: oyo, frequency: 2.6)
+
+Group 'ozo' (1 words):
+  ozo (center palindrome: ozo, frequency: 1.7)
+
+Group 'pap' (1 words):
+  pap (center palindrome: pap, frequency: 3.3)
+
+Group 'pbp' (1 words):
+  pbp (center palindrome: pbp, frequency: 2.0)
+
+Group 'pcp' (1 words):
+  pcp (center palindrome: pcp, frequency: 2.9)
+
+Group 'pdp' (1 words):
+  pdp (center palindrome: pdp, frequency: 3.1)
+
+Group 'pep' (1 words):
+  pep (center palindrome: pep, frequency: 3.5)
+
+Group 'pfp' (1 words):
+  pfp (center palindrome: pfp, frequency: 2.2)
+
+Group 'pgp' (1 words):
+  pgp (center palindrome: pgp, frequency: 2.5)
+
+Group 'php' (1 words):
+  php (center palindrome: php, frequency: 3.4)
+
+Group 'pip' (1 words):
+  pip (center palindrome: pip, frequency: 3.4)
+
+Group 'pjp' (1 words):
+  pjp (center palindrome: pjp, frequency: 1.2)
+
+Group 'pkp' (1 words):
+  pkp (center palindrome: pkp, frequency: 1.7)
+
+Group 'plp' (1 words):
+  plp (center palindrome: plp, frequency: 2.5)
+
+Group 'pmp' (1 words):
+  pmp (center palindrome: pmp, frequency: 2.4)
+
+Group 'pnp' (1 words):
+  pnp (center palindrome: pnp, frequency: 2.7)
+
+Group 'pop' (1 words):
+  pop (center palindrome: pop, frequency: 4.9)
+
+Group 'ppp' (1 words):
+  ppp (center palindrome: ppp, frequency: 3.3)
+
+Group 'prp' (1 words):
+  prp (center palindrome: prp, frequency: 2.5)
+
+Group 'psp' (1 words):
+  psp (center palindrome: psp, frequency: 3.2)
+
+Group 'ptp' (1 words):
+  ptp (center palindrome: ptp, frequency: 2.3)
+
+Group 'pup' (1 words):
+  pup (center palindrome: pup, frequency: 3.6)
+
+Group 'pvp' (1 words):
+  pvp (center palindrome: pvp, frequency: 3.0)
+
+Group 'pwp' (1 words):
+  pwp (center palindrome: pwp, frequency: 1.8)
+
+Group 'pxp' (1 words):
+  pxp (center palindrome: pxp, frequency: 1.3)
+
+Group 'pyp' (1 words):
+  pyp (center palindrome: pyp, frequency: 1.9)
+
+Group 'qaq' (1 words):
+  qaq (center palindrome: qaq, frequency: 1.2)
+
+Group 'qoq' (1 words):
+  qoq (center palindrome: qoq, frequency: 1.6)
+
+Group 'qqq' (1 words):
+  qqq (center palindrome: qqq, frequency: 1.9)
+
+Group 'rar' (1 words):
+  rar (center palindrome: rar, frequency: 2.7)
+
+Group 'rbr' (1 words):
+  rbr (center palindrome: rbr, frequency: 1.9)
+
+Group 'rcr' (1 words):
+  rcr (center palindrome: rcr, frequency: 2.3)
+
+Group 'rdr' (1 words):
+  rdr (center palindrome: rdr, frequency: 2.2)
+
+Group 'rer' (1 words):
+  rer (center palindrome: rer, frequency: 2.4)
+
+Group 'rfr' (1 words):
+  rfr (center palindrome: rfr, frequency: 1.8)
+
+Group 'rgr' (1 words):
+  rgr (center palindrome: rgr, frequency: 1.5)
+
+Group 'rhr' (1 words):
+  rhr (center palindrome: rhr, frequency: 1.7)
+
+Group 'rir' (1 words):
+  rir (center palindrome: rir, frequency: 1.9)
+
+Group 'rjr' (1 words):
+  rjr (center palindrome: rjr, frequency: 1.9)
+
+Group 'rlr' (1 words):
+  rlr (center palindrome: rlr, frequency: 1.3)
+
+Group 'rmr' (1 words):
+  rmr (center palindrome: rmr, frequency: 2.1)
+
+Group 'rnr' (1 words):
+  rnr (center palindrome: rnr, frequency: 2.2)
+
+Group 'ror' (1 words):
+  ror (center palindrome: ror, frequency: 2.4)
+
+Group 'rpr' (1 words):
+  rpr (center palindrome: rpr, frequency: 2.1)
+
+Group 'rrr' (1 words):
+  rrr (center palindrome: rrr, frequency: 2.4)
+
+Group 'rsr' (1 words):
+  rsr (center palindrome: rsr, frequency: 2.1)
+
+Group 'rtr' (1 words):
+  rtr (center palindrome: rtr, frequency: 2.5)
+
+Group 'rur' (1 words):
+  rur (center palindrome: rur, frequency: 1.8)
+
+Group 'rvr' (1 words):
+  rvr (center palindrome: rvr, frequency: 1.8)
+
+Group 'rwr' (1 words):
+  rwr (center palindrome: rwr, frequency: 1.6)
+
+Group 'rxr' (1 words):
+  rxr (center palindrome: rxr, frequency: 1.5)
+
+Group 'ryr' (1 words):
+  ryr (center palindrome: ryr, frequency: 1.3)
+
+Group 'rzr' (1 words):
+  rzr (center palindrome: rzr, frequency: 1.6)
+
+Group 'sas' (1 words):
+  sas (center palindrome: sas, frequency: 3.5)
+
+Group 'sbs' (1 words):
+  sbs (center palindrome: sbs, frequency: 3.4)
+
+Group 'scs' (1 words):
+  scs (center palindrome: scs, frequency: 2.7)
+
+Group 'sds' (1 words):
+  sds (center palindrome: sds, frequency: 3.0)
+
+Group 'ses' (1 words):
+  ses (center palindrome: ses, frequency: 3.3)
+
+Group 'sfs' (1 words):
+  sfs (center palindrome: sfs, frequency: 2.5)
+
+Group 'sgs' (1 words):
+  sgs (center palindrome: sgs, frequency: 2.5)
+
+Group 'shs' (1 words):
+  shs (center palindrome: shs, frequency: 2.8)
+
+Group 'sis' (1 words):
+  sis (center palindrome: sis, frequency: 3.6)
+
+Group 'sjs' (1 words):
+  sjs (center palindrome: sjs, frequency: 2.0)
+
+Group 'sks' (1 words):
+  sks (center palindrome: sks, frequency: 2.3)
+
+Group 'sls' (1 words):
+  sls (center palindrome: sls, frequency: 3.0)
+
+Group 'sms' (1 words):
+  sms (center palindrome: sms, frequency: 3.7)
+
+Group 'sns' (1 words):
+  sns (center palindrome: sns, frequency: 2.8)
+
+Group 'sos' (1 words):
+  sos (center palindrome: sos, frequency: 3.4)
+
+Group 'sps' (1 words):
+  sps (center palindrome: sps, frequency: 2.9)
+
+Group 'sqs' (1 words):
+  sqs (center palindrome: sqs, frequency: 1.7)
+
+Group 'srs' (1 words):
+  srs (center palindrome: srs, frequency: 3.0)
+
+Group 'sss' (1 words):
+  sss (center palindrome: sss, frequency: 2.9)
+
+Group 'sts' (1 words):
+  sts (center palindrome: sts, frequency: 3.3)
+
+Group 'sus' (1 words):
+  sus (center palindrome: sus, frequency: 3.0)
+
+Group 'svs' (1 words):
+  svs (center palindrome: svs, frequency: 2.1)
+
+Group 'sws' (1 words):
+  sws (center palindrome: sws, frequency: 2.3)
+
+Group 'sxs' (1 words):
+  sxs (center palindrome: sxs, frequency: 1.6)
+
+Group 'sys' (1 words):
+  sys (center palindrome: sys, frequency: 2.8)
+
+Group 'szs' (1 words):
+  szs (center palindrome: szs, frequency: 1.0)
+
+Group 'tat' (1 words):
+  tat (center palindrome: tat, frequency: 3.4)
+
+Group 'tbt' (1 words):
+  tbt (center palindrome: tbt, frequency: 2.4)
+
+Group 'tct' (1 words):
+  tct (center palindrome: tct, frequency: 2.1)
+
+Group 'tdt' (1 words):
+  tdt (center palindrome: tdt, frequency: 1.8)
+
+Group 'tet' (1 words):
+  tet (center palindrome: tet, frequency: 2.8)
+
+Group 'tft' (1 words):
+  tft (center palindrome: tft, frequency: 2.6)
+
+Group 'tgt' (1 words):
+  tgt (center palindrome: tgt, frequency: 2.3)
+
+Group 'tht' (1 words):
+  tht (center palindrome: tht, frequency: 2.7)
+
+Group 'tit' (1 words):
+  tit (center palindrome: tit, frequency: 3.5)
+
+Group 'tkt' (1 words):
+  tkt (center palindrome: tkt, frequency: 1.6)
+
+Group 'tlt' (1 words):
+  tlt (center palindrome: tlt, frequency: 1.8)
+
+Group 'tmt' (1 words):
+  tmt (center palindrome: tmt, frequency: 2.4)
+
+Group 'tnt' (1 words):
+  tnt (center palindrome: tnt, frequency: 3.3)
+
+Group 'tot' (1 words):
+  tot (center palindrome: tot, frequency: 3.2)
+
+Group 'tpt' (1 words):
+  tpt (center palindrome: tpt, frequency: 2.0)
+
+Group 'trt' (1 words):
+  trt (center palindrome: trt, frequency: 2.6)
+
+Group 'tst' (1 words):
+  tst (center palindrome: tst, frequency: 2.3)
+
+Group 'ttt' (1 words):
+  ttt (center palindrome: ttt, frequency: 2.6)
+
+Group 'tut' (1 words):
+  tut (center palindrome: tut, frequency: 2.9)
+
+Group 'tvt' (1 words):
+  tvt (center palindrome: tvt, frequency: 2.1)
+
+Group 'twt' (1 words):
+  twt (center palindrome: twt, frequency: 1.9)
+
+Group 'txt' (1 words):
+  txt (center palindrome: txt, frequency: 3.1)
+
+Group 'tyt' (1 words):
+  tyt (center palindrome: tyt, frequency: 2.1)
+
+Group 'uau' (1 words):
+  uau (center palindrome: uau, frequency: 1.3)
+
+Group 'ubu' (1 words):
+  ubu (center palindrome: ubu, frequency: 1.9)
+
+Group 'ucu' (1 words):
+  ucu (center palindrome: ucu, frequency: 2.0)
+
+Group 'udu' (1 words):
+  udu (center palindrome: udu, frequency: 1.4)
+
+Group 'ufu' (1 words):
+  ufu (center palindrome: ufu, frequency: 1.2)
+
+Group 'ugu' (1 words):
+  ugu (center palindrome: ugu, frequency: 1.3)
+
+Group 'uhu' (1 words):
+  uhu (center palindrome: uhu, frequency: 1.7)
+
+Group 'uiu' (1 words):
+  uiu (center palindrome: uiu, frequency: 1.2)
+
+Group 'uju' (1 words):
+  uju (center palindrome: uju, frequency: 1.1)
+
+Group 'uku' (1 words):
+  uku (center palindrome: uku, frequency: 1.5)
+
+Group 'ulu' (1 words):
+  ulu (center palindrome: ulu, frequency: 2.1)
+
+Group 'umu' (1 words):
+  umu (center palindrome: umu, frequency: 1.8)
+
+Group 'unu' (1 words):
+  unu (center palindrome: unu, frequency: 2.1)
+
+Group 'uou' (1 words):
+  uou (center palindrome: uou, frequency: 1.9)
+
+Group 'upu' (1 words):
+  upu (center palindrome: upu, frequency: 1.9)
+
+Group 'uru' (1 words):
+  uru (center palindrome: uru, frequency: 2.2)
+
+Group 'usu' (1 words):
+  usu (center palindrome: usu, frequency: 2.4)
+
+Group 'utu' (1 words):
+  utu (center palindrome: utu, frequency: 1.7)
+
+Group 'uuu' (1 words):
+  uuu (center palindrome: uuu, frequency: 1.7)
+
+Group 'uvu' (1 words):
+  uvu (center palindrome: uvu, frequency: 1.6)
+
+Group 'uwu' (1 words):
+  uwu (center palindrome: uwu, frequency: 2.6)
+
+Group 'uyu' (1 words):
+  uyu (center palindrome: uyu, frequency: 1.2)
+
+Group 'vav' (1 words):
+  vav (center palindrome: vav, frequency: 2.1)
+
+Group 'vcv' (1 words):
+  vcv (center palindrome: vcv, frequency: 1.4)
+
+Group 'vdv' (1 words):
+  vdv (center palindrome: vdv, frequency: 1.6)
+
+Group 'vev' (1 words):
+  vev (center palindrome: vev, frequency: 1.2)
+
+Group 'viv' (1 words):
+  viv (center palindrome: viv, frequency: 2.9)
+
+Group 'vlv' (1 words):
+  vlv (center palindrome: vlv, frequency: 1.2)
+
+Group 'vnv' (1 words):
+  vnv (center palindrome: vnv, frequency: 1.3)
+
+Group 'vov' (1 words):
+  vov (center palindrome: vov, frequency: 1.5)
+
+Group 'vrv' (1 words):
+  vrv (center palindrome: vrv, frequency: 1.5)
+
+Group 'vsv' (1 words):
+  vsv (center palindrome: vsv, frequency: 1.9)
+
+Group 'vtv' (1 words):
+  vtv (center palindrome: vtv, frequency: 1.7)
+
+Group 'vuv' (1 words):
+  vuv (center palindrome: vuv, frequency: 1.6)
+
+Group 'vvv' (1 words):
+  vvv (center palindrome: vvv, frequency: 2.2)
+
+Group 'vzv' (1 words):
+  vzv (center palindrome: vzv, frequency: 1.6)
+
+Group 'waw' (1 words):
+  waw (center palindrome: waw, frequency: 2.4)
+
+Group 'wbw' (1 words):
+  wbw (center palindrome: wbw, frequency: 1.3)
+
+Group 'wcw' (1 words):
+  wcw (center palindrome: wcw, frequency: 3.1)
+
+Group 'wdw' (1 words):
+  wdw (center palindrome: wdw, frequency: 2.2)
+
+Group 'wew' (1 words):
+  wew (center palindrome: wew, frequency: 2.3)
+
+Group 'wfw' (1 words):
+  wfw (center palindrome: wfw, frequency: 1.1)
+
+Group 'whw' (1 words):
+  whw (center palindrome: whw, frequency: 1.3)
+
+Group 'wiw' (1 words):
+  wiw (center palindrome: wiw, frequency: 1.1)
+
+Group 'wjw' (1 words):
+  wjw (center palindrome: wjw, frequency: 1.2)
+
+Group 'wlw' (1 words):
+  wlw (center palindrome: wlw, frequency: 2.1)
+
+Group 'wmw' (1 words):
+  wmw (center palindrome: wmw, frequency: 1.1)
+
+Group 'wnw' (1 words):
+  wnw (center palindrome: wnw, frequency: 2.2)
+
+Group 'wow' (1 words):
+  wow (center palindrome: wow, frequency: 5.0)
+
+Group 'wpw' (1 words):
+  wpw (center palindrome: wpw, frequency: 1.4)
+
+Group 'wsw' (1 words):
+  wsw (center palindrome: wsw, frequency: 2.2)
+
+Group 'wtw' (1 words):
+  wtw (center palindrome: wtw, frequency: 1.5)
+
+Group 'wvw' (1 words):
+  wvw (center palindrome: wvw, frequency: 1.2)
+
+Group 'www' (1 words):
+  www (center palindrome: www, frequency: 3.4)
+
+Group 'wxw' (1 words):
+  wxw (center palindrome: wxw, frequency: 1.1)
+
+Group 'xcx' (1 words):
+  xcx (center palindrome: xcx, frequency: 2.4)
+
+Group 'xex' (1 words):
+  xex (center palindrome: xex, frequency: 1.3)
+
+Group 'xfx' (1 words):
+  xfx (center palindrome: xfx, frequency: 1.6)
+
+Group 'xix' (1 words):
+  xix (center palindrome: xix, frequency: 2.9)
+
+Group 'xox' (1 words):
+  xox (center palindrome: xox, frequency: 1.8)
+
+Group 'xrx' (1 words):
+  xrx (center palindrome: xrx, frequency: 1.1)
+
+Group 'xtx' (1 words):
+  xtx (center palindrome: xtx, frequency: 1.1)
+
+Group 'xxx' (1 words):
+  xxx (center palindrome: xxx, frequency: 3.7)
+
+Group 'yay' (1 words):
+  yay (center palindrome: yay, frequency: 3.9)
+
+Group 'yey' (1 words):
+  yey (center palindrome: yey, frequency: 2.1)
+
+Group 'yoy' (1 words):
+  yoy (center palindrome: yoy, frequency: 2.8)
+
+Group 'yyy' (1 words):
+  yyy (center palindrome: yyy, frequency: 1.7)
+
+Group 'zaz' (1 words):
+  zaz (center palindrome: zaz, frequency: 1.5)
+
+Group 'zez' (1 words):
+  zez (center palindrome: zez, frequency: 1.1)
+
+Group 'ziz' (1 words):
+  ziz (center palindrome: ziz, frequency: 1.6)
+
+Group 'zuz' (1 words):
+  zuz (center palindrome: zuz, frequency: 1.1)
+
+Group 'zzz' (1 words):
+  zzz (center palindrome: zzz, frequency: 2.2)
+

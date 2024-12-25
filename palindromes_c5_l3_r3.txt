@@ -1,0 +1,129 @@
+Found 52 words with 5-letter center palindromes
+(3 letters left, 3 letters right):
+Grouped by 36 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'itati' (10 words):
+  limitations (center palindrome: itati, frequency: 4.0)
+  invitations (center palindrome: itati, frequency: 3.4)
+  meditations (center palindrome: itati, frequency: 3.0)
+  visitations (center palindrome: itati, frequency: 2.5)
+  irritations (center palindrome: itati, frequency: 2.3)
+  recitations (center palindrome: itati, frequency: 2.2)
+  hesitations (center palindrome: itati, frequency: 2.2)
+  excitations (center palindrome: itati, frequency: 2.2)
+  habitations (center palindrome: itati, frequency: 2.1)
+  recitatives (center palindrome: itati, frequency: 1.6)
+
+Group 'libil' (3 words):
+  fallibility (center palindrome: libil, frequency: 2.1)
+  gullibility (center palindrome: libil, frequency: 2.1)
+  fallibilism (center palindrome: libil, frequency: 1.1)
+
+Group 'seles' (3 words):
+  ceaselessly (center palindrome: seles, frequency: 2.4)
+  senselessly (center palindrome: seles, frequency: 2.0)
+  noiselessly (center palindrome: seles, frequency: 1.7)
+
+Group 'ndedn' (2 words):
+  boundedness (center palindrome: ndedn, frequency: 1.6)
+  roundedness (center palindrome: ndedn, frequency: 1.2)
+
+Group 'nesen' (2 words):
+  voznesensky (center palindrome: nesen, frequency: 1.1)
+  chineseness (center palindrome: nesen, frequency: 1.1)
+
+Group 'ropor' (2 words):
+  microporous (center palindrome: ropor, frequency: 1.7)
+  macroporous (center palindrome: ropor, frequency: 1.2)
+
+Group 'artra' (1 words):
+  iheartradio (center palindrome: artra, frequency: 2.5)
+
+Group 'capac' (1 words):
+  biocapacity (center palindrome: capac, frequency: 1.0)
+
+Group 'cific' (1 words):
+  specificity (center palindrome: cific, frequency: 3.2)
+
+Group 'divid' (1 words):
+  subdividing (center palindrome: divid, frequency: 2.0)
+
+Group 'enkne' (1 words):
+  wagenknecht (center palindrome: enkne, frequency: 1.2)
+
+Group 'galag' (1 words):
+  mangalagiri (center palindrome: galag, frequency: 1.1)
+
+Group 'htyth' (1 words):
+  eightythree (center palindrome: htyth, frequency: 1.0)
+
+Group 'icaci' (1 words):
+  efficacious (center palindrome: icaci, frequency: 2.5)
+
+Group 'lllll' (1 words):
+  reallllllly (center palindrome: lllll, frequency: 1.4)
+
+Group 'modom' (1 words):
+  bromodomain (center palindrome: modom, frequency: 1.1)
+
+Group 'nidin' (1 words):
+  guanidinium (center palindrome: nidin, frequency: 1.1)
+
+Group 'nilin' (1 words):
+  cunnilingus (center palindrome: nilin, frequency: 2.3)
+
+Group 'nisin' (1 words):
+  agonisingly (center palindrome: nisin, frequency: 1.7)
+
+Group 'nizin' (1 words):
+  agonizingly (center palindrome: nizin, frequency: 2.0)
+
+Group 'nymyn' (1 words):
+  llanymynech (center palindrome: nymyn, frequency: 1.1)
+
+Group 'polop' (1 words):
+  chipolopolo (center palindrome: polop, frequency: 1.1)
+
+Group 'ramar' (1 words):
+  ultramarine (center palindrome: ramar, frequency: 2.2)
+
+Group 'reser' (1 words):
+  unpreserved (center palindrome: reser, frequency: 1.0)
+
+Group 'robor' (1 words):
+  corroborate (center palindrome: robor, frequency: 2.9)
+
+Group 'rofor' (1 words):
+  microformat (center palindrome: rofor, frequency: 1.0)
+
+Group 'romor' (1 words):
+  necromorphs (center palindrome: romor, frequency: 1.1)
+
+Group 'rowor' (1 words):
+  microworlds (center palindrome: rowor, frequency: 1.0)
+
+Group 'rtstr' (1 words):
+  heartstring (center palindrome: rtstr, frequency: 1.5)
+
+Group 'sidis' (1 words):
+  subsidising (center palindrome: sidis, frequency: 2.2)
+
+Group 'simis' (1 words):
+  pessimistic (center palindrome: simis, frequency: 3.2)
+
+Group 'sitis' (1 words):
+  sensitising (center palindrome: sitis, frequency: 1.2)
+
+Group 'ssess' (1 words):
+  reassessing (center palindrome: ssess, frequency: 2.2)
+
+Group 'talat' (1 words):
+  instalation (center palindrome: talat, frequency: 1.1)
+
+Group 'tilit' (1 words):
+  hostilities (center palindrome: tilit, frequency: 3.4)
+
+Group 'tivit' (1 words):
+  festivities (center palindrome: tivit, frequency: 3.5)
+

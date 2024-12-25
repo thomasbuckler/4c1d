@@ -1,0 +1,83 @@
+Found 42 words with 4-letter center palindromes
+(3 letters left, 4 letters right):
+Grouped by 18 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'arra' (6 words):
+  embarrassed (center palindrome: arra, frequency: 4.0)
+  unwarranted (center palindrome: arra, frequency: 3.1)
+  embarrasses (center palindrome: arra, frequency: 2.4)
+  prearranged (center palindrome: arra, frequency: 2.3)
+  embarrasing (center palindrome: arra, frequency: 2.0)
+  disarranged (center palindrome: arra, frequency: 1.2)
+
+Group 'elle' (6 words):
+  excellently (center palindrome: elle, frequency: 2.8)
+  houellebecq (center palindrome: elle, frequency: 1.6)
+  excellences (center palindrome: elle, frequency: 1.4)
+  intellegent (center palindrome: elle, frequency: 1.3)
+  intellectus (center palindrome: elle, frequency: 1.2)
+  jewelleries (center palindrome: elle, frequency: 1.1)
+
+Group 'erre' (4 words):
+  interregnum (center palindrome: erre, frequency: 2.2)
+  interrelate (center palindrome: erre, frequency: 1.7)
+  underreport (center palindrome: erre, frequency: 1.4)
+  interrested (center palindrome: erre, frequency: 1.1)
+
+Group 'illi' (4 words):
+  unwillingly (center palindrome: illi, frequency: 2.6)
+  mcgillivray (center palindrome: illi, frequency: 1.9)
+  thrillingly (center palindrome: illi, frequency: 1.9)
+  schillinger (center palindrome: illi, frequency: 1.9)
+
+Group 'issi' (3 words):
+  comissioner (center palindrome: issi, frequency: 1.4)
+  vicissitude (center palindrome: issi, frequency: 1.3)
+  comissioned (center palindrome: issi, frequency: 1.3)
+
+Group 'itti' (3 words):
+  unwittingly (center palindrome: itti, frequency: 3.1)
+  bukittinggi (center palindrome: itti, frequency: 1.2)
+  splittingly (center palindrome: itti, frequency: 1.1)
+
+Group 'affa' (2 words):
+  muzaffarpur (center palindrome: affa, frequency: 1.9)
+  mozaffarian (center palindrome: affa, frequency: 1.0)
+
+Group 'anna' (2 words):
+  jagannathan (center palindrome: anna, frequency: 1.4)
+  savannakhet (center palindrome: anna, frequency: 1.3)
+
+Group 'assa' (2 words):
+  ambassadors (center palindrome: assa, frequency: 3.5)
+  ambassadeur (center palindrome: assa, frequency: 1.3)
+
+Group 'onno' (2 words):
+  reconnoiter (center palindrome: onno, frequency: 1.9)
+  reconnoitre (center palindrome: onno, frequency: 1.8)
+
+Group 'aaaa' (1 words):
+  amaaaaazing (center palindrome: aaaa, frequency: 1.1)
+
+Group 'abba' (1 words):
+  mohabbatein (center palindrome: abba, frequency: 1.7)
+
+Group 'ecce' (1 words):
+  unneccesary (center palindrome: ecce, frequency: 1.1)
+
+Group 'eeee' (1 words):
+  reeeeeeally (center palindrome: eeee, frequency: 1.2)
+
+Group 'egge' (1 words):
+  brueggemann (center palindrome: egge, frequency: 1.5)
+
+Group 'ollo' (1 words):
+  unfollowing (center palindrome: ollo, frequency: 1.8)
+
+Group 'ommo' (1 words):
+  accommodate (center palindrome: ommo, frequency: 4.0)
+
+Group 'osso' (1 words):
+  rokossovsky (center palindrome: osso, frequency: 1.1)
+

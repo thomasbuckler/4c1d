@@ -1,0 +1,83 @@
+Found 26 words with 2-letter center palindromes
+(0 letters left, 0 letters right):
+Grouped by 26 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'aa' (1 words):
+  aa (center palindrome: aa, frequency: 4.0)
+
+Group 'bb' (1 words):
+  bb (center palindrome: bb, frequency: 3.8)
+
+Group 'cc' (1 words):
+  cc (center palindrome: cc, frequency: 4.2)
+
+Group 'dd' (1 words):
+  dd (center palindrome: dd, frequency: 3.7)
+
+Group 'ee' (1 words):
+  ee (center palindrome: ee, frequency: 3.6)
+
+Group 'ff' (1 words):
+  ff (center palindrome: ff, frequency: 3.8)
+
+Group 'gg' (1 words):
+  gg (center palindrome: gg, frequency: 3.4)
+
+Group 'hh' (1 words):
+  hh (center palindrome: hh, frequency: 3.2)
+
+Group 'ii' (1 words):
+  ii (center palindrome: ii, frequency: 5.0)
+
+Group 'jj' (1 words):
+  jj (center palindrome: jj, frequency: 3.6)
+
+Group 'kk' (1 words):
+  kk (center palindrome: kk, frequency: 3.2)
+
+Group 'll' (1 words):
+  ll (center palindrome: ll, frequency: 4.7)
+
+Group 'mm' (1 words):
+  mm (center palindrome: mm, frequency: 4.7)
+
+Group 'nn' (1 words):
+  nn (center palindrome: nn, frequency: 3.0)
+
+Group 'oo' (1 words):
+  oo (center palindrome: oo, frequency: 3.6)
+
+Group 'pp' (1 words):
+  pp (center palindrome: pp, frequency: 4.4)
+
+Group 'qq' (1 words):
+  qq (center palindrome: qq, frequency: 2.7)
+
+Group 'rr' (1 words):
+  rr (center palindrome: rr, frequency: 3.4)
+
+Group 'ss' (1 words):
+  ss (center palindrome: ss, frequency: 4.1)
+
+Group 'tt' (1 words):
+  tt (center palindrome: tt, frequency: 3.6)
+
+Group 'uu' (1 words):
+  uu (center palindrome: uu, frequency: 2.7)
+
+Group 'vv' (1 words):
+  vv (center palindrome: vv, frequency: 2.8)
+
+Group 'ww' (1 words):
+  ww (center palindrome: ww, frequency: 3.3)
+
+Group 'xx' (1 words):
+  xx (center palindrome: xx, frequency: 3.7)
+
+Group 'yy' (1 words):
+  yy (center palindrome: yy, frequency: 2.4)
+
+Group 'zz' (1 words):
+  zz (center palindrome: zz, frequency: 2.8)
+

@@ -1,0 +1,381 @@
+Found 164 words with 5-letter center palindromes
+(1 letters left, 1 letters right):
+Grouped by 106 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'ooooo' (12 words):
+  soooooo (center palindrome: ooooo, frequency: 2.8)
+  noooooo (center palindrome: ooooo, frequency: 2.4)
+  goooood (center palindrome: ooooo, frequency: 1.9)
+  woooooo (center palindrome: ooooo, frequency: 1.9)
+  goooooo (center palindrome: ooooo, frequency: 1.6)
+  boooooo (center palindrome: ooooo, frequency: 1.6)
+  toooooo (center palindrome: ooooo, frequency: 1.5)
+  yoooooo (center palindrome: ooooo, frequency: 1.4)
+  coooool (center palindrome: ooooo, frequency: 1.2)
+  doooooo (center palindrome: ooooo, frequency: 1.2)
+  hoooooo (center palindrome: ooooo, frequency: 1.2)
+  looooot (center palindrome: ooooo, frequency: 1.1)
+
+Group 'aaaaa' (8 words):
+  waaaaay (center palindrome: aaaaa, frequency: 2.4)
+  maaaaan (center palindrome: aaaaa, frequency: 1.7)
+  waaaaah (center palindrome: aaaaa, frequency: 1.5)
+  baaaaad (center palindrome: aaaaa, frequency: 1.5)
+  haaaaaa (center palindrome: aaaaa, frequency: 1.2)
+  yaaaaas (center palindrome: aaaaa, frequency: 1.1)
+  faaaaar (center palindrome: aaaaa, frequency: 1.1)
+  naaaaah (center palindrome: aaaaa, frequency: 1.1)
+
+Group 'eeeee' (6 words):
+  meeeeee (center palindrome: eeeee, frequency: 1.6)
+  neeeeed (center palindrome: eeeee, frequency: 1.3)
+  weeeeee (center palindrome: eeeee, frequency: 1.2)
+  heeeeey (center palindrome: eeeee, frequency: 1.2)
+  yeeeees (center palindrome: eeeee, frequency: 1.2)
+  deeeeep (center palindrome: eeeee, frequency: 1.0)
+
+Group 'alala' (5 words):
+  salalah (center palindrome: alala, frequency: 1.7)
+  talalay (center palindrome: alala, frequency: 1.6)
+  malalas (center palindrome: alala, frequency: 1.3)
+  kalalau (center palindrome: alala, frequency: 1.3)
+  malalai (center palindrome: alala, frequency: 1.2)
+
+Group 'hhhhh' (5 words):
+  ahhhhhh (center palindrome: hhhhh, frequency: 2.2)
+  ohhhhhh (center palindrome: hhhhh, frequency: 2.1)
+  shhhhhh (center palindrome: hhhhh, frequency: 1.9)
+  uhhhhhh (center palindrome: hhhhh, frequency: 1.8)
+  ehhhhhh (center palindrome: hhhhh, frequency: 1.4)
+
+Group 'remer' (4 words):
+  kremers (center palindrome: remer, frequency: 1.4)
+  tremere (center palindrome: remer, frequency: 1.2)
+  cremers (center palindrome: remer, frequency: 1.1)
+  premera (center palindrome: remer, frequency: 1.0)
+
+Group 'rewer' (4 words):
+  brewery (center palindrome: rewer, frequency: 3.7)
+  brewers (center palindrome: rewer, frequency: 3.5)
+  drewery (center palindrome: rewer, frequency: 1.2)
+  urewera (center palindrome: rewer, frequency: 1.2)
+
+Group 'atata' (3 words):
+  ratatat (center palindrome: atata, frequency: 1.6)
+  patatas (center palindrome: atata, frequency: 1.6)
+  batatas (center palindrome: atata, frequency: 1.3)
+
+Group 'eifie' (3 words):
+  reified (center palindrome: eifie, frequency: 1.7)
+  reifies (center palindrome: eifie, frequency: 1.2)
+  deifies (center palindrome: eifie, frequency: 1.1)
+
+Group 'entne' (3 words):
+  gentner (center palindrome: entne, frequency: 1.7)
+  zentner (center palindrome: entne, frequency: 1.3)
+  kentner (center palindrome: entne, frequency: 1.2)
+
+Group 'rrrrr' (3 words):
+  grrrrrr (center palindrome: rrrrr, frequency: 1.6)
+  orrrrrr (center palindrome: rrrrr, frequency: 1.1)
+  brrrrrr (center palindrome: rrrrr, frequency: 1.0)
+
+Group 'ahaha' (2 words):
+  hahahaa (center palindrome: ahaha, frequency: 1.5)
+  bahahah (center palindrome: ahaha, frequency: 1.1)
+
+Group 'angna' (2 words):
+  gangnam (center palindrome: angna, frequency: 2.8)
+  kangnam (center palindrome: angna, frequency: 1.4)
+
+Group 'arfra' (2 words):
+  sarfraz (center palindrome: arfra, frequency: 2.1)
+  carfrae (center palindrome: arfra, frequency: 1.2)
+
+Group 'evive' (2 words):
+  revived (center palindrome: evive, frequency: 3.6)
+  revives (center palindrome: evive, frequency: 2.8)
+
+Group 'mmmmm' (2 words):
+  hmmmmmm (center palindrome: mmmmm, frequency: 2.0)
+  ummmmmm (center palindrome: mmmmm, frequency: 1.4)
+
+Group 'oodoo' (2 words):
+  hoodoos (center palindrome: oodoo, frequency: 1.6)
+  voodoos (center palindrome: oodoo, frequency: 1.1)
+
+Group 'otato' (2 words):
+  potatoe (center palindrome: otato, frequency: 2.1)
+  potatos (center palindrome: otato, frequency: 1.9)
+
+Group 'ramar' (2 words):
+  aramark (center palindrome: ramar, frequency: 2.0)
+  kramarz (center palindrome: ramar, frequency: 1.0)
+
+Group 'ranar' (2 words):
+  granary (center palindrome: ranar, frequency: 2.6)
+  granard (center palindrome: ranar, frequency: 1.4)
+
+Group 'refer' (2 words):
+  prefers (center palindrome: refer, frequency: 3.7)
+  prefere (center palindrome: refer, frequency: 1.4)
+
+Group 'reter' (2 words):
+  preterm (center palindrome: reter, frequency: 2.8)
+  ureters (center palindrome: reter, frequency: 1.8)
+
+Group 'rever' (2 words):
+  prevert (center palindrome: rever, frequency: 1.2)
+  frevert (center palindrome: rever, frequency: 1.2)
+
+Group 'wwwww' (2 words):
+  awwwwww (center palindrome: wwwww, frequency: 1.7)
+  ewwwwww (center palindrome: wwwww, frequency: 1.2)
+
+Group 'aceca' (1 words):
+  facecam (center palindrome: aceca, frequency: 1.5)
+
+Group 'aidia' (1 words):
+  haidian (center palindrome: aidia, frequency: 1.5)
+
+Group 'airia' (1 words):
+  zairian (center palindrome: airia, frequency: 1.4)
+
+Group 'aitia' (1 words):
+  haitian (center palindrome: aitia, frequency: 3.4)
+
+Group 'alila' (1 words):
+  dalilah (center palindrome: alila, frequency: 1.2)
+
+Group 'alula' (1 words):
+  talulah (center palindrome: alula, frequency: 1.4)
+
+Group 'amama' (1 words):
+  yamamah (center palindrome: amama, frequency: 1.1)
+
+Group 'ampma' (1 words):
+  lampman (center palindrome: ampma, frequency: 1.6)
+
+Group 'anana' (1 words):
+  bananas (center palindrome: anana, frequency: 3.7)
+
+Group 'apopa' (1 words):
+  zapopan (center palindrome: apopa, frequency: 1.3)
+
+Group 'arkra' (1 words):
+  darkrai (center palindrome: arkra, frequency: 1.6)
+
+Group 'artra' (1 words):
+  bartram (center palindrome: artra, frequency: 2.3)
+
+Group 'bitib' (1 words):
+  abitibi (center palindrome: bitib, frequency: 1.9)
+
+Group 'ddddd' (1 words):
+  xdddddd (center palindrome: ddddd, frequency: 1.2)
+
+Group 'eegee' (1 words):
+  beegees (center palindrome: eegee, frequency: 1.2)
+
+Group 'eepee' (1 words):
+  teepees (center palindrome: eepee, frequency: 1.7)
+
+Group 'eeree' (1 words):
+  meereen (center palindrome: eeree, frequency: 2.2)
+
+Group 'eewee' (1 words):
+  peewees (center palindrome: eewee, frequency: 1.1)
+
+Group 'eitie' (1 words):
+  deities (center palindrome: eitie, frequency: 3.2)
+
+Group 'elale' (1 words):
+  zelalem (center palindrome: elale, frequency: 1.5)
+
+Group 'esuse' (1 words):
+  jesuses (center palindrome: esuse, frequency: 1.3)
+
+Group 'etate' (1 words):
+  metates (center palindrome: etate, frequency: 1.1)
+
+Group 'etite' (1 words):
+  petites (center palindrome: etite, frequency: 2.1)
+
+Group 'ettte' (1 words):
+  bettter (center palindrome: ettte, frequency: 1.4)
+
+Group 'etzte' (1 words):
+  letzten (center palindrome: etzte, frequency: 1.5)
+
+Group 'fffff' (1 words):
+  pffffft (center palindrome: fffff, frequency: 1.2)
+
+Group 'iiiii' (1 words):
+  biiiiig (center palindrome: iiiii, frequency: 1.2)
+
+Group 'ioroi' (1 words):
+  bioroid (center palindrome: ioroi, frequency: 1.1)
+
+Group 'irdri' (1 words):
+  airdrie (center palindrome: irdri, frequency: 2.5)
+
+Group 'irgri' (1 words):
+  eirgrid (center palindrome: irgri, frequency: 1.1)
+
+Group 'itoti' (1 words):
+  mitotic (center palindrome: itoti, frequency: 2.5)
+
+Group 'jahaj' (1 words):
+  tjahaja (center palindrome: jahaj, frequency: 1.1)
+
+Group 'kasak' (1 words):
+  akasaki (center palindrome: kasak, frequency: 1.2)
+
+Group 'kazak' (1 words):
+  okazaki (center palindrome: kazak, frequency: 2.2)
+
+Group 'kerek' (1 words):
+  okereke (center palindrome: kerek, frequency: 1.4)
+
+Group 'kihik' (1 words):
+  akihiko (center palindrome: kihik, frequency: 1.9)
+
+Group 'kotok' (1 words):
+  okotoks (center palindrome: kotok, frequency: 1.6)
+
+Group 'lawal' (1 words):
+  olawale (center palindrome: lawal, frequency: 1.4)
+
+Group 'letel' (1 words):
+  pletely (center palindrome: letel, frequency: 1.2)
+
+Group 'lllll' (1 words):
+  allllll (center palindrome: lllll, frequency: 2.0)
+
+Group 'magam' (1 words):
+  amagami (center palindrome: magam, frequency: 1.1)
+
+Group 'naman' (1 words):
+  nnamani (center palindrome: naman, frequency: 1.1)
+
+Group 'nifin' (1 words):
+  knifing (center palindrome: nifin, frequency: 2.2)
+
+Group 'nigin' (1 words):
+  unigine (center palindrome: nigin, frequency: 1.1)
+
+Group 'nilin' (1 words):
+  aniline (center palindrome: nilin, frequency: 2.3)
+
+Group 'nipin' (1 words):
+  sniping (center palindrome: nipin, frequency: 2.9)
+
+Group 'nitin' (1 words):
+  uniting (center palindrome: nitin, frequency: 3.3)
+
+Group 'nnnnn' (1 words):
+  annnnnd (center palindrome: nnnnn, frequency: 1.8)
+
+Group 'obibo' (1 words):
+  sobibor (center palindrome: obibo, frequency: 2.0)
+
+Group 'obobo' (1 words):
+  robobot (center palindrome: obobo, frequency: 1.2)
+
+Group 'odgdo' (1 words):
+  hodgdon (center palindrome: odgdo, frequency: 1.6)
+
+Group 'oisio' (1 words):
+  poision (center palindrome: oisio, frequency: 1.1)
+
+Group 'oitio' (1 words):
+  coition (center palindrome: oitio, frequency: 1.4)
+
+Group 'onono' (1 words):
+  kononov (center palindrome: onono, frequency: 1.4)
+
+Group 'ooboo' (1 words):
+  booboos (center palindrome: ooboo, frequency: 1.0)
+
+Group 'oogoo' (1 words):
+  toogood (center palindrome: oogoo, frequency: 2.0)
+
+Group 'oohoo' (1 words):
+  woohooo (center palindrome: oohoo, frequency: 1.3)
+
+Group 'oonoo' (1 words):
+  coonoor (center palindrome: oonoo, frequency: 1.5)
+
+Group 'oosoo' (1 words):
+  toosoon (center palindrome: oosoo, frequency: 1.2)
+
+Group 'opepo' (1 words):
+  copepod (center palindrome: opepo, frequency: 1.9)
+
+Group 'orero' (1 words):
+  toreros (center palindrome: orero, frequency: 1.4)
+
+Group 'ornro' (1 words):
+  cornrow (center palindrome: ornro, frequency: 1.6)
+
+Group 'rabar' (1 words):
+  grabarz (center palindrome: rabar, frequency: 1.1)
+
+Group 'rahar' (1 words):
+  urahara (center palindrome: rahar, frequency: 1.4)
+
+Group 'reber' (1 words):
+  freberg (center palindrome: reber, frequency: 1.1)
+
+Group 'reder' (1 words):
+  credere (center palindrome: reder, frequency: 1.2)
+
+Group 'reger' (1 words):
+  gregers (center palindrome: reger, frequency: 1.7)
+
+Group 'reser' (1 words):
+  preserv (center palindrome: reser, frequency: 1.0)
+
+Group 'reyer' (1 words):
+  breyers (center palindrome: reyer, frequency: 1.4)
+
+Group 'rofor' (1 words):
+  proform (center palindrome: rofor, frequency: 1.4)
+
+Group 'romor' (1 words):
+  dromore (center palindrome: romor, frequency: 2.1)
+
+Group 'seles' (1 words):
+  useless (center palindrome: seles, frequency: 4.2)
+
+Group 'sssss' (1 words):
+  pssssst (center palindrome: sssss, frequency: 1.1)
+
+Group 'takat' (1 words):
+  utakata (center palindrome: takat, frequency: 1.2)
+
+Group 'teret' (1 words):
+  sterett (center palindrome: teret, frequency: 1.2)
+
+Group 'tilit' (1 words):
+  utility (center palindrome: tilit, frequency: 4.3)
+
+Group 'uumuu' (1 words):
+  muumuus (center palindrome: uumuu, frequency: 1.0)
+
+Group 'uuuuu' (1 words):
+  buuuuut (center palindrome: uuuuu, frequency: 1.9)
+
+Group 'wasaw' (1 words):
+  iwasawa (center palindrome: wasaw, frequency: 1.2)
+
+Group 'wolow' (1 words):
+  awolowo (center palindrome: wolow, frequency: 2.0)
+
+Group 'ynony' (1 words):
+  synonym (center palindrome: ynony, frequency: 3.1)
+
+Group 'yyyyy' (1 words):
+  ayyyyyy (center palindrome: yyyyy, frequency: 1.1)
+

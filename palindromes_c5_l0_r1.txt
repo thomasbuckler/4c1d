@@ -1,0 +1,429 @@
+Found 164 words with 5-letter center palindromes
+(0 letters left, 1 letters right):
+Grouped by 130 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'minim' (5 words):
+  minima (center palindrome: minim, frequency: 2.5)
+  minims (center palindrome: minim, frequency: 1.9)
+  minimi (center palindrome: minim, frequency: 1.6)
+  minime (center palindrome: minim, frequency: 1.4)
+  minimo (center palindrome: minim, frequency: 1.3)
+
+Group 'rever' (5 words):
+  revert (center palindrome: rever, frequency: 3.4)
+  revere (center palindrome: rever, frequency: 3.1)
+  reverb (center palindrome: rever, frequency: 2.9)
+  revers (center palindrome: rever, frequency: 1.6)
+  revery (center palindrome: rever, frequency: 1.1)
+
+Group 'madam' (4 words):
+  madame (center palindrome: madam, frequency: 3.8)
+  madama (center palindrome: madam, frequency: 2.0)
+  madams (center palindrome: madam, frequency: 1.9)
+  madami (center palindrome: madam, frequency: 1.0)
+
+Group 'civic' (3 words):
+  civics (center palindrome: civic, frequency: 2.9)
+  civico (center palindrome: civic, frequency: 1.4)
+  civica (center palindrome: civic, frequency: 1.4)
+
+Group 'kanak' (3 words):
+  kanaka (center palindrome: kanak, frequency: 2.0)
+  kanako (center palindrome: kanak, frequency: 1.9)
+  kanaks (center palindrome: kanak, frequency: 1.1)
+
+Group 'nagan' (3 words):
+  nagano (center palindrome: nagan, frequency: 2.6)
+  nagant (center palindrome: nagan, frequency: 1.8)
+  nagana (center palindrome: nagan, frequency: 1.2)
+
+Group 'conoc' (2 words):
+  conoco (center palindrome: conoc, frequency: 1.9)
+  conoce (center palindrome: conoc, frequency: 1.2)
+
+Group 'eeeee' (2 words):
+  eeeeek (center palindrome: eeeee, frequency: 1.0)
+  eeeeeh (center palindrome: eeeee, frequency: 1.0)
+
+Group 'galag' (2 words):
+  galaga (center palindrome: galag, frequency: 1.8)
+  galago (center palindrome: galag, frequency: 1.3)
+
+Group 'kayak' (2 words):
+  kayaks (center palindrome: kayak, frequency: 2.6)
+  kayako (center palindrome: kayak, frequency: 1.5)
+
+Group 'kirik' (2 words):
+  kiriko (center palindrome: kirik, frequency: 1.6)
+  kirika (center palindrome: kirik, frequency: 1.3)
+
+Group 'kotok' (2 words):
+  kotoko (center palindrome: kotok, frequency: 2.0)
+  kotoka (center palindrome: kotok, frequency: 1.2)
+
+Group 'level' (2 words):
+  levels (center palindrome: level, frequency: 5.0)
+  levell (center palindrome: level, frequency: 1.3)
+
+Group 'lunul' (2 words):
+  lunula (center palindrome: lunul, frequency: 1.3)
+  lunule (center palindrome: lunul, frequency: 1.3)
+
+Group 'manam' (2 words):
+  manama (center palindrome: manam, frequency: 2.4)
+  manami (center palindrome: manam, frequency: 2.0)
+
+Group 'maram' (2 words):
+  marama (center palindrome: maram, frequency: 1.4)
+  marami (center palindrome: maram, frequency: 1.1)
+
+Group 'nakan' (2 words):
+  nakano (center palindrome: nakan, frequency: 2.3)
+  nakane (center palindrome: nakan, frequency: 1.4)
+
+Group 'nalan' (2 words):
+  nalang (center palindrome: nalan, frequency: 1.2)
+  nalani (center palindrome: nalan, frequency: 1.1)
+
+Group 'natan' (2 words):
+  natanz (center palindrome: natan, frequency: 1.9)
+  natans (center palindrome: natan, frequency: 1.3)
+
+Group 'refer' (2 words):
+  refers (center palindrome: refer, frequency: 4.2)
+  refere (center palindrome: refer, frequency: 1.2)
+
+Group 'senes' (2 words):
+  senese (center palindrome: senes, frequency: 1.3)
+  senesi (center palindrome: senes, frequency: 1.1)
+
+Group 'sinis' (2 words):
+  sinise (center palindrome: sinis, frequency: 1.9)
+  sinisa (center palindrome: sinis, frequency: 1.3)
+
+Group 'takat' (2 words):
+  takata (center palindrome: takat, frequency: 2.3)
+  takato (center palindrome: takat, frequency: 1.1)
+
+Group 'aaaaa' (1 words):
+  aaaaah (center palindrome: aaaaa, frequency: 2.2)
+
+Group 'adida' (1 words):
+  adidas (center palindrome: adida, frequency: 3.6)
+
+Group 'aegea' (1 words):
+  aegean (center palindrome: aegea, frequency: 2.9)
+
+Group 'aenea' (1 words):
+  aeneas (center palindrome: aenea, frequency: 2.6)
+
+Group 'aerea' (1 words):
+  aereas (center palindrome: aerea, frequency: 1.2)
+
+Group 'ahaha' (1 words):
+  ahahah (center palindrome: ahaha, frequency: 2.0)
+
+Group 'alcla' (1 words):
+  alclad (center palindrome: alcla, frequency: 1.1)
+
+Group 'alola' (1 words):
+  alolan (center palindrome: alola, frequency: 2.2)
+
+Group 'anana' (1 words):
+  ananas (center palindrome: anana, frequency: 1.7)
+
+Group 'arara' (1 words):
+  ararat (center palindrome: arara, frequency: 2.5)
+
+Group 'aziza' (1 words):
+  azizah (center palindrome: aziza, frequency: 1.5)
+
+Group 'banab' (1 words):
+  banaba (center palindrome: banab, frequency: 1.2)
+
+Group 'basab' (1 words):
+  basabe (center palindrome: basab, frequency: 1.1)
+
+Group 'bobob' (1 words):
+  bobobo (center palindrome: bobob, frequency: 1.2)
+
+Group 'bonob' (1 words):
+  bonobo (center palindrome: bonob, frequency: 2.4)
+
+Group 'cacac' (1 words):
+  cacace (center palindrome: cacac, frequency: 1.4)
+
+Group 'capac' (1 words):
+  capaci (center palindrome: capac, frequency: 1.2)
+
+Group 'carac' (1 words):
+  caraco (center palindrome: carac, frequency: 1.1)
+
+Group 'cavac' (1 words):
+  cavaco (center palindrome: cavac, frequency: 1.4)
+
+Group 'dadad' (1 words):
+  dadada (center palindrome: dadad, frequency: 1.3)
+
+Group 'dalad' (1 words):
+  dalada (center palindrome: dalad, frequency: 1.0)
+
+Group 'deded' (1 words):
+  dedede (center palindrome: deded, frequency: 1.8)
+
+Group 'divid' (1 words):
+  divide (center palindrome: divid, frequency: 4.1)
+
+Group 'duuud' (1 words):
+  duuude (center palindrome: duuud, frequency: 1.6)
+
+Group 'eevee' (1 words):
+  eevees (center palindrome: eevee, frequency: 1.2)
+
+Group 'ehehe' (1 words):
+  eheheh (center palindrome: ehehe, frequency: 1.0)
+
+Group 'elmle' (1 words):
+  elmley (center palindrome: elmle, frequency: 1.2)
+
+Group 'elsle' (1 words):
+  elsley (center palindrome: elsle, frequency: 1.1)
+
+Group 'entne' (1 words):
+  entner (center palindrome: entne, frequency: 1.1)
+
+Group 'epape' (1 words):
+  epaper (center palindrome: epape, frequency: 1.6)
+
+Group 'epipe' (1 words):
+  epipen (center palindrome: epipe, frequency: 2.3)
+
+Group 'gagag' (1 words):
+  gagaga (center palindrome: gagag, frequency: 1.2)
+
+Group 'gamag' (1 words):
+  gamage (center palindrome: gamag, frequency: 1.4)
+
+Group 'garag' (1 words):
+  garage (center palindrome: garag, frequency: 4.2)
+
+Group 'gavag' (1 words):
+  gavage (center palindrome: gavag, frequency: 1.6)
+
+Group 'gogog' (1 words):
+  gogogo (center palindrome: gogog, frequency: 1.4)
+
+Group 'hahah' (1 words):
+  hahaha (center palindrome: hahah, frequency: 3.8)
+
+Group 'heheh' (1 words):
+  hehehe (center palindrome: heheh, frequency: 2.6)
+
+Group 'hohoh' (1 words):
+  hohoho (center palindrome: hohoh, frequency: 1.5)
+
+Group 'huhuh' (1 words):
+  huhuhu (center palindrome: huhuh, frequency: 1.1)
+
+Group 'ibibi' (1 words):
+  ibibio (center palindrome: ibibi, frequency: 1.4)
+
+Group 'jajaj' (1 words):
+  jajaja (center palindrome: jajaj, frequency: 1.4)
+
+Group 'kabak' (1 words):
+  kabaka (center palindrome: kabak, frequency: 1.8)
+
+Group 'kagak' (1 words):
+  kagaku (center palindrome: kagak, frequency: 1.6)
+
+Group 'kajak' (1 words):
+  kajaki (center palindrome: kajak, frequency: 1.4)
+
+Group 'kamak' (1 words):
+  kamaka (center palindrome: kamak, frequency: 1.2)
+
+Group 'karak' (1 words):
+  karaka (center palindrome: karak, frequency: 1.8)
+
+Group 'kawak' (1 words):
+  kawaki (center palindrome: kawak, frequency: 1.2)
+
+Group 'kazak' (1 words):
+  kazakh (center palindrome: kazak, frequency: 3.0)
+
+Group 'kimik' (1 words):
+  kimiko (center palindrome: kimik, frequency: 2.1)
+
+Group 'kobok' (1 words):
+  koboko (center palindrome: kobok, frequency: 1.1)
+
+Group 'kodok' (1 words):
+  kodoku (center palindrome: kodok, frequency: 1.2)
+
+Group 'kosok' (1 words):
+  kosoko (center palindrome: kosok, frequency: 1.2)
+
+Group 'lalal' (1 words):
+  lalala (center palindrome: lalal, frequency: 1.9)
+
+Group 'lasal' (1 words):
+  lasala (center palindrome: lasal, frequency: 1.1)
+
+Group 'laxal' (1 words):
+  laxalt (center palindrome: laxal, frequency: 1.7)
+
+Group 'lobol' (1 words):
+  lobola (center palindrome: lobol, frequency: 1.3)
+
+Group 'loyol' (1 words):
+  loyola (center palindrome: loyol, frequency: 3.1)
+
+Group 'luzul' (1 words):
+  luzula (center palindrome: luzul, frequency: 1.0)
+
+Group 'maham' (1 words):
+  mahama (center palindrome: maham, frequency: 2.4)
+
+Group 'malam' (1 words):
+  malama (center palindrome: malam, frequency: 1.4)
+
+Group 'masam' (1 words):
+  masami (center palindrome: masam, frequency: 1.9)
+
+Group 'mayam' (1 words):
+  mayama (center palindrome: mayam, frequency: 1.4)
+
+Group 'mazam' (1 words):
+  mazama (center palindrome: mazam, frequency: 1.6)
+
+Group 'musum' (1 words):
+  musume (center palindrome: musum, frequency: 2.2)
+
+Group 'nahan' (1 words):
+  nahant (center palindrome: nahan, frequency: 1.7)
+
+Group 'nanan' (1 words):
+  nanana (center palindrome: nanan, frequency: 1.6)
+
+Group 'naran' (1 words):
+  narang (center palindrome: naran, frequency: 1.9)
+
+Group 'nayan' (1 words):
+  nayana (center palindrome: nayan, frequency: 1.2)
+
+Group 'nenen' (1 words):
+  neneng (center palindrome: nenen, frequency: 1.0)
+
+Group 'neven' (1 words):
+  nevena (center palindrome: neven, frequency: 1.2)
+
+Group 'newen' (1 words):
+  newent (center palindrome: newen, frequency: 1.5)
+
+Group 'nixin' (1 words):
+  nixing (center palindrome: nixin, frequency: 1.8)
+
+Group 'nnenn' (1 words):
+  nnenna (center palindrome: nnenn, frequency: 1.4)
+
+Group 'nocon' (1 words):
+  nocona (center palindrome: nocon, frequency: 1.3)
+
+Group 'nodon' (1 words):
+  nodong (center palindrome: nodon, frequency: 1.2)
+
+Group 'nonon' (1 words):
+  nonono (center palindrome: nonon, frequency: 2.1)
+
+Group 'nopon' (1 words):
+  nopony (center palindrome: nopon, frequency: 1.1)
+
+Group 'ooooo' (1 words):
+  oooooh (center palindrome: ooooo, frequency: 2.5)
+
+Group 'ormro' (1 words):
+  ormrod (center palindrome: ormro, frequency: 1.5)
+
+Group 'palap' (1 words):
+  palapa (center palindrome: palap, frequency: 1.8)
+
+Group 'rabar' (1 words):
+  rabari (center palindrome: rabar, frequency: 1.1)
+
+Group 'radar' (1 words):
+  radars (center palindrome: radar, frequency: 2.9)
+
+Group 'reger' (1 words):
+  regera (center palindrome: reger, frequency: 1.3)
+
+Group 'reper' (1 words):
+  repert (center palindrome: reper, frequency: 1.0)
+
+Group 'reser' (1 words):
+  reserv (center palindrome: reser, frequency: 1.3)
+
+Group 'rezer' (1 words):
+  rezero (center palindrome: rezer, frequency: 1.1)
+
+Group 'rotor' (1 words):
+  rotors (center palindrome: rotor, frequency: 2.9)
+
+Group 'sacas' (1 words):
+  sacasa (center palindrome: sacas, frequency: 1.6)
+
+Group 'saras' (1 words):
+  sarasa (center palindrome: saras, frequency: 1.2)
+
+Group 'seces' (1 words):
+  secesh (center palindrome: seces, frequency: 1.2)
+
+Group 'seves' (1 words):
+  seveso (center palindrome: seves, frequency: 1.5)
+
+Group 'sifis' (1 words):
+  sifiso (center palindrome: sifis, frequency: 1.3)
+
+Group 'siris' (1 words):
+  sirish (center palindrome: siris, frequency: 1.1)
+
+Group 'tabat' (1 words):
+  tabata (center palindrome: tabat, frequency: 2.3)
+
+Group 'tamat' (1 words):
+  tamati (center palindrome: tamat, frequency: 1.5)
+
+Group 'tenet' (1 words):
+  tenets (center palindrome: tenet, frequency: 3.1)
+
+Group 'teret' (1 words):
+  terete (center palindrome: teret, frequency: 1.7)
+
+Group 'tirit' (1 words):
+  tirith (center palindrome: tirit, frequency: 2.0)
+
+Group 'tivit' (1 words):
+  tivity (center palindrome: tivit, frequency: 1.1)
+
+Group 'tokot' (1 words):
+  tokoto (center palindrome: tokot, frequency: 1.3)
+
+Group 'toyot' (1 words):
+  toyota (center palindrome: toyot, frequency: 4.0)
+
+Group 'unanu' (1 words):
+  unanue (center palindrome: unanu, frequency: 1.3)
+
+Group 'uuuuu' (1 words):
+  uuuuuh (center palindrome: uuuuu, frequency: 1.0)
+
+Group 'xdxdx' (1 words):
+  xdxdxd (center palindrome: xdxdx, frequency: 1.1)
+
+Group 'xoxox' (1 words):
+  xoxoxo (center palindrome: xoxox, frequency: 1.6)
+
+Group 'yahay' (1 words):
+  yahaya (center palindrome: yahay, frequency: 1.9)
+

@@ -1,0 +1,21 @@
+Found 8 words with 9-letter center palindromes
+(1 letters left, 1 letters right):
+Grouped by 4 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'ooooooooo' (4 words):
+  noooooooooo (center palindrome: ooooooooo, frequency: 1.8)
+  soooooooooo (center palindrome: ooooooooo, frequency: 1.7)
+  woooooooooo (center palindrome: ooooooooo, frequency: 1.2)
+  goooooooood (center palindrome: ooooooooo, frequency: 1.0)
+
+Group 'hhhhhhhhh' (2 words):
+  ahhhhhhhhhh (center palindrome: hhhhhhhhh, frequency: 1.4)
+  ohhhhhhhhhh (center palindrome: hhhhhhhhh, frequency: 1.2)
+
+Group 'aaaaaaaaa' (1 words):
+  waaaaaaaaay (center palindrome: aaaaaaaaa, frequency: 1.1)
+
+Group 'mmmmmmmmm' (1 words):
+  hmmmmmmmmmm (center palindrome: mmmmmmmmm, frequency: 1.1)
+

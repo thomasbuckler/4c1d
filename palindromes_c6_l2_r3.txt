@@ -1,0 +1,14 @@
+Found 3 words with 6-letter center palindromes
+(2 letters left, 3 letters right):
+Grouped by 3 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'aaaaaa' (1 words):
+  reaaaaaally (center palindrome: aaaaaa, frequency: 1.2)
+
+Group 'eeeeee' (1 words):
+  pleeeeeease (center palindrome: eeeeee, frequency: 1.1)
+
+Group 'iiiiii' (1 words):
+  riiiiiiight (center palindrome: iiiiii, frequency: 1.0)
+

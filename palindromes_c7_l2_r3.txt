@@ -1,0 +1,11 @@
+Found 4 words with 7-letter center palindromes
+(2 letters left, 3 letters right):
+Grouped by 1 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'terpret' (4 words):
+  interpreting (center palindrome: terpret, frequency: 3.5)
+  interpreters (center palindrome: terpret, frequency: 3.1)
+  interpretive (center palindrome: terpret, frequency: 3.0)
+  interpretant (center palindrome: terpret, frequency: 1.2)
+

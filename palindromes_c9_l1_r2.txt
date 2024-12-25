@@ -1,0 +1,14 @@
+Found 3 words with 9-letter center palindromes
+(1 letters left, 2 letters right):
+Grouped by 3 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'ahahahaha' (1 words):
+  bahahahahaha (center palindrome: ahahahaha, frequency: 1.2)
+
+Group 'innikinni' (1 words):
+  kinnikinnick (center palindrome: innikinni, frequency: 1.0)
+
+Group 'ooooooooo' (1 words):
+  looooooooong (center palindrome: ooooooooo, frequency: 1.1)
+

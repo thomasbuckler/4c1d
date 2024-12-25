@@ -1,0 +1,619 @@
+Found 422 words with 3-letter center palindromes
+(4 letters left, 5 letters right):
+Grouped by 96 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'olo' (49 words):
+  neurological (center palindrome: olo, frequency: 3.5)
+  pathological (center palindrome: olo, frequency: 3.4)
+  sociological (center palindrome: olo, frequency: 3.3)
+  mythological (center palindrome: olo, frequency: 3.1)
+  sociologists (center palindrome: olo, frequency: 2.9)
+  radiological (center palindrome: olo, frequency: 2.9)
+  cosmological (center palindrome: olo, frequency: 2.8)
+  unapologetic (center palindrome: olo, frequency: 2.8)
+  astrological (center palindrome: olo, frequency: 2.8)
+  pathologists (center palindrome: olo, frequency: 2.8)
+  phonological (center palindrome: olo, frequency: 2.7)
+  hydrological (center palindrome: olo, frequency: 2.6)
+  histological (center palindrome: olo, frequency: 2.6)
+  neurologists (center palindrome: olo, frequency: 2.5)
+  etymological (center palindrome: olo, frequency: 2.5)
+  philological (center palindrome: olo, frequency: 2.5)
+  radiologists (center palindrome: olo, frequency: 2.5)
+  ethnological (center palindrome: olo, frequency: 2.2)
+  teleological (center palindrome: olo, frequency: 2.1)
+  cosmologists (center palindrome: olo, frequency: 2.0)
+  tautological (center palindrome: olo, frequency: 2.0)
+  philologists (center palindrome: olo, frequency: 1.9)
+  scatological (center palindrome: olo, frequency: 1.9)
+  audiologists (center palindrome: olo, frequency: 1.8)
+  mythologized (center palindrome: olo, frequency: 1.8)
+  anthologized (center palindrome: olo, frequency: 1.8)
+  ethnologists (center palindrome: olo, frequency: 1.7)
+  hydrologists (center palindrome: olo, frequency: 1.7)
+  phenological (center palindrome: olo, frequency: 1.7)
+  metrological (center palindrome: olo, frequency: 1.7)
+  lithological (center palindrome: olo, frequency: 1.6)
+  osteological (center palindrome: olo, frequency: 1.6)
+  tribological (center palindrome: olo, frequency: 1.5)
+  petrological (center palindrome: olo, frequency: 1.4)
+  etymologists (center palindrome: olo, frequency: 1.4)
+  aetiological (center palindrome: olo, frequency: 1.4)
+  limnological (center palindrome: olo, frequency: 1.3)
+  audiological (center palindrome: olo, frequency: 1.3)
+  phycological (center palindrome: olo, frequency: 1.3)
+  pathologized (center palindrome: olo, frequency: 1.3)
+  mythologised (center palindrome: olo, frequency: 1.2)
+  discolouring (center palindrome: olo, frequency: 1.2)
+  astrologists (center palindrome: olo, frequency: 1.1)
+  mereological (center palindrome: olo, frequency: 1.1)
+  museological (center palindrome: olo, frequency: 1.1)
+  gemmological (center palindrome: olo, frequency: 1.1)
+  sociologique (center palindrome: olo, frequency: 1.0)
+  anthologised (center palindrome: olo, frequency: 1.0)
+  mythologists (center palindrome: olo, frequency: 1.0)
+
+Group 'iti' (20 words):
+  conditioning (center palindrome: iti, frequency: 3.9)
+  nutritionist (center palindrome: iti, frequency: 2.9)
+  partitioning (center palindrome: iti, frequency: 2.8)
+  conditioners (center palindrome: iti, frequency: 2.8)
+  abolitionist (center palindrome: iti, frequency: 2.7)
+  uncritically (center palindrome: iti, frequency: 2.4)
+  conditionals (center palindrome: iti, frequency: 2.1)
+  abolitionism (center palindrome: iti, frequency: 2.0)
+  propitiation (center palindrome: iti, frequency: 1.9)
+  propitiatory (center palindrome: iti, frequency: 1.6)
+  fictitiously (center palindrome: iti, frequency: 1.6)
+  intuitionism (center palindrome: iti, frequency: 1.6)
+  nutritionals (center palindrome: iti, frequency: 1.4)
+  intuitionist (center palindrome: iti, frequency: 1.4)
+  traditionals (center palindrome: iti, frequency: 1.4)
+  propitiating (center palindrome: iti, frequency: 1.3)
+  nutritiously (center palindrome: iti, frequency: 1.2)
+  primitivists (center palindrome: iti, frequency: 1.1)
+  detritivores (center palindrome: iti, frequency: 1.1)
+  reinitialize (center palindrome: iti, frequency: 1.0)
+
+Group 'tit' (17 words):
+  constitution (center palindrome: tit, frequency: 4.6)
+  constituents (center palindrome: tit, frequency: 3.7)
+  quantitative (center palindrome: tit, frequency: 3.7)
+  prostitution (center palindrome: tit, frequency: 3.7)
+  constituency (center palindrome: tit, frequency: 3.7)
+  practitioner (center palindrome: tit, frequency: 3.6)
+  substitution (center palindrome: tit, frequency: 3.4)
+  substituting (center palindrome: tit, frequency: 3.0)
+  constituting (center palindrome: tit, frequency: 3.0)
+  constitutive (center palindrome: tit, frequency: 2.7)
+  repetitively (center palindrome: tit, frequency: 2.2)
+  substituents (center palindrome: tit, frequency: 2.2)
+  prostituting (center palindrome: tit, frequency: 2.0)
+  quantitation (center palindrome: tit, frequency: 1.9)
+  identitarian (center palindrome: tit, frequency: 1.6)
+  constitucion (center palindrome: tit, frequency: 1.3)
+  substitutive (center palindrome: tit, frequency: 1.0)
+
+Group 'ici' (13 words):
+  participants (center palindrome: ici, frequency: 4.4)
+  participated (center palindrome: ici, frequency: 4.0)
+  sufficiently (center palindrome: ici, frequency: 3.8)
+  participates (center palindrome: ici, frequency: 3.3)
+  suspiciously (center palindrome: ici, frequency: 3.1)
+  capriciously (center palindrome: ici, frequency: 1.9)
+  proficiently (center palindrome: ici, frequency: 1.8)
+  auspiciously (center palindrome: ici, frequency: 1.7)
+  explicitness (center palindrome: ici, frequency: 1.6)
+  verticillium (center palindrome: ici, frequency: 1.4)
+  verticillata (center palindrome: ici, frequency: 1.4)
+  participator (center palindrome: ici, frequency: 1.4)
+  perniciously (center palindrome: ici, frequency: 1.3)
+
+Group 'ifi' (13 words):
+  significance (center palindrome: ifi, frequency: 4.2)
+  certificates (center palindrome: ifi, frequency: 3.8)
+  magnificence (center palindrome: ifi, frequency: 2.8)
+  horrifically (center palindrome: ifi, frequency: 2.4)
+  certificated (center palindrome: ifi, frequency: 2.3)
+  terrifically (center palindrome: ifi, frequency: 2.2)
+  prolifically (center palindrome: ifi, frequency: 2.0)
+  crucifixions (center palindrome: ifi, frequency: 1.7)
+  magnificient (center palindrome: ifi, frequency: 1.7)
+  pontificates (center palindrome: ifi, frequency: 1.4)
+  pontificated (center palindrome: ifi, frequency: 1.3)
+  pontificalis (center palindrome: ifi, frequency: 1.2)
+  beatifically (center palindrome: ifi, frequency: 1.1)
+
+Group 'ara' (11 words):
+  preparations (center palindrome: ara, frequency: 3.9)
+  declarations (center palindrome: ara, frequency: 3.2)
+  subparagraph (center palindrome: ara, frequency: 2.2)
+  villaraigosa (center palindrome: ara, frequency: 1.9)
+  comparatives (center palindrome: ara, frequency: 1.8)
+  bandaranaike (center palindrome: ara, frequency: 1.8)
+  coomaraswamy (center palindrome: ara, frequency: 1.7)
+  siddaramaiah (center palindrome: ara, frequency: 1.5)
+  sundararajan (center palindrome: ara, frequency: 1.3)
+  catharanthus (center palindrome: ara, frequency: 1.2)
+  unguaranteed (center palindrome: ara, frequency: 1.2)
+
+Group 'opo' (10 words):
+  metropolitan (center palindrome: opo, frequency: 4.2)
+  cosmopolitan (center palindrome: opo, frequency: 3.4)
+  osteoporosis (center palindrome: opo, frequency: 3.0)
+  hippopotamus (center palindrome: opo, frequency: 2.6)
+  metropolises (center palindrome: opo, frequency: 2.1)
+  osteoporotic (center palindrome: opo, frequency: 1.7)
+  micropolitan (center palindrome: opo, frequency: 1.4)
+  chiropodists (center palindrome: opo, frequency: 1.3)
+  antropologia (center palindrome: opo, frequency: 1.3)
+  photopolymer (center palindrome: opo, frequency: 1.3)
+
+Group 'ono' (9 words):
+  astronomical (center palindrome: ono, frequency: 3.5)
+  trigonometry (center palindrome: ono, frequency: 2.8)
+  dishonorable (center palindrome: ono, frequency: 2.7)
+  necronomicon (center palindrome: ono, frequency: 2.2)
+  uneconomical (center palindrome: ono, frequency: 2.1)
+  dishonorably (center palindrome: ono, frequency: 2.0)
+  chironomidae (center palindrome: ono, frequency: 1.6)
+  dishonouring (center palindrome: ono, frequency: 1.5)
+  siphonophore (center palindrome: ono, frequency: 1.1)
+
+Group 'ana' (8 words):
+  indianapolis (center palindrome: ana, frequency: 3.8)
+  explanations (center palindrome: ana, frequency: 3.8)
+  satyanarayan (center palindrome: ana, frequency: 1.4)
+  sardanapalus (center palindrome: ana, frequency: 1.3)
+  vizianagaram (center palindrome: ana, frequency: 1.3)
+  anamanaguchi (center palindrome: ana, frequency: 1.2)
+  intranasally (center palindrome: ana, frequency: 1.2)
+  concanavalin (center palindrome: ana, frequency: 1.1)
+
+Group 'eke' (8 words):
+  housekeeping (center palindrome: eke, frequency: 3.2)
+  peacekeeping (center palindrome: eke, frequency: 3.1)
+  peacekeepers (center palindrome: eke, frequency: 2.8)
+  housekeepers (center palindrome: eke, frequency: 2.5)
+  storekeepers (center palindrome: eke, frequency: 1.7)
+  scorekeeping (center palindrome: eke, frequency: 1.5)
+  scorekeepers (center palindrome: eke, frequency: 1.2)
+  mouseketeers (center palindrome: eke, frequency: 1.2)
+
+Group 'eme' (8 words):
+  implementing (center palindrome: eme, frequency: 3.9)
+  misdemeanors (center palindrome: eme, frequency: 2.8)
+  misdemeanour (center palindrome: eme, frequency: 2.2)
+  implementers (center palindrome: eme, frequency: 1.9)
+  incrementing (center palindrome: eme, frequency: 1.8)
+  sheremetyevo (center palindrome: eme, frequency: 1.8)
+  implementors (center palindrome: eme, frequency: 1.5)
+  decrementing (center palindrome: eme, frequency: 1.1)
+
+Group 'ere' (8 words):
+  differential (center palindrome: ere, frequency: 3.8)
+  preferential (center palindrome: ere, frequency: 3.2)
+  hysterectomy (center palindrome: ere, frequency: 2.8)
+  conferencing (center palindrome: ere, frequency: 2.7)
+  centeredness (center palindrome: ere, frequency: 2.0)
+  differencing (center palindrome: ere, frequency: 1.7)
+  preferencing (center palindrome: ere, frequency: 1.3)
+  gibberellins (center palindrome: ere, frequency: 1.2)
+
+Group 'ete' (8 words):
+  competencies (center palindrome: ete, frequency: 3.0)
+  racketeering (center palindrome: ete, frequency: 2.9)
+  predetermine (center palindrome: ete, frequency: 1.7)
+  puppeteering (center palindrome: ete, frequency: 1.6)
+  catheterized (center palindrome: ete, frequency: 1.3)
+  marketeering (center palindrome: ete, frequency: 1.2)
+  planetesimal (center palindrome: ete, frequency: 1.2)
+  bioretention (center palindrome: ete, frequency: 1.1)
+
+Group 'ili' (8 words):
+  multilingual (center palindrome: ili, frequency: 3.0)
+  conciliatory (center palindrome: ili, frequency: 2.8)
+  conciliation (center palindrome: ili, frequency: 2.7)
+  brasiliensis (center palindrome: ili, frequency: 1.9)
+  conciliating (center palindrome: ili, frequency: 1.3)
+  conciliators (center palindrome: ili, frequency: 1.1)
+  braziliensis (center palindrome: ili, frequency: 1.1)
+  conciliarism (center palindrome: ili, frequency: 1.1)
+
+Group 'isi' (8 words):
+  acquisitions (center palindrome: isi, frequency: 3.7)
+  provisioning (center palindrome: isi, frequency: 2.7)
+  requisitions (center palindrome: isi, frequency: 2.2)
+  inquisitions (center palindrome: isi, frequency: 2.0)
+  provisionals (center palindrome: isi, frequency: 1.6)
+  precisionist (center palindrome: isi, frequency: 1.3)
+  commisioners (center palindrome: isi, frequency: 1.2)
+  provisioners (center palindrome: isi, frequency: 1.0)
+
+Group 'odo' (8 words):
+  orthodontist (center palindrome: odo, frequency: 2.5)
+  orthodontics (center palindrome: odo, frequency: 2.4)
+  tetrodotoxin (center palindrome: odo, frequency: 1.8)
+  periodontics (center palindrome: odo, frequency: 1.7)
+  petrodollars (center palindrome: odo, frequency: 1.6)
+  periodontist (center palindrome: odo, frequency: 1.5)
+  periodontium (center palindrome: odo, frequency: 1.3)
+  microdomains (center palindrome: odo, frequency: 1.0)
+
+Group 'ama' (7 words):
+  exclamations (center palindrome: ama, frequency: 2.2)
+  vikramaditya (center palindrome: ama, frequency: 1.7)
+  acclamations (center palindrome: ama, frequency: 1.5)
+  reclamations (center palindrome: ama, frequency: 1.4)
+  declamations (center palindrome: ama, frequency: 1.3)
+  inframammary (center palindrome: ama, frequency: 1.2)
+  rhadamanthus (center palindrome: ama, frequency: 1.2)
+
+Group 'oso' (7 words):
+  philosophers (center palindrome: oso, frequency: 3.6)
+  philosophies (center palindrome: oso, frequency: 3.2)
+  philosophize (center palindrome: oso, frequency: 1.8)
+  philosophiae (center palindrome: oso, frequency: 1.6)
+  philosophise (center palindrome: oso, frequency: 1.3)
+  philosophica (center palindrome: oso, frequency: 1.3)
+  nitrosomonas (center palindrome: oso, frequency: 1.1)
+
+Group 'tat' (7 words):
+  reputational (center palindrome: tat, frequency: 2.3)
+  misstatement (center palindrome: tat, frequency: 2.0)
+  salutatorian (center palindrome: tat, frequency: 1.9)
+  vegetatively (center palindrome: tat, frequency: 1.7)
+  denotational (center palindrome: tat, frequency: 1.3)
+  irrotational (center palindrome: tat, frequency: 1.3)
+  vegetational (center palindrome: tat, frequency: 1.2)
+
+Group 'ava' (6 words):
+  extravaganza (center palindrome: ava, frequency: 3.0)
+  extravagance (center palindrome: ava, frequency: 2.8)
+  aggravations (center palindrome: ava, frequency: 1.4)
+  bhagavadgita (center palindrome: ava, frequency: 1.4)
+  intravaginal (center palindrome: ava, frequency: 1.4)
+  extravasated (center palindrome: ava, frequency: 1.2)
+
+Group 'ele' (6 words):
+  preselection (center palindrome: ele, frequency: 2.3)
+  nonselective (center palindrome: ele, frequency: 1.6)
+  stekelenburg (center palindrome: ele, frequency: 1.5)
+  pyroelectric (center palindrome: ele, frequency: 1.4)
+  mitteleuropa (center palindrome: ele, frequency: 1.4)
+  postelection (center palindrome: ele, frequency: 1.4)
+
+Group 'imi' (6 words):
+  multimillion (center palindrome: imi, frequency: 2.8)
+  massimiliano (center palindrome: imi, frequency: 2.3)
+  subliminally (center palindrome: imi, frequency: 2.1)
+  incriminated (center palindrome: imi, frequency: 2.1)
+  incriminates (center palindrome: imi, frequency: 1.7)
+  vladimirovna (center palindrome: imi, frequency: 1.4)
+
+Group 'ipi' (6 words):
+  precipitated (center palindrome: ipi, frequency: 3.0)
+  precipitates (center palindrome: ipi, frequency: 2.3)
+  dyslipidemia (center palindrome: ipi, frequency: 1.7)
+  precipitator (center palindrome: ipi, frequency: 1.3)
+  michipicoten (center palindrome: ipi, frequency: 1.2)
+  precipitable (center palindrome: ipi, frequency: 1.1)
+
+Group 'ivi' (6 words):
+  subdivisions (center palindrome: ivi, frequency: 3.3)
+  conviviality (center palindrome: ivi, frequency: 2.0)
+  unprivileged (center palindrome: ivi, frequency: 1.9)
+  flaviviruses (center palindrome: ivi, frequency: 1.3)
+  lasciviously (center palindrome: ivi, frequency: 1.3)
+  lentiviruses (center palindrome: ivi, frequency: 1.2)
+
+Group 'rpr' (6 words):
+  enterprising (center palindrome: rpr, frequency: 3.0)
+  unsurprising (center palindrome: rpr, frequency: 2.7)
+  waterproofed (center palindrome: rpr, frequency: 1.9)
+  underpricing (center palindrome: rpr, frequency: 1.4)
+  interprocess (center palindrome: rpr, frequency: 1.3)
+  enterprisers (center palindrome: rpr, frequency: 1.2)
+
+Group 'ata' (5 words):
+  venkataraman (center palindrome: ata, frequency: 1.7)
+  biocatalysis (center palindrome: ata, frequency: 1.4)
+  biocatalysts (center palindrome: ata, frequency: 1.1)
+  biocatalytic (center palindrome: ata, frequency: 1.0)
+  sabbatarians (center palindrome: ata, frequency: 1.0)
+
+Group 'ehe' (5 words):
+  apprehension (center palindrome: ehe, frequency: 3.1)
+  apprehensive (center palindrome: ehe, frequency: 3.0)
+  apprehending (center palindrome: ehe, frequency: 2.4)
+  wholehearted (center palindrome: ehe, frequency: 2.3)
+  whiteheadian (center palindrome: ehe, frequency: 1.1)
+
+Group 'ene' (5 words):
+  hermeneutics (center palindrome: ene, frequency: 2.5)
+  nonrenewable (center palindrome: ene, frequency: 1.7)
+  montenegrins (center palindrome: ene, frequency: 1.7)
+  listenership (center palindrome: ene, frequency: 1.7)
+  pregenerated (center palindrome: ene, frequency: 1.1)
+
+Group 'idi' (5 words):
+  subsidiaries (center palindrome: idi, frequency: 3.6)
+  subsidiarity (center palindrome: idi, frequency: 2.0)
+  fastidiously (center palindrome: idi, frequency: 1.8)
+  coccidioides (center palindrome: idi, frequency: 1.2)
+  perfidiously (center palindrome: idi, frequency: 1.1)
+
+Group 'aga' (4 words):
+  propagandist (center palindrome: aga, frequency: 2.7)
+  narragansett (center palindrome: aga, frequency: 2.5)
+  propagandize (center palindrome: aga, frequency: 1.7)
+  intragastric (center palindrome: aga, frequency: 1.1)
+
+Group 'aha' (4 words):
+  rappahannock (center palindrome: aha, frequency: 2.3)
+  tallahatchie (center palindrome: aha, frequency: 1.6)
+  bunnahabhain (center palindrome: aha, frequency: 1.4)
+  tappahannock (center palindrome: aha, frequency: 1.3)
+
+Group 'ede' (4 words):
+  confederates (center palindrome: ede, frequency: 3.0)
+  confederated (center palindrome: ede, frequency: 2.2)
+  precedential (center palindrome: ede, frequency: 1.6)
+  confederados (center palindrome: ede, frequency: 1.0)
+
+Group 'efe' (4 words):
+  rockefellers (center palindrome: efe, frequency: 2.1)
+  whitefeather (center palindrome: efe, frequency: 1.1)
+  millefeuille (center palindrome: efe, frequency: 1.1)
+  vertefeuille (center palindrome: efe, frequency: 1.1)
+
+Group 'ege' (4 words):
+  collegeville (center palindrome: ege, frequency: 1.9)
+  collegehumor (center palindrome: ege, frequency: 1.8)
+  placegetters (center palindrome: ege, frequency: 1.1)
+  collegeboard (center palindrome: ege, frequency: 1.1)
+
+Group 'mom' (4 words):
+  thermometers (center palindrome: mom, frequency: 2.5)
+  seismometers (center palindrome: mom, frequency: 1.8)
+  thermometric (center palindrome: mom, frequency: 1.2)
+  dynamometers (center palindrome: mom, frequency: 1.2)
+
+Group 'nen' (4 words):
+  pregnenolone (center palindrome: nen, frequency: 1.8)
+  exponentials (center palindrome: nen, frequency: 1.8)
+  learnenglish (center palindrome: nen, frequency: 1.1)
+  pfannenstiel (center palindrome: nen, frequency: 1.1)
+
+Group 'oco' (4 words):
+  photocopying (center palindrome: oco, frequency: 2.4)
+  photocopiers (center palindrome: oco, frequency: 1.8)
+  hydrocolloid (center palindrome: oco, frequency: 1.6)
+  narcocorrido (center palindrome: oco, frequency: 1.0)
+
+Group 'pap' (4 words):
+  newspaperman (center palindrome: pap, frequency: 2.4)
+  newspapermen (center palindrome: pap, frequency: 1.9)
+  wallpapering (center palindrome: pap, frequency: 1.5)
+  newspapering (center palindrome: pap, frequency: 1.1)
+
+Group 'rar' (4 words):
+  contrariwise (center palindrome: rar, frequency: 1.7)
+  contrariness (center palindrome: rar, frequency: 1.4)
+  hyperarousal (center palindrome: rar, frequency: 1.3)
+  literarische (center palindrome: rar, frequency: 1.1)
+
+Group 'rgr' (4 words):
+  supergravity (center palindrome: rgr, frequency: 1.7)
+  undergrounds (center palindrome: rgr, frequency: 1.4)
+  intergration (center palindrome: rgr, frequency: 1.3)
+  hypergravity (center palindrome: rgr, frequency: 1.0)
+
+Group 'ala' (3 words):
+  baccalaureat (center palindrome: ala, frequency: 1.2)
+  charalambous (center palindrome: ala, frequency: 1.1)
+  subbalakshmi (center palindrome: ala, frequency: 1.0)
+
+Group 'cyc' (3 words):
+  anticyclonic (center palindrome: cyc, frequency: 1.6)
+  valacyclovir (center palindrome: cyc, frequency: 1.3)
+  anticyclones (center palindrome: cyc, frequency: 1.3)
+
+Group 'eve' (3 words):
+  achievements (center palindrome: eve, frequency: 4.1)
+  perseverance (center palindrome: eve, frequency: 3.3)
+  perseverence (center palindrome: eve, frequency: 1.4)
+
+Group 'ibi' (3 words):
+  prohibitions (center palindrome: ibi, frequency: 2.9)
+  multibillion (center palindrome: ibi, frequency: 2.5)
+  possibilites (center palindrome: ibi, frequency: 1.6)
+
+Group 'ini' (3 words):
+  subminiature (center palindrome: ini, frequency: 1.5)
+  santiniketan (center palindrome: ini, frequency: 1.5)
+  lateinischen (center palindrome: ini, frequency: 1.1)
+
+Group 'omo' (3 words):
+  photomontage (center palindrome: omo, frequency: 1.8)
+  homeomorphic (center palindrome: omo, frequency: 1.7)
+  skeuomorphic (center palindrome: omo, frequency: 1.1)
+
+Group 'oto' (3 words):
+  dichotomized (center palindrome: oto, frequency: 1.4)
+  deprotonated (center palindrome: oto, frequency: 1.3)
+  unphotogenic (center palindrome: oto, frequency: 1.1)
+
+Group 'rtr' (3 words):
+  hypertrophic (center palindrome: rtr, frequency: 2.3)
+  cybertronian (center palindrome: rtr, frequency: 1.5)
+  undertrained (center palindrome: rtr, frequency: 1.4)
+
+Group 'rwr' (3 words):
+  underwriting (center palindrome: rwr, frequency: 3.1)
+  underwriters (center palindrome: rwr, frequency: 2.8)
+  underwritten (center palindrome: rwr, frequency: 2.6)
+
+Group 'sis' (3 words):
+  irresistible (center palindrome: sis, frequency: 3.5)
+  irresistibly (center palindrome: sis, frequency: 2.5)
+  irresistable (center palindrome: sis, frequency: 1.8)
+
+Group 'tot' (3 words):
+  aristotelian (center palindrome: tot, frequency: 2.6)
+  camptothecin (center palindrome: tot, frequency: 1.1)
+  somatotropin (center palindrome: tot, frequency: 1.1)
+
+Group 'tst' (3 words):
+  lichtsteiner (center palindrome: tst, frequency: 1.6)
+  nightstalker (center palindrome: tst, frequency: 1.3)
+  frontstretch (center palindrome: tst, frequency: 1.1)
+
+Group 'ada' (2 words):
+  degradations (center palindrome: ada, frequency: 1.6)
+  priyadarshan (center palindrome: ada, frequency: 1.2)
+
+Group 'afa' (2 words):
+  rastafarians (center palindrome: afa, frequency: 1.7)
+  pastafarians (center palindrome: afa, frequency: 1.0)
+
+Group 'aka' (2 words):
+  tillakaratne (center palindrome: aka, frequency: 1.5)
+  dandakaranya (center palindrome: aka, frequency: 1.0)
+
+Group 'apa' (2 words):
+  sarsaparilla (center palindrome: apa, frequency: 2.1)
+  schiaparelli (center palindrome: apa, frequency: 2.1)
+
+Group 'ebe' (2 words):
+  gooseberries (center palindrome: ebe, frequency: 2.2)
+  therebetween (center palindrome: ebe, frequency: 1.8)
+
+Group 'ece' (2 words):
+  predecessors (center palindrome: ece, frequency: 3.6)
+  predeceasing (center palindrome: ece, frequency: 1.1)
+
+Group 'epe' (2 words):
+  entrepeneurs (center palindrome: epe, frequency: 1.3)
+  disrepectful (center palindrome: epe, frequency: 1.1)
+
+Group 'ese' (2 words):
+  representing (center palindrome: ese, frequency: 4.4)
+  representive (center palindrome: ese, frequency: 1.2)
+
+Group 'igi' (2 words):
+  prodigiously (center palindrome: igi, frequency: 2.1)
+  parmigianino (center palindrome: igi, frequency: 1.2)
+
+Group 'lbl' (2 words):
+  trailblazers (center palindrome: lbl, frequency: 2.5)
+  trailblazing (center palindrome: lbl, frequency: 2.2)
+
+Group 'nan' (2 words):
+  clignancourt (center palindrome: nan, frequency: 1.2)
+  refinancings (center palindrome: nan, frequency: 1.2)
+
+Group 'obo' (2 words):
+  photobombing (center palindrome: obo, frequency: 1.8)
+  ostrobothnia (center palindrome: obo, frequency: 1.1)
+
+Group 'ofo' (2 words):
+  microfossils (center palindrome: ofo, frequency: 1.8)
+  macrofossils (center palindrome: ofo, frequency: 1.1)
+
+Group 'ogo' (2 words):
+  orthogonally (center palindrome: ogo, frequency: 1.9)
+  hellogoodbye (center palindrome: ogo, frequency: 1.2)
+
+Group 'pop' (2 words):
+  overpopulate (center palindrome: pop, frequency: 1.2)
+  proapoptotic (center palindrome: pop, frequency: 1.2)
+
+Group 'aba' (1 words):
+  scarabaeidae (center palindrome: aba, frequency: 1.4)
+
+Group 'aja' (1 words):
+  trabajadores (center palindrome: aja, frequency: 1.6)
+
+Group 'aza' (1 words):
+  biohazardous (center palindrome: aza, frequency: 1.4)
+
+Group 'did' (1 words):
+  autodidactic (center palindrome: did, frequency: 1.3)
+
+Group 'gag' (1 words):
+  reengagement (center palindrome: gag, frequency: 1.2)
+
+Group 'hoh' (1 words):
+  conshohocken (center palindrome: hoh, frequency: 1.9)
+
+Group 'hph' (1 words):
+  catchphrases (center palindrome: hph, frequency: 2.5)
+
+Group 'hsh' (1 words):
+  earthshaking (center palindrome: hsh, frequency: 1.5)
+
+Group 'hth' (1 words):
+  exophthalmos (center palindrome: hth, frequency: 1.2)
+
+Group 'lal' (1 words):
+  jayalalithaa (center palindrome: lal, frequency: 2.2)
+
+Group 'lel' (1 words):
+  muzzleloader (center palindrome: lel, frequency: 1.5)
+
+Group 'mem' (1 words):
+  unremembered (center palindrome: mem, frequency: 1.7)
+
+Group 'non' (1 words):
+  bournonville (center palindrome: non, frequency: 1.4)
+
+Group 'oho' (1 words):
+  phytohormone (center palindrome: oho, frequency: 1.0)
+
+Group 'oro' (1 words):
+  retrorockets (center palindrome: oro, frequency: 1.0)
+
+Group 'ovo' (1 words):
+  photovoltaic (center palindrome: ovo, frequency: 3.0)
+
+Group 'ozo' (1 words):
+  protozoology (center palindrome: ozo, frequency: 1.1)
+
+Group 'pep' (1 words):
+  polypeptides (center palindrome: pep, frequency: 2.2)
+
+Group 'pyp' (1 words):
+  creepypastas (center palindrome: pyp, frequency: 1.2)
+
+Group 'rbr' (1 words):
+  powerbrokers (center palindrome: rbr, frequency: 1.4)
+
+Group 'rcr' (1 words):
+  intercropped (center palindrome: rcr, frequency: 1.1)
+
+Group 'rdr' (1 words):
+  underdrawing (center palindrome: rdr, frequency: 1.2)
+
+Group 'rer' (1 words):
+  schererville (center palindrome: rer, frequency: 1.3)
+
+Group 'rfr' (1 words):
+  superfriends (center palindrome: rfr, frequency: 1.6)
+
+Group 'ror' (1 words):
+  interorbital (center palindrome: ror, frequency: 1.5)
+
+Group 'ses' (1 words):
+  cheesesteaks (center palindrome: ses, frequency: 1.9)
+
+Group 'sos' (1 words):
+  chrysostomos (center palindrome: sos, frequency: 1.2)
+
+Group 'sts' (1 words):
+  breaststroke (center palindrome: sts, frequency: 2.7)
+
+Group 'uou' (1 words):
+  virtuousness (center palindrome: uou, frequency: 1.2)
+

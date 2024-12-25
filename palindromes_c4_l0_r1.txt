@@ -1,0 +1,318 @@
+Found 173 words with 4-letter center palindromes
+(0 letters left, 1 letters right):
+Grouped by 70 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'assa' (10 words):
+  assad (center palindrome: assa, frequency: 3.6)
+  assam (center palindrome: assa, frequency: 3.3)
+  assay (center palindrome: assa, frequency: 3.3)
+  assaf (center palindrome: assa, frequency: 2.1)
+  assai (center palindrome: assa, frequency: 1.6)
+  assas (center palindrome: assa, frequency: 1.6)
+  assal (center palindrome: assa, frequency: 1.5)
+  assan (center palindrome: assa, frequency: 1.4)
+  assar (center palindrome: assa, frequency: 1.3)
+  assab (center palindrome: assa, frequency: 1.2)
+
+Group 'atta' (8 words):
+  attar (center palindrome: atta, frequency: 2.2)
+  attac (center palindrome: atta, frequency: 2.0)
+  attah (center palindrome: atta, frequency: 1.7)
+  attan (center palindrome: atta, frequency: 1.4)
+  attas (center palindrome: atta, frequency: 1.2)
+  attax (center palindrome: atta, frequency: 1.2)
+  attak (center palindrome: atta, frequency: 1.1)
+  attal (center palindrome: atta, frequency: 1.0)
+
+Group 'esse' (8 words):
+  essex (center palindrome: esse, frequency: 3.9)
+  essen (center palindrome: esse, frequency: 2.8)
+  esser (center palindrome: esse, frequency: 2.1)
+  esses (center palindrome: esse, frequency: 1.9)
+  essel (center palindrome: esse, frequency: 1.5)
+  essec (center palindrome: esse, frequency: 1.2)
+  esset (center palindrome: esse, frequency: 1.1)
+  essed (center palindrome: esse, frequency: 1.1)
+
+Group 'alla' (7 words):
+  allah (center palindrome: alla, frequency: 3.9)
+  allan (center palindrome: alla, frequency: 3.8)
+  allay (center palindrome: alla, frequency: 2.7)
+  allam (center palindrome: alla, frequency: 2.0)
+  allas (center palindrome: alla, frequency: 1.3)
+  allal (center palindrome: alla, frequency: 1.2)
+  allat (center palindrome: alla, frequency: 1.1)
+
+Group 'anna' (6 words):
+  annan (center palindrome: anna, frequency: 2.9)
+  annas (center palindrome: anna, frequency: 2.2)
+  annam (center palindrome: anna, frequency: 1.9)
+  annal (center palindrome: anna, frequency: 1.6)
+  annah (center palindrome: anna, frequency: 1.4)
+  annai (center palindrome: anna, frequency: 1.1)
+
+Group 'elle' (6 words):
+  ellen (center palindrome: elle, frequency: 4.0)
+  eller (center palindrome: elle, frequency: 2.6)
+  elles (center palindrome: elle, frequency: 2.0)
+  ellet (center palindrome: elle, frequency: 1.6)
+  elley (center palindrome: elle, frequency: 1.4)
+  ellem (center palindrome: elle, frequency: 1.0)
+
+Group 'arra' (5 words):
+  array (center palindrome: arra, frequency: 4.1)
+  arran (center palindrome: arra, frequency: 2.7)
+  arras (center palindrome: arra, frequency: 2.5)
+  arrah (center palindrome: arra, frequency: 1.5)
+  arrau (center palindrome: arra, frequency: 1.1)
+
+Group 'effe' (5 words):
+  effed (center palindrome: effe, frequency: 2.1)
+  effet (center palindrome: effe, frequency: 1.8)
+  effec (center palindrome: effe, frequency: 1.6)
+  effer (center palindrome: effe, frequency: 1.2)
+  effen (center palindrome: effe, frequency: 1.1)
+
+Group 'illi' (5 words):
+  illin (center palindrome: illi, frequency: 1.5)
+  illia (center palindrome: illi, frequency: 1.4)
+  illis (center palindrome: illi, frequency: 1.2)
+  illit (center palindrome: illi, frequency: 1.2)
+  illig (center palindrome: illi, frequency: 1.1)
+
+Group 'abba' (4 words):
+  abbas (center palindrome: abba, frequency: 3.4)
+  abbay (center palindrome: abba, frequency: 1.2)
+  abban (center palindrome: abba, frequency: 1.1)
+  abbad (center palindrome: abba, frequency: 1.0)
+
+Group 'adda' (4 words):
+  addai (center palindrome: adda, frequency: 1.4)
+  addae (center palindrome: adda, frequency: 1.3)
+  addax (center palindrome: adda, frequency: 1.3)
+  addam (center palindrome: adda, frequency: 1.2)
+
+Group 'ayya' (4 words):
+  ayyad (center palindrome: ayya, frequency: 1.4)
+  ayyar (center palindrome: ayya, frequency: 1.4)
+  ayyam (center palindrome: ayya, frequency: 1.3)
+  ayyan (center palindrome: ayya, frequency: 1.1)
+
+Group 'beeb' (4 words):
+  beebe (center palindrome: beeb, frequency: 2.6)
+  beeby (center palindrome: beeb, frequency: 1.5)
+  beebo (center palindrome: beeb, frequency: 1.5)
+  beebs (center palindrome: beeb, frequency: 1.2)
+
+Group 'emme' (4 words):
+  emmet (center palindrome: emme, frequency: 2.9)
+  emmer (center palindrome: emme, frequency: 2.0)
+  emmen (center palindrome: emme, frequency: 1.8)
+  emmel (center palindrome: emme, frequency: 1.4)
+
+Group 'amma' (3 words):
+  amman (center palindrome: amma, frequency: 3.1)
+  ammar (center palindrome: amma, frequency: 2.5)
+  ammal (center palindrome: amma, frequency: 1.2)
+
+Group 'appa' (3 words):
+  appar (center palindrome: appa, frequency: 1.8)
+  appal (center palindrome: appa, frequency: 1.6)
+  appam (center palindrome: appa, frequency: 1.3)
+
+Group 'boob' (3 words):
+  boobs (center palindrome: boob, frequency: 3.9)
+  booby (center palindrome: boob, frequency: 3.0)
+  booba (center palindrome: boob, frequency: 1.5)
+
+Group 'dood' (3 words):
+  doody (center palindrome: dood, frequency: 2.3)
+  doods (center palindrome: dood, frequency: 1.5)
+  doodh (center palindrome: dood, frequency: 1.4)
+
+Group 'egge' (3 words):
+  egged (center palindrome: egge, frequency: 2.5)
+  egger (center palindrome: egge, frequency: 2.0)
+  eggen (center palindrome: egge, frequency: 1.5)
+
+Group 'ette' (3 words):
+  etter (center palindrome: ette, frequency: 2.0)
+  etten (center palindrome: ette, frequency: 1.9)
+  ettes (center palindrome: ette, frequency: 1.3)
+
+Group 'inni' (3 words):
+  innit (center palindrome: inni, frequency: 2.7)
+  innis (center palindrome: inni, frequency: 2.3)
+  innie (center palindrome: inni, frequency: 1.6)
+
+Group 'naan' (3 words):
+  naani (center palindrome: naan, frequency: 1.3)
+  naanu (center palindrome: naan, frequency: 1.1)
+  naans (center palindrome: naan, frequency: 1.1)
+
+Group 'noon' (3 words):
+  noone (center palindrome: noon, frequency: 3.1)
+  noona (center palindrome: noon, frequency: 2.4)
+  noons (center palindrome: noon, frequency: 1.7)
+
+Group 'oooo' (3 words):
+  ooooh (center palindrome: oooo, frequency: 2.9)
+  oooof (center palindrome: oooo, frequency: 1.4)
+  oooor (center palindrome: oooo, frequency: 1.0)
+
+Group 'toot' (3 words):
+  tooth (center palindrome: toot, frequency: 4.1)
+  toots (center palindrome: toot, frequency: 2.6)
+  tooty (center palindrome: toot, frequency: 1.6)
+
+Group 'akka' (2 words):
+  akkad (center palindrome: akka, frequency: 2.1)
+  akkar (center palindrome: akka, frequency: 1.4)
+
+Group 'awwa' (2 words):
+  awwal (center palindrome: awwa, frequency: 1.5)
+  awwad (center palindrome: awwa, frequency: 1.4)
+
+Group 'azza' (2 words):
+  azzam (center palindrome: azza, frequency: 2.2)
+  azzan (center palindrome: azza, frequency: 1.0)
+
+Group 'deed' (2 words):
+  deeds (center palindrome: deed, frequency: 3.8)
+  deedy (center palindrome: deed, frequency: 1.4)
+
+Group 'ebbe' (2 words):
+  ebbed (center palindrome: ebbe, frequency: 2.2)
+  ebben (center palindrome: ebbe, frequency: 1.1)
+
+Group 'eeee' (2 words):
+  eeeek (center palindrome: eeee, frequency: 1.4)
+  eeeeh (center palindrome: eeee, frequency: 1.4)
+
+Group 'goog' (2 words):
+  googl (center palindrome: goog, frequency: 1.7)
+  googe (center palindrome: goog, frequency: 1.4)
+
+Group 'kook' (2 words):
+  kooky (center palindrome: kook, frequency: 2.6)
+  kooks (center palindrome: kook, frequency: 2.3)
+
+Group 'maam' (2 words):
+  maame (center palindrome: maam, frequency: 1.5)
+  maama (center palindrome: maam, frequency: 1.1)
+
+Group 'oppo' (2 words):
+  oppor (center palindrome: oppo, frequency: 1.7)
+  oppos (center palindrome: oppo, frequency: 1.2)
+
+Group 'otto' (2 words):
+  ottos (center palindrome: otto, frequency: 1.6)
+  otton (center palindrome: otto, frequency: 1.5)
+
+Group 'peep' (2 words):
+  peeps (center palindrome: peep, frequency: 3.1)
+  peepo (center palindrome: peep, frequency: 1.3)
+
+Group 'poop' (2 words):
+  poops (center palindrome: poop, frequency: 2.6)
+  poopy (center palindrome: poop, frequency: 2.5)
+
+Group 'sees' (2 words):
+  seest (center palindrome: sees, frequency: 1.9)
+  seeso (center palindrome: sees, frequency: 1.3)
+
+Group 'teet' (2 words):
+  teeth (center palindrome: teet, frequency: 4.6)
+  teets (center palindrome: teet, frequency: 1.5)
+
+Group 'aaaa' (1 words):
+  aaaah (center palindrome: aaaa, frequency: 2.6)
+
+Group 'acca' (1 words):
+  accam (center palindrome: acca, frequency: 1.1)
+
+Group 'affa' (1 words):
+  affan (center palindrome: affa, frequency: 1.6)
+
+Group 'baab' (1 words):
+  baaba (center palindrome: baab, frequency: 1.3)
+
+Group 'cooc' (1 words):
+  cooch (center palindrome: cooc, frequency: 2.4)
+
+Group 'cppc' (1 words):
+  cppcc (center palindrome: cppc, frequency: 1.9)
+
+Group 'duud' (1 words):
+  duude (center palindrome: duud, frequency: 1.0)
+
+Group 'enne' (1 words):
+  enner (center palindrome: enne, frequency: 1.8)
+
+Group 'eppe' (1 words):
+  eppes (center palindrome: eppe, frequency: 1.9)
+
+Group 'erre' (1 words):
+  erred (center palindrome: erre, frequency: 2.8)
+
+Group 'haah' (1 words):
+  haaha (center palindrome: haah, frequency: 1.0)
+
+Group 'hooh' (1 words):
+  hooha (center palindrome: hooh, frequency: 1.1)
+
+Group 'issi' (1 words):
+  issie (center palindrome: issi, frequency: 1.4)
+
+Group 'izzi' (1 words):
+  izzie (center palindrome: izzi, frequency: 2.3)
+
+Group 'keek' (1 words):
+  keeks (center palindrome: keek, frequency: 1.2)
+
+Group 'laal' (1 words):
+  laali (center palindrome: laal, frequency: 1.2)
+
+Group 'leel' (1 words):
+  leela (center palindrome: leel, frequency: 2.9)
+
+Group 'lool' (1 words):
+  lools (center palindrome: lool, frequency: 1.1)
+
+Group 'lttl' (1 words):
+  lttle (center palindrome: lttl, frequency: 1.4)
+
+Group 'meem' (1 words):
+  meems (center palindrome: meem, frequency: 1.2)
+
+Group 'mmmm' (1 words):
+  mmmmh (center palindrome: mmmm, frequency: 1.0)
+
+Group 'neen' (1 words):
+  neena (center palindrome: neen, frequency: 1.9)
+
+Group 'occo' (1 words):
+  occom (center palindrome: occo, frequency: 1.1)
+
+Group 'offo' (1 words):
+  offor (center palindrome: offo, frequency: 1.1)
+
+Group 'ollo' (1 words):
+  ollow (center palindrome: ollo, frequency: 1.3)
+
+Group 'ssss' (1 words):
+  ssssh (center palindrome: ssss, frequency: 1.3)
+
+Group 'uhhu' (1 words):
+  uhhuh (center palindrome: uhhu, frequency: 1.3)
+
+Group 'uuuu' (1 words):
+  uuuuh (center palindrome: uuuu, frequency: 1.4)
+
+Group 'veev' (1 words):
+  veeva (center palindrome: veev, frequency: 1.4)
+
+Group 'yuuy' (1 words):
+  yuuya (center palindrome: yuuy, frequency: 1.4)
+

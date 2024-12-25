@@ -1,0 +1,33 @@
+Found 14 words with 8-letter center palindromes
+(1 letters left, 1 letters right):
+Grouped by 7 unique palindromes:
+(Words are sorted by frequency of usage - most common first)
+
+Group 'oooooooo' (5 words):
+  sooooooooo (center palindrome: oooooooo, frequency: 1.9)
+  nooooooooo (center palindrome: oooooooo, frequency: 1.9)
+  wooooooooo (center palindrome: oooooooo, frequency: 1.4)
+  gooooooood (center palindrome: oooooooo, frequency: 1.2)
+  gooooooooo (center palindrome: oooooooo, frequency: 1.1)
+
+Group 'hhhhhhhh' (4 words):
+  ahhhhhhhhh (center palindrome: hhhhhhhh, frequency: 1.6)
+  ohhhhhhhhh (center palindrome: hhhhhhhh, frequency: 1.4)
+  shhhhhhhhh (center palindrome: hhhhhhhh, frequency: 1.1)
+  uhhhhhhhhh (center palindrome: hhhhhhhh, frequency: 1.0)
+
+Group 'aaaaaaaa' (1 words):
+  waaaaaaaay (center palindrome: aaaaaaaa, frequency: 1.4)
+
+Group 'agilliga' (1 words):
+  magilligan (center palindrome: agilliga, frequency: 1.3)
+
+Group 'eeeeeeee' (1 words):
+  meeeeeeeee (center palindrome: eeeeeeee, frequency: 1.0)
+
+Group 'llllllll' (1 words):
+  alllllllll (center palindrome: llllllll, frequency: 1.1)
+
+Group 'mmmmmmmm' (1 words):
+  hmmmmmmmmm (center palindrome: mmmmmmmm, frequency: 1.2)
+
