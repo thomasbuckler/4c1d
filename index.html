@@ -3,17 +3,22 @@
 <head>
     <title>none</title>
     <style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
         body { 
             margin: 40px; 
             font-family: Arial, sans-serif;
             background: #f8f8f8;
-            padding-top: 10px;
+            padding-top: 0px;
         }
         form {
             display: flex;
             gap: 20px;
             justify-content: left;
-            margin-bottom: 10px;
+            margin-bottom: 40px;
         }
         input { 
             width: 120px; 
@@ -22,6 +27,7 @@
             background: #fff;
             font-size: 16px;
             box-sizing: border-box;
+            animation: spin 20s infinite linear;
         }
         button { 
             width: 120px;
@@ -32,6 +38,7 @@
             font-size: 16px;
             cursor: pointer;
             box-sizing: border-box;
+            animation: spin 20s infinite linear reverse;
         }
         .results { 
             margin: 80px 20px 40px 20px;
@@ -42,6 +49,11 @@
         h3 {
             margin: 0 0 10px 0;
             font-size: 1.4em;
+        }
+
+        /* Pause on hover */
+        input:hover, button:hover {
+            animation-play-state: paused;
         }
     </style>
 </head>
@@ -55,25 +67,6 @@
     <script src="words.js"></script>
     
     <script>
-    window.onload = function() {
-        const input = document.getElementById('patterns');
-        const button = document.querySelector('button');
-        
-        const inputRotate = Math.random() * 360;
-        const buttonRotate = Math.random() * 360;
-        
-        input.style.transform = `rotate(${inputRotate}deg)`;
-        button.style.transform = `rotate(${buttonRotate}deg)`;
-        
-        button.addEventListener('mouseenter', () => {
-            button.style.transform = `rotate(${buttonRotate + 20}deg)`;
-        });
-        
-        button.addEventListener('mouseleave', () => {
-            button.style.transform = `rotate(${buttonRotate}deg)`;
-        });
-    };
-
     function searchWords(event) {
         event.preventDefault();
         const input = document.getElementById('patterns');
