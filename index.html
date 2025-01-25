@@ -21,7 +21,7 @@
             margin-bottom: 40px;
         }
         input { 
-            width: 120px; 
+            width: 88px; 
             padding: 12px; 
             border: 1px solid #222;
             background: #fff;
@@ -30,16 +30,27 @@
             animation: spin 888s infinite linear;
         }
         button { 
-            width: 120px;
-            padding: 12px; 
-            background: #222;
-            color: white;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            box-sizing: border-box;
-            animation: spin 444s infinite linear;
-        }
+    width: 77px;
+    padding: 12px; 
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+    animation: spin 444s infinite linear;
+    /* Smaller notch styling */
+    position: relative;
+    clip-path: polygon(
+        11px 0,      /* Reduced from 15px */
+        100% 0,    
+        100% 100%, 
+        0 100%,    
+        0 11px       /* Reduced from 15px */
+    );
+    background: 
+        linear-gradient(135deg, transparent 11px, #222 11px) /* Reduced from 15px */
+        top left;
+}
         .results { 
             margin: 80px 20px 40px 20px;
         }
