@@ -1,27 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Word Pattern Finder</title>
+    <title>Words Searcher</title>
     <style>
-        body { max-width: 800px; margin: 20px auto; padding: 20px; font-family: Arial, sans-serif; }
-        input { width: 300px; padding: 8px; }
-        button { padding: 8px 15px; }
-        .results { margin-top: 20px; }
-        .pattern { margin: 15px 0; padding: 10px; border-left: 3px solid #007bff; }
+        body { 
+            margin: 20px; 
+            font-family: Arial, sans-serif; 
+            padding-left: 20px;
+        }
+        input { 
+            width: 300px; 
+            padding: 8px; 
+        }
+        button { 
+            padding: 8px 15px; 
+        }
+        .results { 
+            margin-top: 20px; 
+        }
+        .pattern { 
+            margin: 10px 0;
+        }
+        h3 {
+            margin: 15px 0 5px 0;
+        }
     </style>
 </head>
 <body>
     <h1>Word Pattern Finder</h1>
-    <input type="text" id="patterns" placeholder="e.g., eve,ata,exe">
-    <button onclick="searchWords()">Search</button>
+    <form onsubmit="return searchWords(event)">
+        <input type="text" id="patterns" placeholder="e.g. exe, zz, rever">
+        <button type="submit">Search</button>
+    </form>
     <div id="results"></div>
 
-    <!-- Embedded word list (from wordfreq) -->
     <script src="words.js"></script>
     
     <script>
-    function searchWords() {
-        const patterns = document.getElementById('patterns').value
+    function searchWords(event) {
+        event.preventDefault();
+        const input = document.getElementById('patterns');
+        const patterns = input.value
             .toLowerCase()
             .split(',')
             .map(p => p.trim())
@@ -29,7 +48,6 @@
 
         const results = {};
         
-        // Search through all words
         window.wordList.forEach(word => {
             const lowerWord = word.toLowerCase();
             patterns.forEach(pattern => {
@@ -40,7 +58,6 @@
             });
         });
 
-        // Display results
         const resultsDiv = document.getElementById('results');
         resultsDiv.innerHTML = '';
         
@@ -52,6 +69,8 @@
             </div>`;
             resultsDiv.innerHTML += html;
         });
+        
+        return false;
     }
     </script>
 </body>
