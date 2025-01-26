@@ -28,6 +28,10 @@
             font-size: 16px;
             box-sizing: border-box;
             animation: spin 888s infinite linear;
+            background: 
+                linear-gradient(-45deg, transparent 11px, #fff 11px)
+                bottom right,
+                #fff;
         }
         button { 
             width: 77px;
@@ -38,17 +42,16 @@
             cursor: pointer;
             box-sizing: border-box;
             animation: spin 444s infinite linear;
-            /* Smaller notch styling */
             position: relative;
             clip-path: polygon(
-                11px 0,      /* Reduced from 15px */
+                11px 0,
                 100% 0,    
                 100% 100%, 
                 0 100%,    
-                0 11px       /* Reduced from 15px */
+                0 11px
             );
             background: 
-                linear-gradient(135deg, transparent 11px, #222 11px) /* Reduced from 15px */
+                linear-gradient(135deg, transparent 11px, #222 11px)
                 top left;
         }
         .results { 
@@ -60,11 +63,6 @@
         h3 {
             margin: 0 0 10px 0;
             font-size: 1.4em;
-        }
-
-        /* Pause on hover */
-        input:hover, button:hover {
-            animation-play-state: paused;
         }
     </style>
 </head>
@@ -92,7 +90,19 @@
         window.wordList.forEach(word => {
             const lowerWord = word.toLowerCase();
             patterns.forEach(pattern => {
-                if (lowerWord.includes(pattern)) {
+                let isMatch = false;
+                
+                if (pattern.includes('*')) {
+                    const regexPattern = new RegExp(
+                        pattern.replace(/\*/g, '[a-z]'),
+                        'i'
+                    );
+                    isMatch = regexPattern.test(word);
+                } else {
+                    isMatch = lowerWord.includes(pattern);
+                }
+
+                if (isMatch) {
                     if (!results[pattern]) results[pattern] = [];
                     results[pattern].push(word);
                 }
