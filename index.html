@@ -8,17 +8,36 @@
             to { transform: rotate(360deg); }
         }
 
+        @keyframes letterSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
         body { 
             margin: 40px; 
             font-family: Arial, sans-serif;
-            background: #f8f8f8;
+            background: #ffffff;
             padding-top: 0px;
         }
         form {
             display: flex;
             gap: 20px;
-            justify-content: left;
+            justify-content: flex-start;
+            align-items: center;
             margin-bottom: 40px;
+        }
+        .header-title {
+            margin-left: auto;
+            font-size: 1em;
+            color: #000000;
+            letter-spacing: 0px;
+            display: flex;
+        }
+        .header-title span {
+            display: inline-block;
+            animation: letterSpin linear infinite;
+            animation-duration: calc(var(--spin-duration) * 1s);
+            transform-origin: center 55%;
         }
         input { 
             width: 88px; 
@@ -70,12 +89,23 @@
     <form onsubmit="return searchWords(event)">
         <input type="text" id="patterns">
         <button type="submit">search</button>
+        <div class="header-title">substring concordance</div>
     </form>
     <div id="results"></div>
 
     <script src="words.js"></script>
     
     <script>
+    // Initialize title letter rotations
+    window.addEventListener('load', () => {
+        const title = document.querySelector('.header-title');
+        const letters = title.textContent.split('');
+        title.innerHTML = letters.map(letter => 
+            `<span style="--spin-duration: ${Math.floor(Math.random() * 1000)}">${letter}</span>`
+        ).join('');
+    });
+
+    // Search function
     function searchWords(event) {
         event.preventDefault();
         const input = document.getElementById('patterns');
@@ -87,7 +117,7 @@
         const results = {};
         
         window.wordList.forEach(word => {
-            const rawWord = word; // Preserve original casing
+            const rawWord = word;
             const lowerWord = rawWord.toLowerCase();
             
             patterns.forEach(pattern => {
@@ -96,7 +126,6 @@
                 let targetPattern = pattern;
                 let requiredLength = 0;
 
-                // Check for parenthetical length constraint
                 if (pattern.startsWith('(') && pattern.endsWith(')')) {
                     requiresExactLength = true;
                     targetPattern = pattern.slice(1, -1);
