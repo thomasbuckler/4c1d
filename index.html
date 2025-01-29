@@ -3,92 +3,102 @@
 <head>
     <title>4c1d</title>
     <style>
-        body { 
-            margin: 40px; 
-            font-family: Arial, sans-serif;
-            background: #ffffff;
-            padding-top: 0px;
-        }
-        form {
-            display: flex;
-            gap: 20px;
-            justify-content: flex-start;
-            align-items: center;
-            margin-bottom: 40px;
-        }
         .header-title {
-            margin-left: auto;
-            font-size: 1em;
-            color: #000000;
-            letter-spacing: 0px;
-            display: flex;
-        }
-        .header-title span {
-            display: inline-block;
-        }
-        input { 
-            width: 88px; 
-            padding: 12px; 
-            border: 1px solid #222;
-            background: #fff;
-            font-size: 16px;
-            box-sizing: border-box;
-            background: 
-                linear-gradient(-45deg, transparent 11px, #fff 11px)
-                bottom right,
-                #fff;
-        }
-        button { 
-            width: 77px;
-            padding: 12px; 
-            color: white;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            box-sizing: border-box;
             position: relative;
-            clip-path: polygon(
-                11px 0,
-                100% 0,    
-                100% 100%, 
-                0 100%,    
-                0 11px
-            );
-            background: 
-                linear-gradient(135deg, transparent 11px, #222 11px)
-                top left;
+            cursor: pointer;
+            user-select: none;
         }
-        .results { 
-            margin: 80px 20px 40px 20px;
+        .instructions-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #222;
+            padding: 10px;
+            width: 300px;
+            z-index: 1;
         }
-        .pattern { 
-            margin: 25px 0;
+        .header-title.expanded .instructions-dropdown {
+            display: block;
         }
-        h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.4em;
+        .header-title.expanded::before {
+            content: '▾';
         }
+        .header-title::before {
+            content: '▸';
+            margin-right: 4px;
+        }
+
+        body { margin: 40px; font-family: Arial, sans-serif; background: #ffffff; }
+        form { display: flex; gap: 20px; align-items: center; margin-bottom: 40px; }
+        .input-group { display: flex; align-items: center; gap: 8px; }
+        #reverseBtn { writing-mode: vertical-lr; transform: rotate(180deg); background: none; border: none; color: #000; padding: 0; cursor: pointer; font-size: 12px; letter-spacing: 0px; margin-right: -4px; }
+        input { width: 66px; padding: 12px; border: 1px solid #222; font-size: 16px; }
+        button[type="submit"] { padding: 12px 20px; background: #222; color: white; border: none; font-size: 16px; cursor: pointer; }
+        .results { margin: 80px 20px 40px 20px; }
+        .pattern { margin: 25px 0; }
+        h3 { margin: 0 0 10px 0; font-size: 1.4em; }
     </style>
 </head>
 <body>
     <form onsubmit="return searchWords(event)">
-        <input type="text" id="patterns">
+        <div class="input-group">
+            <button type="button" id="reverseBtn" onclick="reversePattern()">reverse</button>
+            <input type="text" id="patterns">
+        </div>
         <button type="submit">search</button>
-        <div class="header-title">substringconcordance</div>
+        <div class="header-title" onclick="toggleInstructions()">substring concordance
+    <div class="instructions-dropdown">
+        <div style="padding: 0px;">
+            <p style="margin: 0 0 0 0;">find words with lil palindromes nested in them.
+			like <em>lil</em> in lilac & lilly, or <em>eve</em> in never & level.<br><br>
+			asterisks (*) are used as wild cards. <em>e*e</em> will return words like were, these, 
+			ever.<br><br>
+			parenthesis are used to limit word length, <em>(e**e)</em> will return only words that are 4 characters in length.<br><br>
+			
+			the reverse button to the left of the text input field reverses the input.
+			<br><br>
+			have fun! :)
+            </ul>
+        </div>
+    </div>
+</div>
     </form>
     <div id="results"></div>
 
     <script src="words.js"></script>
     
     <script>
-    // Initialize title letter rotations
-    window.addEventListener('load', () => {
+    function toggleInstructions() {
         const title = document.querySelector('.header-title');
-        const letters = title.textContent.split('');
-        title.innerHTML = letters.map(letter => 
-            `<span style="--spin-duration: ${Math.floor(Math.random() * 1000)}">${letter}</span>`
-        ).join('');
-    });
+        title.classList.toggle('expanded');
+    }
+    // Function to reverse pattern
+    function reversePattern() {
+        const input = document.getElementById('patterns');
+        const patterns = input.value.split(',').map(p => p.trim());
+        
+        const reversedPatterns = patterns.map(pattern => {
+            const parenthesesCount = (pattern.match(/[()]/g) || []).length;
+            
+            if (parenthesesCount === 2) {
+                return '(' + pattern.slice(1, -1).split('').reverse().join('') + ')';
+            }
+            else if (pattern.startsWith('(')) {
+                return pattern.slice(1).split('').reverse().join('') + ')';
+            }
+            else if (pattern.endsWith(')')) {
+                return '(' + pattern.slice(0, -1).split('').reverse().join('');
+            }
+            else {
+                return pattern.split('').reverse().join('');
+            }
+        });
+        
+        input.value = reversedPatterns.join(', ');
+        searchWords(new Event('submit'));
+    }
 
     // Search function
     function searchWords(event) {
