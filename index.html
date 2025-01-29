@@ -3,75 +3,52 @@
 <head>
     <title>4c1d</title>
     <style>
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes letterSpin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
         body { 
             margin: 40px; 
             font-family: Arial, sans-serif;
             background: #ffffff;
-            padding-top: 0px;
         }
         form {
             display: flex;
             gap: 20px;
-            justify-content: flex-start;
             align-items: center;
             margin-bottom: 40px;
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #reverseBtn {
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            background: none;
+            border: none;
+            color: #000;
+            padding: 0;
+            cursor: pointer;
+            font-size: 12px;
+            letter-spacing: 0px;
+            margin-right: -4px;
+        }
+        input { 
+            width: 66px; 
+            padding: 12px; 
+            border: 1px solid #222;
+            font-size: 16px;
+        }
+        button[type="submit"] { 
+            padding: 12px 20px; 
+            background: #222;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
         }
         .header-title {
             margin-left: auto;
             font-size: 1em;
             color: #000000;
-            letter-spacing: 0px;
-            display: flex;
-        }
-        .header-title span {
-            display: inline-block;
-            animation: letterSpin linear infinite;
-            animation-duration: calc(var(--spin-duration) * 1s);
-            transform-origin: center 55%;
-        }
-        input { 
-            width: 88px; 
-            padding: 12px; 
-            border: 1px solid #222;
-            background: #fff;
-            font-size: 16px;
-            box-sizing: border-box;
-            animation: spin 8888s infinite linear;
-            background: 
-                linear-gradient(-45deg, transparent 11px, #fff 11px)
-                bottom right,
-                #fff;
-        }
-        button { 
-            width: 77px;
-            padding: 12px; 
-            color: white;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            box-sizing: border-box;
-            animation: spin 4444s infinite linear;
-            position: relative;
-            clip-path: polygon(
-                11px 0,
-                100% 0,    
-                100% 100%, 
-                0 100%,    
-                0 11px
-            );
-            background: 
-                linear-gradient(135deg, transparent 11px, #222 11px)
-                top left;
         }
         .results { 
             margin: 80px 20px 40px 20px;
@@ -87,7 +64,10 @@
 </head>
 <body>
     <form onsubmit="return searchWords(event)">
-        <input type="text" id="patterns">
+        <div class="input-group">
+            <button type="button" id="reverseBtn" onclick="reversePattern()">reverse</button>
+            <input type="text" id="patterns">
+        </div>
         <button type="submit">search</button>
         <div class="header-title">substringconcordance</div>
     </form>
@@ -96,16 +76,33 @@
     <script src="words.js"></script>
     
     <script>
-    // Initialize title letter rotations
-    window.addEventListener('load', () => {
-        const title = document.querySelector('.header-title');
-        const letters = title.textContent.split('');
-        title.innerHTML = letters.map(letter => 
-            `<span style="--spin-duration: ${Math.floor(Math.random() * 1000)}">${letter}</span>`
-        ).join('');
-    });
+    // Function to reverse pattern
+    function reversePattern() {
+        const input = document.getElementById('patterns');
+        const patterns = input.value.split(',').map(p => p.trim());
+        
+        const reversedPatterns = patterns.map(pattern => {
+            const parenthesesCount = (pattern.match(/[()]/g) || []).length;
+            
+            if (parenthesesCount === 2) {
+                return '(' + pattern.slice(1, -1).split('').reverse().join('') + ')';
+            }
+            else if (pattern.startsWith('(')) {
+                return pattern.slice(1).split('').reverse().join('') + ')';
+            }
+            else if (pattern.endsWith(')')) {
+                return '(' + pattern.slice(0, -1).split('').reverse().join('');
+            }
+            else {
+                return pattern.split('').reverse().join('');
+            }
+        });
+        
+        input.value = reversedPatterns.join(', ');
+        searchWords(new Event('submit'));
+    }
 
-    // Search function
+    // Search function (unchanged)
     function searchWords(event) {
         event.preventDefault();
         const input = document.getElementById('patterns');
@@ -122,34 +119,57 @@
             
             patterns.forEach(pattern => {
                 let isMatch = false;
-                let requiresExactLength = false;
                 let targetPattern = pattern;
-                let requiredLength = 0;
 
                 if (pattern.startsWith('(') && pattern.endsWith(')')) {
-                    requiresExactLength = true;
-                    targetPattern = pattern.slice(1, -1);
-                    requiredLength = targetPattern.length;
+                    targetPattern = pattern.slice(1, -1).toLowerCase();
+                    
+                    if (/^[a-z]\*+$/i.test(targetPattern)) {
+                        const letter = targetPattern[0];
+                        const length = targetPattern.length;
+                        const regexStr = `^${letter}.{${length - 1}}$`;
+                        const regex = new RegExp(regexStr);
+                        isMatch = regex.test(lowerWord);
+                    }
+                    else if (/^\*+[a-z]$/i.test(targetPattern)) {
+                        const letter = targetPattern.slice(-1);
+                        const length = targetPattern.length;
+                        const regexStr = `^.{${length - 1}}${letter}$`;
+                        const regex = new RegExp(regexStr);
+                        isMatch = regex.test(lowerWord);
+                    }
+                    else if (/^\*+$/.test(targetPattern)) {
+                        isMatch = lowerWord.length === targetPattern.length;
+                    }
+                    else {
+                        if (targetPattern.includes('*')) {
+                            const regexStr = `^${targetPattern.replace(/\*/g, '[a-z]')}$`;
+                            const regex = new RegExp(regexStr);
+                            isMatch = regex.test(lowerWord);
+                        } else {
+                            isMatch = lowerWord === targetPattern;
+                        }
+                    }
+                } 
+                else if (pattern.startsWith('(*')) {
+                    const afterPrefix = pattern.slice(2);
+                    const regexStr = '^' + afterPrefix.replace(/\*/g, '.*').toLowerCase();
+                    const regex = new RegExp(regexStr);
+                    isMatch = regex.test(lowerWord);
                 }
-
-                const processPattern = targetPattern.toLowerCase();
-                
-                if (processPattern.includes('*')) {
-                    const regexStr = requiresExactLength 
-                        ? `^${processPattern.replace(/\*/g, '[a-z]')}$`
-                        : processPattern.replace(/\*/g, '[a-z]');
-                    
-                    const regex = new RegExp(regexStr, 'i');
-                    isMatch = regex.test(rawWord);
-                    
-                    if (requiresExactLength) {
-                        isMatch = isMatch && rawWord.length === requiredLength;
-                    }
-                } else {
-                    isMatch = lowerWord.includes(processPattern);
-                    if (requiresExactLength) {
-                        isMatch = isMatch && rawWord.length === requiredLength;
-                    }
+                else if (pattern.endsWith('*)')) {
+                    const beforeSuffix = pattern.slice(0, -2);
+                    const regexStr = beforeSuffix.replace(/\*/g, '.*').toLowerCase() + '$';
+                    const regex = new RegExp(regexStr);
+                    isMatch = regex.test(lowerWord);
+                }
+                else if (pattern.includes('*')) {
+                    const regexStr = '^' + pattern.toLowerCase().replace(/\*/g, '.*') + '$';
+                    const regex = new RegExp(regexStr);
+                    isMatch = regex.test(lowerWord);
+                }
+                else {
+                    isMatch = lowerWord.includes(pattern.toLowerCase());
                 }
 
                 if (isMatch) {
