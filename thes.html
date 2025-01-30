@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thesaurus Loop</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input, button { font-size: 16px; padding: 10px; }
+        .word { color: blue; cursor: pointer; text-decoration: underline; margin: 5px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <h2>Thesaurus Loop</h2>
+    <input type="text" id="search" placeholder="Enter a word">
+    <button onclick="searchWord()">Search</button>
+    <div id="results"></div>
+
+    <script>
+        async function fetchSynonyms(word) {
+            const response = await fetch(`https://api.datamuse.com/words?ml=${word}`);
+            return response.json();
+        }
+
+        async function searchWord(word = null) {
+            const query = word || document.getElementById('search').value.trim();
+            if (!query) return;
+            
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `<h3>Related words for: ${query}</h3>`;
+            
+            const synonyms = await fetchSynonyms(query);
+            if (synonyms.length === 0) {
+                resultsDiv.innerHTML += '<p>No related words found.</p>';
+                return;
+            }
+
+            synonyms.forEach(entry => {
+                const wordElement = document.createElement('span');
+                wordElement.classList.add('word');
+                wordElement.textContent = entry.word;
+                wordElement.onclick = () => searchWord(entry.word);
+                resultsDiv.appendChild(wordElement);
+            });
+        }
+    </script>
+</body>
+</html>
