@@ -2,8 +2,10 @@
 <html>
 <head>
     <title>4c1d</title>
-	    <meta name="viewport" content="width=device-width, initial-scale=-1.1">
+    <!-- Fixed viewport meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        /* Existing desktop styles */
         .header-title {
             position: relative;
             cursor: pointer;
@@ -40,8 +42,61 @@
         .results { margin: 80px 20px 40px 20px; }
         .pattern { margin: 25px 0; }
         h3 { margin: 0 0 10px 0; font-size: 1.4em; }
+
+        /* Mobile-specific adjustments */
+        @media screen and (max-width: 600px) {
+            body { margin: 0; }
+            
+            form {
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 20px;
+                padding: 10px;
+            }
+            
+            .input-group {
+                width: 100%;
+                gap: 0;
+            }
+            
+            #reverseBtn {
+                writing-mode: horizontal-tb;
+                transform: none;
+                margin: 0 0 0 0;
+                padding: 2px;
+                font-size: 11px;
+            }
+            
+            input {
+                width: 100%;
+                padding: 8px;
+                font-size: 13px;
+                margin-left: 4px;
+            }
+            
+            button[type="submit"] {
+                width: 100%;
+                padding: 8px;
+                font-size: 13px;
+            }
+            
+            .instructions-dropdown {
+                width: calc(100% - 20px);
+                right: 0;
+                padding: 8px;
+            }
+            
+            .results {
+                margin: 20px 10px;
+            }
+            
+            .pattern {
+                margin: 15px 0;
+            }
+        }
     </style>
 </head>
+<!-- Rest of your body remains unchanged -->
 <body>
     <form onsubmit="return searchWords(event)">
         <div class="input-group">
