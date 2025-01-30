@@ -1,61 +1,47 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>4c1d</title>
-    <!-- Add viewport meta tag -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="viewport" content="width=device-width, initial-scale=-0.9">
     <style>
-        /* Existing styles remain unchanged */
-        
-        /* Mobile-responsive styles */
-        @media screen and (max-width: 600px) {
-            body {
-                margin: 15px;
-            }
-            
-            form {
-                flex-direction: column;
-                gap: 15px;
-                margin-bottom: 30px;
-            }
-            
-            .input-group {
-                width: 100%;
-                gap: 5px;
-            }
-            
-            #reverseBtn {
-                writing-mode: horizontal-tb;
-                transform: none;
-                margin: 0 0 5px 0;
-                padding: 5px;
-                font-size: 11px;
-            }
-            
-            input {
-                width: 100%;
-                padding: 10px;
-                font-size: 14px;
-            }
-            
-            button[type="submit"] {
-                width: 100%;
-                padding: 10px;
-                font-size: 14px;
-            }
-            
-            .instructions-dropdown {
-                width: 100%;
-                right: -15px;
-                box-sizing: border-box;
-            }
-            
-            .results {
-                margin: 40px 0 20px 0;
-            }
+        .header-title {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
         }
+        .instructions-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #222;
+            padding: 10px;
+            width: 300px;
+            z-index: 1;
+        }
+        .header-title.expanded .instructions-dropdown {
+            display: block;
+        }
+        .header-title.expanded::before {
+            content: '▾';
+        }
+        .header-title::before {
+            content: '▸';
+            margin-right: 4px;
+        }
+
+        body { margin: 40px; font-family: Arial, sans-serif; background: #ffffff; }
+        form { display: flex; gap: 20px; align-items: center; margin-bottom: 40px; }
+        .input-group { display: flex; align-items: center; gap: 8px; }
+        #reverseBtn { writing-mode: vertical-lr; transform: rotate(180deg); background: none; border: none; color: #000; padding: 0; cursor: pointer; font-size: 12px; letter-spacing: 0px; margin-right: -4px; }
+        input { width: 88px; padding: 12px; border: 1px solid #222; font-size: 16px; }
+        button[type="submit"] { padding: 12px 20px; background: #222; color: white; border: none; font-size: 16px; cursor: pointer; }
+        .results { margin: 80px 20px 40px 20px; }
+        .pattern { margin: 25px 0; }
+        h3 { margin: 0 0 10px 0; font-size: 1.4em; }
     </style>
 </head>
-<!-- Rest of your existing HTML remains unchanged -->
 <body>
     <form onsubmit="return searchWords(event)">
         <div class="input-group">
