@@ -54,14 +54,14 @@
 <body>
     <form onsubmit="return searchWords(event)">
         <div class="input-group">
-            <input type="text" id="inputText" placeholder="Enter text line...">
+            <input type="text" id="inputText" placeholder="">
         </div>
         <button type="submit">search</button>
         <div class="header-title" onclick="toggleInstructions()">erasure
             <div class="instructions-dropdown">
                 <div style="padding: 0px;">
                     <p style="margin: 0 0 0 0;">
-                        enter text to find words that can be formed by erasing letters<br>
+                        find hidden words by erasing letters<br>
                     </p>
                 </div>
             </div>
@@ -103,7 +103,7 @@
         const resultsDiv = document.getElementById('results');
         resultsDiv.innerHTML = `
             <div class="pattern">
-                <h3>Found ${matches.length} words</h3>
+                <h3>${matches.length} words</h3>
                 <div>${matches.join(', ')}</div>
             </div>
         `;
