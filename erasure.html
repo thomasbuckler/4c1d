@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Erasure Poetry Tool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .header-title {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+        }
+        .instructions-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #222;
+            padding: 10px;
+            width: 300px;
+            z-index: 1;
+        }
+        .header-title.expanded .instructions-dropdown {
+            display: block;
+        }
+        .header-title.expanded::before {
+            content: '▾';
+        }
+        .header-title::before {
+            content: '▸';
+            margin-right: 4px;
+        }
+
+        body { margin: 40px; font-family: Arial, sans-serif; background: #ffffff; }
+        form { display: flex; gap: 20px; align-items: center; margin-bottom: 40px; }
+        .input-group { display: flex; align-items: center; gap: 8px; }
+        input { width: 400px; padding: 12px; border: 1px solid #222; font-size: 16px; }
+        button[type="submit"] { padding: 12px 20px; background: #222; color: white; border: none; font-size: 16px; cursor: pointer; }
+        .results { margin: 80px 20px 40px 20px; }
+        .pattern { margin: 25px 0; }
+        h3 { margin: 0 0 10px 0; font-size: 1.4em; }
+
+        @media screen and (max-width: 600px) {
+            body { margin: 0; }
+            form { flex-direction: column; padding: 10px; }
+            .input-group { width: 100%; }
+            input { width: 100%; padding: 8px; }
+            button[type="submit"] { width: 100%; }
+            .instructions-dropdown { width: calc(100% - 20px); }
+            .results { margin: 20px 10px; }
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return searchWords(event)">
+        <div class="input-group">
+            <input type="text" id="inputText" placeholder="Enter text line...">
+        </div>
+        <button type="submit">search</button>
+        <div class="header-title" onclick="toggleInstructions()">erasure
+            <div class="instructions-dropdown">
+                <div style="padding: 0px;">
+                    <p style="margin: 0 0 0 0;">
+                        enter text to find words that can be formed by erasing letters<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div id="results"></div>
+
+    <script src="words.js"></script>
+    
+    <script>
+    function toggleInstructions() {
+        const title = document.querySelector('.header-title');
+        title.classList.toggle('expanded');
+    }
+
+    function isSubsequence(candidate, str) {
+        let candidateIndex = 0;
+        for (let i = 0; i < str.length && candidateIndex < candidate.length; i++) {
+            if (str[i] === candidate[candidateIndex]) {
+                candidateIndex++;
+            }
+        }
+        return candidateIndex === candidate.length;
+    }
+
+    function searchWords(event) {
+        event.preventDefault();
+        const inputText = document.getElementById('inputText').value;
+        const cleanStr = inputText.replace(/[^a-zA-Z]/g, '').toLowerCase();
+        
+        const matches = [];
+        window.wordList.forEach(word => {
+            const lowerWord = word.toLowerCase();
+            if (lowerWord.length >= 1 && isSubsequence(lowerWord, cleanStr)) {
+                matches.push(word);
+            }
+        });
+        
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = `
+            <div class="pattern">
+                <h3>Found ${matches.length} words</h3>
+                <div>${matches.join(', ')}</div>
+            </div>
+        `;
+        document.getElementById('inputText').blur();
+        return false;
+    }
+    </script>
+</body>
+</html>
