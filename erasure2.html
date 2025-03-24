@@ -111,7 +111,7 @@
 
     function findValidCombinations(target, sourceWords) {
         const results = [];
-        const maxSolutions = 1000;
+        const maxSolutions = 10000;
 
         function backtrack(index, currentPos, path) {
             if (currentPos === target.length) {
