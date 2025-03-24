@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>erased into existence</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .header-title {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+        }
+        .instructions-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #222;
+            padding: 10px;
+            width: 300px;
+            z-index: 1;
+        }
+        .header-title.expanded .instructions-dropdown {
+            display: block;
+        }
+        .header-title.expanded::before {
+            content: '▾';
+        }
+        .header-title::before {
+            content: '▸';
+            margin-right: 4px;
+        }
+
+        body { margin: 40px; font-family: Arial, sans-serif; background: #ffffff; }
+        form { display: flex; gap: 20px; align-items: center; margin-bottom: 40px; flex-wrap: wrap; }
+        .input-group { flex: 1; display: flex; align-items: center; gap: 8px; }
+        input { width: 100%; padding: 12px; border: 1px solid #222; font-size: 16px; }
+        button[type="submit"] { padding: 12px 20px; background: #222; color: white; border: none; font-size: 16px; cursor: pointer; }
+        .results { margin: 80px 20px 40px 20px; }
+        .pattern { margin: 25px 0; }
+        h3 { margin: 0 0 10px 0; font-size: 1.4em; }
+
+        @media screen and (max-width: 600px) {
+            body { margin: 0; }
+            form { flex-direction: column; padding: 10px; gap: 10px; }
+            .input-group { width: 100%; }
+            input { padding: 8px; }
+            button[type="submit"] { width: 100%; }
+            .instructions-dropdown { width: calc(100% - 20px); }
+            .results { margin: 20px 10px; }
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return checkErasure(event)">
+        <div class="input-group">
+            <input type="text" id="targetWord" placeholder="target word">
+        </div>
+        <div class="input-group">
+            <input type="text" id="sourceText" placeholder="source text">
+        </div>
+        <button type="submit">search</button>
+        <div class="header-title" onclick="toggleInstructions()">erasure checker
+            <div class="instructions-dropdown">
+                <div style="padding: 0px;">
+                    <p style="margin: 0 0 0 0;">check if a target word can be erased into existence by erasing letters from source text<br>
+					</p>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div id="results"></div>
+
+    <script>
+    function toggleInstructions() {
+        const title = document.querySelector('.header-title');
+        title.classList.toggle('expanded');
+    }
+
+    function checkErasure(event) {
+        event.preventDefault();
+        const target = document.getElementById('targetWord').value.replace(/[^a-zA-Z]/g, '').toLowerCase();
+        const source = document.getElementById('sourceText').value;
+        
+        if (!target) {
+            showResult(false);
+            return;
+        }
+
+        const sourceWords = source.split(' ')
+            .filter(w => w.trim())
+            .map(word => ({
+                original: word,
+                cleaned: word.replace(/[^a-zA-Z]/g, '').toLowerCase()
+            }));
+
+        const validCombination = findValidCombination(target, sourceWords);
+        validCombination ? showResult(true, validCombination) : showResult(false);
+    }
+
+    function findValidCombination(target, sourceWords) {
+        const combinations = generateCombinations(sourceWords);
+        for (const combo of combinations) {
+            const concatenated = combo.map(w => w.cleaned).join('');
+            if (isSubsequence(target, concatenated)) {
+                return combo.map(w => w.original);
+            }
+        }
+        return null;
+    }
+
+    function generateCombinations(words) {
+        const combinations = [];
+        const n = words.length;
+        for (let mask = 1; mask < (1 << n); mask++) {
+            const combo = [];
+            for (let i = 0; i < n; i++) {
+                if (mask & (1 << i)) combo.push(words[i]);
+            }
+            combinations.push(combo);
+        }
+        combinations.sort((a, b) => a.length - b.length);
+        return combinations;
+    }
+
+    function isSubsequence(target, str) {
+        let t = 0;
+        for (let s = 0; s < str.length && t < target.length; s++) {
+            if (str[s] === target[t]) t++;
+        }
+        return t === target.length;
+    }
+
+    function showResult(success, words) {
+        const resultsDiv = document.getElementById('results');
+        if (success) {
+            resultsDiv.innerHTML = `
+                <div class="pattern">
+                    <h3>✔️ word CAN be erased into existence: ${words.join(', ')}</h3>
+                </div>
+            `;
+        } else {
+            resultsDiv.innerHTML = `
+                <div class="pattern">
+                    <h3>🚫 word CANNOT be erased into existence</h3>
+                </div>
+            `;
+        }
+    }
+    </script>
+</body>
+</html>
