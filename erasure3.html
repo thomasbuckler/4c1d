@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>erased into existence</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .header-title {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+        }
+        .instructions-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #222;
+            padding: 10px;
+            width: 300px;
+            z-index: 1;
+        }
+        .header-title.expanded .instructions-dropdown {
+            display: block;
+        }
+        .header-title.expanded::before {
+            content: '▾';
+        }
+        .header-title::before {
+            content: '▸';
+            margin-right: 4px;
+        }
+
+        body { margin: 40px; font-family: Arial, sans-serif; background: #ffffff; }
+        form { display: flex; gap: 20px; align-items: center; margin-bottom: 40px; flex-wrap: wrap; }
+        .input-group { flex: 1; display: flex; align-items: center; gap: 8px; }
+        input { width: 100%; padding: 12px; border: 1px solid #222; font-size: 16px; }
+        button[type="submit"] { padding: 12px 20px; background: #222; color: white; border: none; font-size: 16px; cursor: pointer; }
+        .results { margin: 80px 20px 40px 20px; }
+        .pattern { margin: 25px 0; }
+        h3 { margin: 0 0 10px 0; font-size: 1.4em; }
+
+        @media screen and (max-width: 600px) {
+            body { margin: 0; }
+            form { flex-direction: column; padding: 10px; gap: 10px; }
+            .input-group { width: 100%; }
+            input { padding: 8px; }
+            button[type="submit"] { width: 100%; }
+            .instructions-dropdown { width: calc(100% - 20px); }
+            .results { margin: 20px 10px; }
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return checkErasure(event)">
+        <div class="input-group">
+            <input type="text" id="targetWord" placeholder="target word">
+        </div>
+        <div class="input-group">
+            <input type="text" id="sourceText" placeholder="source text">
+        </div>
+        <button type="submit">search</button>
+        <div class="header-title" onclick="toggleInstructions()">erasure checker
+            <div class="instructions-dropdown">
+                <div style="padding: 0px;">
+                    <p style="margin: 0 0 0 0;">check if a target word can be erased into existence by erasing letters from source text<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div id="results"></div>
+
+<script>
+    function toggleInstructions() {
+        const title = document.querySelector('.header-title');
+        title.classList.toggle('expanded');
+    }
+
+    function checkErasure(event) {
+        event.preventDefault();
+        const target = document.getElementById('targetWord').value.replace(/[^a-zA-Z]/g, '').toLowerCase();
+        const source = document.getElementById('sourceText').value;
+        
+        if (!target) {
+            showResult(false);
+            return;
+        }
+
+        const sourceWords = source.split(' ')
+            .filter(w => w.trim())
+            .map(word => ({
+                original: word,
+                cleaned: word.replace(/[^a-zA-Z]/g, '').toLowerCase()
+            }));
+
+        const validCombinations = findValidCombinations(target, sourceWords);
+        validCombinations.length > 0 ? showResult(true, validCombinations) : showResult(false);
+    }
+	
+	
+
+    function findValidCombinations(target, sourceWords) {
+        const results = [];
+        const maxSolutions = 1000; // Limit the number of solutions to prevent excessive processing
+
+        function backtrack(index, currentPos, usedWords) {
+            if (currentPos === target.length) {
+                results.push([...usedWords]);
+                return;
+            }
+            if (index === sourceWords.length || results.length >= maxSolutions) {
+                return;
+            }
+
+            const word = sourceWords[index].cleaned;
+            let newPos = currentPos;
+            for (const char of word) {
+                if (newPos < target.length && char === target[newPos]) {
+                    newPos++;
+                }
+            }
+
+            if (newPos > currentPos) {
+                usedWords.push(sourceWords[index].original);
+                backtrack(index + 1, newPos, usedWords);
+                usedWords.pop();
+            }
+
+            backtrack(index + 1, currentPos, usedWords);
+        }
+
+        backtrack(0, 0, []);
+        return results;
+    }
+
+    function showResult(success, combinations) {
+        const resultsDiv = document.getElementById('results');
+        if (success) {
+            resultsDiv.innerHTML = combinations.map((combo, index) => `
+                <div class="pattern">
+                    <h3>✔️ word CAN be erased into existence (option ${index + 1}): ${combo.join(', ')}</h3>
+                </div>
+            `).join('');
+        } else {
+            resultsDiv.innerHTML = `
+                <div class="pattern">
+                    <h3>🚫 word CANNOT be erased into existence</h3>
+                </div>
+            `;
+        }
+    }
+    </script>
+</body>
+</html>
