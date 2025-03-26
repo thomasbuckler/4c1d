@@ -39,12 +39,7 @@
         .results { margin: 80px 20px 40px 20px; }
         .pattern { margin: 0px 0; }
         h3 { margin: 0 0 10px 0; font-size: 1.4em; }
-        .target {
-            text-decoration: underline;
-            text-decoration-color: #222;
-            text-underline-offset: 2px;
-        }
-        .dimmed { color: #eee; }
+        .highlight { background-color: yellow; }
 
         @media screen and (max-width: 600px) {
             body { margin: 0; }
@@ -70,7 +65,7 @@
             <div class="instructions-dropdown">
                 <div style="padding: 0px;">
                     <p style="margin: 0 0 0 0;">supply a target word or words to determine if the word(s) is(are) hidden in the source text. <i>(word: 'data' source text: 'mary had a little lamb')</i><br>
-					</p>
+                    </p>
                 </div>
             </div>
         </div>
@@ -128,21 +123,18 @@
             const word = sourceWords[index];
             let maxProgress = currentPos;
             
-            // Find maximum possible progress with this word
             for (let i = 0; i < word.cleaned.length && maxProgress < target.length; i++) {
                 if (word.cleaned[i] === target[maxProgress]) {
                     maxProgress++;
                 }
             }
 
-            // Try using this word if it contributes
             if (maxProgress > currentPos) {
                 path.push(word);
                 backtrack(index + 1, maxProgress, path);
                 path.pop();
             }
 
-            // Try skipping this word
             backtrack(index + 1, currentPos, path);
         }
 
@@ -174,7 +166,7 @@
 
                 const div = document.createElement('div');
                 div.className = 'pattern';
-                div.innerHTML = `${highlightedWords.join(', ')}`;
+                div.innerHTML = `${highlightedWords.join(' ')}`;
                 resultsDiv.appendChild(div);
             });
         } else {
@@ -205,12 +197,8 @@
             const isLetter = /[a-zA-Z]/.test(originalWord[i]);
             const cleanIndex = indexMap.indexOf(i);
             
-            if (isLetter) {
-                if (highlightSet.has(cleanIndex)) {
-                    highlighted.push(`<span class="target">${originalWord[i]}</span>`);
-                } else {
-                    highlighted.push(`<span class="dimmed">${originalWord[i]}</span>`);
-                }
+            if (isLetter && highlightSet.has(cleanIndex)) {
+                highlighted.push(`<span class="highlight">${originalWord[i]}</span>`);
             } else {
                 highlighted.push(originalWord[i]);
             }
