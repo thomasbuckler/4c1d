@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>erased into existence</title>
+    <title>target with erasure</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .header-title {
@@ -39,7 +39,7 @@
         .results { margin: 80px 20px 40px 20px; }
         .pattern { margin: 0px 0; }
         h3 { margin: 0 0 10px 0; font-size: 1.4em; }
-        .dimmed { color: #ddd; }
+        .highlight { background-color: yellow; }
 
         @media screen and (max-width: 600px) {
             body { margin: 0; }
@@ -169,7 +169,7 @@
 
                 const div = document.createElement('div');
                 div.className = 'pattern';
-                div.innerHTML = `option ${index + 1}: ${highlightedWords.join(', ')}`;
+                div.innerHTML = `✔️ Option ${index + 1}: ${highlightedWords.join(', ')}`;
                 resultsDiv.appendChild(div);
             });
         } else {
@@ -199,8 +199,8 @@
         for (let i = 0; i < originalWord.length; i++) {
             const isLetter = /[a-zA-Z]/.test(originalWord[i]);
             const cleanIndex = indexMap.indexOf(i);
-            if (isLetter && !highlightSet.has(cleanIndex)) {
-                highlighted.push(`<span class="dimmed">${originalWord[i]}</span>`);
+            if (isLetter && highlightSet.has(cleanIndex)) {
+                highlighted.push(`<span class="highlight">${originalWord[i]}</span>`);
             } else {
                 highlighted.push(originalWord[i]);
             }

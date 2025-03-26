@@ -37,8 +37,9 @@
         input { width: 100%; padding: 12px; border: 1px solid #222; font-size: 16px; }
         button[type="submit"] { padding: 12px 20px; background: #222; color: white; border: none; font-size: 16px; cursor: pointer; }
         .results { margin: 80px 20px 40px 20px; }
-        .pattern { margin: 25px 0; }
+        .pattern { margin: 0px 0; }
         h3 { margin: 0 0 10px 0; font-size: 1.4em; }
+        .dimmed { color: #ddd; }
 
         @media screen and (max-width: 600px) {
             body { margin: 0; }
@@ -54,24 +55,24 @@
 <body>
     <form onsubmit="return checkErasure(event)">
         <div class="input-group">
-            <input type="text" id="targetWord" placeholder="target word">
+            <input type="text" id="targetWord" placeholder="target word(s)">
         </div>
         <div class="input-group">
             <input type="text" id="sourceText" placeholder="source text">
         </div>
         <button type="submit">search</button>
-        <div class="header-title" onclick="toggleInstructions()">erasure checker
+        <div class="header-title" onclick="toggleInstructions()">how to use 'target word(s) by erasure of source text'
             <div class="instructions-dropdown">
                 <div style="padding: 0px;">
-                    <p style="margin: 0 0 0 0;">check if a target word can be erased into existence by erasing letters from source text<br>
-                    </p>
+                    <p style="margin: 0 0 0 0;">supply a target word or words to determine if the word(s) is(are) hidden in the source text. <i>(word: 'data' source text: 'mary had a little lamb')</i><br>
+					</p>
                 </div>
             </div>
         </div>
     </form>
     <div id="results"></div>
 
-<script>
+    <script>
     function toggleInstructions() {
         const title = document.querySelector('.header-title');
         title.classList.toggle('expanded');
@@ -89,66 +90,122 @@
 
         const sourceWords = source.split(' ')
             .filter(w => w.trim())
-            .map(word => ({
-                original: word,
-                cleaned: word.replace(/[^a-zA-Z]/g, '').toLowerCase()
-            }));
+            .map(word => {
+                const cleaned = word.replace(/[^a-zA-Z]/g, '').toLowerCase();
+                const indexMap = [];
+                for (let i = 0; i < word.length; i++) {
+                    if (/[a-zA-Z]/.test(word[i])) {
+                        indexMap.push(i);
+                    }
+                }
+                return {
+                    original: word,
+                    cleaned: cleaned,
+                    indexMap: indexMap
+                };
+            });
 
         const validCombinations = findValidCombinations(target, sourceWords);
-        validCombinations.length > 0 ? showResult(true, validCombinations) : showResult(false);
+        validCombinations.length > 0 ? showResult(true, target, validCombinations) : showResult(false);
     }
-	
-	
 
     function findValidCombinations(target, sourceWords) {
         const results = [];
-        const maxSolutions = 1000; // Limit the number of solutions to prevent excessive processing
+        const maxSolutions = 1000;
 
-        function backtrack(index, currentPos, usedWords) {
+        function backtrack(index, currentPos, path) {
             if (currentPos === target.length) {
-                results.push([...usedWords]);
+                results.push([...path]);
                 return;
             }
-            if (index === sourceWords.length || results.length >= maxSolutions) {
-                return;
-            }
+            if (index === sourceWords.length || results.length >= maxSolutions) return;
 
-            const word = sourceWords[index].cleaned;
-            let newPos = currentPos;
-            for (const char of word) {
-                if (newPos < target.length && char === target[newPos]) {
-                    newPos++;
+            const word = sourceWords[index];
+            let maxProgress = currentPos;
+            
+            // Find maximum possible progress with this word
+            for (let i = 0; i < word.cleaned.length && maxProgress < target.length; i++) {
+                if (word.cleaned[i] === target[maxProgress]) {
+                    maxProgress++;
                 }
             }
 
-            if (newPos > currentPos) {
-                usedWords.push(sourceWords[index].original);
-                backtrack(index + 1, newPos, usedWords);
-                usedWords.pop();
+            // Try using this word if it contributes
+            if (maxProgress > currentPos) {
+                path.push(word);
+                backtrack(index + 1, maxProgress, path);
+                path.pop();
             }
 
-            backtrack(index + 1, currentPos, usedWords);
+            // Try skipping this word
+            backtrack(index + 1, currentPos, path);
         }
 
         backtrack(0, 0, []);
         return results;
     }
 
-    function showResult(success, combinations) {
+    function showResult(success, target, combinations) {
         const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = '';
+
         if (success) {
-            resultsDiv.innerHTML = combinations.map((combo, index) => `
-                <div class="pattern">
-                    <h3>✔️ word CAN be erased into existence (option ${index + 1}): ${combo.join(', ')}</h3>
-                </div>
-            `).join('');
+            combinations.forEach((combo, index) => {
+                const concatenated = combo.map(w => w.cleaned).join('');
+                const matchedIndices = getMatchedIndices(target, concatenated);
+                
+                let currentPosition = 0;
+                const highlightedWords = combo.map(word => {
+                    const start = currentPosition;
+                    const end = start + word.cleaned.length;
+                    currentPosition = end;
+                    
+                    const wordIndices = matchedIndices
+                        .filter(i => i >= start && i < end)
+                        .map(i => i - start);
+
+                    return highlightWord(word.original, word.indexMap, wordIndices);
+                });
+
+                const div = document.createElement('div');
+                div.className = 'pattern';
+                div.innerHTML = `option ${index + 1}: ${highlightedWords.join(', ')}`;
+                resultsDiv.appendChild(div);
+            });
         } else {
             resultsDiv.innerHTML = `
                 <div class="pattern">
-                    <h3>🚫 word CANNOT be erased into existence</h3>
+                   🚫 CANNOT be erased into existence
                 </div>
             `;
         }
+    }
+
+    function getMatchedIndices(target, concatenated) {
+        const indices = [];
+        let targetIndex = 0;
+        for (let i = 0; i < concatenated.length && targetIndex < target.length; i++) {
+            if (concatenated[i] === target[targetIndex]) {
+                indices.push(i);
+                targetIndex++;
+            }
+        }
+        return indices;
+    }
+
+    function highlightWord(originalWord, indexMap, cleanedIndices) {
+        const highlighted = [];
+        const highlightSet = new Set(cleanedIndices);
+        for (let i = 0; i < originalWord.length; i++) {
+            const isLetter = /[a-zA-Z]/.test(originalWord[i]);
+            const cleanIndex = indexMap.indexOf(i);
+            if (isLetter && !highlightSet.has(cleanIndex)) {
+                highlighted.push(`<span class="dimmed">${originalWord[i]}</span>`);
+            } else {
+                highlighted.push(originalWord[i]);
+            }
+        }
+        return highlighted.join('');
     }
     </script>
 </body>
