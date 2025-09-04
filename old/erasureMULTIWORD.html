@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>discover by erasure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .header-title { position: relative; cursor: pointer; user-select: none; }
+        .instructions-dropdown { display: none; position: absolute; top: 100%; right: 0; background: white; border: 1px solid #222; padding: 10px; width: 320px; z-index: 1; }
+        .header-title.expanded .instructions-dropdown { display: block; }
+        .header-title.expanded::before { content: '▾'; }
+        .header-title::before { content: '▸'; margin-right: 4px; }
+
+        body { margin: 40px; font-family: Arial, sans-serif; background: #ffffff; }
+        form { display: flex; gap: 20px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
+        .input-group { display: flex; align-items: center; gap: 8px; }
+        input { width: 400px; padding: 12px; border: 1px solid #222; font-size: 16px; }
+        button[type="submit"] { padding: 12px 20px; background: #222; color: white; border: none; font-size: 16px; cursor: pointer; }
+        .results { margin: 24px 20px 40px 20px; }
+        .pattern { margin: 25px 0; }
+        h3 { margin: 0 0 10px 0; font-size: 1.2em; }
+        .muted { color: #666; font-size: 0.9em; }
+        .group { margin-top: 8px; }
+        details { border: 1px solid #e5e5e5; border-radius: 8px; padding: 10px 12px; background: #fafafa; }
+        summary { cursor: pointer; font-weight: 600; }
+        .pill { display: inline-block; margin-right: 8px; margin-bottom: 8px; padding: 4px 8px; border: 1px solid #ddd; border-radius: 999px; font-size: 12px; }
+
+        @media screen and (max-width: 600px) {
+            body { margin: 0; }
+            form { flex-direction: column; padding: 10px; }
+            .input-group { width: 100%; }
+            input { width: 100%; padding: 8px; }
+            button[type="submit"] { width: 100%; }
+            .instructions-dropdown { width: calc(100% - 20px); }
+            .results { margin: 20px 10px; }
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return searchWords(event)">
+        <div class="input-group">
+            <input type="text" id="inputText" placeholder="paste text to erase into…">
+        </div>
+        <button type="submit">search</button>
+        <div class="header-title" onclick="toggleInstructions()">how to use discover by erasure
+            <div class="instructions-dropdown">
+                <div style="padding: 0px;">
+                    <p style="margin: 0 0 8px 0;">discover hidden words by erasing letters</p>
+                    <p style="margin: 0 0 0 0; font-style: italic;">examples: ‘constellation’ → ‘cotton’, ‘satin’, ‘contain’, ‘onion’</p>
+                    <p style="margin: 8px 0 0 0;">New: it also finds <strong>multi‑word chains</strong> (e.g. “i am other”). Chains respect the left‑to‑right order of letters in your source.</p>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="muted" id="hint"></div>
+    <div id="results" class="results"></div>
+
+    <!-- your dictionary of words should define: window.wordList = [ ... ] -->
+    <script src="words.js"></script>
+
+    <script>
+    const CONFIG = {
+        MAX_COMBOS: 10000,
+        MAX_RENDER_PER_GROUP: 500,
+        MIN_WORD_LEN: 1,
+        ALLOW_REUSE: true
+    };
+
+    function toggleInstructions() {
+        document.querySelector('.header-title').classList.toggle('expanded');
+    }
+
+    function isSubsequence(candidate, str) {
+        let i = 0;
+        for (let j = 0; j < str.length && i < candidate.length; j++) {
+            if (str[j] === candidate[i]) i++;
+        }
+        return i === candidate.length;
+    }
+
+    function buildNextTable(s) {
+        const L = s.length;
+        const A = 26;
+        const nextPos = Array.from({ length: L + 1 }, () => new Int32Array(A).fill(-1));
+        for (let i = L - 1; i >= 0; i--) {
+            for (let c = 0; c < A; c++) nextPos[i][c] = nextPos[i + 1][c];
+            const code = s.charCodeAt(i) - 97;
+            if (code >= 0 && code < A) nextPos[i][code] = i;
+        }
+        return nextPos;
+    }
+
+    function advanceWord(pos, word, nextPos) {
+        for (let k = 0; k < word.length; k++) {
+            const code = word.charCodeAt(k) - 97;
+            if (code < 0 || code >= 26) continue;
+            const nxt = nextPos[pos][code];
+            if (nxt === -1) return -1;
+            pos = nxt + 1;
+        }
+        return pos;
+    }
+
+    function enumerateChains(cleanStr, candidates, nextPos) {
+        const combosSet = new Set();
+        const memo = new Map();
+
+        function cachedAdvance(pos, idx) {
+            const key = pos + '|' + idx;
+            if (memo.has(key)) return memo.get(key);
+            const w = candidates[idx];
+            const res = advanceWord(pos, w, nextPos);
+            memo.set(key, res);
+            return res;
+        }
+
+        const stack = [{ pos: 0, pathIdxs: [] }];
+
+        while (stack.length) {
+            const { pos, pathIdxs } = stack.pop();
+            if (combosSet.size >= CONFIG.MAX_COMBOS) break;
+
+            for (let idx = 0; idx < candidates.length; idx++) {
+                if (!CONFIG.ALLOW_REUSE && pathIdxs.includes(idx)) continue;
+                const nextP = cachedAdvance(pos, idx);
+                if (nextP === -1) continue;
+
+                const newPathIdxs = pathIdxs.concat(idx);
+                if (newPathIdxs.length >= 2) {
+                    const phrase = newPathIdxs.map(i => candidates[i]).join(' ');
+                    combosSet.add(phrase);
+                    if (combosSet.size >= CONFIG.MAX_COMBOS) break;
+                }
+                if (nextP < cleanStr.length && combosSet.size < CONFIG.MAX_COMBOS) {
+                    stack.push({ pos: nextP, pathIdxs: newPathIdxs });
+                }
+            }
+        }
+        return Array.from(combosSet);
+    }
+
+    function groupByWordCount(phrases) {
+        const buckets = new Map();
+        for (const p of phrases) {
+            const count = p.split(' ').length;
+            if (!buckets.has(count)) buckets.set(count, []);
+            buckets.get(count).push(p);
+        }
+        return new Map([...buckets.entries()].sort((a,b) => a[0]-b[0]));
+    }
+
+    function renderGroups(container, title, items) {
+        const wrap = document.createElement('div');
+        wrap.className = 'pattern';
+        const h = document.createElement('h3');
+        h.textContent = title;
+        wrap.appendChild(h);
+
+        if (items.length === 0) {
+            const empty = document.createElement('div');
+            empty.className = 'muted';
+            empty.textContent = 'none';
+            wrap.appendChild(empty);
+            container.appendChild(wrap);
+            return;
+        }
+
+        const preview = document.createElement('div');
+        preview.textContent = items.join(', ');
+        wrap.appendChild(preview);
+        container.appendChild(wrap);
+    }
+
+    function renderComboGroups(container, combos) {
+        const buckets = groupByWordCount(combos);
+        const summary = document.createElement('div');
+        for (const [len, arr] of buckets) {
+            const pill = document.createElement('span');
+            pill.className = 'pill';
+            pill.textContent = `${len} words • ${arr.length}`;
+            summary.appendChild(pill);
+        }
+        container.appendChild(summary);
+
+        for (const [len, arr] of buckets) {
+            const details = document.createElement('details');
+            const summaryEl = document.createElement('summary');
+            summaryEl.textContent = `${len}‑word chains (${Math.min(arr.length, CONFIG.MAX_RENDER_PER_GROUP)} shown)`;
+            details.appendChild(summaryEl);
+
+            // Frequency-respecting sort: by popularity of first word in window.wordList
+            arr.sort((a, b) => {
+                const fa = window.wordList.indexOf(a.split(' ')[0]);
+                const fb = window.wordList.indexOf(b.split(' ')[0]);
+                return fa - fb;
+            });
+
+            const list = document.createElement('div');
+            const slice = arr.slice(0, CONFIG.MAX_RENDER_PER_GROUP);
+            list.textContent = slice.join(', ');
+            details.appendChild(list);
+            container.appendChild(details);
+        }
+    }
+
+    function searchWords(event) {
+        event.preventDefault();
+        const text = document.getElementById('inputText').value;
+        const cleanStr = text.replace(/[^a-zA-Z]/g, '').toLowerCase();
+        const hint = document.getElementById('hint');
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = '';
+
+        if (!cleanStr.length) {
+            hint.textContent = '';
+            resultsDiv.innerHTML = '<div class="muted">enter some letters first</div>';
+            return false;
+        }
+
+        const nextPos = buildNextTable(cleanStr);
+
+        const singleMatches = [];
+        const seen = new Set();
+        for (const word of (window.wordList || [])) {
+            const w = String(word).toLowerCase();
+            if (w.length < CONFIG.MIN_WORD_LEN) continue;
+            if (seen.has(w)) continue;
+            if (isSubsequence(w, cleanStr)) {
+                singleMatches.push(w);
+                seen.add(w);
+            }
+        }
+        // DO NOT sort here — preserve frequency order from words.js
+
+        const combos = enumerateChains(cleanStr, singleMatches, nextPos);
+
+        hint.textContent = `source length: ${cleanStr.length} • singles: ${singleMatches.length} • combos found: ${combos.length} (cap ${CONFIG.MAX_COMBOS})`;
+
+        renderGroups(resultsDiv, `${singleMatches.length} single words`, singleMatches);
+
+        const combosec = document.createElement('div');
+        combosec.className = 'pattern';
+        const h3 = document.createElement('h3');
+        h3.textContent = `combinations (arbitrarily long)`;
+        combosec.appendChild(h3);
+        resultsDiv.appendChild(combosec);
+        renderComboGroups(resultsDiv, combos);
+
+        document.getElementById('inputText').blur();
+        return false;
+    }
+    </script>
+</body>
+</html>
