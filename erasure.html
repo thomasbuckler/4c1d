@@ -32,20 +32,31 @@
         }
 
         body { margin: 40px; font-family: Arial, sans-serif; background: #ffffff; }
-        form { display: flex; gap: 20px; align-items: center; margin-bottom: 40px; }
+        form { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 40px; }
         .input-group { display: flex; align-items: center; gap: 8px; }
         input { width: 400px; padding: 12px; border: 1px solid #222; font-size: 16px; }
-        button[type="submit"] { padding: 12px 20px; background: #222; color: white; border: none; font-size: 16px; cursor: pointer; }
         .results { margin: 80px 20px 40px 20px; }
         .pattern { margin: 25px 0; }
         h3 { margin: 0 0 10px 0; font-size: 1.4em; }
+        
+        /* new: shared style for form buttons */
+        .form-button {
+            padding: 12px 20px;
+            background: #222;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: lowercase; /* ensures button text is lowercase */
+        }
+
 
         @media screen and (max-width: 600px) {
             body { margin: 0; }
             form { flex-direction: column; padding: 10px; }
             .input-group { width: 100%; }
-            input { width: 100%; padding: 8px; }
-            button[type="submit"] { width: 100%; }
+            input { width: 100%; box-sizing: border-box; }
+            .form-button { width: 100%; }
             .instructions-dropdown { width: calc(100% - 20px); }
             .results { margin: 20px 10px; }
         }
@@ -56,7 +67,8 @@
         <div class="input-group">
             <input type="text" id="inputText" placeholder="">
         </div>
-        <button type="submit">search</button>
+        <button type="submit" class="form-button">search</button>
+        <button type="button" id="downloadbtn" class="form-button" onclick="downloadResults()" style="display: none;">dl .txt</button>
         <div class="header-title" onclick="toggleInstructions()">how to use discover by erasure
             <div class="instructions-dropdown">
                 <div style="padding: 0px;">
@@ -71,6 +83,8 @@
     <script src="words.js"></script>
     
     <script>
+    let currentMatches = [];
+
     function toggleInstructions() {
         const title = document.querySelector('.header-title');
         title.classList.toggle('expanded');
@@ -86,6 +100,29 @@
         return candidateIndex === candidate.length;
     }
 
+    function downloadResults() {
+        if (currentMatches.length === 0) {
+            alert("no words to download.");
+            return;
+        }
+
+        const inputText = document.getElementById('inputText').value;
+        const safeFilename = inputText.trim().replace(/[^a-z0-9]/gi, '_').toLowerCase();
+        const finalFilename = safeFilename ? `${safeFilename}.txt` : 'erasure_words.txt';
+        
+        const fileContent = currentMatches.join(', ');
+        const blob = new Blob([fileContent], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = finalFilename;
+        document.body.appendChild(a);
+        a.click();
+        
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
     function searchWords(event) {
         event.preventDefault();
         const inputText = document.getElementById('inputText').value;
@@ -99,13 +136,27 @@
             }
         });
         
+        currentMatches = matches;
+
         const resultsDiv = document.getElementById('results');
-        resultsDiv.innerHTML = `
+        const downloadButton = document.getElementById('downloadbtn');
+
+        // logic to show or hide the download button
+        if (matches.length > 0) {
+            downloadButton.style.display = 'inline-block';
+        } else {
+            downloadButton.style.display = 'none';
+        }
+        
+        // displays the results, but not the button
+        let resultsHTML = `
             <div class="pattern">
-                <h3>${matches.length} words</h3>
+                <h3>${matches.length} words found</h3>
                 <div>${matches.join(', ')}</div>
             </div>
         `;
+
+        resultsDiv.innerHTML = resultsHTML;
         document.getElementById('inputText').blur();
         return false;
     }
