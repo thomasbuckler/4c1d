@@ -32,26 +32,22 @@
         }
 
         body { margin: 40px; font-family: Arial, sans-serif; background: #ffffff; }
-        form { display: flex; gap: 20px; align-items: center; margin-bottom: 40px; }
+        form { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 40px; }
         .input-group { display: flex; align-items: center; gap: 8px; }
         input { width: 400px; padding: 12px; border: 1px solid #222; font-size: 16px; }
-        button[type="submit"] { padding: 12px 20px; background: #222; color: white; border: none; font-size: 16px; cursor: pointer; }
         .results { margin: 80px 20px 40px 20px; }
         .pattern { margin: 25px 0; }
         h3 { margin: 0 0 10px 0; font-size: 1.4em; }
         
-        /* Style for the new download button */
-        .download-button {
-            margin-top: 20px;
-            padding: 10px 15px;
-            font-size: 14px;
+        /* new: shared style for form buttons */
+        .form-button {
+            padding: 12px 20px;
+            background: #222;
+            color: white;
+            border: none;
+            font-size: 16px;
             cursor: pointer;
-            background: #f0f0f0;
-            color: #222;
-            border: 1px solid #222;
-        }
-        .download-button:hover {
-            background: #e0e0e0;
+            text-transform: lowercase; /* ensures button text is lowercase */
         }
 
 
@@ -60,7 +56,7 @@
             form { flex-direction: column; padding: 10px; }
             .input-group { width: 100%; }
             input { width: 100%; box-sizing: border-box; }
-            button[type="submit"] { width: 100%; }
+            .form-button { width: 100%; }
             .instructions-dropdown { width: calc(100% - 20px); }
             .results { margin: 20px 10px; }
         }
@@ -71,7 +67,8 @@
         <div class="input-group">
             <input type="text" id="inputText" placeholder="">
         </div>
-        <button type="submit">search</button>
+        <button type="submit" class="form-button">search</button>
+        <button type="button" id="downloadbtn" class="form-button" onclick="downloadResults()" style="display: none;">dl .txt</button>
         <div class="header-title" onclick="toggleInstructions()">how to use discover by erasure
             <div class="instructions-dropdown">
                 <div style="padding: 0px;">
@@ -86,7 +83,7 @@
     <script src="words.js"></script>
     
     <script>
-    let currentMatches = []; // Variable to hold the results for the download function
+    let currentMatches = [];
 
     function toggleInstructions() {
         const title = document.querySelector('.header-title');
@@ -105,27 +102,23 @@
 
     function downloadResults() {
         if (currentMatches.length === 0) {
-            alert("No words to download.");
+            alert("no words to download.");
             return;
         }
 
-        // Format the text with a comma and space between each word
+        const inputText = document.getElementById('inputText').value;
+        const safeFilename = inputText.trim().replace(/[^a-z0-9]/gi, '_').toLowerCase();
+        const finalFilename = safeFilename ? `${safeFilename}.txt` : 'erasure_words.txt';
+        
         const fileContent = currentMatches.join(', ');
-        
-        // Create a blob, which is a file-like object
-        const blob = new Blob([fileContent], { type: 'text/plain' });
-        
-        // Create a temporary URL for the blob
+        const blob = new Blob([fileContent], { type: 'text/plain;charset=utf-8' });
         const url = URL.createObjectURL(blob);
-        
-        // Create a temporary anchor element to trigger the download
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'erasure_words.txt'; // The desired filename
-        document.body.appendChild(a); // Add the anchor to the page
-        a.click(); // Programmatically click the anchor
+        a.download = finalFilename;
+        document.body.appendChild(a);
+        a.click();
         
-        // Clean up by removing the temporary anchor and URL
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
     }
@@ -143,17 +136,23 @@
             }
         });
         
-        // Store the matches globally for the download function
         currentMatches = matches;
 
         const resultsDiv = document.getElementById('results');
+        const downloadButton = document.getElementById('downloadbtn');
+
+        // logic to show or hide the download button
+        if (matches.length > 0) {
+            downloadButton.style.display = 'inline-block';
+        } else {
+            downloadButton.style.display = 'none';
+        }
         
-        // Build the result HTML, including the download button if there are matches
+        // displays the results, but not the button
         let resultsHTML = `
             <div class="pattern">
                 <h3>${matches.length} words found</h3>
                 <div>${matches.join(', ')}</div>
-                ${matches.length > 0 ? `<button class="download-button" onclick="downloadResults()">Download as .txt</button>` : ''}
             </div>
         `;
 
