@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,7 +85,7 @@
 	// Is and Ls there has to actually be a vertical line in the the letter
 	"a": ["A","c","C","d","D","h","H","i","I","j","J","l","L","n","N","o","O","r","R","s","S","u","U"],
     "b": ["B","c","C","d","D","h","H","i","I","j","J","l","L","n","N","o","O","r","R","u","U"],
-    "c": ["C","r","R",],
+    "c": ["C","r","R"],
     "d": ["a","A","c","C","D","h","H","i","I","j","J","l","L","n","N","o","O","r","R","u","U"],
     "e": ["c","C","E","r","R"],
     "f": ["F","i","I","l","L","r","R","t","T"],
@@ -95,24 +97,24 @@
     "l": ["i","I","j","J","L"],
     "m": ["i","I","l","L","M","n","N","r","R"],
     "n": ["i","I","l","L","N","r","R"],
-    "o": ["c","C","j","J","n","N","O","r","R""u","U"],
-    "p": ["c","C","i","I",],
-    "q": ["o","g"],
-    "r": ["n","h"],
-    "s": ["c","e"],
-    "t": ["l","i"],
-    "u": ["v","n"],
-    "v": ["u","y"],
-    "w": [],
-    "x": [],
-    "y": ["v","u"],
-    "z": ["s"],
+    "o": ["c","C","j","J","n","N","O","r","R","u","U"],
+    "p": ["c","C","h","H","i","I","j","J","l","L","n","N","o","O","P","r","u","U","y","Y"],
+    "q": ["a","A","c","C","g","G","h","H","i","I","j","J","l","L","n","N","o","O","r","R","u","U","y","Y"],
+    "r": ["i","I","l","L","R"],
+    "s": ["c","C","j","J","S"],
+    "t": ["i","I","j","J","l","L","r","T"],
+    "u": ["i","I","l","L","U"],
+    "v": ["i","I","j","J","l","L","u","U","V"],
+    "w": ["i","I","j","J","l","L","u","U","v","V"],
+    "x": ["c","C","h","H","i","I","k","K","l","L","n","N","v","V","y","Y"],
+    "y": ["i","I","j","J","l","L","v","V","Y"],
+    "z": ["i","I","l","L","Z"],
 
     // uppercase source -> possible target letters (including mixes if needed)
-    "A": ["H","R"],
-    "B": ["P","R","b","p","I","l","i"], // example: B can be treated as P, R, or produce lowercase b etc (extend as needed)
-    "C": ["G","O"],
-    "D": ["O","Q","o","q"], // uppercase D -> O,Q
+    "A": ["a","g","G","h","H","i","I","l","L","n","N","p","P","q","Q","r","R","v","V","y","Y"],
+    "B": ["b","c","C","d","D","e","E","f","F","g","G","h","H","i","I","j","J","k","K","l","L","m","M","n","N","o","O","p","P","q","Q","r","R","s","S","u","U","w","W","y","Y","z","Z"],
+    "C": ["c","l","L","n","N","r","R","u","U",],
+    "D": ["O","Q","o","q"],
     "E": ["F"],
     "F": ["E","T"],
     "G": ["C","O","Q"],
