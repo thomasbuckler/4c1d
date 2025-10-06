@@ -1,0 +1,388 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Target by Erasure — improved</title>
+  <style>
+    :root { --fade: rgba(0,0,0,0.2); --full: rgba(0,0,0,1); }
+    body { margin: 32px; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; color: var(--full); background: #fff; }
+    form { display:flex; gap:12px; align-items:flex-start; flex-wrap:wrap; }
+    .controls { flex:1; min-width:220px; display:flex; gap:8px; flex-direction:column; }
+    label { font-size:0.9rem; color:#333; }
+    input[type="text"]{ padding:10px; font-size:16px; border:1px solid #222; border-radius:6px; width:100%; }
+    textarea { min-height:160px; padding:10px; font-size:15px; border:1px solid #222; border-radius:6px; resize:vertical; width:100%; }
+    button { padding:10px 14px; font-size:15px; border-radius:6px; border:0; background:#222; color:white; cursor:pointer; }
+    .header-title { cursor:pointer; user-select:none; position:relative; margin-left:auto; display:inline-flex; align-items:center; gap:8px; }
+    .instructions-dropdown { display:none; position:absolute; top:calc(100% + 8px); right:0; background:white; border:1px solid #222; padding:10px; width:320px; z-index:100; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+    .header-title.expanded .instructions-dropdown { display:block; }
+    .header-title::before { content:"▸"; }
+    .header-title.expanded::before { content:"▾"; }
+    .results-area { margin-top:28px; display:block; }
+    .viewer { border:1px dashed #ddd; padding:12px; border-radius:6px; background: linear-gradient(180deg,#fff,#fff); white-space: pre-wrap; font-family: inherit; line-height:1.4; font-size:16px; min-height:120px; }
+    .char { display:inline; transition:opacity .12s ease; }
+    .char.faded { color: var(--fade); }
+    .char.highlight { color: var(--full); font-weight:700; text-decoration:none; }
+    .char.erased { color: red; font-weight:700; }
+    .meta { margin-top:8px; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+    .note { color:#666; font-size:0.9rem; }
+    @media (max-width:600px){
+      body { margin:14px; }
+      .header-title { margin-left:0; width:100%; }
+      .instructions-dropdown { width: calc(100% - 20px); left:10px; right:10px; }
+    }
+  </style>
+</head>
+<body>
+  <form id="erasureForm" aria-label="Target by erasure form">
+    <div class="controls" style="flex: 0 1 360px;">
+      <label for="targetInput">target word(s)</label>
+      <input id="targetInput" type="text" placeholder="e.g. data or spirit" />
+      <div style="height:8px"></div>
+      <button id="searchBtn" type="submit">search</button>
+    </div>
+
+    <div class="controls" style="flex: 1 1 420px;">
+      <label for="sourceInput">source text (poem, scripture, chapter…)</label>
+      <textarea id="sourceInput" placeholder="paste the source text here — supports multi-line"></textarea>
+    </div>
+
+    <div class="header-title" onclick="toggleInstructions()" title="Show instructions">
+      how to use target by erasure
+      <div class="instructions-dropdown" role="dialog" aria-label="instructions">
+        <p style="margin:0 0 8px 0;">Enter a target word or phrase (non-letters are ignored) and provide the source text. The tool will look for the target as a subsequence of letters in the source (letters may be separated). The output fades the entire source text except the letters used to build the target — those letters stay fully opaque. Exact matches are highlighted; letters created by erasure are shown in red.</p>
+        <p style="margin:0;color:#555;font-size:0.9rem;"><strong>Note:</strong> For very large input the script will show the first matching solution to avoid long computations.</p>
+      </div>
+    </div>
+  </form>
+
+  <div id="results" class="results-area" aria-live="polite"></div>
+
+<script>
+  const form = document.getElementById('erasureForm');
+  const targetInput = document.getElementById('targetInput');
+  const sourceInput = document.getElementById('sourceInput');
+  const resultsDiv = document.getElementById('results');
+
+  function toggleInstructions(){
+    document.querySelector('.header-title').classList.toggle('expanded');
+  }
+
+  function escapeHtml(s){
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  // --- Erasure map: keys are SOURCE letters; values are letters SOURCE can be erased INTO (TARGET letters).
+  // Include both lowercase and uppercase source keys where appropriate.
+  const erasureMap = {
+    // lowercase source -> possible target letters
+	// thinking is it can't have an equivalent backwards like b and d
+    // but something like and h derived from a d is ok.
+	// put the capital and lowercase of the letter every time.
+	// Is and Ls there has to actually be a vertical line in the the letter
+	"a": ["A","c","C","d","D","h","H","i","I","j","J","l","L","n","N","o","O","r","R","s","S","u","U"],
+    "b": ["B","c","C","d","D","h","H","i","I","j","J","l","L","n","N","o","O","r","R","u","U"],
+    "c": ["C","r","R"],
+    "d": ["a","A","c","C","D","h","H","i","I","j","J","l","L","n","N","o","O","r","R","u","U"],
+    "e": ["c","C","E","r","R"],
+    "f": ["F","i","I","l","L","r","R","t","T"],
+    "g": ["c","C","G","n","N","o","O","r","R","s","S","u","U"],
+    "h": ["H","i","I","l","L","n","N","r","R"],
+    "i": ["I","j","J","l","L"], // add apostrophe possibility
+    "j": ["i","I","J","l","L",],
+    "k": ["h","H","i","I","j","J","K","l","L","n","N","r","R","u","U","v","V","x","X","y","Y"],
+    "l": ["i","I","j","J","L"],
+    "m": ["i","I","l","L","M","n","N","r","R"],
+    "n": ["i","I","l","L","N","r","R"],
+    "o": ["c","C","j","J","n","N","O","r","R","u","U"],
+    "p": ["c","C","h","H","i","I","j","J","l","L","n","N","o","O","P","r","u","U","y","Y"],
+    "q": ["a","A","c","C","g","G","h","H","i","I","j","J","l","L","n","N","o","O","r","R","u","U","y","Y"],
+    "r": ["i","I","l","L","R"],
+    "s": ["c","C","j","J","S"],
+    "t": ["i","I","j","J","l","L","r","T"],
+    "u": ["i","I","l","L","U"],
+    "v": ["i","I","j","J","l","L","u","U","V"],
+    "w": ["i","I","j","J","l","L","u","U","v","V"],
+    "x": ["c","C","h","H","i","I","k","K","l","L","n","N","v","V","y","Y"],
+    "y": ["i","I","j","J","l","L","v","V","Y"],
+    "z": ["i","I","l","L","Z"],
+
+    // uppercase source -> possible target letters (including mixes if needed)
+    "A": ["a","g","G","h","H","i","I","l","L","n","N","p","P","q","Q","r","R","v","V","y","Y"],
+    "B": ["b","c","C","d","D","e","E","f","F","g","G","h","H","i","I","j","J","k","K","l","L","m","M","n","N","o","O","p","P","q","Q","r","R","s","S","u","U","w","W","y","Y","z","Z"],
+    "C": ["c","l","L","n","N","r","R","u","U",],
+    "D": ["O","Q","o","q"],
+    "E": ["F"],
+    "F": ["E","T"],
+    "G": ["C","O","Q"],
+    "H": ["A","M","N"],
+    "I": ["L","T","l","i"], // uppercase I can be used as L/T etc
+    "J": ["I"],
+    "K": ["X","H"],
+    "L": ["I","T"],
+    "M": ["N","H"],
+    "N": ["M","H","R"],
+    "O": ["Q","C"],
+    "P": ["B","R"],
+    "Q": ["O","G"],
+    "R": ["B","P","N"],
+    "S": ["C","E"],
+    "T": ["F","L","I"],
+    "U": ["V","Y"],
+    "V": ["U","Y"],
+    "W": ["V","U"], // keep simple; multi-letter targets are not used by current algorithm
+    "X": ["K"],
+    "Y": ["V","I"],
+    "Z": ["S"]
+  };
+
+  // Returns {match: boolean, erased: boolean}
+  function getMatchInfo(sourceChar, targetChar){
+    if (sourceChar === targetChar) {
+      return { match: true, erased: false };
+    }
+    // If sourceChar key exists in map and includes targetChar, it's an erasure-match
+    if (erasureMap[sourceChar] && erasureMap[sourceChar].includes(targetChar)) {
+      return { match: true, erased: true };
+    }
+    return { match: false, erased: false };
+  }
+
+  function cleanLettersOnlyPreserveCase(s){
+    return s.replace(/[^a-zA-Z]/g,''); // keep uppercase/lowercase as typed
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    runErasure();
+  });
+
+  function runErasure(){
+    const rawTarget = targetInput.value || '';
+    const rawSource = sourceInput.value || '';
+
+    const target = cleanLettersOnlyPreserveCase(rawTarget);
+    if (!target){
+      renderMessage('Please enter a target (letters only).');
+      return;
+    }
+
+    // Collect letter positions from source (preserve original indexes + case)
+    const source = rawSource;
+    const sourceLetters = [];
+    for (let i = 0; i < source.length; i++){
+      const ch = source[i];
+      if (/[a-zA-Z]/.test(ch)) {
+        sourceLetters.push({ char: ch, pos: i });
+      }
+    }
+
+    if (sourceLetters.length === 0){
+      renderMessage('Source contains no letters.');
+      return;
+    }
+
+    // Quick greedy check: find first feasible subsequence (fast)
+    const greedyMatch = findGreedySequence(target, sourceLetters);
+    if (!greedyMatch){
+      renderNoSolution();
+      return;
+    }
+
+    // Decide whether to search for more solutions (backtracking). Limit for safety.
+    const maxSolutions = 10000;
+    const safeLimit = 100000; // only attempt full search for reasonably sized inputs
+    let allMatches = [greedyMatch];
+
+    if (sourceLetters.length <= safeLimit && sourceLetters.length * target.length <= 300000) {
+      // backtracking to find additional solutions, but cap to maxSolutions
+      const additional = findAllSequences(target, sourceLetters, maxSolutions);
+
+      // filter duplicates and keep order (ensure greedyMatch first)
+      const seen = new Set();
+      const uniq = [];
+      for (const seq of additional){
+        const key = seq.map(it => `${it.pos}:${it.erased?1:0}`).join(',');
+        if (!seen.has(key)){
+          uniq.push(seq);
+          seen.add(key);
+        }
+      }
+      // Make sure greedyMatch is first:
+      const greedyKey = greedyMatch.map(it => `${it.pos}:${it.erased?1:0}`).join(',');
+      const rest = uniq.filter(seq => seq.map(it => `${it.pos}:${it.erased?1:0}`).join(',') !== greedyKey);
+      allMatches = [greedyMatch, ...rest].slice(0, maxSolutions);
+    } else {
+      // For large inputs: only show greedy match (to avoid long computations)
+      // allMatches already contains greedyMatch
+    }
+
+    renderMatches(allMatches, source, target);
+  }
+
+  function findGreedySequence(target, sourceLetters){
+    const positions = [];
+    let t = 0;
+    for (let i = 0; i < sourceLetters.length && t < target.length; i++){
+      const src = sourceLetters[i].char;
+      const tgt = target[t];
+      const info = getMatchInfo(src, tgt);
+      if (info.match) {
+        positions.push({ pos: sourceLetters[i].pos, erased: info.erased });
+        t++;
+      }
+    }
+    return t === target.length ? positions : null;
+  }
+
+  function findAllSequences(target, sourceLetters, limit){
+    const results = [];
+    const n = sourceLetters.length;
+    const T = target.length;
+
+    function backtrack(startIndex, tIndex, path){
+      if (results.length >= limit) return;
+      if (tIndex === T){
+        results.push([...path]);
+        return;
+      }
+      for (let i = startIndex; i < n; i++){
+        const src = sourceLetters[i].char;
+        const tgt = target[tIndex];
+        const info = getMatchInfo(src, tgt);
+        if (info.match){
+          path.push({ pos: sourceLetters[i].pos, erased: info.erased });
+          backtrack(i + 1, tIndex + 1, path);
+          path.pop();
+        }
+      }
+    }
+
+    backtrack(0, 0, []);
+    return results;
+  }
+
+  function renderNoSolution(){
+    resultsDiv.innerHTML = `
+      <div class="viewer">
+        🚫 CANNOT be erased into existence
+      </div>
+    `;
+  }
+
+  function renderMessage(msg){
+    resultsDiv.innerHTML = `<div class="note">${escapeHtml(msg)}</div>`;
+  }
+
+  function renderMatches(matches, source, target){
+  let currentIndex = 0;
+  const total = matches.length;
+
+  function buildViewerHtml(matchPositions){
+    const posMap = {};
+    for (const item of matchPositions){
+      posMap[item.pos] = item.erased ? 'erased' : 'highlight';
+    }
+    let html = '';
+    for (let i = 0; i < source.length; i++){
+      const ch = source[i];
+      const esc = escapeHtml(ch);
+      if (/[a-zA-Z]/.test(ch)) {
+        if (posMap[i] === 'highlight') html += `<span class="char highlight">${esc}</span>`;
+        else if (posMap[i] === 'erased') html += `<span class="char erased">${esc}</span>`;
+        else html += `<span class="char faded">${esc}</span>`;
+      } else html += `<span class="char faded">${esc}</span>`;
+    }
+    return html;
+  }
+
+  // initial render + navigation
+  resultsDiv.innerHTML = `
+    <style>
+      .slider-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 1;
+        max-width: 240px;
+      }
+      input[type="range"] {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 6px;
+        background: #ddd;
+        border-radius: 3px;
+        outline: none;
+        cursor: pointer;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: black;
+        cursor: pointer;
+        transition: transform 0.1s ease;
+      }
+      input[type="range"]:active::-webkit-slider-thumb {
+        transform: scale(1.2);
+      }
+      input[type="range"]::-moz-range-thumb {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: black;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+
+    <div class="meta">
+      <div class="note">
+        Found <strong>${total}</strong> solution(s) —
+        showing <span id="which">${currentIndex+1}</span> of ${total} ·
+        target: <strong>${escapeHtml(target)}</strong>
+      </div>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:8px;">
+        <button id="prevBtn" type="button">◀ prev</button>
+        <div class="slider-container">
+          <input id="slider" type="range" min="1" max="${total}" value="1" step="1" />
+        </div>
+        <button id="nextBtn" type="button">next ▶</button>
+      </div>
+    </div>
+    <div id="viewer" class="viewer" role="region" aria-label="erasure viewer"></div>
+  `;
+
+  const viewer = document.getElementById('viewer');
+  const whichSpan = document.getElementById('which');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const slider = document.getElementById('slider');
+
+  function show(i){
+    if (total === 0) return;
+    if (i < 0) i = total - 1;
+    if (i >= total) i = 0;
+    currentIndex = i;
+    whichSpan.textContent = (currentIndex + 1);
+    slider.value = currentIndex + 1;
+    viewer.innerHTML = buildViewerHtml(matches[currentIndex]);
+  }
+
+  prevBtn.addEventListener('click', () => show(currentIndex - 1));
+  nextBtn.addEventListener('click', () => show(currentIndex + 1));
+  slider.addEventListener('input', (e) => {
+    const val = parseInt(e.target.value, 10) - 1;
+    show(val);
+  });
+
+  show(0);
+}
+</script>
+</body>
+</html>
