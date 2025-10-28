@@ -2,7 +2,8 @@ let baseImg;
 let flameImg;
 let bothLoaded = false;
 
-let flames = []; // array of all flame objects
+let flames = [];
+let scaleFactor = 1; // for fitting to page
 
 function preload() {
   baseImg = loadImage("candles2.png", img => checkLoaded(), () => console.error("Couldn't load candles2.png"));
@@ -14,13 +15,13 @@ function checkLoaded() {
 }
 
 function setup() {
-  createCanvas(800, 1000); // fallback size; will resize later
+  createCanvas(windowWidth, windowHeight);
   imageMode(CENTER);
   textAlign(CENTER, CENTER);
   textSize(20);
   fill(60);
 
-  // --- 🔥 INSERT YOUR COORDINATES HERE ---
+ // --- 🔥 INSERT YOUR COORDINATES HERE ---
   let coords = [
     {x: 627, y: 285},
     {x: 303, y: 332},
@@ -42,6 +43,8 @@ function setup() {
     });
     randomizeNextFlip(flames[flames.length - 1]);
   }
+
+  computeScaleFactor();
 }
 
 function draw() {
@@ -52,10 +55,13 @@ function draw() {
     return;
   }
 
-  resizeCanvas(baseImg.width, baseImg.height);
-  image(baseImg, width / 2, height / 2);
+  // draw scaled image
+  push();
+  translate(width / 2, height / 2);
+  scale(scaleFactor);
+  image(baseImg, 0, 0);
 
-  // draw each flame independently
+  // draw each scaled flame
   for (let f of flames) {
     if (millis() > f.nextFlipTime) {
       f.flipped = !f.flipped;
@@ -63,15 +69,28 @@ function draw() {
     }
 
     push();
-    translate(f.x, f.y);
+    translate(f.x - baseImg.width / 2, f.y - baseImg.height / 2); // center alignment
     if (f.flipped) scale(-1, 1);
     image(flameImg, 0, 0);
     pop();
   }
+  pop();
 }
 
 function randomizeNextFlip(f) {
-  // Each flame gets its own random flicker rhythm
-  f.flipInterval = random(10, 2500); // adjust range for faster/slower overall flicker
+  f.flipInterval = random(10, 2000);
   f.nextFlipTime = millis() + f.flipInterval;
+}
+
+function computeScaleFactor() {
+  // fit baseImg into browser window
+  if (!baseImg) return;
+  let scaleX = windowWidth / baseImg.width;
+  let scaleY = windowHeight / baseImg.height;
+  scaleFactor = min(scaleX, scaleY);
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  computeScaleFactor();
 }
