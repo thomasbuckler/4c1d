@@ -4,6 +4,8 @@
 
 const MIN_TWINKLE_SPEED = 0.15;
 const MAX_TWINKLE_SPEED = 0.45;
+
+// recording settings
 const RECORD_DURATION = 60 * 1000; // 1 minute in ms
 const FRAME_RATE = 60;
 
@@ -16,8 +18,8 @@ let stars = [];
 let scaleFactor = 1;
 let bothLoaded = false;
 
-// recording system
-let capturer;
+// recording state
+let capturer = null;
 let recording = false;
 let startTime = 0;
 
@@ -38,19 +40,23 @@ function setup() {
 
   // ⭐ All star coordinates (22×22 overlay regions)
   const coords = [
-    [605, 319], [996, 316], [607, 694], [767, 694], [1069, 696],
-    [697, 739], [952, 739], [1243, 739], [1392, 739], [675, 790],
-    [1073, 838], [665, 886], [1140, 888], [1345, 888], [713, 983],
+    [605, 319], [996, 316], [607, 694],
+    [767, 694], [1069, 696], [697, 739], [952, 739], [1243, 739], [1392, 739],
+    [675, 790], [1073, 838], [665, 886], [1140, 888], [1345, 888], [713, 983],
     [983, 983], [1204, 983], [456, 1076], [695, 1079], [1231, 1081],
-    [1610, 1222], [631, 1271], [995, 1271], [1181, 1271], [1327, 1510],
-    [703, 1656], [995, 1656], [1300, 1656], [591, 1752], [1355, 1752],
-    [1494, 1797], [464, 1944], [817, 1945], [1059, 1945], [1108, 1945],
-    [1337, 1946], [693, 2041], [1141, 2139], [1669, 2184], [709, 2236],
-    [880, 2236], [1181, 2236], [1386, 2332], [939, 2377], [648, 2428],
-    [1456, 2472], [753, 2524], [1139, 2525], [1409, 2525], [1516, 2570],
-    [786, 2622], [914, 2621], [1636, 2622], [1210, 2666], [983, 2717],
-    [538, 2815], [1407, 2858], [853, 2910], [1154, 2910], [685, 3007],
-    [1245, 3007], [1369, 3007], [1726, 3007], [1319, 3148]
+    [1610, 1222], [631, 1271], [995, 1271], [1181, 1271],
+    [1327, 1510], [703, 1656], [995, 1656], [1300, 1656],
+    [591, 1752], [1355, 1752], [1494, 1797],
+    [464, 1944], [817, 1945], [1059, 1945], [1108, 1945], [1337, 1946],
+    [693, 2041], [1141, 2139], [1669, 2184],
+    [709, 2236], [880, 2236], [1181, 2236], [1386, 2332],
+    [939, 2377], [648, 2428], [1456, 2472],
+    [753, 2524], [1139, 2525], [1409, 2525], [1516, 2570],
+    [786, 2622], [914, 2621], [1636, 2622],
+    [1210, 2666], [983, 2717], [538, 2815],
+    [1407, 2858], [853, 2910], [1154, 2910],
+    [685, 3007], [1245, 3007], [1369, 3007], [1726, 3007],
+    [1319, 3148] // ✅ corrected
   ];
 
   stars = coords.map(([x, y]) => ({
@@ -66,16 +72,18 @@ function setup() {
 
   computeScaleFactor();
 
-  // 🎥 initialize recorder
-  capturer = new CCapture({
-    format: "ffmpegserver",
-    framerate: FRAME_RATE,
-    name: "stars_twinkle",
-    extension: "mp4",
-    quality: 100
-  });
-
-  startRecording();
+  // 🎥 Initialize recorder only if CCapture exists
+  if (typeof CCapture !== 'undefined') {
+    capturer = new CCapture({
+      format: 'webm',
+      framerate: FRAME_RATE,
+      quality: 100,
+      name: 'stars_twinkle'
+    });
+    startRecording();
+  } else {
+    console.warn('CCapture not found – recording disabled.');
+  }
 }
 
 function draw() {
@@ -91,6 +99,7 @@ function draw() {
   push();
   translate(width / 2, height / 2);
   scale(scaleFactor);
+
   image(baseImg, 0, 0);
 
   for (let s of stars) {
@@ -112,10 +121,13 @@ function draw() {
 
   pop();
 
-  // 🎥 capture frames
-  if (recording) capturer.capture(canvas);
-
-  if (millis() - startTime > RECORD_DURATION && recording) stopRecording();
+  // 🎥 capture frames if recording
+  if (recording && capturer) {
+    capturer.capture(canvas);
+    if (millis() - startTime > RECORD_DURATION) {
+      stopRecording();
+    }
+  }
 }
 
 // ============================================================
@@ -123,17 +135,19 @@ function draw() {
 // ============================================================
 
 function startRecording() {
+  if (!capturer) return;
   recording = true;
   startTime = millis();
   capturer.start();
-  console.log("🎬 Recording started");
+  console.log('🎬 Recording started');
 }
 
 function stopRecording() {
+  if (!capturer) return;
   recording = false;
   capturer.stop();
   capturer.save();
-  console.log("✅ Recording complete, saved as stars_twinkle.mp4");
+  console.log('✅ Recording complete; WebM file saved');
 }
 
 // ============================================================
