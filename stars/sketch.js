@@ -5,9 +5,9 @@
 const MIN_TWINKLE_SPEED = 0.15;
 const MAX_TWINKLE_SPEED = 0.45;
 
-// recording settings
-const RECORD_DURATION = 60 * 1000; // 1 minute in ms
-const FRAME_RATE = 60;
+const RECORD_SECONDS = 60;
+const RECORD_FPS = 60;
+const TOTAL_FRAMES = RECORD_SECONDS * RECORD_FPS;
 
 // ============================================================
 
@@ -18,25 +18,37 @@ let stars = [];
 let scaleFactor = 1;
 let bothLoaded = false;
 
-// recording state
+// p5 canvas + recording
+let cnv;
 let capturer = null;
 let recording = false;
-let startTime = 0;
+let capturedFrames = 0;
 
 function preload() {
-  baseImg = loadImage("stars.png", img => checkLoaded(), () => console.error("Couldn't load stars.png"));
-  overlayImg = loadImage("overlay.png", img => checkLoaded(), () => console.error("Couldn't load overlay.png"));
+  baseImg = loadImage(
+    "stars.png",
+    () => checkLoaded(),
+    () => console.error("Couldn't load stars.png")
+  );
+
+  overlayImg = loadImage(
+    "overlay.png",
+    () => checkLoaded(),
+    () => console.error("Couldn't load overlay.png")
+  );
 }
 
 function checkLoaded() {
-  if (baseImg && overlayImg) bothLoaded = true;
+  if (baseImg && overlayImg) {
+    bothLoaded = true;
+  }
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  cnv = createCanvas(windowWidth, windowHeight); // keep a handle to canvas
   imageMode(CENTER);
   noStroke();
-  frameRate(FRAME_RATE);
+  frameRate(RECORD_FPS);
 
   // ⭐ All star coordinates (22×22 overlay regions)
   const coords = [
@@ -72,17 +84,17 @@ function setup() {
 
   computeScaleFactor();
 
-  // 🎥 Initialize recorder only if CCapture exists
-  if (typeof CCapture !== 'undefined') {
+  // 🎥 Initialize capturer ONLY if CCapture is available
+  if (typeof CCapture !== "undefined") {
     capturer = new CCapture({
-      format: 'webm',
-      framerate: FRAME_RATE,
+      format: "webm",
+      framerate: RECORD_FPS,
       quality: 100,
-      name: 'stars_twinkle'
+      name: "stars_twinkle"
     });
-    startRecording();
+    console.log("CCapture found, recording will start when images are loaded.");
   } else {
-    console.warn('CCapture not found – recording disabled.');
+    console.warn("CCapture not found – recording disabled.");
   }
 }
 
@@ -96,12 +108,22 @@ function draw() {
     return;
   }
 
+  // Start recording once, on the first frame after everything is loaded
+  if (capturer && !recording) {
+    capturer.start();
+    recording = true;
+    capturedFrames = 0;
+    console.log("🎬 Recording started");
+  }
+
   push();
   translate(width / 2, height / 2);
   scale(scaleFactor);
 
+  // background poem page
   image(baseImg, 0, 0);
 
+  // stars
   for (let s of stars) {
     s.phase += s.speed;
     const twinkle = sin(s.phase) * 0.5 + 0.5;
@@ -121,33 +143,20 @@ function draw() {
 
   pop();
 
-  // 🎥 capture frames if recording
+  // 🎥 Capture one frame per draw
   if (recording && capturer) {
-    capturer.capture(canvas);
-    if (millis() - startTime > RECORD_DURATION) {
-      stopRecording();
+    // cnv is the p5.Renderer; its .canvas is the actual <canvas> element
+    capturer.capture(cnv.canvas);
+    capturedFrames++;
+
+    if (capturedFrames >= TOTAL_FRAMES) {
+      console.log("⏹ Stopping recording and saving...");
+      recording = false;
+      capturer.stop();
+      capturer.save(); // will trigger the download of stars_twinkle.webm
+      noLoop();
     }
   }
-}
-
-// ============================================================
-// 🎥 Recording helpers
-// ============================================================
-
-function startRecording() {
-  if (!capturer) return;
-  recording = true;
-  startTime = millis();
-  capturer.start();
-  console.log('🎬 Recording started');
-}
-
-function stopRecording() {
-  if (!capturer) return;
-  recording = false;
-  capturer.stop();
-  capturer.save();
-  console.log('✅ Recording complete; WebM file saved');
 }
 
 // ============================================================
