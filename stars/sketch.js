@@ -2,8 +2,8 @@
 // 🌟 Global twinkle settings (easy to edit later)
 // ============================================================
 
-const MIN_TWINKLE_SPEED = 0.15;   // slower bound
-const MAX_TWINKLE_SPEED = 0.45;   // faster bound
+const MIN_TWINKLE_SPEED = 0.05;   // slower bound
+const MAX_TWINKLE_SPEED = 0.15;   // faster bound
 
 // ============================================================
 
