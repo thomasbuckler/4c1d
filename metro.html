@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Circular Metronome</title>
+<style>
+  body {
+    background: #fff;
+    color: #000;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .circle {
+    margin-top: 40px;
+    width: 260px;
+    height: 260px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .hand {
+    position: absolute;
+    width: 2px;
+    height: 120px;
+    background: #000;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+
+  .center {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #000;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .marker {
+    position: absolute;
+    width: 2px;
+    height: 14px;
+    background: #000;
+    top: 50%;
+    left: 50%;
+  }
+
+  .controls {
+    margin-top: 20px;
+  }
+
+  button, input {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+  }
+</style>
+<base target="_blank">
+</head>
+<body>
+
+<div class="circle" id="circle">
+  <div class="hand" id="hand"></div>
+  <div class="center"></div>
+</div>
+
+<div class="controls">
+  <button onclick="toggle()">Start / Stop</button>
+  <label>
+    BPM:
+    <input type="number" id="bpmInput" value="120" min="1" max="99999">
+  </label>
+  <label>
+    Beats per measure:
+    <input type="number" id="beatsInput" value="4" min="1" max="60" onchange="drawMarkers()">
+  </label>
+  <label>
+    Accent:
+    <input type="checkbox" id="accentToggle" checked>
+  </label>
+</div>
+
+<script>
+let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+let isRunning = false;
+let beatIndex = 0;      // total beats elapsed (float, continuous)
+let lastBeatIndex = -1; // last integer beat that triggered a sound
+let lastTime = 0;       // timestamp of previous animation frame
+
+const hand = document.getElementById("hand");
+const circle = document.getElementById("circle");
+
+const RADIUS = 130;
+
+// sound
+function clickSound(freq = 1000, duration = 0.02) {
+  let osc = audioCtx.createOscillator();
+  let gain = audioCtx.createGain();
+  osc.frequency.value = freq;
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start();
+  gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+  osc.stop(audioCtx.currentTime + duration);
+}
+
+// markers
+function drawMarkers() {
+  document.querySelectorAll(".marker").forEach(m => m.remove());
+
+  const beats = parseInt(document.getElementById("beatsInput").value);
+
+  for (let i = 0; i < beats; i++) {
+    let m = document.createElement("div");
+    m.className = "marker";
+
+    let angle = (360 / beats) * i;
+
+    m.style.transform = `
+      translate(-50%, -50%)
+      rotate(${angle}deg)
+      translateY(-${RADIUS - 8}px)
+    `;
+
+    if (i === 0) m.style.height = "20px";
+
+    circle.appendChild(m);
+  }
+}
+
+drawMarkers();
+
+function animate(time) {
+  if (!isRunning) return;
+
+  if (lastTime === 0) lastTime = time;
+  let delta = time - lastTime;
+  lastTime = time;
+
+  let bpm = Math.max(1, parseInt(document.getElementById("bpmInput").value));
+  let beats = Math.max(1, parseInt(document.getElementById("beatsInput").value));
+
+  // accumulate beats based on elapsed time and current BPM
+  // changing BPM mid-stream only changes the rate going forward
+  beatIndex += delta * bpm / 60000;
+
+  // smooth rotation: each beat moves the hand by 360/beats degrees
+  let rotation = (beatIndex * 360 / beats) % 360;
+  hand.style.transform = `translate(-50%, -100%) rotate(${rotation}deg)`;
+
+  // beat detection
+  let currentBeat = Math.floor(beatIndex);
+  if (currentBeat !== lastBeatIndex) {
+    lastBeatIndex = currentBeat;
+
+    let accentOn = document.getElementById("accentToggle").checked;
+    let beatInMeasure = currentBeat % beats;
+
+    if (accentOn && beatInMeasure === 0) {
+      clickSound(600, 0.08); // accent
+    } else {
+      clickSound(1000, 0.02); // regular tick
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+
+function toggle() {
+  if (!audioCtx) audioCtx = new AudioContext();
+
+  isRunning = !isRunning;
+
+  if (isRunning) {
+    // reset timers so we start fresh on play, but BPM changes mid-run won't reset
+    beatIndex = 0;
+    lastBeatIndex = -1;
+    lastTime = 0;
+    requestAnimationFrame(animate);
+  }
+}
+</script>
+
+</body>
+</html>
