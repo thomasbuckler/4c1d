@@ -75,19 +75,23 @@
     font-size: clamp(12px, 2vmin, 18px);
   }
 
-  button, input {
+  button, input, select {
     background: #fff;
     color: #000;
     border: 1px solid #000;
     padding: 0.4em 0.8em;
     font-size: inherit;
+    font-family: inherit;
   }
 
   input[type="number"] {
     width: 5em;
   }
+
+  select {
+    cursor: pointer;
+  }
 </style>
-<base target="_blank">
 </head>
 <body>
 
@@ -103,8 +107,25 @@
     <input type="number" id="bpmInput" value="120" min="1" max="99999">
   </label>
   <label>
-    Beats per measure:
+    Beats:
     <input type="number" id="beatsInput" value="4" min="1" max="60" onchange="drawMarkers()">
+  </label>
+  <label>
+    Pitch:
+    <select id="pitchSelect">
+      <option value="261.63">C</option>
+      <option value="277.18">C#</option>
+      <option value="293.66">D</option>
+      <option value="311.13">D#</option>
+      <option value="329.63">E</option>
+      <option value="349.23">F</option>
+      <option value="369.99">F#</option>
+      <option value="392.00">G</option>
+      <option value="415.30">G#</option>
+      <option value="440.00" selected>A</option>
+      <option value="466.16">A#</option>
+      <option value="493.88">B</option>
+    </select>
   </label>
   <label>
     Accent:
@@ -127,7 +148,7 @@ function getRadius() {
 }
 
 // sound
-function clickSound(freq = 1000, duration = 0.02) {
+function clickSound(freq, duration) {
   let osc = audioCtx.createOscillator();
   let gain = audioCtx.createGain();
   osc.frequency.value = freq;
@@ -150,9 +171,7 @@ function drawMarkers() {
     m.className = "marker";
 
     let angle = (360 / beats) * i;
-
-    // Position marker at edge of circle
-    let offset = radius - (radius * 0.06); // 6% inset from edge
+    let offset = radius - (radius * 0.06);
 
     m.style.transform = `
       translate(-50%, -50%)
@@ -190,11 +209,12 @@ function animate(time) {
 
     let accentOn = document.getElementById("accentToggle").checked;
     let beatInMeasure = currentBeat % beats;
+    let pitch = parseFloat(document.getElementById("pitchSelect").value);
 
     if (accentOn && beatInMeasure === 0) {
-      clickSound(600, 0.08);
+      clickSound(pitch, 0.5); // downbeat: same pitch, longer
     } else {
-      clickSound(1000, 0.02);
+      clickSound(pitch, 0.02); // off-beat: same pitch, short
     }
   }
 

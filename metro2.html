@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circular Metronome</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .global-bar {
+    margin-bottom: 1vh;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 10;
+  }
+
+  .circle {
+    width: min(60vw, 60vh);
+    height: min(60vw, 60vh);
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .hand {
+    position: absolute;
+    width: 2px;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translate(-50%, -100%) rotate(0deg);
+    z-index: 2;
+  }
+
+  .center {
+    position: absolute;
+    width: 1.5%;
+    height: 1.5%;
+    background: #000;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+
+  .marker {
+    position: absolute;
+    width: 0.7%;
+    height: 4.5%;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    z-index: 1;
+  }
+
+  .controls {
+    margin-top: 1vh;
+    width: 100%;
+    max-height: 32vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: clamp(10px, 1.6vmin, 15px);
+  }
+
+  .line-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem;
+    border-bottom: 1px solid #ddd;
+    width: 98%;
+    max-width: 1000px;
+  }
+
+  .line-row:last-child {
+    border-bottom: none;
+  }
+
+  .line-color {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    flex-shrink: 0;
+  }
+
+  button, input, select {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+    padding: 0.25em 0.5em;
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  input[type="number"] {
+    width: 3.8em;
+  }
+
+  .delete-btn {
+    border-color: #c0392b;
+    color: #c0392b;
+  }
+
+  .add-btn {
+    margin-top: 0.4rem;
+    padding: 0.4em 1.2em;
+    font-weight: bold;
+  }
+
+  .global-btn {
+    padding: 0.5em 1.5em;
+    font-weight: bold;
+    font-size: clamp(12px, 2vmin, 18px);
+  }
+</style>
+<base target="_blank">
+</head>
+<body>
+
+<div class="global-bar">
+  <button class="global-btn" onclick="toggleAll()" id="globalBtn">▶ Start All</button>
+  <button class="global-btn" onclick="resetAll()" id="resetBtn">↺ Reset</button>
+</div>
+
+<div class="circle" id="circle">
+  <div class="center"></div>
+</div>
+
+<div class="controls" id="linesContainer"></div>
+<button class="add-btn" onclick="addLine()">+ Add Metronome</button>
+
+<script>
+let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+let lines = [];
+let nextId = 0;
+let animFrameId = null;
+
+const circle = document.getElementById("circle");
+const linesContainer = document.getElementById("linesContainer");
+const globalBtn = document.getElementById("globalBtn");
+
+const COLORS = [
+  '#000000', '#e74c3c', '#3498db', '#2ecc71', '#f39c12',
+  '#9b59b6', '#1abc9c', '#e91e63', '#795548', '#607d8b'
+];
+
+const ACCENT_DURATION = 0.5;
+
+const PITCH_OPTIONS = `
+  <option value="523.25" selected>C</option>
+  <option value="554.37">C#</option>
+  <option value="587.33">D</option>
+  <option value="622.25">D#</option>
+  <option value="659.25">E</option>
+  <option value="698.46">F</option>
+  <option value="739.99">F#</option>
+  <option value="783.99">G</option>
+  <option value="830.61">G#</option>
+  <option value="880.00">A</option>
+  <option value="932.33">A#</option>
+  <option value="987.77">B</option>
+`;
+
+function getRadius() {
+  return circle.offsetWidth / 2;
+}
+
+function clickSound(freq, duration) {
+  let osc = audioCtx.createOscillator();
+  let gain = audioCtx.createGain();
+  osc.frequency.value = freq;
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start();
+  gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+  osc.stop(audioCtx.currentTime + duration);
+}
+
+function drawMarkers() {
+  document.querySelectorAll(".marker").forEach(m => m.remove());
+  const radius = getRadius();
+  const offset = radius - (radius * 0.06);
+
+  lines.forEach((line) => {
+    const beatsInput = document.getElementById(`beats-${line.id}`);
+    if (!beatsInput) return;
+
+    const beats = Math.max(1, parseInt(beatsInput.value));
+
+    for (let i = 0; i < beats; i++) {
+      let m = document.createElement("div");
+      m.className = "marker";
+      m.style.background = line.color;
+
+      let angle = (360 / beats) * i;
+      m.style.transform = `translate(-50%, -50%) rotate(${angle}deg) translateY(-${offset}px)`;
+      if (i === 0) m.style.height = "6.5%";
+
+      circle.appendChild(m);
+    }
+  });
+}
+
+function updateGlobalButton() {
+  const anyRunning = lines.some(l => l.isRunning);
+  globalBtn.textContent = anyRunning ? "⏹ Stop All" : "▶ Start All";
+}
+
+function addLine() {
+  const id = nextId++;
+  const color = COLORS[id % COLORS.length];
+  const line = {
+    id, isRunning: false, beatIndex: 0,
+    lastBeatIndex: -1, lastTime: 0, color
+  };
+  lines.push(line);
+
+  const hand = document.createElement("div");
+  hand.className = "hand";
+  hand.id = `hand-${id}`;
+  hand.style.background = color;
+  circle.appendChild(hand);
+
+  const row = document.createElement("div");
+  row.className = "line-row";
+  row.id = `line-row-${id}`;
+  row.innerHTML = `
+    <span class="line-color" style="background:${color}"></span>
+    <button onclick="toggleLine(${id})" id="btn-${id}">Start</button>
+    <label>BPM <input type="number" id="bpm-${id}" value="120" min="1" max="99999"></label>
+    <label>Beats <input type="number" id="beats-${id}" value="4" min="1" max="60" onchange="drawMarkers()"></label>
+    <label>Pitch <select id="pitch-${id}">${PITCH_OPTIONS}</select></label>
+    <label>Accent <input type="checkbox" id="accent-${id}" checked></label>
+    ${lines.length > 1 ? `<button class="delete-btn" onclick="removeLine(${id})">×</button>` : ''}
+  `;
+  linesContainer.appendChild(row);
+
+  drawMarkers();
+}
+
+function removeLine(id) {
+  const idx = lines.findIndex(l => l.id === id);
+  if (idx === -1) return;
+
+  const hand = document.getElementById(`hand-${id}`);
+  if (hand) hand.remove();
+
+  const row = document.getElementById(`line-row-${id}`);
+  if (row) row.remove();
+
+  lines.splice(idx, 1);
+  drawMarkers();
+  updateGlobalButton();
+}
+
+function toggleLine(id) {
+  if (!audioCtx) audioCtx = new AudioContext();
+
+  const line = lines.find(l => l.id === id);
+  if (!line) return;
+
+  line.isRunning = !line.isRunning;
+  document.getElementById(`btn-${id}`).textContent = line.isRunning ? "Stop" : "Start";
+
+  if (line.isRunning) {
+    line.lastTime = 0;
+    ensureAnimation();
+  }
+  updateGlobalButton();
+}
+
+function toggleAll() {
+  if (!audioCtx) audioCtx = new AudioContext();
+
+  const anyRunning = lines.some(l => l.isRunning);
+
+  if (anyRunning) {
+    lines.forEach(line => {
+      if (line.isRunning) toggleLine(line.id);
+    });
+  } else {
+    lines.forEach(line => {
+      if (!line.isRunning) toggleLine(line.id);
+    });
+  }
+}
+
+function resetAll() {
+  lines.forEach(line => {
+    line.beatIndex = 0;
+    line.lastBeatIndex = -1;
+    line.lastTime = 0;
+
+    const hand = document.getElementById(`hand-${line.id}`);
+    if (hand) {
+      hand.style.transform = `translate(-50%, -100%) rotate(0deg)`;
+    }
+  });
+}
+
+function ensureAnimation() {
+  if (!animFrameId) {
+    animFrameId = requestAnimationFrame(animate);
+  }
+}
+
+function animate(time) {
+  let anyRunning = false;
+
+  lines.forEach(line => {
+    if (!line.isRunning) return;
+    anyRunning = true;
+
+    if (line.lastTime === 0) line.lastTime = time;
+    let delta = time - line.lastTime;
+    line.lastTime = time;
+
+    let bpm = Math.max(1, parseInt(document.getElementById(`bpm-${line.id}`).value));
+    let beats = Math.max(1, parseInt(document.getElementById(`beats-${line.id}`).value));
+
+    line.beatIndex += delta * bpm / 60000;
+
+    let rotation = (line.beatIndex * 360 / beats) % 360;
+    const hand = document.getElementById(`hand-${line.id}`);
+    if (hand) {
+      hand.style.transform = `translate(-50%, -100%) rotate(${rotation}deg)`;
+    }
+
+    let currentBeat = Math.floor(line.beatIndex);
+    if (currentBeat !== line.lastBeatIndex) {
+      line.lastBeatIndex = currentBeat;
+
+      let accentOn = document.getElementById(`accent-${line.id}`).checked;
+      let beatInMeasure = currentBeat % beats;
+      let pitch = parseFloat(document.getElementById(`pitch-${line.id}`).value);
+
+      if (accentOn && beatInMeasure === 0) {
+        clickSound(pitch, ACCENT_DURATION);
+      } else {
+        clickSound(pitch, 0.02);
+      }
+    }
+  });
+
+  if (anyRunning) {
+    animFrameId = requestAnimationFrame(animate);
+  } else {
+    animFrameId = null;
+  }
+}
+
+window.addEventListener("resize", drawMarkers);
+
+addLine();
+</script>
+
+</body>
+</html>
