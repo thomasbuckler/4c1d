@@ -2,8 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Circular Metronome</title>
 <style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
   body {
     background: #fff;
     color: #000;
@@ -11,21 +18,25 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
   }
 
   .circle {
-    margin-top: 40px;
-    width: 260px;
-    height: 260px;
+    width: min(85vw, 85vh);
+    height: min(85vw, 85vh);
     border: 2px solid #000;
     border-radius: 50%;
     position: relative;
+    flex-shrink: 0;
   }
 
   .hand {
     position: absolute;
     width: 2px;
-    height: 120px;
+    height: 50%;
     background: #000;
     top: 50%;
     left: 50%;
@@ -35,8 +46,8 @@
 
   .center {
     position: absolute;
-    width: 6px;
-    height: 6px;
+    width: 1.5%;
+    height: 1.5%;
     background: #000;
     border-radius: 50%;
     top: 50%;
@@ -46,21 +57,34 @@
 
   .marker {
     position: absolute;
-    width: 2px;
-    height: 14px;
+    width: 0.6%;
+    height: 5%;
     background: #000;
     top: 50%;
     left: 50%;
+    transform-origin: center center;
   }
 
   .controls {
-    margin-top: 20px;
+    margin-top: 2vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(12px, 2vmin, 18px);
   }
 
   button, input {
     background: #fff;
     color: #000;
     border: 1px solid #000;
+    padding: 0.4em 0.8em;
+    font-size: inherit;
+  }
+
+  input[type="number"] {
+    width: 5em;
   }
 </style>
 <base target="_blank">
@@ -91,14 +115,16 @@
 <script>
 let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 let isRunning = false;
-let beatIndex = 0;      // total beats elapsed (float, continuous)
-let lastBeatIndex = -1; // last integer beat that triggered a sound
-let lastTime = 0;       // timestamp of previous animation frame
+let beatIndex = 0;
+let lastBeatIndex = -1;
+let lastTime = 0;
 
 const hand = document.getElementById("hand");
 const circle = document.getElementById("circle");
 
-const RADIUS = 130;
+function getRadius() {
+  return circle.offsetWidth / 2;
+}
 
 // sound
 function clickSound(freq = 1000, duration = 0.02) {
@@ -117,6 +143,7 @@ function drawMarkers() {
   document.querySelectorAll(".marker").forEach(m => m.remove());
 
   const beats = parseInt(document.getElementById("beatsInput").value);
+  const radius = getRadius();
 
   for (let i = 0; i < beats; i++) {
     let m = document.createElement("div");
@@ -124,19 +151,23 @@ function drawMarkers() {
 
     let angle = (360 / beats) * i;
 
+    // Position marker at edge of circle
+    let offset = radius - (radius * 0.06); // 6% inset from edge
+
     m.style.transform = `
       translate(-50%, -50%)
       rotate(${angle}deg)
-      translateY(-${RADIUS - 8}px)
+      translateY(-${offset}px)
     `;
 
-    if (i === 0) m.style.height = "20px";
+    if (i === 0) m.style.height = "7%";
 
     circle.appendChild(m);
   }
 }
 
 drawMarkers();
+window.addEventListener("resize", drawMarkers);
 
 function animate(time) {
   if (!isRunning) return;
@@ -148,15 +179,11 @@ function animate(time) {
   let bpm = Math.max(1, parseInt(document.getElementById("bpmInput").value));
   let beats = Math.max(1, parseInt(document.getElementById("beatsInput").value));
 
-  // accumulate beats based on elapsed time and current BPM
-  // changing BPM mid-stream only changes the rate going forward
   beatIndex += delta * bpm / 60000;
 
-  // smooth rotation: each beat moves the hand by 360/beats degrees
   let rotation = (beatIndex * 360 / beats) % 360;
   hand.style.transform = `translate(-50%, -100%) rotate(${rotation}deg)`;
 
-  // beat detection
   let currentBeat = Math.floor(beatIndex);
   if (currentBeat !== lastBeatIndex) {
     lastBeatIndex = currentBeat;
@@ -165,9 +192,9 @@ function animate(time) {
     let beatInMeasure = currentBeat % beats;
 
     if (accentOn && beatInMeasure === 0) {
-      clickSound(600, 0.08); // accent
+      clickSound(600, 0.08);
     } else {
-      clickSound(1000, 0.02); // regular tick
+      clickSound(1000, 0.02);
     }
   }
 
@@ -180,7 +207,6 @@ function toggle() {
   isRunning = !isRunning;
 
   if (isRunning) {
-    // reset timers so we start fresh on play, but BPM changes mid-run won't reset
     beatIndex = 0;
     lastBeatIndex = -1;
     lastTime = 0;
