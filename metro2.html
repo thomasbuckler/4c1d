@@ -285,24 +285,42 @@ function updateGlobalVolLabel() {
 }
 
 function updateGlobalScaleLabel() {
-  const val = document.getElementById("globalScale").value;
-  document.getElementById("globalScaleLabel").textContent = parseFloat(val).toFixed(1) + '×';
+  const val = parseFloat(document.getElementById("globalScale").value);
+  document.getElementById("globalScaleLabel").textContent = val.toFixed(1) + '×';
+  applyGlobalScale(val);
+}
+
+function applyGlobalScale(newScale) {
+  lines.forEach(line => {
+    const input = document.getElementById(`bpm-${line.id}`);
+    if (input) {
+      input.value = Math.max(1, Math.round(line.baseBpm * newScale));
+    }
+  });
+}
+
+function updateBaseBpm(id) {
+  const line = lines.find(l => l.id === id);
+  if (!line) return;
+  const input = document.getElementById(`bpm-${id}`);
+  const scale = parseFloat(document.getElementById("globalScale").value);
+  let val = Math.max(1, parseInt(input.value) || 1);
+  line.baseBpm = val / scale;
 }
 
 function addLine() {
   const id = nextId++;
   const color = COLORS[id % COLORS.length];
+  const index = lines.length;
+  const baseBpm = 120 + (index * 10);
   const line = {
     id, isRunning: false, beatIndex: 0,
-    lastBeatIndex: -1, lastTime: 0, color
+    lastBeatIndex: -1, lastTime: 0, color, baseBpm
   };
   lines.push(line);
 
-  const index = lines.length - 1; // 0-based index of this new line
-  const defaultBpm = 120 + (index * 10);
-  const defaultBpc = 3;
-  const defaultHz = 200 + (index * 100);
-  const defaultVol = 60;
+  const currentScale = parseFloat(document.getElementById("globalScale").value);
+  const displayBpm = Math.max(1, Math.round(baseBpm * currentScale));
 
   const hand = document.createElement("div");
   hand.className = "hand";
@@ -316,13 +334,13 @@ function addLine() {
   row.innerHTML = `
     <span class="line-color" style="background:${color}"></span>
     <button onclick="toggleLine(${id})" id="btn-${id}">Start</button>
-    <label>BPM <input type="number" id="bpm-${id}" value="${defaultBpm}" min="1" max="99999"></label>
-    <label>BPC <input type="number" id="beats-${id}" value="${defaultBpc}" min="1" max="60" onchange="onBpcChange(${id})"></label>
+    <label>BPM <input type="number" id="bpm-${id}" value="${displayBpm}" min="1" max="99999" onchange="updateBaseBpm(${id})"></label>
+    <label>BPC <input type="number" id="beats-${id}" value="3" min="1" max="60" onchange="onBpcChange(${id})"></label>
     <div class="accents-wrap" id="accents-${id}"></div>
-    <label>Hz <input type="number" id="pitch-${id}" value="${defaultHz.toFixed(2)}" min="1" max="20000" step="0.01"></label>
+    <label>Hz <input type="number" id="pitch-${id}" value="${(200 + index * 100).toFixed(2)}" min="1" max="20000" step="0.01"></label>
     <label>Vol
-      <input type="range" id="vol-${id}" min="0" max="100" value="${defaultVol}" oninput="updateVolLabel(${id})">
-      <span class="vol-label" id="volLabel-${id}">${defaultVol}%</span>
+      <input type="range" id="vol-${id}" min="0" max="100" value="60" oninput="updateVolLabel(${id})">
+      <span class="vol-label" id="volLabel-${id}">60%</span>
     </label>
   `;
   linesContainer.appendChild(row);
@@ -389,7 +407,6 @@ function ensureAnimation() {
 
 function animate(time) {
   let anyRunning = false;
-  let scale = parseFloat(document.getElementById("globalScale").value);
 
   lines.forEach(line => {
     if (!line.isRunning) return;
@@ -399,8 +416,7 @@ function animate(time) {
     let delta = time - line.lastTime;
     line.lastTime = time;
 
-    let baseBpm = Math.max(1, parseInt(document.getElementById(`bpm-${line.id}`).value));
-    let bpm = baseBpm * scale;
+    let bpm = Math.max(1, parseInt(document.getElementById(`bpm-${line.id}`).value));
     let beats = Math.max(1, parseInt(document.getElementById(`beats-${line.id}`).value));
 
     line.beatIndex += delta * bpm / 60000;
