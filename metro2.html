@@ -27,7 +27,7 @@
   .global-bar {
     margin-bottom: 1vh;
     display: flex;
-    gap: 0.6rem;
+    gap: 0.5rem;
     align-items: center;
     z-index: 10;
     flex-wrap: wrap;
@@ -84,18 +84,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: clamp(10px, 1.6vmin, 15px);
+    font-size: clamp(9px, 1.5vmin, 14px);
   }
 
   .line-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
+    gap: 0.3rem;
     align-items: center;
     justify-content: center;
-    padding: 0.35rem;
+    padding: 0.3rem;
     width: 98%;
-    max-width: 1000px;
+    max-width: 1100px;
   }
 
   .line-color {
@@ -110,7 +110,7 @@
   .accents-wrap {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.2rem;
+    gap: 0.15rem;
     align-items: center;
     justify-content: center;
   }
@@ -127,7 +127,7 @@
     background: #fff;
     color: #000;
     border: 1px solid #000;
-    padding: 0.25em 0.5em;
+    padding: 0.2em 0.4em;
     font-size: inherit;
     font-family: inherit;
     cursor: pointer;
@@ -135,7 +135,7 @@
   }
 
   input[type="number"] {
-    width: 4em;
+    width: 4.2em;
     -moz-appearance: textfield;
   }
 
@@ -146,13 +146,13 @@
   }
 
   input[type="range"] {
-    width: 6em;
+    width: 5em;
     vertical-align: middle;
   }
 
-  .vol-label, .scale-label {
+  .vol-label, .scale-label, .sus-label {
     font-size: 0.85em;
-    min-width: 3em;
+    min-width: 3.2em;
     text-align: center;
   }
 
@@ -163,7 +163,7 @@
   }
 
   .global-btn {
-    padding: 0.5em 1.5em;
+    padding: 0.5em 1.2em;
     font-weight: bold;
     font-size: clamp(12px, 2vmin, 18px);
   }
@@ -182,13 +182,16 @@
     <input type="range" id="globalScale" min="0.1" max="10" value="1" step="0.1" oninput="updateGlobalScaleLabel()">
     <span class="scale-label" id="globalScaleLabel">1.0×</span>
   </label>
-  <label>Accent
-    <input type="range" id="accentSus" min="0.01" max="2" value="0.5" step="0.01" oninput="updateAccentSusLabel()">
-    <span class="scale-label" id="accentSusLabel">0.50s</span>
+  <label>Acc Sus
+    <input type="range" id="globalAccentSus" min="0.01" max="2" value="0.5" step="0.01" oninput="updateGlobalAccentSusLabel()">
+    <span class="sus-label" id="globalAccentSusLabel">0.50s</span>
   </label>
-  <label>Beat
-    <input type="range" id="beatSus" min="0.01" max="2" value="0.02" step="0.01" oninput="updateBeatSusLabel()">
-    <span class="scale-label" id="beatSusLabel">0.02s</span>
+  <label>Beat Sus
+    <input type="range" id="globalBeatSus" min="0.01" max="2" value="0.02" step="0.01" oninput="updateGlobalBeatSusLabel()">
+    <span class="sus-label" id="globalBeatSusLabel">0.02s</span>
+  </label>
+  <label>Flip
+    <input type="checkbox" id="masterFlip" onchange="toggleMasterFlip()">
   </label>
 </div>
 
@@ -200,7 +203,8 @@
 <button class="add-btn" onclick="addLine()">+ Add Metronome</button>
 
 <script>
-let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+let audioCtx = null;
+let silentNode = null;
 let lines = [];
 let nextId = 0;
 let animFrameId = null;
@@ -218,16 +222,46 @@ function getRadius() {
   return circle.offsetWidth / 2;
 }
 
+function ensureAudioCtx() {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+  if (!silentNode) {
+    let osc = audioCtx.createOscillator();
+    let gain = audioCtx.createGain();
+    gain.gain.value = 0;
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start();
+    silentNode = { osc, gain };
+  }
+}
+
 function clickSound(freq, duration, volume) {
+  ensureAudioCtx();
+
   let osc = audioCtx.createOscillator();
   let gain = audioCtx.createGain();
-  osc.frequency.value = freq;
-  gain.gain.value = volume;
+
+  osc.frequency.value = Math.max(1, Math.min(200000, freq));
+
+  let now = audioCtx.currentTime;
+  let dur = Math.max(0.001, duration);
+  let vol = Math.max(0, volume);
+
+  // CRITICAL FIX: explicitly set start value on the timeline before ramping
+  gain.gain.setValueAtTime(vol, now);
+  gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+
   osc.connect(gain);
   gain.connect(audioCtx.destination);
-  osc.start();
-  gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
-  osc.stop(audioCtx.currentTime + duration);
+  osc.start(now);
+
+  // Stop slightly after ramp so the tail isn't truncated mid-render-quantum
+  osc.stop(now + dur + 0.005);
 }
 
 function drawMarkers() {
@@ -239,7 +273,7 @@ function drawMarkers() {
     const beatsInput = document.getElementById(`beats-${line.id}`);
     if (!beatsInput) return;
 
-    const beats = Math.max(1, parseInt(beatsInput.value));
+    const beats = Math.max(1, Math.min(60, parseInt(beatsInput.value) || 1));
 
     for (let i = 0; i < beats; i++) {
       let m = document.createElement("div");
@@ -259,7 +293,7 @@ function drawAccents(id) {
   const container = document.getElementById(`accents-${id}`);
   if (!container) return;
 
-  const beats = Math.max(1, parseInt(document.getElementById(`beats-${id}`).value));
+  const beats = Math.max(1, Math.min(60, parseInt(document.getElementById(`beats-${id}`).value) || 1));
   let html = '';
 
   for (let i = 0; i < beats; i++) {
@@ -287,9 +321,9 @@ function applyGlobalVolume(newVol) {
     const slider = document.getElementById(`vol-${line.id}`);
     const label = document.getElementById(`volLabel-${line.id}`);
     if (slider) {
-      let val = Math.max(0, Math.min(100, Math.round(line.baseVolume * newVol / 100)));
-      slider.value = val;
-      if (label) label.textContent = val + '%';
+      let display = Math.max(0, Math.min(100, Math.round(line.baseVolume * newVol / 100)));
+      slider.value = display;
+      if (label) label.textContent = display + '%';
     }
   });
 }
@@ -322,7 +356,7 @@ function applyGlobalScale(newScale) {
   lines.forEach(line => {
     const input = document.getElementById(`bpm-${line.id}`);
     if (input) {
-      input.value = Math.max(1, Math.round(line.baseBpm * newScale));
+      input.value = Math.max(1, Math.min(10000, Math.round(line.baseBpm * newScale)));
     }
   });
 }
@@ -332,18 +366,129 @@ function updateBaseBpm(id) {
   if (!line) return;
   const input = document.getElementById(`bpm-${id}`);
   const scale = parseFloat(document.getElementById("globalScale").value);
-  let val = Math.max(1, parseInt(input.value) || 1);
+  let val = Math.max(1, Math.min(10000, parseInt(input.value) || 1));
   line.baseBpm = val / scale;
 }
 
-function updateAccentSusLabel() {
-  const val = parseFloat(document.getElementById("accentSus").value);
-  document.getElementById("accentSusLabel").textContent = val.toFixed(2) + 's';
+function updateGlobalAccentSusLabel() {
+  const val = parseFloat(document.getElementById("globalAccentSus").value);
+  document.getElementById("globalAccentSusLabel").textContent = val.toFixed(2) + 's';
+  applyGlobalAccentSus(val);
 }
 
-function updateBeatSusLabel() {
-  const val = parseFloat(document.getElementById("beatSus").value);
-  document.getElementById("beatSusLabel").textContent = val.toFixed(2) + 's';
+function applyGlobalAccentSus(newVal) {
+  let clamped = Math.max(0.01, Math.min(2.0, newVal));
+  lines.forEach(line => {
+    const slider = document.getElementById(`accentSus-${line.id}`);
+    const label = document.getElementById(`accentSusLabel-${line.id}`);
+    if (slider) {
+      slider.value = clamped.toFixed(2);
+      if (label) label.textContent = clamped.toFixed(2) + 's';
+    }
+  });
+}
+
+function onAccentSusInput(id) {
+  const slider = document.getElementById(`accentSus-${id}`);
+  const label = document.getElementById(`accentSusLabel-${id}`);
+  let val = parseFloat(slider.value) || 0.01;
+  val = Math.max(0.01, Math.min(2.0, val));
+  if (label) label.textContent = val.toFixed(2) + 's';
+}
+
+function updateGlobalBeatSusLabel() {
+  const val = parseFloat(document.getElementById("globalBeatSus").value);
+  document.getElementById("globalBeatSusLabel").textContent = val.toFixed(2) + 's';
+  applyGlobalBeatSus(val);
+}
+
+function applyGlobalBeatSus(newVal) {
+  let clamped = Math.max(0.01, Math.min(2.0, newVal));
+  lines.forEach(line => {
+    const slider = document.getElementById(`beatSus-${line.id}`);
+    const label = document.getElementById(`beatSusLabel-${line.id}`);
+    if (slider) {
+      slider.value = clamped.toFixed(2);
+      if (label) label.textContent = clamped.toFixed(2) + 's';
+    }
+  });
+}
+
+function onBeatSusInput(id) {
+  const slider = document.getElementById(`beatSus-${id}`);
+  const label = document.getElementById(`beatSusLabel-${id}`);
+  let val = parseFloat(slider.value) || 0.01;
+  val = Math.max(0.01, Math.min(2.0, val));
+  if (label) label.textContent = val.toFixed(2) + 's';
+}
+
+function swapSustains(id) {
+  const accSlider = document.getElementById(`accentSus-${id}`);
+  const beatSlider = document.getElementById(`beatSus-${id}`);
+  const accLabel = document.getElementById(`accentSusLabel-${id}`);
+  const beatLabel = document.getElementById(`beatSusLabel-${id}`);
+  
+  if (!accSlider || !beatSlider) return;
+  
+  const tempVal = accSlider.value;
+  accSlider.value = beatSlider.value;
+  beatSlider.value = tempVal;
+  
+  const tempLabel = accLabel.textContent;
+  accLabel.textContent = beatLabel.textContent;
+  beatLabel.textContent = tempLabel;
+  
+  const line = lines.find(l => l.id === id);
+  if (line) {
+    const tempBase = line.baseAccentSus;
+    line.baseAccentSus = line.baseBeatSus;
+    line.baseBeatSus = tempBase;
+  }
+}
+
+function toggleFlip(id) {
+  const line = lines.find(l => l.id === id);
+  if (!line) return;
+  const checkbox = document.getElementById(`flip-${id}`);
+  const shouldFlip = checkbox.checked;
+  
+  if (shouldFlip !== line.isFlipped) {
+    swapSustains(id);
+    line.isFlipped = shouldFlip;
+  }
+}
+
+function toggleMasterFlip() {
+  const masterCheckbox = document.getElementById("masterFlip");
+  const shouldFlip = masterCheckbox.checked;
+  
+  lines.forEach(line => {
+    const checkbox = document.getElementById(`flip-${line.id}`);
+    if (checkbox) {
+      checkbox.checked = shouldFlip;
+      if (shouldFlip !== line.isFlipped) {
+        swapSustains(line.id);
+        line.isFlipped = shouldFlip;
+      }
+    }
+  });
+}
+
+function clampInput(inputId, minVal, maxVal) {
+  const el = document.getElementById(inputId);
+  if (!el) return;
+  let val = parseFloat(el.value);
+  if (isNaN(val) || el.value === '' || val < minVal) val = minVal;
+  if (val > maxVal) val = maxVal;
+  el.value = val;
+}
+
+function preventBlank(inputId, minVal) {
+  const el = document.getElementById(inputId);
+  if (!el) return;
+  if (el.value === '' || el.value === null || el.value === undefined) {
+    el.value = minVal;
+  }
 }
 
 function addLine() {
@@ -352,17 +497,25 @@ function addLine() {
   const index = lines.length;
   const baseBpm = 120 + (index * 10);
   const baseVolume = 60;
+  const baseAccentSus = 0.5;
+  const baseBeatSus = 0.02;
+
   const line = {
     id, isRunning: false, beatIndex: 0,
-    lastBeatIndex: -1, lastTime: 0, color, baseBpm, baseVolume
+    lastBeatIndex: -1, lastTime: 0, color,
+    baseBpm, baseVolume, baseAccentSus, baseBeatSus,
+    isFlipped: false
   };
   lines.push(line);
 
   const currentScale = parseFloat(document.getElementById("globalScale").value);
-  const displayBpm = Math.max(1, Math.round(baseBpm * currentScale));
+  const displayBpm = Math.max(1, Math.min(10000, Math.round(baseBpm * currentScale)));
 
   const currentMasterVol = parseFloat(document.getElementById("globalVol").value);
   const displayVolume = Math.max(0, Math.min(100, Math.round(baseVolume * currentMasterVol / 100)));
+
+  const displayAccentSus = parseFloat(document.getElementById("globalAccentSus").value);
+  const displayBeatSus = parseFloat(document.getElementById("globalBeatSus").value);
 
   const hand = document.createElement("div");
   hand.className = "hand";
@@ -376,16 +529,32 @@ function addLine() {
   row.innerHTML = `
     <span class="line-color" style="background:${color}"></span>
     <button onclick="toggleLine(${id})" id="btn-${id}">Start</button>
-    <label>BPM <input type="number" id="bpm-${id}" value="${displayBpm}" min="1" max="99999" onchange="updateBaseBpm(${id})"></label>
-    <label>BPC <input type="number" id="beats-${id}" value="3" min="1" max="60" onchange="onBpcChange(${id})"></label>
+    <label>BPM <input type="number" id="bpm-${id}" value="${displayBpm}" min="1" max="10000" oninput="preventBlank('bpm-${id}', 1)" onchange="updateBaseBpm(${id}); clampInput('bpm-${id}', 1, 10000)"></label>
+    <label>BPC <input type="number" id="beats-${id}" value="3" min="1" max="60" oninput="preventBlank('beats-${id}', 1)" onchange="onBpcChange(${id}); clampInput('beats-${id}', 1, 60)"></label>
     <div class="accents-wrap" id="accents-${id}"></div>
-    <label>Hz <input type="number" id="pitch-${id}" value="${(200 + index * 100).toFixed(2)}" min="1" max="20000" step="0.01"></label>
+    <label>Hz <input type="number" id="pitch-${id}" value="${(200 + index * 100).toFixed(2)}" min="1" max="200000" step="0.01" oninput="preventBlank('pitch-${id}', 1)" onchange="clampInput('pitch-${id}', 1, 200000)"></label>
     <label>Vol
       <input type="range" id="vol-${id}" min="0" max="100" value="${displayVolume}" oninput="onVolumeInput(${id})">
       <span class="vol-label" id="volLabel-${id}">${displayVolume}%</span>
     </label>
+    <label>Acc
+      <input type="range" id="accentSus-${id}" min="0.01" max="2" value="${displayAccentSus.toFixed(2)}" step="0.01" oninput="onAccentSusInput(${id})">
+      <span class="sus-label" id="accentSusLabel-${id}">${displayAccentSus.toFixed(2)}s</span>
+    </label>
+    <label>Beat
+      <input type="range" id="beatSus-${id}" min="0.01" max="2" value="${displayBeatSus.toFixed(2)}" step="0.01" oninput="onBeatSusInput(${id})">
+      <span class="sus-label" id="beatSusLabel-${id}">${displayBeatSus.toFixed(2)}s</span>
+    </label>
+    <label>Flip <input type="checkbox" id="flip-${id}" onchange="toggleFlip(${id})"></label>
   `;
   linesContainer.appendChild(row);
+
+  if (document.getElementById("masterFlip").checked) {
+    const flipCheckbox = document.getElementById(`flip-${id}`);
+    if (flipCheckbox) flipCheckbox.checked = true;
+    swapSustains(id);
+    line.isFlipped = true;
+  }
 
   drawAccents(id);
   drawMarkers();
@@ -397,7 +566,7 @@ function onBpcChange(id) {
 }
 
 function toggleLine(id) {
-  if (!audioCtx) audioCtx = new AudioContext();
+  ensureAudioCtx();
 
   const line = lines.find(l => l.id === id);
   if (!line) return;
@@ -413,7 +582,7 @@ function toggleLine(id) {
 }
 
 function toggleAll() {
-  if (!audioCtx) audioCtx = new AudioContext();
+  ensureAudioCtx();
 
   const anyRunning = lines.some(l => l.isRunning);
 
@@ -450,9 +619,6 @@ function ensureAnimation() {
 function animate(time) {
   let anyRunning = false;
 
-  let accentSus = parseFloat(document.getElementById("accentSus").value);
-  let beatSus = parseFloat(document.getElementById("beatSus").value);
-
   lines.forEach(line => {
     if (!line.isRunning) return;
     anyRunning = true;
@@ -461,8 +627,8 @@ function animate(time) {
     let delta = time - line.lastTime;
     line.lastTime = time;
 
-    let bpm = Math.max(1, parseInt(document.getElementById(`bpm-${line.id}`).value));
-    let beats = Math.max(1, parseInt(document.getElementById(`beats-${line.id}`).value));
+    let bpm = Math.max(1, Math.min(10000, parseInt(document.getElementById(`bpm-${line.id}`).value) || 1));
+    let beats = Math.max(1, Math.min(60, parseInt(document.getElementById(`beats-${line.id}`).value) || 1));
 
     line.beatIndex += delta * bpm / 60000;
 
@@ -473,20 +639,23 @@ function animate(time) {
     }
 
     let currentBeat = Math.floor(line.beatIndex);
-    if (currentBeat !== line.lastBeatIndex) {
-      line.lastBeatIndex = currentBeat;
 
-      let beatInMeasure = currentBeat % beats;
-      let pitch = parseFloat(document.getElementById(`pitch-${line.id}`).value);
-      let volume = parseFloat(document.getElementById(`vol-${line.id}`).value) / 100;
+    while (line.lastBeatIndex < currentBeat) {
+      line.lastBeatIndex++;
+
+      let beatInMeasure = line.lastBeatIndex % beats;
+      let pitch = Math.max(1, Math.min(200000, parseFloat(document.getElementById(`pitch-${line.id}`).value) || 200));
+      let volume = (parseFloat(document.getElementById(`vol-${line.id}`).value) || 0) / 100;
+      let accentDur = parseFloat(document.getElementById(`accentSus-${line.id}`).value) || 0.01;
+      let beatDur = parseFloat(document.getElementById(`beatSus-${line.id}`).value) || 0.01;
 
       const accentCheckbox = document.getElementById(`accent-${line.id}-${beatInMeasure}`);
       const isAccent = accentCheckbox ? accentCheckbox.checked : false;
 
       if (isAccent) {
-        clickSound(pitch, accentSus, volume);
+        clickSound(pitch, accentDur, volume);
       } else {
-        clickSound(pitch, beatSus, volume);
+        clickSound(pitch, beatDur, volume);
       }
     }
   });
