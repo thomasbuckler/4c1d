@@ -152,7 +152,7 @@
 
   .vol-label, .scale-label {
     font-size: 0.85em;
-    min-width: 2.5em;
+    min-width: 3em;
     text-align: center;
   }
 
@@ -168,7 +168,6 @@
     font-size: clamp(12px, 2vmin, 18px);
   }
 </style>
-<base target="_blank">
 </head>
 <body>
 
@@ -179,9 +178,17 @@
     <input type="range" id="globalVol" min="0" max="100" value="100" oninput="updateGlobalVolLabel()">
     <span class="vol-label" id="globalVolLabel">100%</span>
   </label>
-  <label>Speed
+  <label>Master Speed
     <input type="range" id="globalScale" min="0.1" max="10" value="1" step="0.1" oninput="updateGlobalScaleLabel()">
     <span class="scale-label" id="globalScaleLabel">1.0×</span>
+  </label>
+  <label>Accent
+    <input type="range" id="accentSus" min="0.01" max="2" value="0.5" step="0.01" oninput="updateAccentSusLabel()">
+    <span class="scale-label" id="accentSusLabel">0.50s</span>
+  </label>
+  <label>Beat
+    <input type="range" id="beatSus" min="0.01" max="2" value="0.02" step="0.01" oninput="updateBeatSusLabel()">
+    <span class="scale-label" id="beatSusLabel">0.02s</span>
   </label>
 </div>
 
@@ -207,20 +214,15 @@ const COLORS = [
   '#9b59b6', '#1abc9c', '#e91e63', '#795548', '#607d8b'
 ];
 
-const ACCENT_DURATION = 0.5;
-
 function getRadius() {
   return circle.offsetWidth / 2;
 }
 
 function clickSound(freq, duration, volume) {
-  let masterVol = parseFloat(document.getElementById("globalVol").value) / 100;
-  let finalVol = volume * masterVol;
-
   let osc = audioCtx.createOscillator();
   let gain = audioCtx.createGain();
   osc.frequency.value = freq;
-  gain.gain.value = finalVol;
+  gain.gain.value = volume;
   osc.connect(gain);
   gain.connect(audioCtx.destination);
   osc.start();
@@ -274,14 +276,40 @@ function updateGlobalButton() {
   globalBtn.textContent = anyRunning ? "⏹ Stop All" : "▶ Start All";
 }
 
-function updateVolLabel(id) {
-  const val = document.getElementById(`vol-${id}`).value;
-  document.getElementById(`volLabel-${id}`).textContent = val + '%';
+function updateGlobalVolLabel() {
+  const val = parseFloat(document.getElementById("globalVol").value);
+  document.getElementById("globalVolLabel").textContent = val + '%';
+  applyGlobalVolume(val);
 }
 
-function updateGlobalVolLabel() {
-  const val = document.getElementById("globalVol").value;
-  document.getElementById("globalVolLabel").textContent = val + '%';
+function applyGlobalVolume(newVol) {
+  lines.forEach(line => {
+    const slider = document.getElementById(`vol-${line.id}`);
+    const label = document.getElementById(`volLabel-${line.id}`);
+    if (slider) {
+      let val = Math.max(0, Math.min(100, Math.round(line.baseVolume * newVol / 100)));
+      slider.value = val;
+      if (label) label.textContent = val + '%';
+    }
+  });
+}
+
+function onVolumeInput(id) {
+  const line = lines.find(l => l.id === id);
+  if (!line) return;
+  const slider = document.getElementById(`vol-${id}`);
+  const label = document.getElementById(`volLabel-${id}`);
+  const masterVol = parseFloat(document.getElementById("globalVol").value);
+  let val = parseInt(slider.value) || 0;
+  val = Math.max(0, Math.min(100, val));
+
+  if (masterVol > 0) {
+    line.baseVolume = Math.max(0, Math.min(100, val / (masterVol / 100)));
+  } else {
+    line.baseVolume = val;
+  }
+
+  if (label) label.textContent = val + '%';
 }
 
 function updateGlobalScaleLabel() {
@@ -308,19 +336,33 @@ function updateBaseBpm(id) {
   line.baseBpm = val / scale;
 }
 
+function updateAccentSusLabel() {
+  const val = parseFloat(document.getElementById("accentSus").value);
+  document.getElementById("accentSusLabel").textContent = val.toFixed(2) + 's';
+}
+
+function updateBeatSusLabel() {
+  const val = parseFloat(document.getElementById("beatSus").value);
+  document.getElementById("beatSusLabel").textContent = val.toFixed(2) + 's';
+}
+
 function addLine() {
   const id = nextId++;
   const color = COLORS[id % COLORS.length];
   const index = lines.length;
   const baseBpm = 120 + (index * 10);
+  const baseVolume = 60;
   const line = {
     id, isRunning: false, beatIndex: 0,
-    lastBeatIndex: -1, lastTime: 0, color, baseBpm
+    lastBeatIndex: -1, lastTime: 0, color, baseBpm, baseVolume
   };
   lines.push(line);
 
   const currentScale = parseFloat(document.getElementById("globalScale").value);
   const displayBpm = Math.max(1, Math.round(baseBpm * currentScale));
+
+  const currentMasterVol = parseFloat(document.getElementById("globalVol").value);
+  const displayVolume = Math.max(0, Math.min(100, Math.round(baseVolume * currentMasterVol / 100)));
 
   const hand = document.createElement("div");
   hand.className = "hand";
@@ -339,8 +381,8 @@ function addLine() {
     <div class="accents-wrap" id="accents-${id}"></div>
     <label>Hz <input type="number" id="pitch-${id}" value="${(200 + index * 100).toFixed(2)}" min="1" max="20000" step="0.01"></label>
     <label>Vol
-      <input type="range" id="vol-${id}" min="0" max="100" value="60" oninput="updateVolLabel(${id})">
-      <span class="vol-label" id="volLabel-${id}">60%</span>
+      <input type="range" id="vol-${id}" min="0" max="100" value="${displayVolume}" oninput="onVolumeInput(${id})">
+      <span class="vol-label" id="volLabel-${id}">${displayVolume}%</span>
     </label>
   `;
   linesContainer.appendChild(row);
@@ -408,6 +450,9 @@ function ensureAnimation() {
 function animate(time) {
   let anyRunning = false;
 
+  let accentSus = parseFloat(document.getElementById("accentSus").value);
+  let beatSus = parseFloat(document.getElementById("beatSus").value);
+
   lines.forEach(line => {
     if (!line.isRunning) return;
     anyRunning = true;
@@ -439,9 +484,9 @@ function animate(time) {
       const isAccent = accentCheckbox ? accentCheckbox.checked : false;
 
       if (isAccent) {
-        clickSound(pitch, ACCENT_DURATION, volume);
+        clickSound(pitch, accentSus, volume);
       } else {
-        clickSound(pitch, 0.02, volume);
+        clickSound(pitch, beatSus, volume);
       }
     }
   });
