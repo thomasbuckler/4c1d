@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Circular Metronome</title>
 <style>
   * {
@@ -32,6 +32,19 @@
     z-index: 10;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .global-bar label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+  }
+
+  .global-bar input[type="range"] {
+    width: clamp(12rem, 20vw, 20rem);
   }
 
   .circle {
@@ -135,7 +148,7 @@
   }
 
   input[type="number"] {
-    width: 4.2em;
+    width: 4.6em;
     -moz-appearance: textfield;
   }
 
@@ -145,7 +158,7 @@
     margin: 0;
   }
 
-  input[type="range"] {
+  .line-row input[type="range"] {
     width: 5em;
     vertical-align: middle;
   }
@@ -156,12 +169,7 @@
     text-align: center;
   }
 
-  .global-btn {
-    padding: 0.5em 1.2em;
-    font-weight: bold;
-    font-size: clamp(12px, 2vmin, 18px);
-  }
-
+  .global-btn,
   .add-btn {
     padding: 0.5em 1.2em;
     font-weight: bold;
@@ -175,22 +183,32 @@
   <button class="global-btn" onclick="toggleAll()" id="globalBtn">Start</button>
   <button class="global-btn" onclick="resetAll()" id="resetBtn">Reset</button>
   <button class="add-btn" onclick="addLine()">+ Add Metronome</button>
+
   <label>Master Volume
     <input type="range" id="globalVol" min="0" max="100" value="100" oninput="updateGlobalVolLabel()">
     <span class="vol-label" id="globalVolLabel">100%</span>
   </label>
+
   <label>Master BPM Scale
     <input type="range" id="globalScale" min="0.1" max="10" value="1" step="0.1" oninput="updateGlobalScaleLabel()">
     <span class="scale-label" id="globalScaleLabel">1.0x</span>
   </label>
+
+  <label>Master Hz Scale
+    <input type="range" id="globalHzScale" min="0.1" max="10" value="1" step="0.1" oninput="updateGlobalHzScaleLabel()">
+    <span class="scale-label" id="globalHzScaleLabel">1.0x</span>
+  </label>
+
   <label>Master Accent Sustain
     <input type="range" id="globalAccentSus" min="0.01" max="2" value="0.5" step="0.01" oninput="updateGlobalAccentSusLabel()">
     <span class="sus-label" id="globalAccentSusLabel">0.50s</span>
   </label>
+
   <label>Master Beat Sustain
     <input type="range" id="globalBeatSus" min="0.01" max="2" value="0.01" step="0.01" oninput="updateGlobalBeatSusLabel()">
     <span class="sus-label" id="globalBeatSusLabel">0.01s</span>
   </label>
+
   <label>Flip
     <input type="checkbox" id="masterFlip" onchange="toggleMasterFlip()">
   </label>
@@ -385,6 +403,31 @@ function updateBaseBpm(id) {
   line.baseBpm = val / scale;
 }
 
+function updateGlobalHzScaleLabel() {
+  const val = parseFloat(document.getElementById("globalHzScale").value);
+  document.getElementById("globalHzScaleLabel").textContent = val.toFixed(1) + 'x';
+  applyGlobalHzScale(val);
+}
+
+function applyGlobalHzScale(newScale) {
+  lines.forEach(line => {
+    if (line.isKeeper) return;
+    const input = document.getElementById(`pitch-${line.id}`);
+    if (input) {
+      input.value = Math.max(1, Math.min(200000, (line.basePitch * newScale).toFixed(2)));
+    }
+  });
+}
+
+function updateBasePitch(id) {
+  const line = lines.find(l => l.id === id);
+  if (!line || line.isKeeper) return;
+  const input = document.getElementById(`pitch-${id}`);
+  const scale = parseFloat(document.getElementById("globalHzScale").value);
+  let val = Math.max(1, Math.min(200000, parseFloat(input.value) || 1));
+  line.basePitch = val / scale;
+}
+
 function updateGlobalAccentSusLabel() {
   const val = parseFloat(document.getElementById("globalAccentSus").value);
   document.getElementById("globalAccentSusLabel").textContent = val.toFixed(2) + 's';
@@ -444,17 +487,17 @@ function swapSustains(id) {
   const beatSlider = document.getElementById(`beatSus-${id}`);
   const accLabel = document.getElementById(`accentSusLabel-${id}`);
   const beatLabel = document.getElementById(`beatSusLabel-${id}`);
-  
+
   if (!accSlider || !beatSlider) return;
-  
+
   const tempVal = accSlider.value;
   accSlider.value = beatSlider.value;
   beatSlider.value = tempVal;
-  
+
   const tempLabel = accLabel.textContent;
   accLabel.textContent = beatLabel.textContent;
   beatLabel.textContent = tempLabel;
-  
+
   const line = lines.find(l => l.id === id);
   if (line) {
     const tempBase = line.baseAccentSus;
@@ -468,7 +511,7 @@ function toggleFlip(id) {
   if (!line || line.isKeeper) return;
   const checkbox = document.getElementById(`flip-${id}`);
   const shouldFlip = checkbox.checked;
-  
+
   if (shouldFlip !== line.isFlipped) {
     swapSustains(id);
     line.isFlipped = shouldFlip;
@@ -478,7 +521,7 @@ function toggleFlip(id) {
 function toggleMasterFlip() {
   const masterCheckbox = document.getElementById("masterFlip");
   const shouldFlip = masterCheckbox.checked;
-  
+
   lines.forEach(line => {
     if (line.isKeeper) return;
     const checkbox = document.getElementById(`flip-${line.id}`);
@@ -526,21 +569,34 @@ function addLine() {
   const id = nextId++;
   const color = COLORS[id % COLORS.length];
   const index = lines.filter(l => !l.isKeeper).length;
+
   const baseBpm = 120 + (index * 10);
+  const basePitch = 200 + (index * 100);
   const baseVolume = 60;
   const baseAccentSus = 0.5;
   const baseBeatSus = 0.01;
 
   const line = {
-    id, isRunning: false, beatIndex: 0,
-    lastBeatIndex: -1, lastTime: 0, color,
-    baseBpm, baseVolume, baseAccentSus, baseBeatSus,
+    id,
+    isRunning: false,
+    beatIndex: 0,
+    lastBeatIndex: -1,
+    lastTime: 0,
+    color,
+    baseBpm,
+    basePitch,
+    baseVolume,
+    baseAccentSus,
+    baseBeatSus,
     isFlipped: false
   };
   lines.push(line);
 
   const currentScale = parseFloat(document.getElementById("globalScale").value);
+  const currentHzScale = parseFloat(document.getElementById("globalHzScale").value);
+
   const displayBpm = Math.max(1, Math.min(10000, Math.round(baseBpm * currentScale)));
+  const displayPitch = Math.max(1, Math.min(200000, (basePitch * currentHzScale).toFixed(2)));
 
   const currentMasterVol = parseFloat(document.getElementById("globalVol").value);
   const displayVolume = Math.max(0, Math.min(100, Math.round(baseVolume * currentMasterVol / 100)));
@@ -563,7 +619,7 @@ function addLine() {
     <label>BPM <input type="number" id="bpm-${id}" value="${displayBpm}" min="1" max="10000" oninput="preventBlank('bpm-${id}', 1)" onchange="updateBaseBpm(${id}); clampInput('bpm-${id}', 1, 10000)"></label>
     <label>BPC <input type="number" id="beats-${id}" value="3" min="1" max="60" oninput="preventBlank('beats-${id}', 1)" onchange="onBpcChange(${id}); clampInput('beats-${id}', 1, 60)"></label>
     <div class="accents-wrap" id="accents-${id}"></div>
-    <label>Hz <input type="number" id="pitch-${id}" value="${(200 + index * 100).toFixed(2)}" min="1" max="200000" step="0.01" oninput="preventBlank('pitch-${id}', 1)" onchange="clampInput('pitch-${id}', 1, 200000)"></label>
+    <label>Hz <input type="number" id="pitch-${id}" value="${displayPitch}" min="1" max="200000" step="0.01" oninput="preventBlank('pitch-${id}', 1)" onchange="updateBasePitch(${id}); clampInput('pitch-${id}', 1, 200000)"></label>
     <label>Vol
       <input type="range" id="vol-${id}" min="0" max="100" value="${displayVolume}" oninput="onVolumeInput(${id})">
       <span class="vol-label" id="volLabel-${id}">${displayVolume}%</span>
@@ -666,7 +722,7 @@ function animate(time) {
       bpm = 30;
       beats = 1;
       pitch = 1;
-      volume = 1;
+      volume = 0.01;
       accentDur = 1;
       beatDur = 0.01;
       isAccent = true;
@@ -702,7 +758,6 @@ function animate(time) {
       }
 
       let dur = isAccent ? accentDur : beatDur;
-
       clickSound(pitch, dur, volume);
     }
   });
