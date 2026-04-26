@@ -174,21 +174,21 @@
 <div class="global-bar">
   <button class="global-btn" onclick="toggleAll()" id="globalBtn">▶ Start All</button>
   <button class="global-btn" onclick="resetAll()" id="resetBtn">↺ Reset</button>
-  <label>Master Vol
+  <label>Master Volume
     <input type="range" id="globalVol" min="0" max="100" value="100" oninput="updateGlobalVolLabel()">
     <span class="vol-label" id="globalVolLabel">100%</span>
   </label>
-  <label>Master Speed
+  <label>Master BPM Scale
     <input type="range" id="globalScale" min="0.1" max="10" value="1" step="0.1" oninput="updateGlobalScaleLabel()">
     <span class="scale-label" id="globalScaleLabel">1.0×</span>
   </label>
-  <label>Acc Sus
+  <label>Master Accent Sustain
     <input type="range" id="globalAccentSus" min="0.01" max="2" value="0.5" step="0.01" oninput="updateGlobalAccentSusLabel()">
     <span class="sus-label" id="globalAccentSusLabel">0.50s</span>
   </label>
-  <label>Beat Sus
-    <input type="range" id="globalBeatSus" min="0.01" max="2" value="0.02" step="0.01" oninput="updateGlobalBeatSusLabel()">
-    <span class="sus-label" id="globalBeatSusLabel">0.02s</span>
+  <label>Master Beat Sustain
+    <input type="range" id="globalBeatSus" min="0.01" max="2" value="0.01" step="0.01" oninput="updateGlobalBeatSusLabel()">
+    <span class="sus-label" id="globalBeatSusLabel">0.01s</span>
   </label>
   <label>Flip
     <input type="checkbox" id="masterFlip" onchange="toggleMasterFlip()">
@@ -204,7 +204,6 @@
 
 <script>
 let audioCtx = null;
-let silentNode = null;
 let lines = [];
 let nextId = 0;
 let animFrameId = null;
@@ -229,39 +228,30 @@ function ensureAudioCtx() {
   if (audioCtx.state === 'suspended') {
     audioCtx.resume();
   }
-  if (!silentNode) {
-    let osc = audioCtx.createOscillator();
-    let gain = audioCtx.createGain();
-    gain.gain.value = 0;
-    osc.connect(gain);
-    gain.connect(audioCtx.destination);
-    osc.start();
-    silentNode = { osc, gain };
-  }
 }
 
 function clickSound(freq, duration, volume) {
   ensureAudioCtx();
-
+  let dur = Math.max(0.001, duration);
+  let now = audioCtx.currentTime;
   let osc = audioCtx.createOscillator();
   let gain = audioCtx.createGain();
-
   osc.frequency.value = Math.max(1, Math.min(200000, freq));
 
-  let now = audioCtx.currentTime;
-  let dur = Math.max(0.001, duration);
-  let vol = Math.max(0, volume);
-
-  // CRITICAL FIX: explicitly set start value on the timeline before ramping
-  gain.gain.setValueAtTime(vol, now);
-  gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
-
-  osc.connect(gain);
-  gain.connect(audioCtx.destination);
-  osc.start(now);
-
-  // Stop slightly after ramp so the tail isn't truncated mid-render-quantum
-  osc.stop(now + dur + 0.005);
+  if (volume <= 0) {
+    gain.gain.value = 0;
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(now);
+    osc.stop(now + dur);
+  } else {
+    gain.gain.value = Math.max(0, volume);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(now);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+    osc.stop(now + dur);
+  }
 }
 
 function drawMarkers() {
@@ -270,6 +260,7 @@ function drawMarkers() {
   const offset = radius - (radius * 0.06);
 
   lines.forEach((line) => {
+    if (line.isKeeper) return;
     const beatsInput = document.getElementById(`beats-${line.id}`);
     if (!beatsInput) return;
 
@@ -305,9 +296,31 @@ function drawAccents(id) {
   container.innerHTML = html;
 }
 
+function startKeeper() {
+  const keeper = lines.find(l => l.isKeeper);
+  if (keeper && !keeper.isRunning) {
+    keeper.isRunning = true;
+    keeper.lastTime = 0;
+    ensureAnimation();
+  }
+}
+
+function stopKeeper() {
+  const keeper = lines.find(l => l.isKeeper);
+  if (keeper) {
+    keeper.isRunning = false;
+    keeper.beatIndex = 0;
+    keeper.lastBeatIndex = -1;
+    keeper.lastTime = 0;
+  }
+}
+
 function updateGlobalButton() {
-  const anyRunning = lines.some(l => l.isRunning);
-  globalBtn.textContent = anyRunning ? "⏹ Stop All" : "▶ Start All";
+  const anyVisibleRunning = lines.some(l => l.isRunning && !l.isKeeper);
+  globalBtn.textContent = anyVisibleRunning ? "⏹ Stop All" : "▶ Start All";
+  if (!anyVisibleRunning) {
+    stopKeeper();
+  }
 }
 
 function updateGlobalVolLabel() {
@@ -318,6 +331,7 @@ function updateGlobalVolLabel() {
 
 function applyGlobalVolume(newVol) {
   lines.forEach(line => {
+    if (line.isKeeper) return;
     const slider = document.getElementById(`vol-${line.id}`);
     const label = document.getElementById(`volLabel-${line.id}`);
     if (slider) {
@@ -330,7 +344,7 @@ function applyGlobalVolume(newVol) {
 
 function onVolumeInput(id) {
   const line = lines.find(l => l.id === id);
-  if (!line) return;
+  if (!line || line.isKeeper) return;
   const slider = document.getElementById(`vol-${id}`);
   const label = document.getElementById(`volLabel-${id}`);
   const masterVol = parseFloat(document.getElementById("globalVol").value);
@@ -354,6 +368,7 @@ function updateGlobalScaleLabel() {
 
 function applyGlobalScale(newScale) {
   lines.forEach(line => {
+    if (line.isKeeper) return;
     const input = document.getElementById(`bpm-${line.id}`);
     if (input) {
       input.value = Math.max(1, Math.min(10000, Math.round(line.baseBpm * newScale)));
@@ -363,7 +378,7 @@ function applyGlobalScale(newScale) {
 
 function updateBaseBpm(id) {
   const line = lines.find(l => l.id === id);
-  if (!line) return;
+  if (!line || line.isKeeper) return;
   const input = document.getElementById(`bpm-${id}`);
   const scale = parseFloat(document.getElementById("globalScale").value);
   let val = Math.max(1, Math.min(10000, parseInt(input.value) || 1));
@@ -379,6 +394,7 @@ function updateGlobalAccentSusLabel() {
 function applyGlobalAccentSus(newVal) {
   let clamped = Math.max(0.01, Math.min(2.0, newVal));
   lines.forEach(line => {
+    if (line.isKeeper) return;
     const slider = document.getElementById(`accentSus-${line.id}`);
     const label = document.getElementById(`accentSusLabel-${line.id}`);
     if (slider) {
@@ -405,6 +421,7 @@ function updateGlobalBeatSusLabel() {
 function applyGlobalBeatSus(newVal) {
   let clamped = Math.max(0.01, Math.min(2.0, newVal));
   lines.forEach(line => {
+    if (line.isKeeper) return;
     const slider = document.getElementById(`beatSus-${line.id}`);
     const label = document.getElementById(`beatSusLabel-${line.id}`);
     if (slider) {
@@ -448,7 +465,7 @@ function swapSustains(id) {
 
 function toggleFlip(id) {
   const line = lines.find(l => l.id === id);
-  if (!line) return;
+  if (!line || line.isKeeper) return;
   const checkbox = document.getElementById(`flip-${id}`);
   const shouldFlip = checkbox.checked;
   
@@ -463,6 +480,7 @@ function toggleMasterFlip() {
   const shouldFlip = masterCheckbox.checked;
   
   lines.forEach(line => {
+    if (line.isKeeper) return;
     const checkbox = document.getElementById(`flip-${line.id}`);
     if (checkbox) {
       checkbox.checked = shouldFlip;
@@ -491,14 +509,27 @@ function preventBlank(inputId, minVal) {
   }
 }
 
+function addKeeper() {
+  const keeper = {
+    id: 'keeper',
+    isKeeper: true,
+    isRunning: false,
+    beatIndex: 0,
+    lastBeatIndex: -1,
+    lastTime: 0,
+    color: 'transparent'
+  };
+  lines.push(keeper);
+}
+
 function addLine() {
   const id = nextId++;
   const color = COLORS[id % COLORS.length];
-  const index = lines.length;
+  const index = lines.filter(l => !l.isKeeper).length;
   const baseBpm = 120 + (index * 10);
   const baseVolume = 60;
   const baseAccentSus = 0.5;
-  const baseBeatSus = 0.02;
+  const baseBeatSus = 0.01;
 
   const line = {
     id, isRunning: false, beatIndex: 0,
@@ -569,13 +600,14 @@ function toggleLine(id) {
   ensureAudioCtx();
 
   const line = lines.find(l => l.id === id);
-  if (!line) return;
+  if (!line || line.isKeeper) return;
 
   line.isRunning = !line.isRunning;
   document.getElementById(`btn-${id}`).textContent = line.isRunning ? "Stop" : "Start";
 
   if (line.isRunning) {
     line.lastTime = 0;
+    startKeeper();
     ensureAnimation();
   }
   updateGlobalButton();
@@ -584,15 +616,15 @@ function toggleLine(id) {
 function toggleAll() {
   ensureAudioCtx();
 
-  const anyRunning = lines.some(l => l.isRunning);
+  const anyVisibleRunning = lines.some(l => l.isRunning && !l.isKeeper);
 
-  if (anyRunning) {
+  if (anyVisibleRunning) {
     lines.forEach(line => {
-      if (line.isRunning) toggleLine(line.id);
+      if (!line.isKeeper && line.isRunning) toggleLine(line.id);
     });
   } else {
     lines.forEach(line => {
-      if (!line.isRunning) toggleLine(line.id);
+      if (!line.isKeeper && !line.isRunning) toggleLine(line.id);
     });
   }
 }
@@ -602,10 +634,11 @@ function resetAll() {
     line.beatIndex = 0;
     line.lastBeatIndex = -1;
     line.lastTime = 0;
-
-    const hand = document.getElementById(`hand-${line.id}`);
-    if (hand) {
-      hand.style.transform = `translate(-50%, -100%) rotate(0deg)`;
+    if (!line.isKeeper) {
+      const hand = document.getElementById(`hand-${line.id}`);
+      if (hand) {
+        hand.style.transform = `translate(-50%, -100%) rotate(0deg)`;
+      }
     }
   });
 }
@@ -627,15 +660,33 @@ function animate(time) {
     let delta = time - line.lastTime;
     line.lastTime = time;
 
-    let bpm = Math.max(1, Math.min(10000, parseInt(document.getElementById(`bpm-${line.id}`).value) || 1));
-    let beats = Math.max(1, Math.min(60, parseInt(document.getElementById(`beats-${line.id}`).value) || 1));
+    let bpm, beats, pitch, volume, accentDur, beatDur, isAccent;
+
+    if (line.isKeeper) {
+      bpm = 30;
+      beats = 1;
+      pitch = 1;
+      volume = 0.01;
+      accentDur = 1;
+      beatDur = 0.01;
+      isAccent = true;
+    } else {
+      bpm = Math.max(1, Math.min(10000, parseInt(document.getElementById(`bpm-${line.id}`).value) || 1));
+      beats = Math.max(1, Math.min(60, parseInt(document.getElementById(`beats-${line.id}`).value) || 1));
+      pitch = Math.max(1, Math.min(200000, parseFloat(document.getElementById(`pitch-${line.id}`).value) || 200));
+      volume = (parseFloat(document.getElementById(`vol-${line.id}`).value) || 0) / 100;
+      accentDur = parseFloat(document.getElementById(`accentSus-${line.id}`).value) || 0.01;
+      beatDur = parseFloat(document.getElementById(`beatSus-${line.id}`).value) || 0.01;
+    }
 
     line.beatIndex += delta * bpm / 60000;
 
-    let rotation = (line.beatIndex * 360 / beats) % 360;
-    const hand = document.getElementById(`hand-${line.id}`);
-    if (hand) {
-      hand.style.transform = `translate(-50%, -100%) rotate(${rotation}deg)`;
+    if (!line.isKeeper) {
+      let rotation = (line.beatIndex * 360 / beats) % 360;
+      const hand = document.getElementById(`hand-${line.id}`);
+      if (hand) {
+        hand.style.transform = `translate(-50%, -100%) rotate(${rotation}deg)`;
+      }
     }
 
     let currentBeat = Math.floor(line.beatIndex);
@@ -644,19 +695,15 @@ function animate(time) {
       line.lastBeatIndex++;
 
       let beatInMeasure = line.lastBeatIndex % beats;
-      let pitch = Math.max(1, Math.min(200000, parseFloat(document.getElementById(`pitch-${line.id}`).value) || 200));
-      let volume = (parseFloat(document.getElementById(`vol-${line.id}`).value) || 0) / 100;
-      let accentDur = parseFloat(document.getElementById(`accentSus-${line.id}`).value) || 0.01;
-      let beatDur = parseFloat(document.getElementById(`beatSus-${line.id}`).value) || 0.01;
 
-      const accentCheckbox = document.getElementById(`accent-${line.id}-${beatInMeasure}`);
-      const isAccent = accentCheckbox ? accentCheckbox.checked : false;
-
-      if (isAccent) {
-        clickSound(pitch, accentDur, volume);
-      } else {
-        clickSound(pitch, beatDur, volume);
+      if (!line.isKeeper) {
+        const accentCheckbox = document.getElementById(`accent-${line.id}-${beatInMeasure}`);
+        isAccent = accentCheckbox ? accentCheckbox.checked : false;
       }
+
+      let dur = isAccent ? accentDur : beatDur;
+
+      clickSound(pitch, dur, volume);
     }
   });
 
@@ -669,6 +716,7 @@ function animate(time) {
 
 window.addEventListener("resize", drawMarkers);
 
+addKeeper();
 addLine();
 </script>
 
