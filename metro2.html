@@ -12,36 +12,35 @@
   }
 
   body {
-    background: #fff;
-    color: #000;
-    font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
+  background: #fff;
+  color: #000;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-  .global-bar {
-    margin-bottom: 1vh;
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    z-index: 10;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    padding: 0 0.5rem;
-  }
+.global-bar {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;   /* stack vertically */
+  gap: 0.75rem;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
 
-  .global-bar label {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    flex-wrap: wrap;
-  }
+.global-bar label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+}
 
   .global-bar input[type="range"] {
     width: clamp(12rem, 20vw, 20rem);
@@ -90,15 +89,13 @@
   }
 
   .controls {
-    margin-top: 1vh;
-    width: 100%;
-    max-height: 32vh;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: clamp(9px, 1.5vmin, 14px);
-  }
+  margin-top: 2vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: clamp(9px, 1.5vmin, 14px);
+}
 
   .line-row {
     display: flex;
@@ -175,6 +172,11 @@
     font-weight: bold;
     font-size: clamp(12px, 2vmin, 18px);
   }
+
+  /* Make sure the body allows scrolling */
+  html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
 </style>
 </head>
 <body>
@@ -189,10 +191,10 @@
     <span class="vol-label" id="globalVolLabel">100%</span>
   </label>
 
-  <label>Master BPM Scale
-    <input type="range" id="globalScale" min="0.1" max="10" value="1" step="0.1" oninput="updateGlobalScaleLabel()">
-    <span class="scale-label" id="globalScaleLabel">1.0x</span>
-  </label>
+<label>Master BPM Scale
+  <input type="range" id="globalScale" min="0.01" max="3" value="1" step="0.01" oninput="updateGlobalScaleLabel()">
+  <span class="scale-label" id="globalScaleLabel">1.00x</span>
+</label>
 
   <label>Master Hz Scale
     <input type="range" id="globalHzScale" min="0.1" max="10" value="1" step="0.1" oninput="updateGlobalHzScaleLabel()">
@@ -209,9 +211,9 @@
     <span class="sus-label" id="globalBeatSusLabel">0.01s</span>
   </label>
 
-  <label>Flip
-    <input type="checkbox" id="masterFlip" onchange="toggleMasterFlip()">
-  </label>
+ <label>Master Switch Accent & Beat Sustain
+  <input type="checkbox" id="masterFlip" onchange="toggleMasterFlip()">
+</label>
 </div>
 
 <div class="circle" id="circle">
@@ -380,7 +382,7 @@ function onVolumeInput(id) {
 
 function updateGlobalScaleLabel() {
   const val = parseFloat(document.getElementById("globalScale").value);
-  document.getElementById("globalScaleLabel").textContent = val.toFixed(1) + 'x';
+  document.getElementById("globalScaleLabel").textContent = val.toFixed(2) + 'x';
   applyGlobalScale(val);
 }
 
@@ -389,7 +391,7 @@ function applyGlobalScale(newScale) {
     if (line.isKeeper) return;
     const input = document.getElementById(`bpm-${line.id}`);
     if (input) {
-      input.value = Math.max(1, Math.min(10000, Math.round(line.baseBpm * newScale)));
+      input.value = Math.max(0.01, Math.min(10000, (line.baseBpm * newScale).toFixed(2)));
     }
   });
 }
@@ -399,8 +401,8 @@ function updateBaseBpm(id) {
   if (!line || line.isKeeper) return;
   const input = document.getElementById(`bpm-${id}`);
   const scale = parseFloat(document.getElementById("globalScale").value);
-  let val = Math.max(1, Math.min(10000, parseInt(input.value) || 1));
-  line.baseBpm = val / scale;
+  let val = Math.max(0.01, Math.min(10000, parseFloat(input.value) || 0.01));
+line.baseBpm = val / scale;
 }
 
 function updateGlobalHzScaleLabel() {
@@ -616,7 +618,12 @@ function addLine() {
   row.innerHTML = `
     <span class="line-color" style="background:${color}"></span>
     <button onclick="toggleLine(${id})" id="btn-${id}">Start</button>
-    <label>BPM <input type="number" id="bpm-${id}" value="${displayBpm}" min="1" max="10000" oninput="preventBlank('bpm-${id}', 1)" onchange="updateBaseBpm(${id}); clampInput('bpm-${id}', 1, 10000)"></label>
+    <label>BPM 
+  <input type="number" id="bpm-${id}" value="${displayBpm.toFixed(2)}"
+    min="0.01" max="10000" step="0.01"
+    oninput="preventBlank('bpm-${id}', 0.01)"
+    onchange="updateBaseBpm(${id}); clampInput('bpm-${id}', 0.01, 10000)">
+</label>
     <label>BPC <input type="number" id="beats-${id}" value="3" min="1" max="60" oninput="preventBlank('beats-${id}', 1)" onchange="onBpcChange(${id}); clampInput('beats-${id}', 1, 60)"></label>
     <div class="accents-wrap" id="accents-${id}"></div>
     <label>Hz <input type="number" id="pitch-${id}" value="${displayPitch}" min="1" max="200000" step="0.01" oninput="preventBlank('pitch-${id}', 1)" onchange="updateBasePitch(${id}); clampInput('pitch-${id}', 1, 200000)"></label>
@@ -727,7 +734,7 @@ function animate(time) {
       beatDur = 0.01;
       isAccent = true;
     } else {
-      bpm = Math.max(1, Math.min(10000, parseInt(document.getElementById(`bpm-${line.id}`).value) || 1));
+      bpm = Math.max(0.01, Math.min(10000, parseFloat(document.getElementById(`bpm-${line.id}`).value) || 0.01));
       beats = Math.max(1, Math.min(60, parseInt(document.getElementById(`beats-${line.id}`).value) || 1));
       pitch = Math.max(1, Math.min(200000, parseFloat(document.getElementById(`pitch-${line.id}`).value) || 200));
       volume = (parseFloat(document.getElementById(`vol-${line.id}`).value) || 0) / 100;
