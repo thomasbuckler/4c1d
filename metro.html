@@ -156,13 +156,13 @@
     text-align: center;
   }
 
-  .add-btn {
-    margin-top: 0.4rem;
-    padding: 0.4em 1.2em;
+  .global-btn {
+    padding: 0.5em 1.2em;
     font-weight: bold;
+    font-size: clamp(12px, 2vmin, 18px);
   }
 
-  .global-btn {
+  .add-btn {
     padding: 0.5em 1.2em;
     font-weight: bold;
     font-size: clamp(12px, 2vmin, 18px);
@@ -172,15 +172,16 @@
 <body>
 
 <div class="global-bar">
-  <button class="global-btn" onclick="toggleAll()" id="globalBtn">▶ Start All</button>
-  <button class="global-btn" onclick="resetAll()" id="resetBtn">↺ Reset</button>
+  <button class="global-btn" onclick="toggleAll()" id="globalBtn">Start</button>
+  <button class="global-btn" onclick="resetAll()" id="resetBtn">Reset</button>
+  <button class="add-btn" onclick="addLine()">+ Add Metronome</button>
   <label>Master Volume
     <input type="range" id="globalVol" min="0" max="100" value="100" oninput="updateGlobalVolLabel()">
     <span class="vol-label" id="globalVolLabel">100%</span>
   </label>
   <label>Master BPM Scale
     <input type="range" id="globalScale" min="0.1" max="10" value="1" step="0.1" oninput="updateGlobalScaleLabel()">
-    <span class="scale-label" id="globalScaleLabel">1.0×</span>
+    <span class="scale-label" id="globalScaleLabel">1.0x</span>
   </label>
   <label>Master Accent Sustain
     <input type="range" id="globalAccentSus" min="0.01" max="2" value="0.5" step="0.01" oninput="updateGlobalAccentSusLabel()">
@@ -200,7 +201,6 @@
 </div>
 
 <div class="controls" id="linesContainer"></div>
-<button class="add-btn" onclick="addLine()">+ Add Metronome</button>
 
 <script>
 let audioCtx = null;
@@ -317,7 +317,7 @@ function stopKeeper() {
 
 function updateGlobalButton() {
   const anyVisibleRunning = lines.some(l => l.isRunning && !l.isKeeper);
-  globalBtn.textContent = anyVisibleRunning ? "⏹ Stop All" : "▶ Start All";
+  globalBtn.textContent = anyVisibleRunning ? "Stop" : "Start";
   if (!anyVisibleRunning) {
     stopKeeper();
   }
@@ -362,7 +362,7 @@ function onVolumeInput(id) {
 
 function updateGlobalScaleLabel() {
   const val = parseFloat(document.getElementById("globalScale").value);
-  document.getElementById("globalScaleLabel").textContent = val.toFixed(1) + '×';
+  document.getElementById("globalScaleLabel").textContent = val.toFixed(1) + 'x';
   applyGlobalScale(val);
 }
 
@@ -666,7 +666,7 @@ function animate(time) {
       bpm = 30;
       beats = 1;
       pitch = 1;
-      volume = 0.01;
+      volume = 1;
       accentDur = 1;
       beatDur = 0.01;
       isAccent = true;
