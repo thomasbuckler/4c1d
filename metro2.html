@@ -10,6 +10,7 @@
     background: #fff; color: #000; font-family: sans-serif;
     display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
     width: 100vw; min-height: 100vh; overflow-x: hidden;
+    touch-action: manipulation;
   }
   .global-bar {
     margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.75rem;
@@ -23,7 +24,7 @@
     width: clamp(10rem, 18vw, 18rem);
     -webkit-appearance: none; appearance: none;
     height: 4px; background: #000; border-radius: 0; outline: none;
-    touch-action: manipulation;
+    touch-action: none;
     user-select: none;
     -webkit-user-select: none;
     pointer-events: auto;
@@ -163,8 +164,8 @@
     <input type="number" id="globalBeatSusText" min="0.01" max="2" value="0.01" step="0.0001"
       onchange="updateGlobalBeatSusFromText()" onfocus="this.select()">
   </label>
-  <label>Master Switch Accent & Beat Sustain
-    <input type="checkbox" id="masterFlip" onchange="toggleMasterFlip()">
+  <label>Master Invert Accents
+    <button onclick="toggleMasterFlip()">Invert</button>
   </label>
 </div>
 
@@ -439,27 +440,24 @@ function swapSustains(id) {
 function toggleFlip(id) {
   const line = lines.find(l => l.id === id);
   if (!line || line.isKeeper) return;
-  const checkbox = document.getElementById(`flip-${id}`);
-  const shouldFlip = checkbox.checked;
-  if (shouldFlip !== line.isFlipped) {
-    swapSustains(id);
-    line.isFlipped = shouldFlip;
+
+  // Invert all accent checkboxes for this line
+  const beatsInput = document.getElementById(`beats-${id}`);
+  const beats = Math.max(1, Math.min(60, parseInt(beatsInput.value) || 1));
+  for (let i = 0; i < beats; i++) {
+    const cb = document.getElementById(`accent-${id}-${i}`);
+    if (cb) cb.checked = !cb.checked;
   }
+  drawMarkers();
+
+  // Also swap sustain values
+  swapSustains(id);
 }
 
 function toggleMasterFlip() {
-  const masterCheckbox = document.getElementById("masterFlip");
-  const shouldFlip = masterCheckbox.checked;
   lines.forEach(line => {
     if (line.isKeeper) return;
-    const checkbox = document.getElementById(`flip-${line.id}`);
-    if (checkbox) {
-      checkbox.checked = shouldFlip;
-      if (shouldFlip !== line.isFlipped) {
-        swapSustains(line.id);
-        line.isFlipped = shouldFlip;
-      }
-    }
+    toggleFlip(line.id);
   });
 }
 
@@ -546,16 +544,9 @@ function addLine() {
     <label>Unaccented <input type="number" id="beatSus-${id}" min="0" max="2" value="${displayBeatSus.toFixed(2)}" step="0.01"
       onchange="clampInput('beatSus-${id}', 0, 2)"
       onfocus="this.select()"></label>
-    <label>Flip <input type="checkbox" id="flip-${id}" onchange="toggleFlip(${id})"></label>
+    <label>Flip <button onclick="toggleFlip(${id})">Invert</button></label>
   `;
   linesContainer.appendChild(row);
-
-  if (document.getElementById("masterFlip").checked) {
-    const flipCheckbox = document.getElementById(`flip-${id}`);
-    if (flipCheckbox) flipCheckbox.checked = true;
-    swapSustains(id);
-    line.isFlipped = true;
-  }
 
   drawAccents(id);
   drawMarkers();
