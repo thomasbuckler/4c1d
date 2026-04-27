@@ -23,6 +23,10 @@
     width: clamp(10rem, 18vw, 18rem);
     -webkit-appearance: none; appearance: none;
     height: 4px; background: #000; border-radius: 0; outline: none;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: auto;
   }
   .global-bar input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none; appearance: none;
@@ -70,6 +74,10 @@
     position: absolute; width: 0.7%; height: 4.5%; top: 50%; left: 50%;
     transform-origin: center center; z-index: 1;
   }
+  .marker.accent {
+    width: 1.4%;
+    height: 6.5%;
+  }
   .controls {
     margin-top: 2vh; width: 100%; display: flex; flex-direction: column;
     align-items: center; font-size: clamp(9px, 1.5vmin, 14px);
@@ -103,7 +111,6 @@
   input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none; margin: 0;
   }
-  /* Individual metronome checkboxes (accent + flip) */
   .line-row input[type="checkbox"],
   .accents-wrap input[type="checkbox"] {
     -webkit-appearance: none; appearance: none;
@@ -214,18 +221,25 @@ function drawMarkers() {
   document.querySelectorAll(".marker").forEach(m => m.remove());
   const radius = getRadius();
   const offset = radius - (radius * 0.06);
+
   lines.forEach((line) => {
     if (line.isKeeper) return;
     const beatsInput = document.getElementById(`beats-${line.id}`);
     if (!beatsInput) return;
     const beats = Math.max(1, Math.min(60, parseInt(beatsInput.value) || 1));
+
     for (let i = 0; i < beats; i++) {
       let m = document.createElement("div");
       m.className = "marker";
       m.style.background = line.color;
+
+      const accentCheckbox = document.getElementById(`accent-${line.id}-${i}`);
+      const isAccent = accentCheckbox ? accentCheckbox.checked : (i === 0);
+      if (isAccent) m.classList.add("accent");
+
       let angle = (360 / beats) * i;
       m.style.transform = `translate(-50%, -50%) rotate(${angle}deg) translateY(-${offset}px)`;
-      if (i === 0) m.style.height = "6.5%";
+
       circle.appendChild(m);
     }
   });
@@ -239,7 +253,7 @@ function drawAccents(id) {
   for (let i = 0; i < beats; i++) {
     const existing = document.getElementById(`accent-${id}-${i}`);
     const checked = existing ? existing.checked : (i === 0);
-    html += `<label><input type="checkbox" id="accent-${id}-${i}" ${checked ? 'checked' : ''}>${i + 1}</label>`;
+    html += `<label><input type="checkbox" id="accent-${id}-${i}" ${checked ? 'checked' : ''} onchange="drawMarkers()">${i + 1}</label>`;
   }
   container.innerHTML = html;
 }
