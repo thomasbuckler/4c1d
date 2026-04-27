@@ -287,13 +287,13 @@ function addLine() {
     <label>BPC <input type="number" id="beats-${id}" value="3" min="1" max="60"
       oninput="if(!this.value)this.value=1" onchange="onBpcChange(${id});clamp(this,1,60)" onfocus="this.select()"></label>
     <div class="accents-wrap" id="accents-${id}"></div>
-    <label>Vol <input type="number" id="vol-${id}" min="0" max="100" value="${Math.round(baseVolume*gVol/100)}"
+    <label>Volume <input type="number" id="vol-${id}" min="0" max="100" value="${Math.round(baseVolume*gVol/100)}"
       onchange="clamp(this,0,100)" onfocus="this.select()"></label>
-    <label>Acc <input type="number" id="accentSus-${id}" min="0" max="2" value="${gAcc.toFixed(2)}" step="0.01"
+    <label>Accent <input type="number" id="accentSus-${id}" min="0" max="2" value="${gAcc.toFixed(2)}" step="0.01"
       onchange="clamp(this,0,2)" onfocus="this.select()"></label>
-    <label>Una <input type="number" id="beatSus-${id}" min="0" max="2" value="${gBeat.toFixed(2)}" step="0.01"
+    <label>Unaccent <input type="number" id="beatSus-${id}" min="0" max="2" value="${gBeat.toFixed(2)}" step="0.01"
       onchange="clamp(this,0,2)" onfocus="this.select()"></label>
-    <button onclick="toggleFlip(${id})">Flip</button>
+    <button onclick="toggleFlip(${id})">Invert</button>
   `;
   linesContainer.appendChild(row);
 
