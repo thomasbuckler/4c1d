@@ -129,6 +129,7 @@
   html, body { overflow-x: hidden; }
 </style>
 <base target="_blank">
+<base target="_blank">
 </head>
 <body>
 
@@ -422,21 +423,6 @@ function applyGlobalBeatSus(newVal) {
   });
 }
 
-function swapSustains(id) {
-  const accInput = document.getElementById(`accentSus-${id}`);
-  const beatInput = document.getElementById(`beatSus-${id}`);
-  if (!accInput || !beatInput) return;
-  const tempVal = accInput.value;
-  accInput.value = beatInput.value;
-  beatInput.value = tempVal;
-  const line = lines.find(l => l.id === id);
-  if (line) {
-    const tempBase = line.baseAccentSus;
-    line.baseAccentSus = line.baseBeatSus;
-    line.baseBeatSus = tempBase;
-  }
-}
-
 function toggleFlip(id) {
   const line = lines.find(l => l.id === id);
   if (!line || line.isKeeper) return;
@@ -449,9 +435,6 @@ function toggleFlip(id) {
     if (cb) cb.checked = !cb.checked;
   }
   drawMarkers();
-
-  // Also swap sustain values
-  swapSustains(id);
 }
 
 function toggleMasterFlip() {
