@@ -100,11 +100,11 @@
     <input type="range" id="globalVol" min="0" max="100" value="100" step="1" oninput="applyGlobalVol(setMaster('Vol',this.value,0,100,0))">
     <input type="number" id="globalVolText" min="0" max="100" value="100" onchange="applyGlobalVol(setMaster('Vol',this.value,0,100,0))" onfocus="this.select()">
   </label>
-  <label>Master BPM Scale
+  <label>Master BPM Multiplier
     <input type="range" id="globalScale" min="0.01" max="3" value="1" step="0.01" oninput="applyGlobalScale(setMaster('Scale',this.value,0.01,3,2))">
     <input type="number" id="globalScaleText" min="0.01" max="3" value="1" step="0.0001" onchange="applyGlobalScale(setMaster('Scale',this.value,0.01,3,2))" onfocus="this.select()">
   </label>
-  <label>Master Hz Scale
+  <label>Master Hz Multiplier
     <input type="range" id="globalHzScale" min="0.1" max="10" value="1" step="0.1" oninput="applyGlobalHzScale(setMaster('HzScale',this.value,0.1,10,1))">
     <input type="number" id="globalHzScaleText" min="0.1" max="10" value="1" step="0.0001" onchange="applyGlobalHzScale(setMaster('HzScale',this.value,0.1,10,1))" onfocus="this.select()">
   </label>
@@ -112,7 +112,7 @@
     <input type="range" id="globalAccentSus" min="0.01" max="2" value="0.5" step="0.01" oninput="applyGlobalAccentSus(setMaster('AccentSus',this.value,0.01,2,2))">
     <input type="number" id="globalAccentSusText" min="0.01" max="2" value="0.5" step="0.0001" onchange="applyGlobalAccentSus(setMaster('AccentSus',this.value,0.01,2,2))" onfocus="this.select()">
   </label>
-  <label>Master Beat Sustain
+  <label>Master Unaccent Sustain
     <input type="range" id="globalBeatSus" min="0.01" max="2" value="0.01" step="0.01" oninput="applyGlobalBeatSus(setMaster('BeatSus',this.value,0.01,2,2))">
     <input type="number" id="globalBeatSusText" min="0.01" max="2" value="0.01" step="0.0001" onchange="applyGlobalBeatSus(setMaster('BeatSus',this.value,0.01,2,2))" onfocus="this.select()">
   </label>
