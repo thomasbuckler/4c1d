@@ -19,7 +19,40 @@
     display: flex; justify-content: space-between; align-items: center;
     width: 100%; gap: 0.5rem;
   }
-  .global-bar input[type="range"] { width: clamp(12rem, 20vw, 20rem); }
+  .global-bar input[type="range"] {
+    width: clamp(10rem, 18vw, 18rem);
+    -webkit-appearance: none; appearance: none;
+    height: 4px; background: #000; border-radius: 0; outline: none;
+  }
+  .global-bar input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 14px; height: 14px; background: #000; border-radius: 0; cursor: pointer;
+  }
+  .global-bar input[type="range"]::-moz-range-thumb {
+    width: 14px; height: 14px; background: #000; border-radius: 0; cursor: pointer; border: none;
+  }
+  .global-bar input[type="range"]::-moz-range-track {
+    background: #000; height: 4px; border-radius: 0;
+  }
+  .global-bar input[type="number"] {
+    width: 4.6em; text-align: right; padding: 0.15em 0.3em;
+    -moz-appearance: textfield;
+  }
+  .global-bar input[type="number"]::-webkit-inner-spin-button,
+  .global-bar input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; margin: 0;
+  }
+  .global-bar input[type="checkbox"] {
+    -webkit-appearance: none; appearance: none;
+    width: 16px; height: 16px; border: 1px solid #000; background: #fff;
+    cursor: pointer; position: relative; padding: 0; flex-shrink: 0;
+  }
+  .global-bar input[type="checkbox"]:checked::after {
+    content: ''; position: absolute; top: 2px; left: 2px; width: 10px; height: 10px; background: #000;
+  }
+  .btn-row {
+    display: flex; gap: 0.5rem; justify-content: center; width: 100%;
+  }
   .circle {
     width: min(60vw, 60vh); height: min(60vw, 60vh);
     border: 2px solid #000; border-radius: 50%; position: relative; flex-shrink: 0;
@@ -70,8 +103,16 @@
   input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none; margin: 0;
   }
-  .vol-label, .scale-label, .sus-label {
-    font-size: 0.85em; min-width: 3.2em; text-align: center;
+  /* Individual metronome checkboxes (accent + flip) */
+  .line-row input[type="checkbox"],
+  .accents-wrap input[type="checkbox"] {
+    -webkit-appearance: none; appearance: none;
+    width: 14px; height: 14px; border: 1px solid #000; background: #fff;
+    cursor: pointer; position: relative; padding: 0; margin: 0; flex-shrink: 0;
+  }
+  .line-row input[type="checkbox"]:checked::after,
+  .accents-wrap input[type="checkbox"]:checked::after {
+    content: ''; position: absolute; top: 2px; left: 2px; width: 8px; height: 8px; background: #000;
   }
   .global-btn, .add-btn {
     padding: 0.5em 1.2em; font-weight: bold;
@@ -84,29 +125,36 @@
 <body>
 
 <div class="global-bar">
-  <button class="global-btn" onclick="toggleAll()" id="globalBtn">Start</button>
-  <button class="global-btn" onclick="resetAll()" id="resetBtn">Reset</button>
-  <button class="add-btn" onclick="addLine()">+ Add Metronome</button>
+  <div class="btn-row">
+    <button class="global-btn" onclick="toggleAll()" id="globalBtn">Start</button>
+    <button class="global-btn" onclick="resetAll()" id="resetBtn">Reset</button>
+    <button class="add-btn" onclick="addLine()">+ Add Metronome</button>
+  </div>
 
   <label>Master Volume
-    <input type="range" id="globalVol" min="0" max="100" value="100" oninput="updateGlobalVolLabel()">
-    <span class="vol-label" id="globalVolLabel">100%</span>
+    <input type="range" id="globalVol" min="0" max="100" value="100" step="1" oninput="updateGlobalVolFromSlider()">
+    <input type="number" id="globalVolText" min="0" max="100" value="100" step="1"
+      onchange="updateGlobalVolFromText()" onfocus="this.select()">
   </label>
   <label>Master BPM Scale
-    <input type="range" id="globalScale" min="0.01" max="3" value="1" step="0.01" oninput="updateGlobalScaleLabel()">
-    <span class="scale-label" id="globalScaleLabel">1.00x</span>
+    <input type="range" id="globalScale" min="0.01" max="3" value="1" step="0.01" oninput="updateGlobalScaleFromSlider()">
+    <input type="number" id="globalScaleText" min="0.01" max="3" value="1" step="0.0001"
+      onchange="updateGlobalScaleFromText()" onfocus="this.select()">
   </label>
   <label>Master Hz Scale
-    <input type="range" id="globalHzScale" min="0.1" max="10" value="1" step="0.1" oninput="updateGlobalHzScaleLabel()">
-    <span class="scale-label" id="globalHzScaleLabel">1.0x</span>
+    <input type="range" id="globalHzScale" min="0.1" max="10" value="1" step="0.1" oninput="updateGlobalHzScaleFromSlider()">
+    <input type="number" id="globalHzScaleText" min="0.1" max="10" value="1" step="0.0001"
+      onchange="updateGlobalHzScaleFromText()" onfocus="this.select()">
   </label>
   <label>Master Accent Sustain
-    <input type="range" id="globalAccentSus" min="0.01" max="2" value="0.5" step="0.01" oninput="updateGlobalAccentSusLabel()">
-    <span class="sus-label" id="globalAccentSusLabel">0.50s</span>
+    <input type="range" id="globalAccentSus" min="0.01" max="2" value="0.5" step="0.01" oninput="updateGlobalAccentSusFromSlider()">
+    <input type="number" id="globalAccentSusText" min="0.01" max="2" value="0.5" step="0.0001"
+      onchange="updateGlobalAccentSusFromText()" onfocus="this.select()">
   </label>
   <label>Master Beat Sustain
-    <input type="range" id="globalBeatSus" min="0.01" max="2" value="0.01" step="0.01" oninput="updateGlobalBeatSusLabel()">
-    <span class="sus-label" id="globalBeatSusLabel">0.01s</span>
+    <input type="range" id="globalBeatSus" min="0.01" max="2" value="0.01" step="0.01" oninput="updateGlobalBeatSusFromSlider()">
+    <input type="number" id="globalBeatSusText" min="0.01" max="2" value="0.01" step="0.0001"
+      onchange="updateGlobalBeatSusFromText()" onfocus="this.select()">
   </label>
   <label>Master Switch Accent & Beat Sustain
     <input type="checkbox" id="masterFlip" onchange="toggleMasterFlip()">
@@ -221,12 +269,21 @@ function updateGlobalButton() {
   if (!anyVisibleRunning) stopKeeper();
 }
 
-function updateGlobalVolLabel() {
-  const val = parseFloat(document.getElementById("globalVol").value);
-  document.getElementById("globalVolLabel").textContent = val + '%';
+/* ---------- Master Volume ---------- */
+function updateGlobalVolFromSlider() {
+  let val = parseFloat(document.getElementById("globalVol").value);
+  val = Math.max(0, Math.min(100, val));
+  document.getElementById("globalVolText").value = val;
   applyGlobalVolume(val);
 }
-
+function updateGlobalVolFromText() {
+  let val = parseFloat(document.getElementById("globalVolText").value);
+  if (isNaN(val)) val = 100;
+  val = Math.max(0, Math.min(100, val));
+  document.getElementById("globalVol").value = val;
+  document.getElementById("globalVolText").value = val;
+  applyGlobalVolume(val);
+}
 function applyGlobalVolume(newVol) {
   lines.forEach(line => {
     if (line.isKeeper) return;
@@ -238,27 +295,21 @@ function applyGlobalVolume(newVol) {
   });
 }
 
-function onVolumeChange(id) {
-  const line = lines.find(l => l.id === id);
-  if (!line || line.isKeeper) return;
-  const input = document.getElementById(`vol-${id}`);
-  const masterVol = parseFloat(document.getElementById("globalVol").value);
-  let val = parseInt(input.value) || 0;
-  val = Math.max(0, Math.min(100, val));
-  if (masterVol > 0) {
-    line.baseVolume = Math.max(0, Math.min(100, val / (masterVol / 100)));
-  } else {
-    line.baseVolume = val;
-  }
-  input.value = val;
-}
-
-function updateGlobalScaleLabel() {
-  const val = parseFloat(document.getElementById("globalScale").value);
-  document.getElementById("globalScaleLabel").textContent = val.toFixed(2) + 'x';
+/* ---------- Master BPM Scale ---------- */
+function updateGlobalScaleFromSlider() {
+  let val = parseFloat(document.getElementById("globalScale").value);
+  val = Math.max(0.01, Math.min(3, val));
+  document.getElementById("globalScaleText").value = val.toFixed(2);
   applyGlobalScale(val);
 }
-
+function updateGlobalScaleFromText() {
+  let val = parseFloat(document.getElementById("globalScaleText").value);
+  if (isNaN(val)) val = 1;
+  val = Math.max(0.01, Math.min(3, val));
+  document.getElementById("globalScale").value = val;
+  document.getElementById("globalScaleText").value = val;
+  applyGlobalScale(val);
+}
 function applyGlobalScale(newScale) {
   lines.forEach(line => {
     if (line.isKeeper) return;
@@ -276,12 +327,21 @@ function updateBaseBpm(id) {
   line.baseBpm = val / scale;
 }
 
-function updateGlobalHzScaleLabel() {
-  const val = parseFloat(document.getElementById("globalHzScale").value);
-  document.getElementById("globalHzScaleLabel").textContent = val.toFixed(1) + 'x';
+/* ---------- Master Hz Scale ---------- */
+function updateGlobalHzScaleFromSlider() {
+  let val = parseFloat(document.getElementById("globalHzScale").value);
+  val = Math.max(0.1, Math.min(10, val));
+  document.getElementById("globalHzScaleText").value = val.toFixed(1);
   applyGlobalHzScale(val);
 }
-
+function updateGlobalHzScaleFromText() {
+  let val = parseFloat(document.getElementById("globalHzScaleText").value);
+  if (isNaN(val)) val = 1;
+  val = Math.max(0.1, Math.min(10, val));
+  document.getElementById("globalHzScale").value = val;
+  document.getElementById("globalHzScaleText").value = val;
+  applyGlobalHzScale(val);
+}
 function applyGlobalHzScale(newScale) {
   lines.forEach(line => {
     if (line.isKeeper) return;
@@ -299,12 +359,21 @@ function updateBasePitch(id) {
   line.basePitch = val / scale;
 }
 
-function updateGlobalAccentSusLabel() {
-  const val = parseFloat(document.getElementById("globalAccentSus").value);
-  document.getElementById("globalAccentSusLabel").textContent = val.toFixed(2) + 's';
+/* ---------- Master Accent Sustain ---------- */
+function updateGlobalAccentSusFromSlider() {
+  let val = parseFloat(document.getElementById("globalAccentSus").value);
+  val = Math.max(0.01, Math.min(2, val));
+  document.getElementById("globalAccentSusText").value = val.toFixed(2);
   applyGlobalAccentSus(val);
 }
-
+function updateGlobalAccentSusFromText() {
+  let val = parseFloat(document.getElementById("globalAccentSusText").value);
+  if (isNaN(val)) val = 0.5;
+  val = Math.max(0.01, Math.min(2, val));
+  document.getElementById("globalAccentSus").value = val;
+  document.getElementById("globalAccentSusText").value = val;
+  applyGlobalAccentSus(val);
+}
 function applyGlobalAccentSus(newVal) {
   let clamped = Math.max(0.01, Math.min(2.0, newVal));
   lines.forEach(line => {
@@ -314,12 +383,21 @@ function applyGlobalAccentSus(newVal) {
   });
 }
 
-function updateGlobalBeatSusLabel() {
-  const val = parseFloat(document.getElementById("globalBeatSus").value);
-  document.getElementById("globalBeatSusLabel").textContent = val.toFixed(2) + 's';
+/* ---------- Master Beat Sustain ---------- */
+function updateGlobalBeatSusFromSlider() {
+  let val = parseFloat(document.getElementById("globalBeatSus").value);
+  val = Math.max(0.01, Math.min(2, val));
+  document.getElementById("globalBeatSusText").value = val.toFixed(2);
   applyGlobalBeatSus(val);
 }
-
+function updateGlobalBeatSusFromText() {
+  let val = parseFloat(document.getElementById("globalBeatSusText").value);
+  if (isNaN(val)) val = 0.01;
+  val = Math.max(0.01, Math.min(2, val));
+  document.getElementById("globalBeatSus").value = val;
+  document.getElementById("globalBeatSusText").value = val;
+  applyGlobalBeatSus(val);
+}
 function applyGlobalBeatSus(newVal) {
   let clamped = Math.max(0.01, Math.min(2.0, newVal));
   lines.forEach(line => {
