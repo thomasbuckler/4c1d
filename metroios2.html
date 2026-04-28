@@ -324,7 +324,7 @@ function addLine() {
   const row = document.createElement('div');
   row.className = 'line-row';
   row.id = `line-row-${id}`;
-  /* FIX: oninput now calls updateBaseBpm / syncHandToState so graphics update live */
+  /* FIX: BPC oninput now redraws accents, markers, and syncs the hand in real-time */
   row.innerHTML = `
     <span class="line-color" style="background:${color}"></span>
     <button onclick="toggleLine(${id})" id="btn-${id}">Start</button>
@@ -333,7 +333,7 @@ function addLine() {
     <label>BPM <input type="number" id="bpm-${id}" value="${(baseBpm*gScale).toFixed(2)}" min="0.01" max="10000" step="0.01"
       oninput="if(!this.value)this.value=0.01;updateBaseBpm(${id})" onchange="clamp(this,0.01,10000);updateBaseBpm(${id})" onfocus="this.select()"></label>
     <label>BPC <input type="number" id="beats-${id}" value="3" min="1" max="60"
-      oninput="if(!this.value)this.value=1;syncHandToState(lines.find(l=>l.id===${id}))" onchange="onBpcChange(${id});clamp(this,1,60)" onfocus="this.select()"></label>
+      oninput="if(!this.value)this.value=1;drawAccents(${id});drawMarkers();syncHandToState(lines.find(l=>l.id===${id}))" onchange="onBpcChange(${id});clamp(this,1,60)" onfocus="this.select()"></label>
     <div class="accents-wrap" id="accents-${id}"></div>
     <label>Volume <input type="number" id="vol-${id}" min="0" max="100" value="${Math.round(baseVolume*gVol/100)}"
       onchange="clamp(this,0,100)" onfocus="this.select()"></label>
