@@ -52,7 +52,6 @@
     width: min(60vw, 60vh); height: min(60vw, 60vh);
     border: 2px solid #000; border-radius: 50%; position: relative; flex-shrink: 0;
   }
-  /* iOS 120 Hz: pure rotate() keyframes, no translate, no percentages */
   @keyframes spin {
     from { transform: rotate(0deg); }
     to   { transform: rotate(360deg); }
@@ -61,9 +60,9 @@
     position: absolute;
     width: 2px;
     height: 50%;
-    bottom: 50%;        /* pivot at circle center */
+    bottom: 50%;
     left: 50%;
-    margin-left: -1px;  /* center 2px line */
+    margin-left: -1px;
     transform-origin: bottom center;
     transform: rotate(0deg);
     animation-name: spin;
@@ -279,21 +278,16 @@ function syncHandToState(line) {
 
   const bpm   = Math.max(0.01, +(line.inputs?.bpm?.value)  || 0.01);
   const beats = Math.max(1,   +(line.inputs?.beats?.value) || 1);
-  const duration = (beats * 60) / bpm; // seconds per full rotation
+  const duration = (beats * 60) / bpm;
 
-  // Canonical angle from JS master clock
   const cycle    = line.beatIndex / beats;
   const progress = cycle - Math.floor(cycle);
   const angle    = progress * 360;
   const delay    = -progress * duration;
 
-  /* Atomic rebuild:
-     1. Set static transform as fallback (holds frame while animation is rebuilt)
-     2. Clear animation → reflow → rebuild with exact same angle + new speed
-     3. Eye sees zero movement, only speed changes */
   line.handEl.style.transform = `rotate(${angle}deg)`;
   line.handEl.style.animation = 'none';
-  void line.handEl.offsetHeight; // force reflow
+  void line.handEl.offsetHeight;
   line.handEl.style.animation = `spin ${duration}s linear infinite ${delay}s`;
   line.handEl.style.animationPlayState = line.isRunning ? 'running' : 'paused';
 }
@@ -330,15 +324,16 @@ function addLine() {
   const row = document.createElement('div');
   row.className = 'line-row';
   row.id = `line-row-${id}`;
+  /* FIX: BPC oninput now redraws accents, markers, and syncs the hand in real-time */
   row.innerHTML = `
     <span class="line-color" style="background:${color}"></span>
     <button onclick="toggleLine(${id})" id="btn-${id}">Start</button>
     <label>Hz <input type="number" id="pitch-${id}" value="${(basePitch*gHz).toFixed(2)}" min="1" max="200000" step="0.01"
       oninput="if(!this.value)this.value=1" onchange="updateBasePitch(${id});clamp(this,1,200000)" onfocus="this.select()"></label>
     <label>BPM <input type="number" id="bpm-${id}" value="${(baseBpm*gScale).toFixed(2)}" min="0.01" max="10000" step="0.01"
-      oninput="if(!this.value)this.value=0.01" onchange="updateBaseBpm(${id});clamp(this,0.01,10000)" onfocus="this.select()"></label>
+      oninput="if(!this.value)this.value=0.01;updateBaseBpm(${id})" onchange="clamp(this,0.01,10000);updateBaseBpm(${id})" onfocus="this.select()"></label>
     <label>BPC <input type="number" id="beats-${id}" value="3" min="1" max="60"
-      oninput="if(!this.value)this.value=1" onchange="onBpcChange(${id});clamp(this,1,60)" onfocus="this.select()"></label>
+      oninput="if(!this.value)this.value=1;drawAccents(${id});drawMarkers();syncHandToState(lines.find(l=>l.id===${id}))" onchange="onBpcChange(${id});clamp(this,1,60)" onfocus="this.select()"></label>
     <div class="accents-wrap" id="accents-${id}"></div>
     <label>Volume <input type="number" id="vol-${id}" min="0" max="100" value="${Math.round(baseVolume*gVol/100)}"
       onchange="clamp(this,0,100)" onfocus="this.select()"></label>
@@ -451,7 +446,6 @@ function tick(time) {
 
     line.beatIndex += dt * bpm / 60000;
 
-    /* Audio derived from canonical JS beatIndex — never drifts from CSS */
     const current = Math.floor(line.beatIndex);
     while (line.lastBeatIndex < current) {
       line.lastBeatIndex++;
@@ -479,7 +473,7 @@ document.addEventListener('visibilitychange', () => {
     lines.forEach(l => {
       if (l.isRunning) {
         l.lastTime = now;
-        syncHandToState(l); /* resync CSS to JS after hidden-tab audio kept going */
+        syncHandToState(l);
       }
     });
     ensureAnimation();
