@@ -6,11 +6,11 @@
 <title>Circular Metronome</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { overflow-x: hidden; }
   body {
     background: #fff; color: #000; font-family: sans-serif;
     display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
-    width: 100vw; min-height: 100vh; overflow-x: hidden;
-    touch-action: manipulation;
+    width: 100vw; min-height: 100vh; touch-action: manipulation;
   }
   .global-bar {
     margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.75rem;
@@ -20,44 +20,34 @@
     display: flex; justify-content: space-between; align-items: center;
     width: 100%; gap: 0.5rem;
   }
-  .global-bar input[type="range"] {
+  input[type="range"] {
     width: clamp(10rem, 18vw, 18rem);
     -webkit-appearance: none; appearance: none;
-    height: 4px; background: #000; border-radius: 0; outline: none;
+    height: 4px; background: #000; outline: none;
     touch-action: none;
-    user-select: none;
-    -webkit-user-select: none;
-    pointer-events: auto;
   }
-  .global-bar input[type="range"]::-webkit-slider-thumb {
+  input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none; appearance: none;
-    width: 14px; height: 14px; background: #000; border-radius: 0; cursor: pointer;
+    width: 14px; height: 14px; background: #000; cursor: pointer;
   }
-  .global-bar input[type="range"]::-moz-range-thumb {
-    width: 14px; height: 14px; background: #000; border-radius: 0; cursor: pointer; border: none;
-  }
-  .global-bar input[type="range"]::-moz-range-track {
-    background: #000; height: 4px; border-radius: 0;
-  }
-  .global-bar input[type="number"] {
+  input[type="range"]::-moz-range-thumb { width: 14px; height: 14px; background: #000; cursor: pointer; border: none; }
+  input[type="number"] {
     width: 4.6em; text-align: right; padding: 0.15em 0.3em;
     -moz-appearance: textfield;
   }
-  .global-bar input[type="number"]::-webkit-inner-spin-button,
-  .global-bar input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none; margin: 0;
-  }
-  .global-bar input[type="checkbox"] {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type="checkbox"] {
     -webkit-appearance: none; appearance: none;
-    width: 16px; height: 16px; border: 1px solid #000; background: #fff;
-    cursor: pointer; position: relative; padding: 0; flex-shrink: 0;
+    width: 14px; height: 14px; border: 1px solid #000; background: #fff;
+    cursor: pointer; position: relative; flex-shrink: 0; margin: 0;
   }
-  .global-bar input[type="checkbox"]:checked::after {
-    content: ''; position: absolute; top: 2px; left: 2px; width: 10px; height: 10px; background: #000;
+  input[type="checkbox"]:checked::after {
+    content: ''; position: absolute; top: 2px; left: 2px; width: 8px; height: 8px; background: #000;
   }
-  .btn-row {
-    display: flex; gap: 0.5rem; justify-content: center; width: 100%;
-  }
+  .global-bar input[type="checkbox"] { width: 16px; height: 16px; }
+  .global-bar input[type="checkbox"]:checked::after { width: 10px; height: 10px; }
+  .btn-row { display: flex; gap: 0.5rem; justify-content: center; width: 100%; }
   .circle {
     width: min(60vw, 60vh); height: min(60vw, 60vh);
     border: 2px solid #000; border-radius: 50%; position: relative; flex-shrink: 0;
@@ -75,10 +65,7 @@
     position: absolute; width: 0.7%; height: 4.5%; top: 50%; left: 50%;
     transform-origin: center center; z-index: 1;
   }
-  .marker.accent {
-    width: 1.4%;
-    height: 6.5%;
-  }
+  .marker.accent { width: 1.4%; height: 6.5%; }
   .controls {
     margin-top: 2vh; width: 100%; display: flex; flex-direction: column;
     align-items: center; font-size: clamp(9px, 1.5vmin, 14px);
@@ -88,47 +75,16 @@
     align-items: center; justify-content: center;
     padding: 0.3rem; width: 98%; max-width: 1100px;
   }
-  .line-color {
-    display: inline-block; width: 10px; height: 10px;
-    border-radius: 50%; border: 1px solid #000; flex-shrink: 0;
-  }
-  .accents-wrap {
-    display: flex; flex-wrap: wrap; gap: 0.15rem;
-    align-items: center; justify-content: center;
-  }
-  .accents-wrap label {
-    display: inline-flex; align-items: center; gap: 2px;
-    font-size: 0.85em; cursor: pointer;
-  }
+  .line-color { display: inline-block; width: 10px; height: 10px; border-radius: 50%; border: 1px solid #000; flex-shrink: 0; }
+  .accents-wrap { display: flex; flex-wrap: wrap; gap: 0.15rem; align-items: center; justify-content: center; }
+  .accents-wrap label { display: inline-flex; align-items: center; gap: 2px; font-size: 0.85em; cursor: pointer; }
   button, input, select {
     background: #fff; color: #000; border: 1px solid #000;
     padding: 0.2em 0.4em; font-size: inherit; font-family: inherit;
     cursor: pointer; user-select: none;
   }
-  input[type="number"] {
-    width: 4.6em; -moz-appearance: textfield;
-  }
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none; margin: 0;
-  }
-  .line-row input[type="checkbox"],
-  .accents-wrap input[type="checkbox"] {
-    -webkit-appearance: none; appearance: none;
-    width: 14px; height: 14px; border: 1px solid #000; background: #fff;
-    cursor: pointer; position: relative; padding: 0; margin: 0; flex-shrink: 0;
-  }
-  .line-row input[type="checkbox"]:checked::after,
-  .accents-wrap input[type="checkbox"]:checked::after {
-    content: ''; position: absolute; top: 2px; left: 2px; width: 8px; height: 8px; background: #000;
-  }
-  .global-btn, .add-btn {
-    padding: 0.5em 1.2em; font-weight: bold;
-    font-size: clamp(12px, 2vmin, 18px);
-  }
-  html, body { overflow-x: hidden; }
+  .global-btn, .add-btn { padding: 0.5em 1.2em; font-weight: bold; font-size: clamp(12px, 2vmin, 18px); }
 </style>
-<base target="_blank">
 <base target="_blank">
 </head>
 <body>
@@ -136,44 +92,37 @@
 <div class="global-bar">
   <div class="btn-row">
     <button class="global-btn" onclick="toggleAll()" id="globalBtn">Start</button>
-    <button class="global-btn" onclick="resetAll()" id="resetBtn">Reset</button>
-    <button class="add-btn" onclick="addLine()">+ Add Metronome</button>
+    <button class="global-btn" onclick="resetAll()">Reset</button>
+    <button class="add-btn" onclick="addLine()">+ Add</button>
+    <button class="add-btn" onclick="addAndPlayLine()">+ Add & Play</button>
   </div>
 
   <label>Master Volume
-    <input type="range" id="globalVol" min="0" max="100" value="100" step="1" oninput="updateGlobalVolFromSlider()">
-    <input type="number" id="globalVolText" min="0" max="100" value="100" step="1"
-      onchange="updateGlobalVolFromText()" onfocus="this.select()">
+    <input type="range" id="globalVol" min="0" max="100" value="100" step="1" oninput="applyGlobalVol(setMaster('Vol',this.value,0,100,0))">
+    <input type="number" id="globalVolText" min="0" max="100" value="100" onchange="applyGlobalVol(setMaster('Vol',this.value,0,100,0))" onfocus="this.select()">
   </label>
-  <label>Master BPM Scale
-    <input type="range" id="globalScale" min="0.01" max="3" value="1" step="0.01" oninput="updateGlobalScaleFromSlider()">
-    <input type="number" id="globalScaleText" min="0.01" max="3" value="1" step="0.0001"
-      onchange="updateGlobalScaleFromText()" onfocus="this.select()">
+  <label>Master BPM Multiplier
+    <input type="range" id="globalScale" min="0.01" max="3" value="1" step="0.01" oninput="applyGlobalScale(setMaster('Scale',this.value,0.01,3,2))">
+    <input type="number" id="globalScaleText" min="0.01" max="3" value="1" step="0.0001" onchange="applyGlobalScale(setMaster('Scale',this.value,0.01,3,2))" onfocus="this.select()">
   </label>
-  <label>Master Hz Scale
-    <input type="range" id="globalHzScale" min="0.1" max="10" value="1" step="0.1" oninput="updateGlobalHzScaleFromSlider()">
-    <input type="number" id="globalHzScaleText" min="0.1" max="10" value="1" step="0.0001"
-      onchange="updateGlobalHzScaleFromText()" onfocus="this.select()">
+  <label>Master Hz Multiplier
+    <input type="range" id="globalHzScale" min="0.1" max="10" value="1" step="0.1" oninput="applyGlobalHzScale(setMaster('HzScale',this.value,0.1,10,1))">
+    <input type="number" id="globalHzScaleText" min="0.1" max="10" value="1" step="0.0001" onchange="applyGlobalHzScale(setMaster('HzScale',this.value,0.1,10,1))" onfocus="this.select()">
   </label>
   <label>Master Accent Sustain
-    <input type="range" id="globalAccentSus" min="0.01" max="2" value="0.5" step="0.01" oninput="updateGlobalAccentSusFromSlider()">
-    <input type="number" id="globalAccentSusText" min="0.01" max="2" value="0.5" step="0.0001"
-      onchange="updateGlobalAccentSusFromText()" onfocus="this.select()">
+    <input type="range" id="globalAccentSus" min="0.01" max="2" value="0.5" step="0.01" oninput="applyGlobalAccentSus(setMaster('AccentSus',this.value,0.01,2,2))">
+    <input type="number" id="globalAccentSusText" min="0.01" max="2" value="0.5" step="0.0001" onchange="applyGlobalAccentSus(setMaster('AccentSus',this.value,0.01,2,2))" onfocus="this.select()">
   </label>
-  <label>Master Beat Sustain
-    <input type="range" id="globalBeatSus" min="0.01" max="2" value="0.01" step="0.01" oninput="updateGlobalBeatSusFromSlider()">
-    <input type="number" id="globalBeatSusText" min="0.01" max="2" value="0.01" step="0.0001"
-      onchange="updateGlobalBeatSusFromText()" onfocus="this.select()">
+  <label>Master Unaccent Sustain
+    <input type="range" id="globalBeatSus" min="0.01" max="2" value="0.01" step="0.01" oninput="applyGlobalBeatSus(setMaster('BeatSus',this.value,0.01,2,2))">
+    <input type="number" id="globalBeatSusText" min="0.01" max="2" value="0.01" step="0.0001" onchange="applyGlobalBeatSus(setMaster('BeatSus',this.value,0.01,2,2))" onfocus="this.select()">
   </label>
   <label>Master Invert Accents
     <button onclick="toggleMasterFlip()">Invert</button>
   </label>
 </div>
 
-<div class="circle" id="circle">
-  <div class="center"></div>
-</div>
-
+<div class="circle" id="circle"><div class="center"></div></div>
 <div class="controls" id="linesContainer"></div>
 
 <script>
@@ -182,357 +131,120 @@ let lines = [];
 let nextId = 0;
 let animFrameId = null;
 let intervalId = null;
+const HIDDEN_ID = -1;
 
-const circle = document.getElementById("circle");
-const linesContainer = document.getElementById("linesContainer");
-const globalBtn = document.getElementById("globalBtn");
+const circle = document.getElementById('circle');
+const linesContainer = document.getElementById('linesContainer');
+const globalBtn = document.getElementById('globalBtn');
 
-const COLORS = [
-  '#000000', '#e74c3c', '#3498db', '#2ecc71', '#f39c12',
-  '#9b59b6', '#1abc9c', '#e91e63', '#795548', '#607d8b'
-];
-
-function getRadius() { return circle.offsetWidth / 2; }
+const COLORS = ['#000','#e74c3c','#3498db','#2ecc71','#f39c12','#9b59b6','#1abc9c','#e91e63','#795548','#607d8b'];
 
 function ensureAudioCtx() {
   if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   if (audioCtx.state === 'suspended') audioCtx.resume();
 }
 
-function clickSound(freq, duration, volume) {
+function clickSound(freq, dur, vol) {
   ensureAudioCtx();
-  let dur = Math.max(0.001, duration);
-  let now = audioCtx.currentTime;
-  let osc = audioCtx.createOscillator();
-  let gain = audioCtx.createGain();
+  dur = Math.max(0.001, dur);
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
   osc.frequency.value = Math.max(1, Math.min(200000, freq));
-  if (volume <= 0) {
-    gain.gain.value = 0;
-    osc.connect(gain); gain.connect(audioCtx.destination);
-    osc.start(now); osc.stop(now + dur);
-  } else {
-    gain.gain.value = Math.max(0, volume);
-    osc.connect(gain); gain.connect(audioCtx.destination);
-    osc.start(now);
-    gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
-    osc.stop(now + dur);
-  }
+  gain.gain.value = Math.max(0, vol);
+  osc.connect(gain).connect(audioCtx.destination);
+  osc.start();
+  if (vol > 0) gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur);
+  osc.stop(audioCtx.currentTime + dur);
 }
 
 function drawMarkers() {
-  document.querySelectorAll(".marker").forEach(m => m.remove());
-  const radius = getRadius();
-  const offset = radius - (radius * 0.06);
-
-  lines.forEach((line) => {
-    if (line.isKeeper) return;
-    const beatsInput = document.getElementById(`beats-${line.id}`);
-    if (!beatsInput) return;
-    const beats = Math.max(1, Math.min(60, parseInt(beatsInput.value) || 1));
-
+  document.querySelectorAll('.marker').forEach(m => m.remove());
+  const offset = (circle.offsetWidth / 2) * 0.94;
+  lines.forEach(line => {
+    if (line.id === HIDDEN_ID) return;
+    const beats = Math.max(1, Math.min(60, +document.getElementById(`beats-${line.id}`)?.value || 1));
     for (let i = 0; i < beats; i++) {
-      let m = document.createElement("div");
-      m.className = "marker";
-      m.style.background = line.color;
-
-      const accentCheckbox = document.getElementById(`accent-${line.id}-${i}`);
-      const isAccent = accentCheckbox ? accentCheckbox.checked : (i === 0);
-      if (isAccent) m.classList.add("accent");
-
-      let angle = (360 / beats) * i;
-      m.style.transform = `translate(-50%, -50%) rotate(${angle}deg) translateY(-${offset}px)`;
-
+      const isAccent = document.getElementById(`accent-${line.id}-${i}`)?.checked ?? (i === 0);
+      const m = document.createElement('div');
+      m.className = 'marker' + (isAccent ? ' accent' : '');
+      m.style.cssText = `background:${line.color};transform:translate(-50%,-50%) rotate(${(360/beats)*i}deg) translateY(-${offset}px)`;
       circle.appendChild(m);
     }
   });
 }
 
 function drawAccents(id) {
-  const container = document.getElementById(`accents-${id}`);
-  if (!container) return;
-  const beats = Math.max(1, Math.min(60, parseInt(document.getElementById(`beats-${id}`).value) || 1));
-  let html = '';
-  for (let i = 0; i < beats; i++) {
-    const existing = document.getElementById(`accent-${id}-${i}`);
-    const checked = existing ? existing.checked : (i === 0);
-    html += `<label><input type="checkbox" id="accent-${id}-${i}" ${checked ? 'checked' : ''} onchange="drawMarkers()">${i + 1}</label>`;
-  }
-  container.innerHTML = html;
+  const beats = Math.max(1, Math.min(60, +document.getElementById(`beats-${id}`).value || 1));
+  document.getElementById(`accents-${id}`).innerHTML =
+    Array.from({length: beats}, (_, i) => {
+      const checked = document.getElementById(`accent-${id}-${i}`)?.checked ?? (i === 0);
+      return `<label><input type="checkbox" id="accent-${id}-${i}" ${checked ? 'checked' : ''} onchange="drawMarkers()">${i + 1}</label>`;
+    }).join('');
 }
 
-function startKeeper() {
-  const keeper = lines.find(l => l.isKeeper);
-  if (keeper && !keeper.isRunning) {
-    keeper.isRunning = true;
-    keeper.lastTime = 0;
-    ensureAnimation();
-  }
+/* ---------- Master helpers ---------- */
+function setMaster(key, val, min, max, dec) {
+  val = Math.max(min, Math.min(max, parseFloat(val) || min));
+  document.getElementById('global' + key).value = val;
+  document.getElementById('global' + key + 'Text').value = dec ? val.toFixed(dec) : val;
+  return val;
 }
 
-function stopKeeper() {
-  const keeper = lines.find(l => l.isKeeper);
-  if (keeper) {
-    keeper.isRunning = false;
-    keeper.beatIndex = 0;
-    keeper.lastBeatIndex = -1;
-    keeper.lastTime = 0;
-  }
+function applyGlobalVol(vol) {
+  lines.forEach(l => {
+    const el = document.getElementById(`vol-${l.id}`);
+    if (el) el.value = Math.round(l.baseVolume * vol / 100);
+  });
 }
-
-function updateGlobalButton() {
-  const anyVisibleRunning = lines.some(l => l.isRunning && !l.isKeeper);
-  globalBtn.textContent = anyVisibleRunning ? "Stop" : "Start";
-  if (!anyVisibleRunning) stopKeeper();
+function applyGlobalScale(scale) {
+  lines.forEach(l => {
+    const el = document.getElementById(`bpm-${l.id}`);
+    if (el) el.value = (l.baseBpm * scale).toFixed(2);
+  });
 }
-
-/* ---------- Master Volume ---------- */
-function updateGlobalVolFromSlider() {
-  let val = parseFloat(document.getElementById("globalVol").value);
-  val = Math.max(0, Math.min(100, val));
-  document.getElementById("globalVolText").value = val;
-  applyGlobalVolume(val);
+function applyGlobalHzScale(scale) {
+  lines.forEach(l => {
+    const el = document.getElementById(`pitch-${l.id}`);
+    if (el) el.value = (l.basePitch * scale).toFixed(2);
+  });
 }
-function updateGlobalVolFromText() {
-  let val = parseFloat(document.getElementById("globalVolText").value);
-  if (isNaN(val)) val = 100;
-  val = Math.max(0, Math.min(100, val));
-  document.getElementById("globalVol").value = val;
-  document.getElementById("globalVolText").value = val;
-  applyGlobalVolume(val);
+function applyGlobalAccentSus(v) {
+  lines.forEach(l => {
+    const el = document.getElementById(`accentSus-${l.id}`);
+    if (el) el.value = v.toFixed(2);
+  });
 }
-function applyGlobalVolume(newVol) {
-  lines.forEach(line => {
-    if (line.isKeeper) return;
-    const input = document.getElementById(`vol-${line.id}`);
-    if (input) {
-      let display = Math.max(0, Math.min(100, Math.round(line.baseVolume * newVol / 100)));
-      input.value = display;
-    }
+function applyGlobalBeatSus(v) {
+  lines.forEach(l => {
+    const el = document.getElementById(`beatSus-${l.id}`);
+    if (el) el.value = v.toFixed(2);
   });
 }
 
-/* ---------- Master BPM Scale ---------- */
-function updateGlobalScaleFromSlider() {
-  let val = parseFloat(document.getElementById("globalScale").value);
-  val = Math.max(0.01, Math.min(3, val));
-  document.getElementById("globalScaleText").value = val.toFixed(2);
-  applyGlobalScale(val);
-}
-function updateGlobalScaleFromText() {
-  let val = parseFloat(document.getElementById("globalScaleText").value);
-  if (isNaN(val)) val = 1;
-  val = Math.max(0.01, Math.min(3, val));
-  document.getElementById("globalScale").value = val;
-  document.getElementById("globalScaleText").value = val;
-  applyGlobalScale(val);
-}
-function applyGlobalScale(newScale) {
-  lines.forEach(line => {
-    if (line.isKeeper) return;
-    const input = document.getElementById(`bpm-${line.id}`);
-    if (input) input.value = Math.max(0.01, Math.min(10000, (line.baseBpm * newScale).toFixed(2)));
-  });
+/* ---------- Line helpers ---------- */
+function clamp(el, min, max) {
+  let v = parseFloat(el.value);
+  if (isNaN(v)) v = min;
+  el.value = Math.max(min, Math.min(max, v));
 }
 
 function updateBaseBpm(id) {
-  const line = lines.find(l => l.id === id);
-  if (!line || line.isKeeper) return;
-  const input = document.getElementById(`bpm-${id}`);
-  const scale = parseFloat(document.getElementById("globalScale").value);
-  let val = Math.max(0.01, Math.min(10000, parseFloat(input.value) || 0.01));
-  line.baseBpm = val / scale;
+  lines.find(l => l.id === id).baseBpm = (+document.getElementById(`bpm-${id}`).value || 0.01) / +document.getElementById('globalScale').value;
 }
-
-/* ---------- Master Hz Scale ---------- */
-function updateGlobalHzScaleFromSlider() {
-  let val = parseFloat(document.getElementById("globalHzScale").value);
-  val = Math.max(0.1, Math.min(10, val));
-  document.getElementById("globalHzScaleText").value = val.toFixed(1);
-  applyGlobalHzScale(val);
-}
-function updateGlobalHzScaleFromText() {
-  let val = parseFloat(document.getElementById("globalHzScaleText").value);
-  if (isNaN(val)) val = 1;
-  val = Math.max(0.1, Math.min(10, val));
-  document.getElementById("globalHzScale").value = val;
-  document.getElementById("globalHzScaleText").value = val;
-  applyGlobalHzScale(val);
-}
-function applyGlobalHzScale(newScale) {
-  lines.forEach(line => {
-    if (line.isKeeper) return;
-    const input = document.getElementById(`pitch-${line.id}`);
-    if (input) input.value = Math.max(1, Math.min(200000, (line.basePitch * newScale).toFixed(2)));
-  });
-}
-
 function updateBasePitch(id) {
-  const line = lines.find(l => l.id === id);
-  if (!line || line.isKeeper) return;
-  const input = document.getElementById(`pitch-${id}`);
-  const scale = parseFloat(document.getElementById("globalHzScale").value);
-  let val = Math.max(1, Math.min(200000, parseFloat(input.value) || 1));
-  line.basePitch = val / scale;
-}
-
-/* ---------- Master Accent Sustain ---------- */
-function updateGlobalAccentSusFromSlider() {
-  let val = parseFloat(document.getElementById("globalAccentSus").value);
-  val = Math.max(0.01, Math.min(2, val));
-  document.getElementById("globalAccentSusText").value = val.toFixed(2);
-  applyGlobalAccentSus(val);
-}
-function updateGlobalAccentSusFromText() {
-  let val = parseFloat(document.getElementById("globalAccentSusText").value);
-  if (isNaN(val)) val = 0.5;
-  val = Math.max(0.01, Math.min(2, val));
-  document.getElementById("globalAccentSus").value = val;
-  document.getElementById("globalAccentSusText").value = val;
-  applyGlobalAccentSus(val);
-}
-function applyGlobalAccentSus(newVal) {
-  let clamped = Math.max(0.01, Math.min(2.0, newVal));
-  lines.forEach(line => {
-    if (line.isKeeper) return;
-    const input = document.getElementById(`accentSus-${line.id}`);
-    if (input) input.value = clamped.toFixed(2);
-  });
-}
-
-/* ---------- Master Beat Sustain ---------- */
-function updateGlobalBeatSusFromSlider() {
-  let val = parseFloat(document.getElementById("globalBeatSus").value);
-  val = Math.max(0.01, Math.min(2, val));
-  document.getElementById("globalBeatSusText").value = val.toFixed(2);
-  applyGlobalBeatSus(val);
-}
-function updateGlobalBeatSusFromText() {
-  let val = parseFloat(document.getElementById("globalBeatSusText").value);
-  if (isNaN(val)) val = 0.01;
-  val = Math.max(0.01, Math.min(2, val));
-  document.getElementById("globalBeatSus").value = val;
-  document.getElementById("globalBeatSusText").value = val;
-  applyGlobalBeatSus(val);
-}
-function applyGlobalBeatSus(newVal) {
-  let clamped = Math.max(0.01, Math.min(2.0, newVal));
-  lines.forEach(line => {
-    if (line.isKeeper) return;
-    const input = document.getElementById(`beatSus-${line.id}`);
-    if (input) input.value = clamped.toFixed(2);
-  });
+  lines.find(l => l.id === id).basePitch = (+document.getElementById(`pitch-${id}`).value || 1) / +document.getElementById('globalHzScale').value;
 }
 
 function toggleFlip(id) {
-  const line = lines.find(l => l.id === id);
-  if (!line || line.isKeeper) return;
-
-  // Invert all accent checkboxes for this line
-  const beatsInput = document.getElementById(`beats-${id}`);
-  const beats = Math.max(1, Math.min(60, parseInt(beatsInput.value) || 1));
+  const beats = Math.max(1, Math.min(60, +document.getElementById(`beats-${id}`)?.value || 1));
   for (let i = 0; i < beats; i++) {
     const cb = document.getElementById(`accent-${id}-${i}`);
     if (cb) cb.checked = !cb.checked;
   }
   drawMarkers();
 }
-
 function toggleMasterFlip() {
-  lines.forEach(line => {
-    if (line.isKeeper) return;
-    toggleFlip(line.id);
-  });
-}
-
-function clampInput(inputId, minVal, maxVal) {
-  const el = document.getElementById(inputId);
-  if (!el) return;
-  let val = parseFloat(el.value);
-  if (isNaN(val) || el.value === '' || val < minVal) val = minVal;
-  if (val > maxVal) val = maxVal;
-  el.value = val;
-}
-
-function preventBlank(inputId, minVal) {
-  const el = document.getElementById(inputId);
-  if (!el) return;
-  if (el.value === '' || el.value === null || el.value === undefined) el.value = minVal;
-}
-
-function addKeeper() {
-  const keeper = {
-    id: 'keeper', isKeeper: true, isRunning: false,
-    beatIndex: 0, lastBeatIndex: -1, lastTime: 0, color: 'transparent'
-  };
-  lines.push(keeper);
-}
-
-function addLine() {
-  const id = nextId++;
-  const color = COLORS[id % COLORS.length];
-  const index = lines.filter(l => !l.isKeeper).length;
-
-  const baseBpm = 120 + (index * 10);
-  const basePitch = 200 + (index * 100);
-  const baseVolume = 60;
-  const baseAccentSus = 0.5;
-  const baseBeatSus = 0.01;
-
-  const line = {
-    id, isRunning: false, beatIndex: 0, lastBeatIndex: -1, lastTime: 0,
-    color, baseBpm, basePitch, baseVolume, baseAccentSus, baseBeatSus, isFlipped: false
-  };
-  lines.push(line);
-
-  const currentScale = parseFloat(document.getElementById("globalScale").value);
-  const currentHzScale = parseFloat(document.getElementById("globalHzScale").value);
-  const displayBpm = Math.max(1, Math.min(10000, Math.round(baseBpm * currentScale)));
-  const displayPitch = Math.max(1, Math.min(200000, (basePitch * currentHzScale).toFixed(2)));
-  const currentMasterVol = parseFloat(document.getElementById("globalVol").value);
-  const displayVolume = Math.max(0, Math.min(100, Math.round(baseVolume * currentMasterVol / 100)));
-  const displayAccentSus = parseFloat(document.getElementById("globalAccentSus").value);
-  const displayBeatSus = parseFloat(document.getElementById("globalBeatSus").value);
-
-  const hand = document.createElement("div");
-  hand.className = "hand";
-  hand.id = `hand-${id}`;
-  hand.style.background = color;
-  circle.appendChild(hand);
-
-  const row = document.createElement("div");
-  row.className = "line-row";
-  row.id = `line-row-${id}`;
-  row.innerHTML = `
-    <span class="line-color" style="background:${color}"></span>
-    <button onclick="toggleLine(${id})" id="btn-${id}">Start</button>
-    <label>Hz <input type="number" id="pitch-${id}" value="${displayPitch}" min="1" max="200000" step="0.01"
-      oninput="preventBlank('pitch-${id}', 1)"
-      onchange="updateBasePitch(${id}); clampInput('pitch-${id}', 1, 200000)"
-      onfocus="this.select()"></label>
-    <label>BPM <input type="number" id="bpm-${id}" value="${displayBpm.toFixed(2)}" min="0.01" max="10000" step="0.01"
-      oninput="preventBlank('bpm-${id}', 0.01)"
-      onchange="updateBaseBpm(${id}); clampInput('bpm-${id}', 0.01, 10000)"
-      onfocus="this.select()"></label>
-    <label>BPC <input type="number" id="beats-${id}" value="3" min="1" max="60"
-      oninput="preventBlank('beats-${id}', 1)"
-      onchange="onBpcChange(${id}); clampInput('beats-${id}', 1, 60)"
-      onfocus="this.select()"></label>
-    <div class="accents-wrap" id="accents-${id}"></div>
-    <label>Volume <input type="number" id="vol-${id}" min="0" max="100" value="${displayVolume}"
-      onchange="onVolumeChange(${id}); clampInput('vol-${id}', 0, 100)"
-      onfocus="this.select()"></label>
-    <label>Accented <input type="number" id="accentSus-${id}" min="0" max="2" value="${displayAccentSus.toFixed(2)}" step="0.01"
-      onchange="clampInput('accentSus-${id}', 0, 2)"
-      onfocus="this.select()"></label>
-    <label>Unaccented <input type="number" id="beatSus-${id}" min="0" max="2" value="${displayBeatSus.toFixed(2)}" step="0.01"
-      onchange="clampInput('beatSus-${id}', 0, 2)"
-      onfocus="this.select()"></label>
-    <label>Flip <button onclick="toggleFlip(${id})">Invert</button></label>
-  `;
-  linesContainer.appendChild(row);
-
-  drawAccents(id);
-  drawMarkers();
+  lines.forEach(l => { if (l.id !== HIDDEN_ID) toggleFlip(l.id); });
 }
 
 function onBpcChange(id) {
@@ -540,128 +252,189 @@ function onBpcChange(id) {
   drawMarkers();
 }
 
+/* ---------- CRUD ---------- */
+function addLine() {
+  const id = nextId++;
+  const color = COLORS[id % COLORS.length];
+  const idx = lines.filter(l => l.id !== HIDDEN_ID).length;
+  const baseBpm = 120 + idx * 10;
+  const basePitch = 200 + idx * 100;
+  const baseVolume = 60;
+
+  lines.push({ id, isRunning: false, beatIndex: 0, lastBeatIndex: -1, lastTime: 0, color, baseBpm, basePitch, baseVolume });
+
+  const gScale = +document.getElementById('globalScale').value;
+  const gHz = +document.getElementById('globalHzScale').value;
+  const gVol = +document.getElementById('globalVol').value;
+  const gAcc = +document.getElementById('globalAccentSus').value;
+  const gBeat = +document.getElementById('globalBeatSus').value;
+
+  const hand = document.createElement('div');
+  hand.className = 'hand';
+  hand.id = `hand-${id}`;
+  hand.style.background = color;
+  circle.appendChild(hand);
+
+  const row = document.createElement('div');
+  row.className = 'line-row';
+  row.id = `line-row-${id}`;
+  row.innerHTML = `
+    <span class="line-color" style="background:${color}"></span>
+    <button onclick="toggleLine(${id})" id="btn-${id}">Start</button>
+    <label>Hz <input type="number" id="pitch-${id}" value="${(basePitch*gHz).toFixed(2)}" min="1" max="200000" step="0.01"
+      oninput="if(!this.value)this.value=1" onchange="updateBasePitch(${id});clamp(this,1,200000)" onfocus="this.select()"></label>
+    <label>BPM <input type="number" id="bpm-${id}" value="${(baseBpm*gScale).toFixed(2)}" min="0.01" max="10000" step="0.01"
+      oninput="if(!this.value)this.value=0.01" onchange="updateBaseBpm(${id});clamp(this,0.01,10000)" onfocus="this.select()"></label>
+    <label>BPC <input type="number" id="beats-${id}" value="3" min="1" max="60"
+      oninput="if(!this.value)this.value=1" onchange="onBpcChange(${id});clamp(this,1,60)" onfocus="this.select()"></label>
+    <div class="accents-wrap" id="accents-${id}"></div>
+    <label>Volume <input type="number" id="vol-${id}" min="0" max="100" value="${Math.round(baseVolume*gVol/100)}"
+      onchange="clamp(this,0,100)" onfocus="this.select()"></label>
+    <label>Accent <input type="number" id="accentSus-${id}" min="0" max="2" value="${gAcc.toFixed(2)}" step="0.01"
+      onchange="clamp(this,0,2)" onfocus="this.select()"></label>
+    <label>Unaccent <input type="number" id="beatSus-${id}" min="0" max="2" value="${gBeat.toFixed(2)}" step="0.01"
+      onchange="clamp(this,0,2)" onfocus="this.select()"></label>
+    <button onclick="toggleFlip(${id})">Invert</button>
+  `;
+  linesContainer.appendChild(row);
+
+  drawAccents(id);
+  drawMarkers();
+}
+
+function addAndPlayLine() {
+  addLine();
+  toggleLine(lines[lines.length - 1].id);
+}
+
+/* ---------- Playback ---------- */
 function toggleLine(id) {
   ensureAudioCtx();
   const line = lines.find(l => l.id === id);
-  if (!line || line.isKeeper) return;
   line.isRunning = !line.isRunning;
-  document.getElementById(`btn-${id}`).textContent = line.isRunning ? "Stop" : "Start";
-  if (line.isRunning) {
-    line.lastTime = 0;
-    startKeeper();
-    ensureAnimation();
-  }
+  const btn = document.getElementById(`btn-${id}`);
+  if (btn) btn.textContent = line.isRunning ? 'Stop' : 'Start';
+  if (line.isRunning) line.lastTime = 0;
   updateGlobalButton();
+  ensureAnimation();
 }
 
 function toggleAll() {
   ensureAudioCtx();
-  const anyVisibleRunning = lines.some(l => l.isRunning && !l.isKeeper);
-  if (anyVisibleRunning) {
-    lines.forEach(line => { if (!line.isKeeper && line.isRunning) toggleLine(line.id); });
-  } else {
-    lines.forEach(line => { if (!line.isKeeper && !line.isRunning) toggleLine(line.id); });
-  }
+  const stop = lines.some(l => l.isRunning && l.id !== HIDDEN_ID);
+  lines.forEach(l => {
+    if (l.id === HIDDEN_ID) {
+      if (!stop && !l.isRunning) {
+        l.isRunning = true;
+        l.lastTime = 0;
+        ensureAnimation();
+      }
+      return;
+    }
+    if (l.isRunning === stop) toggleLine(l.id);
+  });
 }
 
 function resetAll() {
   lines.forEach(line => {
-    line.beatIndex = 0;
-    line.lastBeatIndex = -1;
+    if (line.id === HIDDEN_ID) return;
+    line.beatIndex = line.lastBeatIndex = 0;
     line.lastTime = 0;
-    if (!line.isKeeper) {
-      const hand = document.getElementById(`hand-${line.id}`);
-      if (hand) hand.style.transform = `translate(-50%, -100%) rotate(0deg)`;
-    }
+    const hand = document.getElementById(`hand-${line.id}`);
+    if (hand) hand.style.transform = `translate(-50%,-100%) rotate(0deg)`;
   });
+}
+
+function updateGlobalButton() {
+  globalBtn.textContent = lines.some(l => l.isRunning && l.id !== HIDDEN_ID) ? 'Stop' : 'Start';
 }
 
 function ensureAnimation() {
-  if (document.hidden) {
-    if (!intervalId && lines.some(l => l.isRunning)) {
-      intervalId = setInterval(() => {
-        const anyRunning = tick(performance.now());
-        if (!anyRunning) { clearInterval(intervalId); intervalId = null; }
-      }, 16);
-    }
-  } else {
-    if (!animFrameId) animFrameId = requestAnimationFrame(animateRAF);
-  }
-}
-
-function animateRAF(time) {
-  animFrameId = null;
-  const anyRunning = tick(time);
-  if (anyRunning) animFrameId = requestAnimationFrame(animateRAF);
+  if (animFrameId || !lines.some(l => l.isRunning)) return;
+  animFrameId = requestAnimationFrame(function f(t) {
+    animFrameId = null;
+    if (tick(t)) ensureAnimation();
+  });
 }
 
 function tick(time) {
-  let anyRunning = false;
+  let any = false;
   lines.forEach(line => {
     if (!line.isRunning) return;
-    anyRunning = true;
-    if (line.lastTime === 0) line.lastTime = time;
-    let delta = time - line.lastTime;
+    any = true;
+    if (!line.lastTime) line.lastTime = time;
+    const dt = time - line.lastTime;
     line.lastTime = time;
 
-    let bpm, beats, pitch, volume, accentDur, beatDur, isAccent;
-    if (line.isKeeper) {
-      bpm = 30; beats = 1; pitch = 1; volume = 0.01;
-      accentDur = 1; beatDur = 0.01; isAccent = true;
+    const id = line.id;
+    let bpm, beats, pitch, vol, accentDur, beatDur;
+
+    if (id === HIDDEN_ID) {
+      bpm = 30;
+      beats = 1;
+      pitch = 1;
+      vol = 1;
+      accentDur = 0.01;
+      beatDur = 0.01;
     } else {
-      bpm = Math.max(0.01, Math.min(10000, parseFloat(document.getElementById(`bpm-${line.id}`).value) || 0.01));
-      beats = Math.max(1, Math.min(60, parseInt(document.getElementById(`beats-${line.id}`).value) || 1));
-      pitch = Math.max(1, Math.min(200000, parseFloat(document.getElementById(`pitch-${line.id}`).value) || 200));
-      volume = (parseFloat(document.getElementById(`vol-${line.id}`).value) || 0) / 100;
-      accentDur = parseFloat(document.getElementById(`accentSus-${line.id}`).value) || 0.01;
-      beatDur = parseFloat(document.getElementById(`beatSus-${line.id}`).value) || 0.01;
+      bpm = Math.max(0.01, Math.min(10000, +document.getElementById(`bpm-${id}`).value || 0.01));
+      beats = Math.max(1, Math.min(60, +document.getElementById(`beats-${id}`).value || 1));
+      pitch = Math.max(1, Math.min(200000, +document.getElementById(`pitch-${id}`).value || 200));
+      vol = (+document.getElementById(`vol-${id}`).value || 0) / 100;
+      accentDur = +document.getElementById(`accentSus-${id}`).value || 0.01;
+      beatDur = +document.getElementById(`beatSus-${id}`).value || 0.01;
     }
 
-    line.beatIndex += delta * bpm / 60000;
-    if (!line.isKeeper) {
-      let rotation = (line.beatIndex * 360 / beats) % 360;
-      const hand = document.getElementById(`hand-${line.id}`);
-      if (hand) hand.style.transform = `translate(-50%, -100%) rotate(${rotation}deg)`;
-    }
+    line.beatIndex += dt * bpm / 60000;
 
-    let currentBeat = Math.floor(line.beatIndex);
-    while (line.lastBeatIndex < currentBeat) {
+    const hand = document.getElementById(`hand-${id}`);
+    if (hand) hand.style.transform = `translate(-50%,-100%) rotate(${(line.beatIndex * 360 / beats) % 360}deg)`;
+
+    const current = Math.floor(line.beatIndex);
+    while (line.lastBeatIndex < current) {
       line.lastBeatIndex++;
-      let beatInMeasure = line.lastBeatIndex % beats;
-      if (!line.isKeeper) {
-        const accentCheckbox = document.getElementById(`accent-${line.id}-${beatInMeasure}`);
-        isAccent = accentCheckbox ? accentCheckbox.checked : false;
-      }
-      let dur = isAccent ? accentDur : beatDur;
-      clickSound(pitch, dur, volume);
+      const beatInMeasure = line.lastBeatIndex % beats;
+      const isAccent = id === HIDDEN_ID ? false : (document.getElementById(`accent-${id}-${beatInMeasure}`)?.checked ?? false);
+      clickSound(pitch, isAccent ? accentDur : beatDur, vol);
     }
   });
-  return anyRunning;
+  return any;
 }
 
+/* ---------- Visibility / Resize ---------- */
 document.addEventListener('visibilitychange', () => {
   const now = performance.now();
   if (document.hidden) {
     if (animFrameId) { cancelAnimationFrame(animFrameId); animFrameId = null; }
-    lines.forEach(line => { if (line.isRunning) line.lastTime = now; });
-    if (lines.some(l => l.isRunning) && !intervalId) {
+    lines.forEach(l => { if (l.isRunning) l.lastTime = now; });
+    if (!intervalId && lines.some(l => l.isRunning)) {
       intervalId = setInterval(() => {
-        const anyRunning = tick(performance.now());
-        if (!anyRunning) { clearInterval(intervalId); intervalId = null; }
+        if (!tick(performance.now())) { clearInterval(intervalId); intervalId = null; }
       }, 16);
     }
   } else {
     if (intervalId) { clearInterval(intervalId); intervalId = null; }
-    lines.forEach(line => { if (line.isRunning) line.lastTime = now; });
+    lines.forEach(l => { if (l.isRunning) l.lastTime = now; });
     ensureAnimation();
   }
 });
 
-window.addEventListener("resize", drawMarkers);
+window.addEventListener('resize', drawMarkers);
 
-addKeeper();
 addLine();
-</script>
 
+/* Hidden background metronome – no visual elements, uses existing tick/clickSound */
+lines.push({
+  id: HIDDEN_ID,
+  isRunning: false,
+  beatIndex: 0,
+  lastBeatIndex: -1,
+  lastTime: 0,
+  color: 'transparent',
+  baseBpm: 30,
+  basePitch: 1,
+  baseVolume: 1
+});
+</script>
 </body>
 </html>
