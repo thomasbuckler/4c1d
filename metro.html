@@ -85,6 +85,8 @@
   }
   .global-btn, .add-btn { padding: 0.5em 1.2em; font-weight: bold; font-size: clamp(12px, 2vmin, 18px); }
 </style>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#000000">
 <base target="_blank">
 </head>
 <body>
@@ -435,6 +437,11 @@ lines.push({
   basePitch: 1,
   baseVolume: 1
 });
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+  }
 </script>
 </body>
 </html>
