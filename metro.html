@@ -94,6 +94,7 @@
     <button class="global-btn" onclick="toggleAll()" id="globalBtn">Start</button>
     <button class="global-btn" onclick="resetAll()">Reset</button>
     <button class="add-btn" onclick="addLine()">+ Add</button>
+    <button class="add-btn" onclick="addAndPlayLine()">+ Add & Play</button>
   </div>
 
   <label>Master Volume
@@ -255,7 +256,7 @@ function onBpcChange(id) {
 function addLine() {
   const id = nextId++;
   const color = COLORS[id % COLORS.length];
-  const idx = lines.length;
+  const idx = lines.filter(l => l.id !== HIDDEN_ID).length;
   const baseBpm = 120 + idx * 10;
   const basePitch = 200 + idx * 100;
   const baseVolume = 60;
@@ -299,6 +300,11 @@ function addLine() {
 
   drawAccents(id);
   drawMarkers();
+}
+
+function addAndPlayLine() {
+  addLine();
+  toggleLine(lines[lines.length - 1].id);
 }
 
 /* ---------- Playback ---------- */
@@ -431,5 +437,4 @@ lines.push({
 });
 </script>
 </body>
-</html>
 </html>
